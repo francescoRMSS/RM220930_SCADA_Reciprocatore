@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RM240513_RobotVerniciatura", "RM240513_RobotVerniciatura\RM240513_RobotVerniciatura.csproj", "{79CAD77D-4809-46A2-8801-B612285AFE3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79CAD77D-4809-46A2-8801-B612285AFE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CAD77D-4809-46A2-8801-B612285AFE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CAD77D-4809-46A2-8801-B612285AFE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CAD77D-4809-46A2-8801-B612285AFE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {563A4941-AAF4-409E-B6E3-E2E22619A718}
+	EndGlobalSection
+EndGlobal
