@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RM.src.RM220930.Forms.Plant.Axis
 {
-    public partial class UC_parametriLavoro : UserControl, INavigable, INavigationRequester
+    public partial class UC_workParams : UserControl, INavigable, INavigationRequester
     {
-        public UC_parametriLavoro()
+        public UC_workParams()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         {
             if (parameter is int offset)
             {
-                MessageBox.Show(offset.ToString());
+               // MessageBox.Show(offset.ToString());
             }
         }
     }

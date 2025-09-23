@@ -202,11 +202,11 @@
     <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axis.Designer.cs">
       <DependentUpon>UC_axis.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_parametriLavoro.cs">
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_workParams.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_parametriLavoro.Designer.cs">
-      <DependentUpon>UC_parametriLavoro.cs</DependentUpon>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_workParams.Designer.cs">
+      <DependentUpon>UC_workParams.cs</DependentUpon>
     </Compile>
     <Compile Include="src\RM220930\Forms\Plant\UC_HomePage.cs">
       <SubType>UserControl</SubType>
@@ -356,8 +356,8 @@
     <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_axis.resx">
       <DependentUpon>UC_axis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_parametriLavoro.resx">
-      <DependentUpon>UC_parametriLavoro.cs</DependentUpon>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_workParams.resx">
+      <DependentUpon>UC_workParams.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_HomePage.resx">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
@@ -441,6 +441,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\axe_4th_gun.png" />
+    <None Include="Resources\axe_3rd_gun.png" />
+    <None Include="Resources\axe_2nd_gun.png" />
     <None Include="Resources\right-arrow.png" />
     <None Include="Resources\left-arrow.png" />
     <None Include="Resources\cabin_layout_robot_1_selected.png" />

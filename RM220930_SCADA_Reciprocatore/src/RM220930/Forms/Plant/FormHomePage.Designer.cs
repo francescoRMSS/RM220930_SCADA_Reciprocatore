@@ -57,7 +57,13 @@
             this.pnl_highTask = new System.Windows.Forms.Panel();
             this.pnl_highTaskStatus = new RMLib.View.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.pnl_showScrnSvrMgr = new System.Windows.Forms.Panel();
+            this.pnl_safeZone = new System.Windows.Forms.Panel();
+            this.Pnl_PLC_alarm = new System.Windows.Forms.Panel();
+            this.Pnl_diagnostics = new System.Windows.Forms.Panel();
+            this.pnl_ActiveAlarms = new System.Windows.Forms.Panel();
             this.PnlLogoContainer = new RMLib.View.CustomPanel();
+            this.Pnl_logo_rm = new RMLib.View.CustomPanel();
             this.lbl_pageTitle = new System.Windows.Forms.Label();
             this.lbl_dateTime = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -67,14 +73,6 @@
             this.btn_alarms = new System.Windows.Forms.Button();
             this.btn_axis = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.Pnl_ROBOT_alarm = new System.Windows.Forms.Panel();
-            this.Pnl_MOVROBOT_alarm = new System.Windows.Forms.Panel();
-            this.pnl_showScrnSvrMgr = new System.Windows.Forms.Panel();
-            this.pnl_safeZone = new System.Windows.Forms.Panel();
-            this.Pnl_PLC_alarm = new System.Windows.Forms.Panel();
-            this.Pnl_diagnostics = new System.Windows.Forms.Panel();
-            this.pnl_ActiveAlarms = new System.Windows.Forms.Panel();
-            this.Pnl_logo_rm = new RMLib.View.CustomPanel();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -179,10 +177,8 @@
             this.pnl_header.BorderColor = System.Drawing.Color.Black;
             this.pnl_header.BorderRadius = 0;
             this.pnl_header.BorderSize = 0;
-            this.pnl_header.Controls.Add(this.Pnl_ROBOT_alarm);
             this.pnl_header.Controls.Add(this.pnl_appTask);
             this.pnl_header.Controls.Add(this.pnl_comRobotTask);
-            this.pnl_header.Controls.Add(this.Pnl_MOVROBOT_alarm);
             this.pnl_header.Controls.Add(this.pnl_vrTask);
             this.pnl_header.Controls.Add(this.pnl_auxTask);
             this.pnl_header.Controls.Add(this.pnl_lowTask);
@@ -432,6 +428,66 @@
             this.label4.Text = "HIGH";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnl_showScrnSvrMgr
+            // 
+            this.pnl_showScrnSvrMgr.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_showScrnSvrMgr.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.pnl_showScrnSvrMgr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_showScrnSvrMgr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_showScrnSvrMgr.Location = new System.Drawing.Point(734, 29);
+            this.pnl_showScrnSvrMgr.Name = "pnl_showScrnSvrMgr";
+            this.pnl_showScrnSvrMgr.Size = new System.Drawing.Size(40, 40);
+            this.pnl_showScrnSvrMgr.TabIndex = 29;
+            this.pnl_showScrnSvrMgr.Visible = false;
+            this.pnl_showScrnSvrMgr.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_showScrnSvrMgr_Paint);
+            // 
+            // pnl_safeZone
+            // 
+            this.pnl_safeZone.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_safeZone.BackgroundImage = global::RM.Properties.Resources.safeZone_green32;
+            this.pnl_safeZone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_safeZone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_safeZone.Location = new System.Drawing.Point(825, 29);
+            this.pnl_safeZone.Name = "pnl_safeZone";
+            this.pnl_safeZone.Size = new System.Drawing.Size(40, 40);
+            this.pnl_safeZone.TabIndex = 28;
+            this.pnl_safeZone.Visible = false;
+            // 
+            // Pnl_PLC_alarm
+            // 
+            this.Pnl_PLC_alarm.BackColor = System.Drawing.Color.Transparent;
+            this.Pnl_PLC_alarm.BackgroundImage = global::RM.Properties.Resources.connection_icon;
+            this.Pnl_PLC_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pnl_PLC_alarm.Location = new System.Drawing.Point(960, 29);
+            this.Pnl_PLC_alarm.Name = "Pnl_PLC_alarm";
+            this.Pnl_PLC_alarm.Size = new System.Drawing.Size(40, 40);
+            this.Pnl_PLC_alarm.TabIndex = 24;
+            // 
+            // Pnl_diagnostics
+            // 
+            this.Pnl_diagnostics.BackColor = System.Drawing.Color.Transparent;
+            this.Pnl_diagnostics.BackgroundImage = global::RM.Properties.Resources.diagnostic;
+            this.Pnl_diagnostics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pnl_diagnostics.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Pnl_diagnostics.Location = new System.Drawing.Point(780, 29);
+            this.Pnl_diagnostics.Name = "Pnl_diagnostics";
+            this.Pnl_diagnostics.Size = new System.Drawing.Size(40, 40);
+            this.Pnl_diagnostics.TabIndex = 26;
+            this.Pnl_diagnostics.Visible = false;
+            this.Pnl_diagnostics.Click += new System.EventHandler(this.Pnl_diagnostics_Click);
+            // 
+            // pnl_ActiveAlarms
+            // 
+            this.pnl_ActiveAlarms.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_ActiveAlarms.BackgroundImage = global::RM.Properties.Resources.alarm_popup_grey;
+            this.pnl_ActiveAlarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_ActiveAlarms.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_ActiveAlarms.Location = new System.Drawing.Point(915, 29);
+            this.pnl_ActiveAlarms.Name = "pnl_ActiveAlarms";
+            this.pnl_ActiveAlarms.Size = new System.Drawing.Size(40, 40);
+            this.pnl_ActiveAlarms.TabIndex = 25;
+            this.pnl_ActiveAlarms.Click += new System.EventHandler(this.ClickEvent_alarms);
+            // 
             // PnlLogoContainer
             // 
             this.PnlLogoContainer.BackColor = System.Drawing.Color.White;
@@ -449,6 +505,23 @@
             this.PnlLogoContainer.Size = new System.Drawing.Size(208, 54);
             this.PnlLogoContainer.TabIndex = 28;
             this.PnlLogoContainer.TextColor = System.Drawing.Color.White;
+            // 
+            // Pnl_logo_rm
+            // 
+            this.Pnl_logo_rm.BackColor = System.Drawing.Color.White;
+            this.Pnl_logo_rm.BackgroundColor = System.Drawing.Color.White;
+            this.Pnl_logo_rm.BackgroundImage = global::RM.Properties.Resources.RM_logo;
+            this.Pnl_logo_rm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pnl_logo_rm.BorderColor = System.Drawing.Color.Black;
+            this.Pnl_logo_rm.BorderRadius = 0;
+            this.Pnl_logo_rm.BorderSize = 0;
+            this.Pnl_logo_rm.ForeColor = System.Drawing.Color.White;
+            this.Pnl_logo_rm.Location = new System.Drawing.Point(14, 3);
+            this.Pnl_logo_rm.Name = "Pnl_logo_rm";
+            this.Pnl_logo_rm.Size = new System.Drawing.Size(180, 49);
+            this.Pnl_logo_rm.TabIndex = 29;
+            this.Pnl_logo_rm.TextColor = System.Drawing.Color.White;
+            this.Pnl_logo_rm.DoubleClick += new System.EventHandler(this.DoubleClickEvent_showSwVersion);
             // 
             // lbl_pageTitle
             // 
@@ -563,104 +636,6 @@
             this.btn_home.TabIndex = 326;
             this.btn_home.UseVisualStyleBackColor = false;
             // 
-            // Pnl_ROBOT_alarm
-            // 
-            this.Pnl_ROBOT_alarm.BackColor = System.Drawing.Color.Transparent;
-            this.Pnl_ROBOT_alarm.BackgroundImage = global::RM.Properties.Resources.connection_icon;
-            this.Pnl_ROBOT_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_ROBOT_alarm.Location = new System.Drawing.Point(623, 29);
-            this.Pnl_ROBOT_alarm.Name = "Pnl_ROBOT_alarm";
-            this.Pnl_ROBOT_alarm.Size = new System.Drawing.Size(40, 40);
-            this.Pnl_ROBOT_alarm.TabIndex = 25;
-            // 
-            // Pnl_MOVROBOT_alarm
-            // 
-            this.Pnl_MOVROBOT_alarm.BackColor = System.Drawing.Color.Transparent;
-            this.Pnl_MOVROBOT_alarm.BackgroundImage = global::RM.Properties.Resources.noMov;
-            this.Pnl_MOVROBOT_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_MOVROBOT_alarm.Location = new System.Drawing.Point(669, 29);
-            this.Pnl_MOVROBOT_alarm.Name = "Pnl_MOVROBOT_alarm";
-            this.Pnl_MOVROBOT_alarm.Size = new System.Drawing.Size(40, 40);
-            this.Pnl_MOVROBOT_alarm.TabIndex = 26;
-            this.Pnl_MOVROBOT_alarm.Visible = false;
-            // 
-            // pnl_showScrnSvrMgr
-            // 
-            this.pnl_showScrnSvrMgr.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_showScrnSvrMgr.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
-            this.pnl_showScrnSvrMgr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_showScrnSvrMgr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnl_showScrnSvrMgr.Location = new System.Drawing.Point(734, 29);
-            this.pnl_showScrnSvrMgr.Name = "pnl_showScrnSvrMgr";
-            this.pnl_showScrnSvrMgr.Size = new System.Drawing.Size(40, 40);
-            this.pnl_showScrnSvrMgr.TabIndex = 29;
-            this.pnl_showScrnSvrMgr.Visible = false;
-            this.pnl_showScrnSvrMgr.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_showScrnSvrMgr_Paint);
-            // 
-            // pnl_safeZone
-            // 
-            this.pnl_safeZone.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_safeZone.BackgroundImage = global::RM.Properties.Resources.safeZone_green32;
-            this.pnl_safeZone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_safeZone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnl_safeZone.Location = new System.Drawing.Point(825, 29);
-            this.pnl_safeZone.Name = "pnl_safeZone";
-            this.pnl_safeZone.Size = new System.Drawing.Size(40, 40);
-            this.pnl_safeZone.TabIndex = 28;
-            this.pnl_safeZone.Visible = false;
-            // 
-            // Pnl_PLC_alarm
-            // 
-            this.Pnl_PLC_alarm.BackColor = System.Drawing.Color.Transparent;
-            this.Pnl_PLC_alarm.BackgroundImage = global::RM.Properties.Resources.connection_icon;
-            this.Pnl_PLC_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_PLC_alarm.Location = new System.Drawing.Point(960, 29);
-            this.Pnl_PLC_alarm.Name = "Pnl_PLC_alarm";
-            this.Pnl_PLC_alarm.Size = new System.Drawing.Size(40, 40);
-            this.Pnl_PLC_alarm.TabIndex = 24;
-            // 
-            // Pnl_diagnostics
-            // 
-            this.Pnl_diagnostics.BackColor = System.Drawing.Color.Transparent;
-            this.Pnl_diagnostics.BackgroundImage = global::RM.Properties.Resources.diagnostic;
-            this.Pnl_diagnostics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_diagnostics.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Pnl_diagnostics.Location = new System.Drawing.Point(780, 29);
-            this.Pnl_diagnostics.Name = "Pnl_diagnostics";
-            this.Pnl_diagnostics.Size = new System.Drawing.Size(40, 40);
-            this.Pnl_diagnostics.TabIndex = 26;
-            this.Pnl_diagnostics.Visible = false;
-            this.Pnl_diagnostics.Click += new System.EventHandler(this.Pnl_diagnostics_Click);
-            // 
-            // pnl_ActiveAlarms
-            // 
-            this.pnl_ActiveAlarms.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_ActiveAlarms.BackgroundImage = global::RM.Properties.Resources.alarm_popup_grey;
-            this.pnl_ActiveAlarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_ActiveAlarms.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnl_ActiveAlarms.Location = new System.Drawing.Point(915, 29);
-            this.pnl_ActiveAlarms.Name = "pnl_ActiveAlarms";
-            this.pnl_ActiveAlarms.Size = new System.Drawing.Size(40, 40);
-            this.pnl_ActiveAlarms.TabIndex = 25;
-            this.pnl_ActiveAlarms.Click += new System.EventHandler(this.ClickEvent_alarms);
-            // 
-            // Pnl_logo_rm
-            // 
-            this.Pnl_logo_rm.BackColor = System.Drawing.Color.White;
-            this.Pnl_logo_rm.BackgroundColor = System.Drawing.Color.White;
-            this.Pnl_logo_rm.BackgroundImage = global::RM.Properties.Resources.RM_logo;
-            this.Pnl_logo_rm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_logo_rm.BorderColor = System.Drawing.Color.Black;
-            this.Pnl_logo_rm.BorderRadius = 0;
-            this.Pnl_logo_rm.BorderSize = 0;
-            this.Pnl_logo_rm.ForeColor = System.Drawing.Color.White;
-            this.Pnl_logo_rm.Location = new System.Drawing.Point(14, 3);
-            this.Pnl_logo_rm.Name = "Pnl_logo_rm";
-            this.Pnl_logo_rm.Size = new System.Drawing.Size(180, 49);
-            this.Pnl_logo_rm.TabIndex = 29;
-            this.Pnl_logo_rm.TextColor = System.Drawing.Color.White;
-            this.Pnl_logo_rm.DoubleClick += new System.EventHandler(this.DoubleClickEvent_showSwVersion);
-            // 
             // FormHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -706,7 +681,6 @@
         private System.Windows.Forms.Timer timer_dateTime_clock;
         private System.Windows.Forms.Panel Pnl_PLC_alarm;
         private System.Windows.Forms.Label lbl_pageTitle;
-        private System.Windows.Forms.Panel Pnl_MOVROBOT_alarm;
         private System.Windows.Forms.Panel pnl_ActiveAlarms;
         private RMLib.View.CustomPanel Pnl_logo_rm;
         private RMLib.View.CustomPanel PnlLogoContainer;
@@ -738,7 +712,6 @@
         private System.Windows.Forms.Button btn_alarms;
         private System.Windows.Forms.Button btn_axis;
         private System.Windows.Forms.Button btn_home;
-        private System.Windows.Forms.Panel Pnl_ROBOT_alarm;
     }
 }
 

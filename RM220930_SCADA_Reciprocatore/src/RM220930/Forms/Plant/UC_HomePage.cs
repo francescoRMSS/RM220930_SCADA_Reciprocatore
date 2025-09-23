@@ -22,6 +22,7 @@ namespace RM.src.RM220930.Forms.Plant
         public UC_HomePage()
         {
             InitializeComponent();
+
         }
 
         public void OnNavigatedTo(object parameter)
@@ -52,6 +53,46 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_openAlarms(object sender, EventArgs e)
         {
             AlarmManager.OpenAlarmFormPage(RobotManager.formAlarmPage);
+        }
+
+        private void ClickEvent_goToZ1(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 1);
+        }
+
+        private void ClickEvent_goToZ2(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 2);
+        }
+
+        private void ClickEvent_goToZ3(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 3);
+        }
+
+        private void ClickEvent_goToZ4(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 4);
+        }
+
+        private void ClickEvent_goToZ5(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 5);
+        }
+
+        private void ClickEvent_goToZ6(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 6);
+        }
+
+        private void ClickEvent_goToZ7(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 7);
+        }
+
+        private void ClickEvent_goToZ8(object sender, EventArgs e)
+        {
+            FormHomePage._navigator.Navigate("Axis", 8);
         }
     }
 }

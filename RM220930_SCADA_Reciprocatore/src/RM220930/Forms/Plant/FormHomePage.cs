@@ -73,24 +73,6 @@ namespace RM.src.RM220930
         }
 
         /// <summary>
-        /// Definisce una variabile per settare ed ottenere l'allarme del PLC
-        /// </summary>
-        public Panel RobotBlinkPanel
-        {
-            get { return Pnl_ROBOT_alarm; }
-            set { Pnl_ROBOT_alarm = value; }
-        }
-
-        /// <summary>
-        /// Definisce una variabile per settare ed ottenere l'allarme del robot in movimento
-        /// </summary>
-        public Panel RobotMovPanel
-        {
-            get { return Pnl_MOVROBOT_alarm; }
-            set { Pnl_MOVROBOT_alarm = value; }
-        }
-
-        /// <summary>
         /// Definisce una variabile per settare ed ottenere safeZone
         /// </summary>
         public Panel RobotSafeZone
@@ -139,7 +121,7 @@ namespace RM.src.RM220930
         /// <summary>
         /// Gestisce switch tra le varie userControl
         /// </summary>
-        private Navigator _navigator;
+        public static Navigator _navigator;
 
         /// <summary>
         /// Riferimento alla pagina degli allarmi.
@@ -169,8 +151,14 @@ namespace RM.src.RM220930
             formAlarmPage = new FormAlarmPage();
             formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
 
-            blinkMgr = new BlinkManager(PlcBlinkPanel, RobotBlinkPanel, RobotMovPanel, Resources.plc_connection_ok,
-               Resources.connection_error, Resources.robot_alarm_ok, Resources.robot_alarm_error, Resources.noMov, Resources.inMov);
+            // 3. Crea l'istanza del BlinkManager
+            blinkMgr = new BlinkManager(
+                true,
+                Pnl_PLC_alarm,
+                Resources.plc_connection_ok,
+                Resources.connection_error
+            );
+
             blinkMgr.StartBlinking();
 
             EnterFullScreenMode();

@@ -4091,15 +4091,105 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="T:RM.src.RM220930.Forms.Plant.UC_axis">
+            <summary>
+            Gestisce la seleziona degli assi e delle relative proprietà. Ogni asse ha un indice (offset) che servirà
+            da dscriminante durante la lettura e scrittura della proprietà relative.
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Forms.Plant.UC_axis.NavigateRequested">
+            <summary>
+            Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_axis._navigator">
             <summary>
-            Gestisce switch tra le varie userControl
+            Gestisce switch tra le varie userControl degli assi
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_axis.axeOffset">
             <summary>
             Asse selezionato
             </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.#ctor">
+            <summary>
+            Costruttura user control axis
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.OnNavigatedTo(System.Object)">
+            <summary>
+            Gestisce l'utilizzo del parametro passato durante la navigazione
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.RegisterPages">
+            <summary>
+            Registra le pagine che verranno switchate all'interno del panel contenitore
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe1(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 1
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe2(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 2
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe3(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 3
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe4(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 4
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe5(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 5
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe6(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 6
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe7(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 7
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe8(System.Object,System.EventArgs)">
+            <summary>
+            Seleziona l'asse 8
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_goToWorkParams(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina dei parametri di lavoro
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_axis.components">
             <summary> 
@@ -4118,18 +4208,18 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
-        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_parametriLavoro.components">
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.components">
             <summary> 
             Variabile di progettazione necessaria.
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_parametriLavoro.Dispose(System.Boolean)">
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.Dispose(System.Boolean)">
             <summary> 
             Pulire le risorse in uso.
             </summary>
             <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_parametriLavoro.InitializeComponent">
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.InitializeComponent">
             <summary> 
             Metodo necessario per il supporto della finestra di progettazione. Non modificare 
             il contenuto del metodo con l'editor di codice.
@@ -6322,16 +6412,6 @@
             Definisce una variabile per settare ed ottenere l'allarme del PLC
             </summary>
         </member>
-        <member name="P:RM.src.RM220930.FormHomePage.RobotBlinkPanel">
-            <summary>
-            Definisce una variabile per settare ed ottenere l'allarme del PLC
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.FormHomePage.RobotMovPanel">
-            <summary>
-            Definisce una variabile per settare ed ottenere l'allarme del robot in movimento
-            </summary>
-        </member>
         <member name="P:RM.src.RM220930.FormHomePage.RobotSafeZone">
             <summary>
             Definisce una variabile per settare ed ottenere safeZone
@@ -7430,6 +7510,21 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.axe_1st_gun">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.axe_2nd_gun">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.axe_3rd_gun">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.axe_4th_gun">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

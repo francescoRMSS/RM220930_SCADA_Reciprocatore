@@ -1,6 +1,6 @@
 ﻿namespace RM.src.RM220930.Forms.Plant.Axis
 {
-    partial class UC_parametriLavoro
+    partial class UC_workParams
     {
         /// <summary> 
         /// Variabile di progettazione necessaria.
