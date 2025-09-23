@@ -79,7 +79,6 @@ namespace RM.src.RM220930
             if (!Configuration.basicConfigurationFromFile())
             {
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during get basic info from file");
-                //MessageBox.Show("Error during get basic info from file", "Error configuration file", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 log.Error("Error during get basic info from file");
                 Application.Exit();
             }
@@ -93,7 +92,6 @@ namespace RM.src.RM220930
             {
                 log.Error("Error during configuration_properties configuration");
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during configuration_properties configuration");
-                //MessageBox.Show("Error during configuration_properties configuration", "Error configuration_properties configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // ProgressBar a 30%
@@ -127,7 +125,6 @@ namespace RM.src.RM220930
             {
                 log.Error("Error during plc configuration loading");
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during plc configuration loading");
-                //MessageBox.Show("Error during plc configuration loading", "Error plc configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
@@ -135,22 +132,20 @@ namespace RM.src.RM220930
             {
                 log.Error("Error during plc configuration loading");
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during plc configuration loading");
-                //MessageBox.Show("Error during plc configuration loading", "Error plc configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
             // Assegno le variabili da guardare per il plcClock
-            RefresherTask.SetPlcClock(PLCTagName.LifeBit_in, PLCTagName.LifeBit_out, "INT16");
+            RefresherTask.SetPlcClock("PLC1_" + "plcClock_in", "PLC1_" + "plcClock_out", "BOOL");
 
             // SyncManager.StartWriteProcessor();
 
-                if (!PLCConfig.startPLCManagers(databaseConnection.GetConnectionString()))
-                {
-                    log.Error("Error during plc configuration loading");
-                    CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during plc configuration loading");
-                    //MessageBox.Show("Error during plc configuration loading", "Error plc configuration", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //  Application.Exit();
-                }
+            if (!PLCConfig.startPLCManagers(databaseConnection.GetConnectionString()))
+            {
+                log.Error("Error during plc configuration loading");
+                CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during plc configuration loading");
+                Application.Exit();
+            }
 
             // ProgressBar a 55%
             progressBar1.Increment(10);
@@ -161,7 +156,6 @@ namespace RM.src.RM220930
             {
                 log.Error("Error during security loading");
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during security loading");
-                //MessageBox.Show("Error during security loading", "Error during security loading", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //ProgressBar a 90%
@@ -173,7 +167,6 @@ namespace RM.src.RM220930
             {
                 log.Error("Error during load translations");
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during load translations");
-                //MessageBox.Show("Error during load translations", "Error load translations", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //ProgressBar a 100%

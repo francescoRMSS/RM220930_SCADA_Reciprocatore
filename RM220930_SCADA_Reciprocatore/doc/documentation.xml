@@ -4091,6 +4091,23 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_axis.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.components">
             <summary> 
             Variabile di progettazione necessaria.
@@ -6293,6 +6310,11 @@
             Definisce una variabile per settare ed ottenere safeZone
             </summary>
         </member>
+        <member name="E:RM.src.RM220930.FormHomePage.AllarmeResettato">
+            <summary>
+            Evento invocato quando gli allarmi vengono resettati.
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.FormHomePage.log">
             <summary>
             Logger
@@ -6318,15 +6340,38 @@
             Gestisce la schermata con il video screen saver per una fiera
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.FormHomePage._navigator">
+            <summary>
+            Gestisce switch tra le varie userControl
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.FormHomePage.formAlarmPage">
             <summary>
             Riferimento alla pagina degli allarmi.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.allarmiSegnalati">
+            <summary>
+            Dizionario di allarmi per evitare segnalazioni duplicate.
             </summary>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.#ctor">
             <summary>
             Costruisce la form di homepage
             </summary>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
+            <summary>
+            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.OnAllarmeResettato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarmi resettati
+            </summary>
+            <param name="e"></param>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.EnterFullScreenMode">
             <summary>
@@ -7457,6 +7502,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.down">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.downArrowBlue_32">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -7567,6 +7617,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.laser">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.letter_m">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -7598,6 +7653,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.lock_32">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.minus">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -7663,6 +7723,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.plc_connection_ok">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.plus">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -7838,6 +7903,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.UC_positions">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.up">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

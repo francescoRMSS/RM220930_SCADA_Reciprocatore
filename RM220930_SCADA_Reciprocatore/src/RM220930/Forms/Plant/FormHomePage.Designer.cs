@@ -39,7 +39,6 @@
             this.pnl_pageContainer = new System.Windows.Forms.Panel();
             this.timer_dateTime_clock = new System.Windows.Forms.Timer(this.components);
             this.pnl_header = new RMLib.View.CustomPanel();
-            this.Pnl_ROBOT_alarm = new System.Windows.Forms.Panel();
             this.pnl_appTask = new System.Windows.Forms.Panel();
             this.pnl_appTaskStatus = new RMLib.View.CustomPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,23 +57,24 @@
             this.pnl_highTask = new System.Windows.Forms.Panel();
             this.pnl_highTaskStatus = new RMLib.View.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.PnlLogoContainer = new RMLib.View.CustomPanel();
+            this.lbl_pageTitle = new System.Windows.Forms.Label();
+            this.lbl_dateTime = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_VAT = new System.Windows.Forms.Button();
+            this.btn_homePage = new System.Windows.Forms.Button();
+            this.bnt_exit = new System.Windows.Forms.Button();
+            this.btn_alarms = new System.Windows.Forms.Button();
+            this.btn_axis = new System.Windows.Forms.Button();
+            this.btn_home = new System.Windows.Forms.Button();
+            this.Pnl_ROBOT_alarm = new System.Windows.Forms.Panel();
+            this.Pnl_MOVROBOT_alarm = new System.Windows.Forms.Panel();
             this.pnl_showScrnSvrMgr = new System.Windows.Forms.Panel();
             this.pnl_safeZone = new System.Windows.Forms.Panel();
             this.Pnl_PLC_alarm = new System.Windows.Forms.Panel();
             this.Pnl_diagnostics = new System.Windows.Forms.Panel();
             this.pnl_ActiveAlarms = new System.Windows.Forms.Panel();
-            this.PnlLogoContainer = new RMLib.View.CustomPanel();
             this.Pnl_logo_rm = new RMLib.View.CustomPanel();
-            this.Pnl_MOVROBOT_alarm = new System.Windows.Forms.Panel();
-            this.lbl_pageTitle = new System.Windows.Forms.Label();
-            this.lbl_dateTime = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_VAT = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.bnt_exit = new System.Windows.Forms.Button();
-            this.btn_alarms = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_home = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -179,8 +179,10 @@
             this.pnl_header.BorderColor = System.Drawing.Color.Black;
             this.pnl_header.BorderRadius = 0;
             this.pnl_header.BorderSize = 0;
+            this.pnl_header.Controls.Add(this.Pnl_ROBOT_alarm);
             this.pnl_header.Controls.Add(this.pnl_appTask);
             this.pnl_header.Controls.Add(this.pnl_comRobotTask);
+            this.pnl_header.Controls.Add(this.Pnl_MOVROBOT_alarm);
             this.pnl_header.Controls.Add(this.pnl_vrTask);
             this.pnl_header.Controls.Add(this.pnl_auxTask);
             this.pnl_header.Controls.Add(this.pnl_lowTask);
@@ -201,16 +203,6 @@
             this.pnl_header.Size = new System.Drawing.Size(1030, 120);
             this.pnl_header.TabIndex = 0;
             this.pnl_header.TextColor = System.Drawing.Color.White;
-            // 
-            // Pnl_ROBOT_alarm
-            // 
-            this.Pnl_ROBOT_alarm.BackColor = System.Drawing.Color.Transparent;
-            this.Pnl_ROBOT_alarm.BackgroundImage = global::RM.Properties.Resources.connection_icon;
-            this.Pnl_ROBOT_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_ROBOT_alarm.Location = new System.Drawing.Point(1080, 278);
-            this.Pnl_ROBOT_alarm.Name = "Pnl_ROBOT_alarm";
-            this.Pnl_ROBOT_alarm.Size = new System.Drawing.Size(40, 40);
-            this.Pnl_ROBOT_alarm.TabIndex = 25;
             // 
             // pnl_appTask
             // 
@@ -440,6 +432,158 @@
             this.label4.Text = "HIGH";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PnlLogoContainer
+            // 
+            this.PnlLogoContainer.BackColor = System.Drawing.Color.White;
+            this.PnlLogoContainer.BackgroundColor = System.Drawing.Color.White;
+            this.PnlLogoContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PnlLogoContainer.BorderColor = System.Drawing.Color.Black;
+            this.PnlLogoContainer.BorderRadius = 20;
+            this.PnlLogoContainer.BorderSize = 0;
+            this.PnlLogoContainer.Controls.Add(this.Pnl_logo_rm);
+            this.PnlLogoContainer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlLogoContainer.ForeColor = System.Drawing.Color.White;
+            this.PnlLogoContainer.Location = new System.Drawing.Point(20, 42);
+            this.PnlLogoContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.PnlLogoContainer.Name = "PnlLogoContainer";
+            this.PnlLogoContainer.Size = new System.Drawing.Size(208, 54);
+            this.PnlLogoContainer.TabIndex = 28;
+            this.PnlLogoContainer.TextColor = System.Drawing.Color.White;
+            // 
+            // lbl_pageTitle
+            // 
+            this.lbl_pageTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_pageTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pageTitle.Location = new System.Drawing.Point(-2, 74);
+            this.lbl_pageTitle.Name = "lbl_pageTitle";
+            this.lbl_pageTitle.Size = new System.Drawing.Size(1030, 34);
+            this.lbl_pageTitle.TabIndex = 25;
+            this.lbl_pageTitle.Text = "HOMEPAGE";
+            this.lbl_pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_dateTime
+            // 
+            this.lbl_dateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dateTime.Location = new System.Drawing.Point(298, 29);
+            this.lbl_dateTime.Name = "lbl_dateTime";
+            this.lbl_dateTime.Size = new System.Drawing.Size(427, 25);
+            this.lbl_dateTime.TabIndex = 4;
+            this.lbl_dateTime.Text = "12:34:56";
+            this.lbl_dateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Teal;
+            this.panel5.Controls.Add(this.btn_VAT);
+            this.panel5.Controls.Add(label7);
+            this.panel5.Controls.Add(this.btn_homePage);
+            this.panel5.Controls.Add(label8);
+            this.panel5.Controls.Add(this.bnt_exit);
+            this.panel5.Controls.Add(label9);
+            this.panel5.Controls.Add(this.btn_alarms);
+            this.panel5.Controls.Add(label10);
+            this.panel5.Controls.Add(this.btn_axis);
+            this.panel5.Controls.Add(label11);
+            this.panel5.Controls.Add(this.btn_home);
+            this.panel5.Controls.Add(lbl_buttonHome);
+            this.panel5.Location = new System.Drawing.Point(0, 665);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1026, 102);
+            this.panel5.TabIndex = 325;
+            // 
+            // btn_VAT
+            // 
+            this.btn_VAT.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_VAT.BackgroundImage = global::RM.Properties.Resources.vatView;
+            this.btn_VAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_VAT.Location = new System.Drawing.Point(936, 8);
+            this.btn_VAT.Name = "btn_VAT";
+            this.btn_VAT.Size = new System.Drawing.Size(65, 65);
+            this.btn_VAT.TabIndex = 336;
+            this.btn_VAT.UseVisualStyleBackColor = false;
+            this.btn_VAT.Click += new System.EventHandler(this.ClickEvent_openVAT);
+            // 
+            // btn_homePage
+            // 
+            this.btn_homePage.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_homePage.BackgroundImage = global::RM.Properties.Resources.cabin;
+            this.btn_homePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_homePage.Location = new System.Drawing.Point(25, 8);
+            this.btn_homePage.Name = "btn_homePage";
+            this.btn_homePage.Size = new System.Drawing.Size(65, 65);
+            this.btn_homePage.TabIndex = 334;
+            this.btn_homePage.UseVisualStyleBackColor = false;
+            this.btn_homePage.Click += new System.EventHandler(this.ClickEvent_goToHomePage);
+            // 
+            // bnt_exit
+            // 
+            this.bnt_exit.BackColor = System.Drawing.SystemColors.Control;
+            this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
+            this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bnt_exit.Location = new System.Drawing.Point(425, 8);
+            this.bnt_exit.Name = "bnt_exit";
+            this.bnt_exit.Size = new System.Drawing.Size(65, 65);
+            this.bnt_exit.TabIndex = 332;
+            this.bnt_exit.UseVisualStyleBackColor = false;
+            this.bnt_exit.Click += new System.EventHandler(this.ClickEvent_exit);
+            // 
+            // btn_alarms
+            // 
+            this.btn_alarms.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
+            this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_alarms.Location = new System.Drawing.Point(325, 8);
+            this.btn_alarms.Name = "btn_alarms";
+            this.btn_alarms.Size = new System.Drawing.Size(65, 65);
+            this.btn_alarms.TabIndex = 330;
+            this.btn_alarms.UseVisualStyleBackColor = false;
+            this.btn_alarms.Click += new System.EventHandler(this.ClickEvent_alarms);
+            // 
+            // btn_axis
+            // 
+            this.btn_axis.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_axis.BackgroundImage = global::RM.Properties.Resources.axis;
+            this.btn_axis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_axis.Location = new System.Drawing.Point(225, 8);
+            this.btn_axis.Name = "btn_axis";
+            this.btn_axis.Size = new System.Drawing.Size(65, 65);
+            this.btn_axis.TabIndex = 328;
+            this.btn_axis.UseVisualStyleBackColor = false;
+            this.btn_axis.Click += new System.EventHandler(this.ClickEvent_goToAxis);
+            // 
+            // btn_home
+            // 
+            this.btn_home.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_home.BackgroundImage = global::RM.Properties.Resources.chain;
+            this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_home.Location = new System.Drawing.Point(125, 8);
+            this.btn_home.Name = "btn_home";
+            this.btn_home.Size = new System.Drawing.Size(65, 65);
+            this.btn_home.TabIndex = 326;
+            this.btn_home.UseVisualStyleBackColor = false;
+            // 
+            // Pnl_ROBOT_alarm
+            // 
+            this.Pnl_ROBOT_alarm.BackColor = System.Drawing.Color.Transparent;
+            this.Pnl_ROBOT_alarm.BackgroundImage = global::RM.Properties.Resources.connection_icon;
+            this.Pnl_ROBOT_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pnl_ROBOT_alarm.Location = new System.Drawing.Point(623, 29);
+            this.Pnl_ROBOT_alarm.Name = "Pnl_ROBOT_alarm";
+            this.Pnl_ROBOT_alarm.Size = new System.Drawing.Size(40, 40);
+            this.Pnl_ROBOT_alarm.TabIndex = 25;
+            // 
+            // Pnl_MOVROBOT_alarm
+            // 
+            this.Pnl_MOVROBOT_alarm.BackColor = System.Drawing.Color.Transparent;
+            this.Pnl_MOVROBOT_alarm.BackgroundImage = global::RM.Properties.Resources.noMov;
+            this.Pnl_MOVROBOT_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pnl_MOVROBOT_alarm.Location = new System.Drawing.Point(669, 29);
+            this.Pnl_MOVROBOT_alarm.Name = "Pnl_MOVROBOT_alarm";
+            this.Pnl_MOVROBOT_alarm.Size = new System.Drawing.Size(40, 40);
+            this.Pnl_MOVROBOT_alarm.TabIndex = 26;
+            this.Pnl_MOVROBOT_alarm.Visible = false;
+            // 
             // pnl_showScrnSvrMgr
             // 
             this.pnl_showScrnSvrMgr.BackColor = System.Drawing.Color.Transparent;
@@ -500,24 +644,6 @@
             this.pnl_ActiveAlarms.TabIndex = 25;
             this.pnl_ActiveAlarms.Click += new System.EventHandler(this.ClickEvent_alarms);
             // 
-            // PnlLogoContainer
-            // 
-            this.PnlLogoContainer.BackColor = System.Drawing.Color.White;
-            this.PnlLogoContainer.BackgroundColor = System.Drawing.Color.White;
-            this.PnlLogoContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PnlLogoContainer.BorderColor = System.Drawing.Color.Black;
-            this.PnlLogoContainer.BorderRadius = 20;
-            this.PnlLogoContainer.BorderSize = 0;
-            this.PnlLogoContainer.Controls.Add(this.Pnl_logo_rm);
-            this.PnlLogoContainer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlLogoContainer.ForeColor = System.Drawing.Color.White;
-            this.PnlLogoContainer.Location = new System.Drawing.Point(20, 42);
-            this.PnlLogoContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.PnlLogoContainer.Name = "PnlLogoContainer";
-            this.PnlLogoContainer.Size = new System.Drawing.Size(208, 54);
-            this.PnlLogoContainer.TabIndex = 28;
-            this.PnlLogoContainer.TextColor = System.Drawing.Color.White;
-            // 
             // Pnl_logo_rm
             // 
             this.Pnl_logo_rm.BackColor = System.Drawing.Color.White;
@@ -535,128 +661,6 @@
             this.Pnl_logo_rm.TextColor = System.Drawing.Color.White;
             this.Pnl_logo_rm.DoubleClick += new System.EventHandler(this.DoubleClickEvent_showSwVersion);
             // 
-            // Pnl_MOVROBOT_alarm
-            // 
-            this.Pnl_MOVROBOT_alarm.BackColor = System.Drawing.Color.Transparent;
-            this.Pnl_MOVROBOT_alarm.BackgroundImage = global::RM.Properties.Resources.noMov;
-            this.Pnl_MOVROBOT_alarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pnl_MOVROBOT_alarm.Location = new System.Drawing.Point(1080, 232);
-            this.Pnl_MOVROBOT_alarm.Name = "Pnl_MOVROBOT_alarm";
-            this.Pnl_MOVROBOT_alarm.Size = new System.Drawing.Size(40, 40);
-            this.Pnl_MOVROBOT_alarm.TabIndex = 26;
-            this.Pnl_MOVROBOT_alarm.Visible = false;
-            // 
-            // lbl_pageTitle
-            // 
-            this.lbl_pageTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_pageTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pageTitle.Location = new System.Drawing.Point(-2, 74);
-            this.lbl_pageTitle.Name = "lbl_pageTitle";
-            this.lbl_pageTitle.Size = new System.Drawing.Size(1030, 34);
-            this.lbl_pageTitle.TabIndex = 25;
-            this.lbl_pageTitle.Text = "HOMEPAGE";
-            this.lbl_pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_dateTime
-            // 
-            this.lbl_dateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dateTime.Location = new System.Drawing.Point(298, 29);
-            this.lbl_dateTime.Name = "lbl_dateTime";
-            this.lbl_dateTime.Size = new System.Drawing.Size(427, 25);
-            this.lbl_dateTime.TabIndex = 4;
-            this.lbl_dateTime.Text = "12:34:56";
-            this.lbl_dateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Teal;
-            this.panel5.Controls.Add(this.btn_VAT);
-            this.panel5.Controls.Add(label7);
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(label8);
-            this.panel5.Controls.Add(this.bnt_exit);
-            this.panel5.Controls.Add(label9);
-            this.panel5.Controls.Add(this.btn_alarms);
-            this.panel5.Controls.Add(label10);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(label11);
-            this.panel5.Controls.Add(this.btn_home);
-            this.panel5.Controls.Add(lbl_buttonHome);
-            this.panel5.Location = new System.Drawing.Point(0, 665);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1026, 102);
-            this.panel5.TabIndex = 325;
-            // 
-            // btn_VAT
-            // 
-            this.btn_VAT.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_VAT.BackgroundImage = global::RM.Properties.Resources.vatView;
-            this.btn_VAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_VAT.Location = new System.Drawing.Point(936, 8);
-            this.btn_VAT.Name = "btn_VAT";
-            this.btn_VAT.Size = new System.Drawing.Size(65, 65);
-            this.btn_VAT.TabIndex = 336;
-            this.btn_VAT.UseVisualStyleBackColor = false;
-            this.btn_VAT.Click += new System.EventHandler(this.ClickEvent_openVAT);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
-            this.button4.BackgroundImage = global::RM.Properties.Resources.cabin;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Location = new System.Drawing.Point(25, 8);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(65, 65);
-            this.button4.TabIndex = 334;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // bnt_exit
-            // 
-            this.bnt_exit.BackColor = System.Drawing.SystemColors.Control;
-            this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
-            this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bnt_exit.Location = new System.Drawing.Point(425, 8);
-            this.bnt_exit.Name = "bnt_exit";
-            this.bnt_exit.Size = new System.Drawing.Size(65, 65);
-            this.bnt_exit.TabIndex = 332;
-            this.bnt_exit.UseVisualStyleBackColor = false;
-            this.bnt_exit.Click += new System.EventHandler(this.ClickEvent_exit);
-            // 
-            // btn_alarms
-            // 
-            this.btn_alarms.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
-            this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_alarms.Location = new System.Drawing.Point(325, 8);
-            this.btn_alarms.Name = "btn_alarms";
-            this.btn_alarms.Size = new System.Drawing.Size(65, 65);
-            this.btn_alarms.TabIndex = 330;
-            this.btn_alarms.UseVisualStyleBackColor = false;
-            this.btn_alarms.Click += new System.EventHandler(this.ClickEvent_alarms);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.BackgroundImage = global::RM.Properties.Resources.axis;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Location = new System.Drawing.Point(225, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 65);
-            this.button1.TabIndex = 328;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btn_home
-            // 
-            this.btn_home.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_home.BackgroundImage = global::RM.Properties.Resources.chain;
-            this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_home.Location = new System.Drawing.Point(125, 8);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(65, 65);
-            this.btn_home.TabIndex = 326;
-            this.btn_home.UseVisualStyleBackColor = false;
-            // 
             // FormHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -665,11 +669,9 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 767);
-            this.Controls.Add(this.Pnl_ROBOT_alarm);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.pnl_pageContainer);
             this.Controls.Add(this.pnl_header);
-            this.Controls.Add(this.Pnl_MOVROBOT_alarm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormHomePage";
@@ -731,10 +733,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_VAT;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_homePage;
         private System.Windows.Forms.Button bnt_exit;
         private System.Windows.Forms.Button btn_alarms;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_axis;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel Pnl_ROBOT_alarm;
     }

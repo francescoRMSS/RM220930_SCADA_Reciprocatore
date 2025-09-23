@@ -88,6 +88,12 @@ public class Navigator
             }
         }
 
+        // 👇 Nuovo controllo: se la pagina è già mostrata, non fare nulla
+        if (_hostPanel.Controls.Count > 0 && _hostPanel.Controls[0] == page)
+        {
+            return;
+        }
+
         // Rimpiazzo contenuto del pannello host
         _hostPanel.Controls.Clear();
         _hostPanel.Controls.Add(page);
@@ -98,4 +104,5 @@ public class Navigator
             navigablePage.OnNavigatedTo(parameter);
         }
     }
+
 }

@@ -17,6 +17,8 @@ using RMLib.Security;
 using System.Collections.Generic;
 using RM.src.RM220930.Forms.ScreenSaver;
 using RM.src.RM220930.Forms.Plant;
+using RM.src.RM220930.Classes.PLC;
+using System.Linq;
 
 namespace RM.src.RM220930
 {
@@ -101,6 +103,11 @@ namespace RM.src.RM220930
         #region Proprietà di FormHomePage
 
         /// <summary>
+        /// Evento invocato quando gli allarmi vengono resettati.
+        /// </summary>
+        public static event EventHandler AllarmeResettato;
+
+        /// <summary>
         /// Logger
         /// </summary>
         private static readonly log4net.ILog log = LogHelper.GetLogger();
@@ -129,12 +136,20 @@ namespace RM.src.RM220930
         /// </summary>
         private ScreenSaverManager screenSaverManager;
 
+        /// <summary>
+        /// Gestisce switch tra le varie userControl
+        /// </summary>
         private Navigator _navigator;
 
         /// <summary>
         /// Riferimento alla pagina degli allarmi.
         /// </summary>
         public static FormAlarmPage formAlarmPage;
+
+        /// <summary>
+        /// Dizionario di allarmi per evitare segnalazioni duplicate.
+        /// </summary>
+        private static readonly Dictionary<string, bool> allarmiSegnalati = new Dictionary<string, bool>();
 
         #endregion
 
@@ -145,10 +160,14 @@ namespace RM.src.RM220930
         {
             InitializeComponent();
 
+            // Istanzio oggetto navigatore
             _navigator = new Navigator(pnl_pageContainer);
+
+            // Registrazione della pagine dell'applicazione
             RegisterPages();
+
             formAlarmPage = new FormAlarmPage();
-            // formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
+            formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
 
             blinkMgr = new BlinkManager(PlcBlinkPanel, RobotBlinkPanel, RobotMovPanel, Resources.plc_connection_ok,
                Resources.connection_error, Resources.robot_alarm_ok, Resources.robot_alarm_error, Resources.noMov, Resources.inMov);
@@ -177,7 +196,52 @@ namespace RM.src.RM220930
 
         #region Metodi di FormHomePage
 
-     
+        /// <summary>
+        /// Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private static void RMLib_AlarmsCleared(object sender, EventArgs e)
+        {
+            var criteria = new List<(string device, string description)>
+            {
+                ("Robot", ""),
+                ("", "PLC disconnesso. Il ciclo è stato terminato.")
+            };
+
+            bool isBlocking = formAlarmPage.IsBlockingAlarmPresent(criteria);
+
+            if (isBlocking)
+            {
+                // Segnalo che non ci sono più allarmi bloccanti
+                AlarmManager.blockingAlarm = false;
+            }
+
+            TriggerAllarmeResettato();
+
+            RefresherTask.AddUpdate(PLCTagName.System_error, 0, "INT16");
+
+            // Reset degli allarmi segnalati
+            foreach (var key in allarmiSegnalati.Keys.ToList())
+            {
+                allarmiSegnalati[key] = false;
+            }
+
+        }
+
+        public static void TriggerAllarmeResettato()
+        {
+            OnAllarmeResettato(EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Generazione evento da allarmi resettati
+        /// </summary>
+        /// <param name="e"></param>
+        protected static void OnAllarmeResettato(EventArgs e)
+        {
+            AllarmeResettato?.Invoke(null, e);
+        }
 
         /// <summary>
         /// Entra in modalità full screen
@@ -387,9 +451,7 @@ namespace RM.src.RM220930
         {
             // Registrazione delle pagine
             _navigator.RegisterPage("Home Page", typeof(UC_HomePage));
-            _navigator.RegisterPage("Dashboard", typeof(UserControlDashboard));
-            _navigator.RegisterPage("Impostazioni", typeof(UserControlImpostazioni));
-
+            _navigator.RegisterPage("Axis", typeof(UC_axis));
         }
 
         #endregion
@@ -546,6 +608,16 @@ namespace RM.src.RM220930
             {
                 Environment.Exit(0);
             }
+        }
+
+        private void ClickEvent_goToAxis(object sender, EventArgs e)
+        {
+            _navigator.Navigate("Axis","AXIS SETUP");
+        }
+
+        private void ClickEvent_goToHomePage(object sender, EventArgs e)
+        {
+            _navigator.Navigate("Home Page", "HOME PAGE");
         }
     }
 }

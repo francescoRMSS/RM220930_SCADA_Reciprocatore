@@ -196,6 +196,12 @@
     <Compile Include="src\RM220930\Forms\FormLoading.Designer.cs">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_axis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_axis.Designer.cs">
+      <DependentUpon>UC_axis.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\UC_HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -341,6 +347,9 @@
     <EmbeddedResource Include="src\RM220930\Forms\FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_axis.resx">
+      <DependentUpon>UC_axis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_HomePage.resx">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,6 +432,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\laser.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
     <None Include="Resources\cabin.png" />
     <None Include="Resources\power-off.png" />
     <None Include="Resources\alarm.png" />
