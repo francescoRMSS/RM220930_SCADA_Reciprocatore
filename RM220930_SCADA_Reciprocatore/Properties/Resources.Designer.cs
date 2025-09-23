@@ -183,6 +183,26 @@ namespace RM.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap axe {
+            get {
+                object obj = ResourceManager.GetObject("axe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap axe_1st_gun {
+            get {
+                object obj = ResourceManager.GetObject("axe_1st_gun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap axis {
             get {
                 object obj = ResourceManager.GetObject("axis", resourceCulture);
@@ -216,6 +236,16 @@ namespace RM.Properties {
         internal static System.Drawing.Bitmap cabin {
             get {
                 object obj = ResourceManager.GetObject("cabin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cabin_layout_robot_1_selected {
+            get {
+                object obj = ResourceManager.GetObject("cabin_layout_robot_1_selected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -633,6 +663,16 @@ namespace RM.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap left_arrow {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap letter_m {
             get {
                 object obj = ResourceManager.GetObject("letter-m", resourceCulture);
@@ -953,6 +993,16 @@ namespace RM.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap right_arrow {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RM_logo {
             get {
                 object obj = ResourceManager.GetObject("RM_logo", resourceCulture);
@@ -1046,6 +1096,16 @@ namespace RM.Properties {
         internal static System.Drawing.Bitmap security_filled {
             get {
                 object obj = ResourceManager.GetObject("security_filled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_64 {
+            get {
+                object obj = ResourceManager.GetObject("settings_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

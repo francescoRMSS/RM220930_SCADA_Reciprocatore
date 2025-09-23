@@ -51,6 +51,10 @@ public class Navigator
         _pages[key] = pageType;
     }
 
+    private string _currentPageKey = null;
+    private object _currentParameter = null;
+
+
     /// <summary>
     /// Naviga verso una pagina registrata e la visualizza nel <see cref="_hostPanel"/>.
     /// Se la pagina è già stata creata in precedenza, viene riutilizzata dalla cache.
@@ -64,6 +68,7 @@ public class Navigator
     /// <exception cref="ArgumentException">
     /// Sollevata se la chiave non corrisponde ad alcuna pagina registrata.
     /// </exception>
+
     public void Navigate(string key, object parameter = null)
     {
         if (!_pages.ContainsKey(key))
@@ -88,21 +93,28 @@ public class Navigator
             }
         }
 
-        // 👇 Nuovo controllo: se la pagina è già mostrata, non fare nulla
-        if (_hostPanel.Controls.Count > 0 && _hostPanel.Controls[0] == page)
-        {
-            return;
-        }
+        // Verifica se cambia pagina o parametro
+        bool shouldReload = _currentPageKey != key || !Equals(_currentParameter, parameter);
 
-        // Rimpiazzo contenuto del pannello host
-        _hostPanel.Controls.Clear();
-        _hostPanel.Controls.Add(page);
-
-        // Passaggio parametri, se implementa INavigable
-        if (page is INavigable navigablePage)
+        if (shouldReload)
         {
-            navigablePage.OnNavigatedTo(parameter);
+            if (_hostPanel.Controls.Count == 0 || _hostPanel.Controls[0] != page)
+            {
+                _hostPanel.Controls.Clear();
+                _hostPanel.Controls.Add(page);
+            }
+
+            // Passaggio parametri, se implementa INavigable
+            if (page is INavigable navigablePage)
+            {
+                navigablePage.OnNavigatedTo(parameter);
+            }
+
+            // Aggiorno lo stato corrente
+            _currentPageKey = key;
+            _currentParameter = parameter;
         }
     }
+
 
 }

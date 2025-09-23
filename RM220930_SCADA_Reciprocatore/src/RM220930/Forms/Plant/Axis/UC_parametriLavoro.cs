@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RM.src.RM220930.Forms.Plant
+namespace RM.src.RM220930.Forms.Plant.Axis
 {
-    public partial class UC_axis : UserControl, INavigable, INavigationRequester
+    public partial class UC_parametriLavoro : UserControl, INavigable, INavigationRequester
     {
-        public UC_axis()
+        public UC_parametriLavoro()
         {
             InitializeComponent();
         }
@@ -22,10 +22,9 @@ namespace RM.src.RM220930.Forms.Plant
 
         public void OnNavigatedTo(object parameter)
         {
-            // Esempio: se il parametro è una stringa con il nome utente
-            if (parameter is string pageTitle)
+            if (parameter is int offset)
             {
-                lbl_title.Text = pageTitle;
+                MessageBox.Show(offset.ToString());
             }
         }
     }

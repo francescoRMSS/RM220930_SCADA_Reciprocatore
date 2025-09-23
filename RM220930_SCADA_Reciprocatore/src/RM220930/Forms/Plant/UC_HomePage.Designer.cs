@@ -57,6 +57,8 @@
             this.button21 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -64,8 +66,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
             label8 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -425,6 +425,55 @@
             this.panel4.Size = new System.Drawing.Size(288, 486);
             this.panel4.TabIndex = 360;
             // 
+            // label4
+            // 
+            label4.BackColor = System.Drawing.Color.Red;
+            label4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.ForeColor = System.Drawing.Color.White;
+            label4.Location = new System.Drawing.Point(204, 26);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(65, 62);
+            label4.TabIndex = 340;
+            label4.Text = "0";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            label5.BackColor = System.Drawing.Color.Red;
+            label5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(203, 26);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(65, 62);
+            label5.TabIndex = 360;
+            label5.Text = "0";
+            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.Gold;
+            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button26.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.button26.Location = new System.Drawing.Point(914, 219);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(80, 80);
+            this.button26.TabIndex = 362;
+            this.button26.Text = "HUB 1";
+            this.button26.UseVisualStyleBackColor = false;
+            // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button27.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.button27.ForeColor = System.Drawing.Color.White;
+            this.button27.Location = new System.Drawing.Point(914, 305);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(80, 80);
+            this.button27.TabIndex = 363;
+            this.button27.Text = "OFF";
+            this.button27.UseVisualStyleBackColor = false;
+            // 
             // button24
             // 
             this.button24.BackColor = System.Drawing.SystemColors.Control;
@@ -500,55 +549,6 @@
             this.button1.Size = new System.Drawing.Size(65, 65);
             this.button1.TabIndex = 329;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            label4.BackColor = System.Drawing.Color.Red;
-            label4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(204, 26);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(65, 62);
-            label4.TabIndex = 340;
-            label4.Text = "0";
-            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.BackColor = System.Drawing.Color.Red;
-            label5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.ForeColor = System.Drawing.Color.White;
-            label5.Location = new System.Drawing.Point(203, 26);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(65, 62);
-            label5.TabIndex = 360;
-            label5.Text = "0";
-            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button26
-            // 
-            this.button26.BackColor = System.Drawing.Color.Gold;
-            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button26.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button26.Location = new System.Drawing.Point(914, 219);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(80, 80);
-            this.button26.TabIndex = 362;
-            this.button26.Text = "HUB 1";
-            this.button26.UseVisualStyleBackColor = false;
-            // 
-            // button27
-            // 
-            this.button27.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button27.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button27.ForeColor = System.Drawing.Color.White;
-            this.button27.Location = new System.Drawing.Point(914, 305);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(80, 80);
-            this.button27.TabIndex = 363;
-            this.button27.Text = "OFF";
-            this.button27.UseVisualStyleBackColor = false;
             // 
             // UC_HomePage
             // 

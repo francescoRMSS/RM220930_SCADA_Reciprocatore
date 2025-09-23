@@ -130,9 +130,6 @@
   <data name="off_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\off-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove_filter_filled1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove_filter_filled1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="delete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +147,9 @@
   </data>
   <data name="UC_dragMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UC_dragMode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="security_filled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\security_filled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +199,9 @@
   <data name="settings_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="axe_1st_gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\axe_1st_gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="backgroundSpry" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backgroundSpry.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -210,6 +213,9 @@
   </data>
   <data name="tools-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tools-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="letter-m" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\letter-m.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="esclamationWhite32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\esclamationWhite32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,8 +268,14 @@
   <data name="germany_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\germany_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="appWhite32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appWhite32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plc_connection_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plc_connection_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tracker_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tracker-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,14 +286,11 @@
   <data name="UC_applications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UC_applications.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="A_letter_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\A-letter-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="on_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\on-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,8 +298,8 @@
   <data name="upArrowBlue-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upArrowBlue-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appWhite32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appWhite32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="axe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\axe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,11 +310,14 @@
   <data name="edit321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="trackerWhite64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trackerWhite64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tools32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tools32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="airbrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\airbrush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="remove_filter_filled1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove_filter_filled1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="monitoring" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitoring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,8 +388,8 @@
   <data name="egypt_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\egypt_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trackerWhite32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trackerWhite32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="on_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\on-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="keypad_filled_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keypad_filled_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -400,17 +412,20 @@
   <data name="a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="connection_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\connection_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clean2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clean2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="airbrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airbrush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="france_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\france_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -424,14 +439,17 @@
   <data name="robot_arm_connection" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\robot_arm_connection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="trackerWhite32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trackerWhite32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sartMonitoringGreen-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sartMonitoringGreen-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cancelOperation_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelOperation_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="demo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\demo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -454,8 +472,8 @@
   <data name="gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="letter-m" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\letter-m.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="go_back_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go-back-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,13 +481,13 @@
   <data name="england_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\england_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trackerWhite64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trackerWhite64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cabin_layout_robot_1_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cabin_layout_robot_1_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alarm_popup_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alarm_popup_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="right-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

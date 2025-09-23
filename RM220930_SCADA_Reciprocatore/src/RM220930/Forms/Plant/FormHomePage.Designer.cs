@@ -489,7 +489,7 @@
             this.panel5.Controls.Add(lbl_buttonHome);
             this.panel5.Location = new System.Drawing.Point(0, 665);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1026, 102);
+            this.panel5.Size = new System.Drawing.Size(1024, 102);
             this.panel5.TabIndex = 325;
             // 
             // btn_VAT

@@ -4091,6 +4091,16 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_axis._navigator">
+            <summary>
+            Gestisce switch tra le varie userControl
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_axis.axeOffset">
+            <summary>
+            Asse selezionato
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_axis.components">
             <summary> 
             Variabile di progettazione necessaria.
@@ -4103,6 +4113,23 @@
             <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_parametriLavoro.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_parametriLavoro.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_parametriLavoro.InitializeComponent">
             <summary> 
             Metodo necessario per il supporto della finestra di progettazione. Non modificare 
             il contenuto del metodo con l'editor di codice.
@@ -7397,6 +7424,16 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.axe">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.axe_1st_gun">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.axis">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -7413,6 +7450,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.cabin">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.cabin_layout_robot_1_selected">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -7622,6 +7664,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.left_arrow">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.letter_m">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -7782,6 +7829,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.right_arrow">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.RM_logo">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -7828,6 +7880,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.security_filled">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.settings_64">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
