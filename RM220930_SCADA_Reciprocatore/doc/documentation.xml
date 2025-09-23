@@ -4123,6 +4123,16 @@
             </summary>
             <param name="parameter"></param>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.RestorButtonColor">
+            <summary>
+            Ripristina colore dei button degli assi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.SelectAxe">
+            <summary>
+            Seleziona graficamente l'asse
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.RegisterPages">
             <summary>
             Registra le pagine che verranno switchate all'interno del panel contenitore
