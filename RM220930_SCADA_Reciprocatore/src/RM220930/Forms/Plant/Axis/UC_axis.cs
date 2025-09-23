@@ -48,8 +48,6 @@ namespace RM.src.RM220930.Forms.Plant
 
             // Registro le pagine che dovrà genire il panel contenitore
             RegisterPages();
-
-           
         }
 
         #region Metodi di UC_axis
@@ -60,19 +58,25 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="parameter"></param>
         public void OnNavigatedTo(object parameter)
         {
-            // Se il parametro è una stringa lo utilizzo come titolo della pagina
+            // Se il parametro è il numero di asse
             if (parameter is int offset)
             {
-                axeOffset = offset;
-                SelectAxe();
-                _navigator.Navigate("Work Params", axeOffset);
+                axeOffset = offset;   
             }
-            else
+            else // se non c'è imposto 1 di default
             {
-                _navigator.Navigate("Work Params", 1);
+                axeOffset = 1;
             }
+
+            SelectAxe(); // Seleziono graficamente l'asse
+
+            // Apro la pagina dei parametri di lavoro relativa
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
+        /// <summary>
+        /// Ripristina colore dei button degli assi
+        /// </summary>
         private void RestorButtonColor()
         {
             btn_axe1.BackColor = SystemColors.ControlDarkDark;
@@ -85,6 +89,9 @@ namespace RM.src.RM220930.Forms.Plant
             btn_axe8.BackColor = SystemColors.ControlDarkDark;
         }
 
+        /// <summary>
+        /// Seleziona graficamente l'asse
+        /// </summary>
         private void SelectAxe()
         {
             switch (axeOffset)
@@ -139,7 +146,6 @@ namespace RM.src.RM220930.Forms.Plant
             }
         }
 
-
         /// <summary>
         /// Registra le pagine che verranno switchate all'interno del panel contenitore
         /// </summary>
@@ -166,6 +172,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
             btn_axe1.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -179,6 +186,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
             btn_axe2.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -192,6 +200,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
             btn_axe3.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -205,6 +214,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
             btn_axe4.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -218,6 +228,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
             btn_axe5.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -231,6 +242,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
             btn_axe6.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -244,6 +256,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
             btn_axe7.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -257,6 +270,7 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
             btn_axe8.BackColor = SystemColors.ButtonHighlight;
+            _navigator.Navigate("Work Params", axeOffset);
         }
 
         #endregion

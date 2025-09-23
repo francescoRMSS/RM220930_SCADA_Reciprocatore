@@ -214,18 +214,6 @@
     <Compile Include="src\RM220930\Forms\Plant\UC_HomePage.Designer.cs">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UserControlDashboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UserControlDashboard.Designer.cs">
-      <DependentUpon>UserControlDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UserControlImpostazioni.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UserControlImpostazioni.Designer.cs">
-      <DependentUpon>UserControlImpostazioni.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\ViveTracker\FormTrackerCalibration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,12 +349,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_HomePage.resx">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UserControlDashboard.resx">
-      <DependentUpon>UserControlDashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UserControlImpostazioni.resx">
-      <DependentUpon>UserControlImpostazioni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\ViveTracker\FormTrackerCalibration.resx">
       <DependentUpon>FormTrackerCalibration.cs</DependentUpon>

@@ -577,17 +577,21 @@ namespace RM.src.RM220930
             // screenSaverManager.RestoreLocation();
         }
 
-
-
-
-
-        #endregion
-
+        /// <summary>
+        /// Apre la VAT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_openVAT(object sender, EventArgs e)
         {
             VATViewManager.ShowVAT();
         }
 
+        /// <summary>
+        /// Chiude l'applicazione
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_exit(object sender, EventArgs e)
         {
             if (!SecurityManager.ActionRequestCheck("exit")) return;
@@ -598,14 +602,27 @@ namespace RM.src.RM220930
             }
         }
 
+        /// <summary>
+        /// Apre la pagina degli assi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToAxis(object sender, EventArgs e)
         {
-            _navigator.Navigate("Axis","AXIS SETUP");
+            _navigator.Navigate("Axis", "AXIS SETUP");
         }
 
+        /// <summary>
+        /// Apre la pagina di Home
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToHomePage(object sender, EventArgs e)
         {
             _navigator.Navigate("Home Page", "HOME PAGE");
         }
+
+        #endregion
+
     }
 }

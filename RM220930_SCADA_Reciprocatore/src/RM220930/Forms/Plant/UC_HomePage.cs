@@ -4,30 +4,41 @@ using RMLib.MessageBox;
 using RMLib.Security;
 using RMLib.VATView;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RM.src.RM220930.Forms.Plant
 {
+    /// <summary>
+    /// Pagina di home
+    /// </summary>
     public partial class UC_HomePage : UserControl, INavigable, INavigationRequester
     {
+        #region Events
+
+        /// <summary>
+        /// Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+        /// </summary>
         public event EventHandler<NavigateEventArgs> NavigateRequested;
 
+        #endregion
+
+        /// <summary>
+        /// Costruttore
+        /// </summary>
         public UC_HomePage()
         {
             InitializeComponent();
-
         }
 
+        #region Metodi di UC_HomePage
+
+        /// <summary>
+        /// Metodo eseguito dopo la richiesta di navigazione in home page
+        /// </summary>
+        /// <param name="parameter"></param>
         public void OnNavigatedTo(object parameter)
         {
-            // Esempio: se il parametro è una stringa con il nome utente
+            // Se il parametro è una stringa con il titolo
             if (parameter is string pageTitle)
             {
                 lbl_title.Text = pageTitle;
@@ -35,64 +46,90 @@ namespace RM.src.RM220930.Forms.Plant
 
         }
 
-        private void ClickEvent_exit(object sender, EventArgs e)
-        {
-            if (!SecurityManager.ActionRequestCheck("exit")) return;
+        #endregion
 
-            if (CustomMessageBox.ShowTranslated(MessageBoxTypeEnum.WARNING, "MSG_CLOSING_APP") == DialogResult.OK)
-            {
-                Environment.Exit(0);
-            }
-        }
+        #region Eventi di UC_HomePage
 
-        private void ClickEvent_openVAT(object sender, EventArgs e)
-        {
-            VATViewManager.ShowVAT();
-        }
-
-        private void ClickEvent_openAlarms(object sender, EventArgs e)
-        {
-            AlarmManager.OpenAlarmFormPage(RobotManager.formAlarmPage);
-        }
-
+        /// <summary>
+        /// Apre la gestione dell'asse 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ1(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 1);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ2(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 2);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 3
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ3(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 3);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 4
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ4(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 4);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 5
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ5(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 5);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 6
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ6(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 6);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 7
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ7(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 7);
         }
 
+        /// <summary>
+        /// Apre la gestione dell'asse 8
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_goToZ8(object sender, EventArgs e)
         {
             FormHomePage._navigator.Navigate("Axis", 8);
         }
+
+        #endregion
     }
 }

@@ -4225,6 +4225,83 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="T:RM.src.RM220930.Forms.Plant.UC_HomePage">
+            <summary>
+            Pagina di home
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Forms.Plant.UC_HomePage.NavigateRequested">
+            <summary>
+            Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.#ctor">
+            <summary>
+            Costruttore
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.OnNavigatedTo(System.Object)">
+            <summary>
+            Metodo eseguito dopo la richiesta di navigazione in home page
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ1(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 1
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ2(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 2
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ3(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 3
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ4(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 4
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ5(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 5
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ6(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 6
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ7(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 7
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ8(System.Object,System.EventArgs)">
+            <summary>
+            Apre la gestione dell'asse 8
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.components">
             <summary> 
             Variabile di progettazione necessaria.
@@ -4237,40 +4314,6 @@
             <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitializeComponent">
-            <summary> 
-            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
-            il contenuto del metodo con l'editor di codice.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Forms.Plant.UserControlDashboard.components">
-            <summary> 
-            Variabile di progettazione necessaria.
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UserControlDashboard.Dispose(System.Boolean)">
-            <summary> 
-            Pulire le risorse in uso.
-            </summary>
-            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UserControlDashboard.InitializeComponent">
-            <summary> 
-            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
-            il contenuto del metodo con l'editor di codice.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Forms.Plant.UserControlImpostazioni.components">
-            <summary> 
-            Variabile di progettazione necessaria.
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UserControlImpostazioni.Dispose(System.Boolean)">
-            <summary> 
-            Pulire le risorse in uso.
-            </summary>
-            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UserControlImpostazioni.InitializeComponent">
             <summary> 
             Metodo necessario per il supporto della finestra di progettazione. Non modificare 
             il contenuto del metodo con l'editor di codice.
@@ -6580,6 +6623,34 @@
         <member name="M:RM.src.RM220930.FormHomePage.Pnl_diagnostics_Click(System.Object,System.EventArgs)">
             <summary>
             Apertura pannello diagnostica
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_openVAT(System.Object,System.EventArgs)">
+            <summary>
+            Apre la VAT
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_exit(System.Object,System.EventArgs)">
+            <summary>
+            Chiude l'applicazione
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToAxis(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina degli assi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToHomePage(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina di Home
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

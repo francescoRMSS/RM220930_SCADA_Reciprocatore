@@ -24,7 +24,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         {
             if (parameter is int offset)
             {
-               // MessageBox.Show(offset.ToString());
+               lbl_num.Text = offset.ToString();
             }
         }
     }

@@ -43,12 +43,15 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.lbl_num = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -87,6 +90,30 @@
             label6.Text = "0";
             label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            label3.BackColor = System.Drawing.Color.White;
+            label3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.ForeColor = System.Drawing.Color.Black;
+            label3.Location = new System.Drawing.Point(395, 319);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(113, 47);
+            label3.TabIndex = 376;
+            label3.Text = "0";
+            label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            label5.BackColor = System.Drawing.Color.Red;
+            label5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(94, 91);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(80, 80);
+            label5.TabIndex = 364;
+            label5.Text = "0";
+            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button18
             // 
             this.button18.BackColor = System.Drawing.SystemColors.Control;
@@ -108,18 +135,6 @@
             this.button19.Size = new System.Drawing.Size(70, 50);
             this.button19.TabIndex = 377;
             this.button19.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            label3.BackColor = System.Drawing.Color.White;
-            label3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.ForeColor = System.Drawing.Color.Black;
-            label3.Location = new System.Drawing.Point(395, 319);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(113, 47);
-            label3.TabIndex = 376;
-            label3.Text = "0";
-            label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button14
             // 
@@ -157,18 +172,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(269, 265);
             this.panel8.TabIndex = 372;
-            // 
-            // label5
-            // 
-            label5.BackColor = System.Drawing.Color.Red;
-            label5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.ForeColor = System.Drawing.Color.White;
-            label5.Location = new System.Drawing.Point(94, 91);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(80, 80);
-            label5.TabIndex = 364;
-            label5.Text = "0";
-            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button10
             // 
@@ -223,12 +226,36 @@
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
             this.panel6.BackgroundImage = global::RM.Properties.Resources.axe;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.lbl_num);
             this.panel6.Location = new System.Drawing.Point(5, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(306, 502);
             this.panel6.TabIndex = 373;
             // 
-            // UC_parametriLavoro
+            // lbl_num
+            // 
+            this.lbl_num.AutoSize = true;
+            this.lbl_num.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_num.ForeColor = System.Drawing.Color.Red;
+            this.lbl_num.Location = new System.Drawing.Point(69, 5);
+            this.lbl_num.Name = "lbl_num";
+            this.lbl_num.Size = new System.Drawing.Size(15, 16);
+            this.lbl_num.TabIndex = 0;
+            this.lbl_num.Text = "x";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "AXE NUM";
+            // 
+            // UC_workParams
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,9 +269,11 @@
             this.Controls.Add(this.button15);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
-            this.Name = "UC_parametriLavoro";
+            this.Name = "UC_workParams";
             this.Size = new System.Drawing.Size(590, 510);
             this.panel8.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -261,5 +290,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lbl_num;
+        private System.Windows.Forms.Label label1;
     }
 }
