@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace RM.src.RM220930.Classes.PLC
 {
+    /// <summary>
+    /// Classe che gestisce task di comunicazione con PLC
+    /// </summary>
     public static class ComPLC
     {
         // <summary>
