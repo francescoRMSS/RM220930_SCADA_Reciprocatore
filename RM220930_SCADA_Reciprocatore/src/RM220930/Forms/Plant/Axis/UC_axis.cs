@@ -32,7 +32,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// <summary>
         /// Asse selezionato
         /// </summary>
-        private int axeOffset = 1;
+        public static int axeOffset = 1;
 
         #endregion
 

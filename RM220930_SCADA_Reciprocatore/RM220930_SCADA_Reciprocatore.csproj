@@ -180,11 +180,23 @@
     <Compile Include="src\RM220930\Forms\FormLoading.Designer.cs">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axePosition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axePosition.Designer.cs">
+      <DependentUpon>UC_axePosition.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axis.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axis.Designer.cs">
       <DependentUpon>UC_axis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_testUDT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_testUDT.Designer.cs">
+      <DependentUpon>UC_testUDT.cs</DependentUpon>
     </Compile>
     <Compile Include="src\RM220930\Forms\Plant\Axis\UC_workParams.cs">
       <SubType>UserControl</SubType>
@@ -241,8 +253,14 @@
     <EmbeddedResource Include="src\RM220930\Forms\FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_axePosition.resx">
+      <DependentUpon>UC_axePosition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_axis.resx">
       <DependentUpon>UC_axis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_testUDT.resx">
+      <DependentUpon>UC_testUDT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_workParams.resx">
       <DependentUpon>UC_workParams.cs</DependentUpon>
@@ -281,6 +299,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\barrier-vertical-right.png" />
+    <None Include="Resources\barrier-vertical-left.png" />
     <None Include="Resources\axe_4th_gun.png" />
     <None Include="Resources\axe_3rd_gun.png" />
     <None Include="Resources\axe_2nd_gun.png" />
@@ -442,6 +462,5 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

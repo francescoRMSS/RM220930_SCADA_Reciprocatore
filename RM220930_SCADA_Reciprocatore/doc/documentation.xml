@@ -107,7 +107,7 @@
         </member>
         <member name="T:RM.src.RM220930.DAOSqlite">
             <summary>
-            Contiene procedure relative al funzionamento del Robot
+            DAO contenente procedure database
             </summary>
         </member>
         <member name="F:RM.src.RM220930.DAOSqlite.log">
@@ -115,34 +115,9 @@
             Logger
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.DAOSqlite.GetPointsPosition(System.String,System.String)">
+        <member name="M:RM.src.RM220930.DAOSqlite.SaveAlarm(System.String,System.Int32,System.String,System.String,System.String,System.String)">
             <summary>
-            Metodo che restituisce le posizioni di una determinata applicazione
-            </summary>
-            <param name="connectionString">Stringa di connessione</param>
-            <param name="application">Nome applicazione</param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.DAOSqlite.GetRobotMovementCode(System.String,System.Int32)">
-            <summary>
-            Restituisce codice movimento robot
-            </summary>
-            <param name="connectionString">Stringa di connessione al database</param>
-            <param name="id">id del movimento robot</param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.DAOSqlite.GetRobotAlarm(System.String,System.Int32,System.Int32)">
-            <summary>
-            Metodo che restituisce DataRow contenente allarme del Robot
-            </summary>
-            <param name="connectionString"></param>
-            <param name="mainCode"></param>
-            <param name="subCode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.DAOSqlite.SaveRobotAlarm(System.String,System.Int32,System.String,System.String,System.String,System.String)">
-            <summary>
-            Salva sul db l'allarme del robot
+            Salva sul db l'allarme
             </summary>
             <param name="connectionString"></param>
             <param name="id"></param>
@@ -150,13 +125,6 @@
             <param name="timpestamp"></param>
             <param name="device"></param>
             <param name="state"></param>
-        </member>
-        <member name="M:RM.src.RM220930.DAOSqlite.DeletePositions(System.String,System.String)">
-            <summary>
-            Cancella dal db i punti salvati del robot di una certa applicazione
-            </summary>
-            <param name="connectionString"></param>
-            <param name="applicationName"></param>
         </member>
         <member name="T:RM.src.RM220930.TaskManager">
             <summary>
@@ -1828,6 +1796,57 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
         <member name="T:RM.src.RM220930.Forms.Plant.UC_axis">
             <summary>
             Gestisce la seleziona degli assi e delle relative proprietà. Ogni asse ha un indice (offset) che servirà
@@ -1950,23 +1969,6 @@
             <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.InitializeComponent">
-            <summary> 
-            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
-            il contenuto del metodo con l'editor di codice.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.components">
-            <summary> 
-            Variabile di progettazione necessaria.
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.Dispose(System.Boolean)">
-            <summary> 
-            Pulire le risorse in uso.
-            </summary>
-            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.InitializeComponent">
             <summary> 
             Metodo necessario per il supporto della finestra di progettazione. Non modificare 
             il contenuto del metodo con l'editor di codice.
@@ -2884,6 +2886,16 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.backgroundSpry">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.barrier_vertical_left">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.barrier_vertical_right">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

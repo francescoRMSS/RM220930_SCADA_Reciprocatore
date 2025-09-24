@@ -19,6 +19,7 @@ using RM.src.RM220930.Forms.ScreenSaver;
 using RM.src.RM220930.Forms.Plant;
 using RM.src.RM220930.Classes.PLC;
 using System.Linq;
+using RM.src.RM220930.Forms.Plant.Axis;
 
 namespace RM.src.RM220930
 {
@@ -451,6 +452,7 @@ namespace RM.src.RM220930
             // Registrazione delle pagine
             _navigator.RegisterPage("Home Page", typeof(UC_HomePage));
             _navigator.RegisterPage("Axis", typeof(UC_axis));
+            _navigator.RegisterPage("Test UDT", typeof(UC_testUDT));
         }
 
         #endregion
@@ -609,7 +611,13 @@ namespace RM.src.RM220930
             _navigator.Navigate("Home Page", "HOME PAGE");
         }
 
+        private void ClickEvent_testUDT(object sender, EventArgs e)
+        {
+            _navigator.Navigate("Test UDT");
+        }
+
         #endregion
+
 
     }
 }

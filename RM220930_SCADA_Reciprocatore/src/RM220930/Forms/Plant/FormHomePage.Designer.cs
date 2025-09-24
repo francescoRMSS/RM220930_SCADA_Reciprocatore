@@ -35,10 +35,13 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label lbl_buttonHome;
+            System.Windows.Forms.Label label12;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomePage));
             this.pnl_pageContainer = new System.Windows.Forms.Panel();
             this.timer_dateTime_clock = new System.Windows.Forms.Timer(this.components);
             this.pnl_header = new RMLib.View.CustomPanel();
+            this.RobotMovPanel = new System.Windows.Forms.Panel();
+            this.RobotBlinkPanel = new System.Windows.Forms.Panel();
             this.pnl_appTask = new System.Windows.Forms.Panel();
             this.pnl_appTaskStatus = new RMLib.View.CustomPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,14 +76,14 @@
             this.btn_alarms = new System.Windows.Forms.Button();
             this.btn_axis = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.RobotMovPanel = new System.Windows.Forms.Panel();
-            this.RobotBlinkPanel = new System.Windows.Forms.Panel();
+            this.btn_testUDT = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             lbl_buttonHome = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
             this.pnl_appTask.SuspendLayout();
             this.pnl_comRobotTask.SuspendLayout();
@@ -169,7 +172,7 @@
             this.pnl_pageContainer.BackColor = System.Drawing.Color.Transparent;
             this.pnl_pageContainer.Location = new System.Drawing.Point(0, 110);
             this.pnl_pageContainer.Name = "pnl_pageContainer";
-            this.pnl_pageContainer.Size = new System.Drawing.Size(1023, 557);
+            this.pnl_pageContainer.Size = new System.Drawing.Size(1024, 557);
             this.pnl_pageContainer.TabIndex = 1;
             // 
             // pnl_header
@@ -203,6 +206,30 @@
             this.pnl_header.Size = new System.Drawing.Size(1030, 120);
             this.pnl_header.TabIndex = 0;
             this.pnl_header.TextColor = System.Drawing.Color.White;
+            // 
+            // RobotMovPanel
+            // 
+            this.RobotMovPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RobotMovPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.RobotMovPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RobotMovPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RobotMovPanel.Location = new System.Drawing.Point(685, 45);
+            this.RobotMovPanel.Name = "RobotMovPanel";
+            this.RobotMovPanel.Size = new System.Drawing.Size(40, 40);
+            this.RobotMovPanel.TabIndex = 30;
+            this.RobotMovPanel.Visible = false;
+            // 
+            // RobotBlinkPanel
+            // 
+            this.RobotBlinkPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RobotBlinkPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.RobotBlinkPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RobotBlinkPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RobotBlinkPanel.Location = new System.Drawing.Point(618, 42);
+            this.RobotBlinkPanel.Name = "RobotBlinkPanel";
+            this.RobotBlinkPanel.Size = new System.Drawing.Size(40, 40);
+            this.RobotBlinkPanel.TabIndex = 30;
+            this.RobotBlinkPanel.Visible = false;
             // 
             // pnl_appTask
             // 
@@ -552,6 +579,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Teal;
+            this.panel5.Controls.Add(this.btn_testUDT);
+            this.panel5.Controls.Add(label12);
             this.panel5.Controls.Add(this.btn_VAT);
             this.panel5.Controls.Add(label7);
             this.panel5.Controls.Add(this.btn_homePage);
@@ -640,29 +669,29 @@
             this.btn_home.TabIndex = 326;
             this.btn_home.UseVisualStyleBackColor = false;
             // 
-            // RobotMovPanel
+            // btn_testUDT
             // 
-            this.RobotMovPanel.BackColor = System.Drawing.Color.Transparent;
-            this.RobotMovPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
-            this.RobotMovPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RobotMovPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RobotMovPanel.Location = new System.Drawing.Point(685, 45);
-            this.RobotMovPanel.Name = "RobotMovPanel";
-            this.RobotMovPanel.Size = new System.Drawing.Size(40, 40);
-            this.RobotMovPanel.TabIndex = 30;
-            this.RobotMovPanel.Visible = false;
+            this.btn_testUDT.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_testUDT.BackgroundImage = global::RM.Properties.Resources.config;
+            this.btn_testUDT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_testUDT.Location = new System.Drawing.Point(839, 8);
+            this.btn_testUDT.Name = "btn_testUDT";
+            this.btn_testUDT.Size = new System.Drawing.Size(65, 65);
+            this.btn_testUDT.TabIndex = 338;
+            this.btn_testUDT.UseVisualStyleBackColor = false;
+            this.btn_testUDT.Click += new System.EventHandler(this.ClickEvent_testUDT);
             // 
-            // RobotBlinkPanel
+            // label12
             // 
-            this.RobotBlinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.RobotBlinkPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
-            this.RobotBlinkPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RobotBlinkPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RobotBlinkPanel.Location = new System.Drawing.Point(618, 42);
-            this.RobotBlinkPanel.Name = "RobotBlinkPanel";
-            this.RobotBlinkPanel.Size = new System.Drawing.Size(40, 40);
-            this.RobotBlinkPanel.TabIndex = 30;
-            this.RobotBlinkPanel.Visible = false;
+            label12.BackColor = System.Drawing.Color.Transparent;
+            label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.ForeColor = System.Drawing.SystemColors.Control;
+            label12.Location = new System.Drawing.Point(827, 76);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(89, 22);
+            label12.TabIndex = 337;
+            label12.Text = "TEST UDT";
+            label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FormHomePage
             // 
@@ -742,6 +771,7 @@
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel RobotMovPanel;
         private System.Windows.Forms.Panel RobotBlinkPanel;
+        private System.Windows.Forms.Button btn_testUDT;
     }
 }
 
