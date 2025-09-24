@@ -527,28 +527,7 @@ namespace RM.src.RM220930
                 { "Utils", RMLib.Utils.ProjectVariables.Version },
                 { "VatView", VATViewManager.Version },
                 { "Versions", VersionManager.Version },
-                { "View", CustomViewManager.Version },
-                { "RobotSdk", RobotManager.RobotSdkVer },
-                { "RobotCurrentIP", RobotManager.RobotCurrentIP },
-                { "RobotModelVer", RobotManager.RobotModelVer },
-                { "RobotWebVer", RobotManager.RobotWebVer },
-                { "RobotControllerVer", RobotManager.RobotControllerVer },
-                { "RobotFwBoxBoardVer", RobotManager.RobotFwBoxBoardVer },
-                { "RobotFwDriver1Ver", RobotManager.RobotFwDriver1Ver },
-                { "RobotFwDriver2Ver", RobotManager.RobotFwDriver2Ver },
-                { "RobotFwDriver3Ver", RobotManager.RobotFwDriver3Ver },
-                { "RobotFwDriver4Ver", RobotManager.RobotFwDriver4Ver },
-                { "RobotFwDriver5Ver", RobotManager.RobotFwDriver5Ver },
-                { "RobotFwDriver6Ver", RobotManager.RobotFwDriver6Ver },
-                { "RobotFwEndBoardVer", RobotManager.RobotFwEndBoardVer },
-                { "RobotHwBoxBoardVer", RobotManager.RobotHwBoxBoardVer },
-                { "RobotHwDriver1Ver", RobotManager.RobotHwDriver1Ver },
-                { "RobotHwDriver2Ver", RobotManager.RobotHwDriver2Ver },
-                { "RobotHwDriver3Ver", RobotManager.RobotHwDriver3Ver },
-                { "RobotHwDriver4Ver", RobotManager.RobotHwDriver4Ver },
-                { "RobotHwDriver5Ver", RobotManager.RobotHwDriver5Ver },
-                { "RobotHwDriver6Ver", RobotManager.RobotHwDriver6Ver },
-                { "RobotHwEndBoardVer", RobotManager.RobotHwEndBoardVer }
+                { "View", CustomViewManager.Version }
             };
 
             VersionManager.ShowVersions(versions, VersionsAppType.ROBOT_FAIRINO);
@@ -577,10 +556,7 @@ namespace RM.src.RM220930
         /// <param name="e"></param>
         private void Pnl_diagnostics_Click(object sender, EventArgs e)
         {
-            if (!RobotManager.formDiagnostics.Visible)
-            {
-                RobotManager.formDiagnostics.Visible = true;
-            }
+            
         }
 
         private void pnl_showScrnSvrMgr_Paint(object sender, PaintEventArgs e)

@@ -48,7 +48,7 @@ namespace RM.src.RM220930.Classes.PLC
         /// <summary>
         /// Oggetto per l'accesso ai dati del robot nel database.
         /// </summary>
-        private static readonly RobotDAOSqlite ComPLCDAO = new RobotDAOSqlite();
+        private static readonly DAOSqlite ComPLCDAO = new DAOSqlite();
         /// <summary>
         /// Configurazione della connessione al database.
         /// </summary>
@@ -252,7 +252,7 @@ namespace RM.src.RM220930.Classes.PLC
             // Calcola il timestamp Unix in millisecondi
             long unixTimestamp = ((DateTimeOffset)Convert.ToDateTime(e.Timestamp)).ToUnixTimeMilliseconds();
 
-            ComPLCDAO.SaveRobotAlarm(ConnectionString, Convert.ToInt32(e.Id), e.Description,
+            ComPLCDAO.SaveAlarm(ConnectionString, Convert.ToInt32(e.Id), e.Description,
                 unixTimestamp.ToString(), e.Device, e.State);
             FormHomePage.formAlarmPage.AddAlarmToList(e.Id, e.Description, e.Timestamp, e.Device, e.State);
             TriggerAllarmeGenerato();

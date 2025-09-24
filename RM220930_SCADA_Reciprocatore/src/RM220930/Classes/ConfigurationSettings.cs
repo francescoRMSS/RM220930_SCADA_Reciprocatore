@@ -1,5 +1,4 @@
 ﻿
-using RM.src.RM220930.Classes.FR20.Jog;
 using RM.src.RM220930.Classes.PLC;
 using RMLib.Alarms;
 using RMLib.DataAccess;
@@ -27,6 +26,7 @@ namespace RM.src.RM220930
     public class ConfigurationSettings
     {
         #region Proprietà della classe ConfigurationSettings
+
         /// <summary>
         /// Logger
         /// </summary>
@@ -37,7 +37,6 @@ namespace RM.src.RM220930
         /// </summary>
         public static DataTable configurationProperties;
 
- 
         /// <summary>
         /// Metodo attuale in esecuzione
         /// </summary>
@@ -54,6 +53,7 @@ namespace RM.src.RM220930
         }
 
         #region Metodi della classe ConfigurationSettings
+
         /// <summary>
         /// Metodo che gestisce avanzamento progressBar della FormLoading.
         /// Viene fatto il get del setting dal database.

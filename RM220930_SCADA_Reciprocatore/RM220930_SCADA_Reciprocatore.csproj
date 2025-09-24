@@ -162,32 +162,15 @@
     <Compile Include="src\RM220930\Classes\CustomRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="src\RM220930\Classes\FR20\Applications\ApplicationConfig.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Applications\Application\ApplicationPositions.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Applications\Application\GunSettings.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Applications\Application\RobotApplication.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Applications\ObservableApplicationsDictionary.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\DAO\SQLite\RobotDAOSqlite.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\FrRobot\FairinoRobotClient.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Jog\JogMovement.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Jog\JogRobotProperties.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\PointPosition.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\PositionChecker.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Properties\Collisions.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Properties\Frames.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\Properties\Tools.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\RobotDictionaryChangedEventArgs.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\RobotManager.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\RobotProperties.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\TaskManager\TaskManager.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\TaskManager\TaskType.cs" />
-    <Compile Include="src\RM220930\Classes\FR20\TaskManager\TaskModel.cs" />
+    <Compile Include="src\RM220930\Classes\DAO\SQLite\DAOSqlite.cs" />
+    <Compile Include="src\RM220930\Classes\TaskManager\TaskManager.cs" />
+    <Compile Include="src\RM220930\Classes\TaskManager\TaskType.cs" />
+    <Compile Include="src\RM220930\Classes\TaskManager\TaskModel.cs" />
     <Compile Include="src\RM220930\Classes\Global.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\INavigable.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\INavigationRequester.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\NavigateEventArgs.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\Navigator.cs" />
-    <Compile Include="src\RM220930\Classes\OpenVRsupport.cs" />
     <Compile Include="src\RM220930\Classes\PLC\ComPLC.cs" />
     <Compile Include="src\RM220930\Classes\PLC\PLCTagName.cs" />
     <Compile Include="src\RM220930\Classes\Program.cs" />
@@ -215,36 +198,6 @@
     <Compile Include="src\RM220930\Forms\Plant\UC_HomePage.Designer.cs">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\ViveTracker\FormTrackerCalibration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\ViveTracker\FormTrackerCalibration.Designer.cs">
-      <DependentUpon>FormTrackerCalibration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\FormDebugSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\FormDebugSettings.Designer.cs">
-      <DependentUpon>FormDebugSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\FormDebugTools.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\FormDebugTools.Designer.cs">
-      <DependentUpon>FormDebugTools.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\FormGunSettigs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\FormGunSettigs.Designer.cs">
-      <DependentUpon>FormGunSettigs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\UC_FullDragModePage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\DragMode\UC_FullDragModePage.Designer.cs">
-      <DependentUpon>UC_FullDragModePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\FormDiagnostics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,65 +210,11 @@
     <Compile Include="src\RM220930\Forms\Plant\FormHomePage.Designer.cs">
       <DependentUpon>FormHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\FormInfoRobot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\FormInfoRobot.Designer.cs">
-      <DependentUpon>FormInfoRobot.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\FormLanguageSelection.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\RM220930\Forms\Plant\FormLanguageSelection.Designer.cs">
       <DependentUpon>FormLanguageSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_ApplicationPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_ApplicationPage.Designer.cs">
-      <DependentUpon>UC_ApplicationPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_CleaningPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_CleaningPage.Designer.cs">
-      <DependentUpon>UC_CleaningPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_configuration.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_configuration.Designer.cs">
-      <DependentUpon>UC_configuration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_parameters.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_parameters.Designer.cs">
-      <DependentUpon>UC_parameters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_permissions.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_permissions.Designer.cs">
-      <DependentUpon>UC_permissions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_positions.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_positions.Designer.cs">
-      <DependentUpon>UC_positions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_us3Configuration.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\UC_us3Configuration.Designer.cs">
-      <DependentUpon>UC_us3Configuration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\ViveTracker\UC_ViveTrackerPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="src\RM220930\Forms\Plant\ViveTracker\UC_ViveTrackerPage.Designer.cs">
-      <DependentUpon>UC_ViveTrackerPage.cs</DependentUpon>
     </Compile>
     <Compile Include="src\RM220930\Forms\ScreenSaver\ScreenSaverManager.cs">
       <SubType>Form</SubType>
@@ -351,56 +250,14 @@
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_HomePage.resx">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\ViveTracker\FormTrackerCalibration.resx">
-      <DependentUpon>FormTrackerCalibration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\DragMode\FormDebugSettings.resx">
-      <DependentUpon>FormDebugSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\DragMode\FormDebugTools.resx">
-      <DependentUpon>FormDebugTools.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\DragMode\FormGunSettigs.resx">
-      <DependentUpon>FormGunSettigs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\DragMode\UC_FullDragModePage.resx">
-      <DependentUpon>UC_FullDragModePage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\FormDiagnostics.resx">
       <DependentUpon>FormDiagnostics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\FormHomePage.resx">
       <DependentUpon>FormHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\FormInfoRobot.resx">
-      <DependentUpon>FormInfoRobot.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\FormLanguageSelection.resx">
       <DependentUpon>FormLanguageSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_ApplicationPage.resx">
-      <DependentUpon>UC_ApplicationPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_CleaningPage.resx">
-      <DependentUpon>UC_CleaningPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_configuration.resx">
-      <DependentUpon>UC_configuration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_parameters.resx">
-      <DependentUpon>UC_parameters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_permissions.resx">
-      <DependentUpon>UC_permissions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_positions.resx">
-      <DependentUpon>UC_positions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_us3Configuration.resx">
-      <DependentUpon>UC_us3Configuration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\RM220930\Forms\Plant\ViveTracker\UC_ViveTrackerPage.resx">
-      <DependentUpon>UC_ViveTrackerPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\ScreenSaver\ScreenSaverManager.resx">
       <DependentUpon>ScreenSaverManager.cs</DependentUpon>
@@ -585,5 +442,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
