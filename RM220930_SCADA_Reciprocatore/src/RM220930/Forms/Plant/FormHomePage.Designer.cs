@@ -73,6 +73,8 @@
             this.btn_alarms = new System.Windows.Forms.Button();
             this.btn_axis = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
+            this.RobotMovPanel = new System.Windows.Forms.Panel();
+            this.RobotBlinkPanel = new System.Windows.Forms.Panel();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -177,6 +179,8 @@
             this.pnl_header.BorderColor = System.Drawing.Color.Black;
             this.pnl_header.BorderRadius = 0;
             this.pnl_header.BorderSize = 0;
+            this.pnl_header.Controls.Add(this.RobotMovPanel);
+            this.pnl_header.Controls.Add(this.RobotBlinkPanel);
             this.pnl_header.Controls.Add(this.pnl_appTask);
             this.pnl_header.Controls.Add(this.pnl_comRobotTask);
             this.pnl_header.Controls.Add(this.pnl_vrTask);
@@ -636,6 +640,30 @@
             this.btn_home.TabIndex = 326;
             this.btn_home.UseVisualStyleBackColor = false;
             // 
+            // RobotMovPanel
+            // 
+            this.RobotMovPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RobotMovPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.RobotMovPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RobotMovPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RobotMovPanel.Location = new System.Drawing.Point(685, 45);
+            this.RobotMovPanel.Name = "RobotMovPanel";
+            this.RobotMovPanel.Size = new System.Drawing.Size(40, 40);
+            this.RobotMovPanel.TabIndex = 30;
+            this.RobotMovPanel.Visible = false;
+            // 
+            // RobotBlinkPanel
+            // 
+            this.RobotBlinkPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RobotBlinkPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.RobotBlinkPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RobotBlinkPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RobotBlinkPanel.Location = new System.Drawing.Point(618, 42);
+            this.RobotBlinkPanel.Name = "RobotBlinkPanel";
+            this.RobotBlinkPanel.Size = new System.Drawing.Size(40, 40);
+            this.RobotBlinkPanel.TabIndex = 30;
+            this.RobotBlinkPanel.Visible = false;
+            // 
             // FormHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,6 +740,8 @@
         private System.Windows.Forms.Button btn_alarms;
         private System.Windows.Forms.Button btn_axis;
         private System.Windows.Forms.Button btn_home;
+        private System.Windows.Forms.Panel RobotMovPanel;
+        private System.Windows.Forms.Panel RobotBlinkPanel;
     }
 }
 

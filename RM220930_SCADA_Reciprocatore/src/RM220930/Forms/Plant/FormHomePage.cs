@@ -129,9 +129,9 @@ namespace RM.src.RM220930
         public static FormAlarmPage formAlarmPage;
 
         /// <summary>
-        /// Dizionario di allarmi per evitare segnalazioni duplicate.
+        /// Oggetto taskManager
         /// </summary>
-        private static readonly Dictionary<string, bool> allarmiSegnalati = new Dictionary<string, bool>();
+        TaskManager taskManager;
 
         #endregion
 
@@ -141,6 +141,17 @@ namespace RM.src.RM220930
         public FormHomePage()
         {
             InitializeComponent();
+            
+            taskManager = new TaskManager(); // Istanzio TaskManager
+            taskManager.StartTaskChecker();
+
+            taskManager.OneTaskChangedStatus += ChangeTaskStatus;
+
+            // Aggiungo task checkLowPriority alla lista dei task
+            taskManager.AddTask(nameof(ComPLC.CheckLowPriority), ComPLC.CheckLowPriority, TaskType.LongRunning, true);
+
+            // Avvio task checkLowPriority
+            taskManager.StartTask(nameof(ComPLC.CheckLowPriority));
 
             // Istanzio oggetto navigatore
             _navigator = new Navigator(pnl_pageContainer);
@@ -148,20 +159,17 @@ namespace RM.src.RM220930
             // Registrazione della pagine dell'applicazione
             RegisterPages();
 
-            formAlarmPage = new FormAlarmPage();
+            formAlarmPage = new FormAlarmPage(); // Istanzio form di allarmi
+
+            // Collego evento di cancellazione allarmi al metodo RMLib_AlarmsCleared
             formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
 
             // 3. Crea l'istanza del BlinkManager
-            blinkMgr = new BlinkManager(
-                true,
-                Pnl_PLC_alarm,
-                Resources.plc_connection_ok,
-                Resources.connection_error
-            );
+            blinkMgr = new BlinkManager(true, Pnl_PLC_alarm, Resources.plc_connection_ok, Resources.connection_error );
 
-            blinkMgr.StartBlinking();
+            blinkMgr.StartBlinking(); // Avvio servizio di blink
 
-            EnterFullScreenMode();
+            // EnterFullScreenMode(); // Da attivare solo in produzione su pc touch
             CheckForIllegalCrossThreadCalls = false;
 
             // Avvio timer per la data
@@ -172,14 +180,14 @@ namespace RM.src.RM220930
             InitFont();
 
             // Iscrizione al metodo OnAllarmeGenerato quando generato evento AllarmeGenerato
-            RobotManager.AllarmeGenerato += OnAllarmeGenerato;
+            ComPLC.AllarmeGenerato += OnAllarmeGenerato;
 
             // Iscrizione al metodo OnAllarmeResettato quando generato evento AllarmeResettato
-            RobotManager.AllarmeResettato += OnAllarmeResettato;
+            AllarmeResettato += OnAllarmeResettato;
 
             ScreenSaverManager.AutoAddClickEvents(this);
 
-            RobotManager.taskManager.OneTaskChangedStatus += ChangeTaskStatus;
+            
         }
 
         #region Metodi di FormHomePage
@@ -193,7 +201,6 @@ namespace RM.src.RM220930
         {
             var criteria = new List<(string device, string description)>
             {
-                ("Robot", ""),
                 ("", "PLC disconnesso. Il ciclo è stato terminato.")
             };
 
@@ -207,16 +214,17 @@ namespace RM.src.RM220930
 
             TriggerAllarmeResettato();
 
-            RefresherTask.AddUpdate(PLCTagName.System_error, 0, "INT16");
-
             // Reset degli allarmi segnalati
-            foreach (var key in allarmiSegnalati.Keys.ToList())
+            foreach (var key in ComPLC.allarmiSegnalati.Keys.ToList())
             {
-                allarmiSegnalati[key] = false;
+                ComPLC.allarmiSegnalati[key] = false;
             }
 
         }
 
+        /// <summary>
+        /// Trigget per avvisare che gli allarmi sono stati resettati
+        /// </summary>
         public static void TriggerAllarmeResettato()
         {
             OnAllarmeResettato(EventArgs.Empty);
@@ -368,7 +376,7 @@ namespace RM.src.RM220930
             pnl_comRobotTask.Visible = false;
             pnl_appTask.Visible = false;
 
-            List<TaskModel> taskStructs = RobotManager.taskManager.GetTaskList();
+            List<TaskModel> taskStructs = taskManager.GetTaskList();
 
             foreach (TaskModel taskStruct in taskStructs)
             {
@@ -435,6 +443,9 @@ namespace RM.src.RM220930
             }
         }
 
+        /// <summary>
+        /// Registra pagine che utilizza il navigator
+        /// </summary>
         private void RegisterPages()
         {
             // Registrazione delle pagine

@@ -526,6 +526,119 @@
             Numero di asse selezionato
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "E:RM.src.RM220930.Classes.PLC.ComPLC.AllarmeResettato" -->
+        <member name="E:RM.src.RM220930.Classes.PLC.ComPLC.AllarmeGenerato">
+            <summary>
+            Evento invocato quando viene generato un allarme.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.allarmiSegnalati">
+            <summary>
+            Dizionario di allarmi per evitare segnalazioni duplicate.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.lowPriorityRefreshPeriod">
+            <summary>
+            Delay di refresh del task
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.prevIsPlcConnected">
+            <summary>
+            Rappresenta lo stato precedente della connessione al PLC.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.ComPLCDAO">
+            <summary>
+            Oggetto per l'accesso ai dati del robot nel database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.DatabaseConnection">
+            <summary>
+            Configurazione della connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.ConnectionString">
+            <summary>
+            Stringa di connessione al database.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.CheckLowPriority(System.Threading.CancellationToken)">
+            <summary>
+            Thread a priorità bassa che gestisce comunicazione PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creazione di un allarme
+            </summary>
+            <param name="id">ID allarme</param>
+            <param name="description">Descrizione allarme</param>
+            <param name="timestamp">Timestamp allarme</param>
+            <param name="device">Device da cui deriva l'allarme</param>
+            <param name="state">ON-OFF</param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.GetPLCErrorCode(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.DateTime,System.Int64,System.DateTime,System.String)">
+            <summary>
+            Check su errori comunicati da PLC
+            </summary>
+            <param name="alarmValues"></param>
+            <param name="alarmDescriptions"></param>
+            <param name="now"></param>
+            <param name="unixTimestamp"></param>
+            <param name="dateTime"></param>
+            <param name="formattedDate"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.CheckPLCConnection">
+            <summary>
+            Check su connessione PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.TriggerAllarmeResettato">
+            <summary>
+            Trigger attivato quando vengono cancellati gli allarmi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.OnAllarmeResettato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarmi resettati
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
+            <summary>
+            Metodo che aggiunge alla lista degli allarmi l'allarme
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.TriggerAllarmeGenerato">
+            <summary>
+            Generazione eventi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.OnAllarmeGenerato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarme ricevuto
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.IsAlarmAlreadySignaled(System.String)">
+            <summary>
+            Avvisa se un allarme è già stato segnalato
+            </summary>
+            <param name="alarmKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.MarkAlarmAsSignaled(System.String)">
+            <summary>
+            Imposta l'allarme come segnalato
+            </summary>
+            <param name="alarmKey"></param>
+        </member>
         <member name="T:RM.src.RM220930.Classes.PLC.PLCTagName">
             <summary>
             Contiene i tag degli indirizzi PLC
@@ -6510,9 +6623,9 @@
             Riferimento alla pagina degli allarmi.
             </summary>
         </member>
-        <member name="F:RM.src.RM220930.FormHomePage.allarmiSegnalati">
+        <member name="F:RM.src.RM220930.FormHomePage.taskManager">
             <summary>
-            Dizionario di allarmi per evitare segnalazioni duplicate.
+            Oggetto taskManager
             </summary>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.#ctor">
@@ -6526,6 +6639,11 @@
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.TriggerAllarmeResettato">
+            <summary>
+            Trigget per avvisare che gli allarmi sono stati resettati
+            </summary>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.OnAllarmeResettato(System.EventArgs)">
             <summary>
@@ -6584,6 +6702,11 @@
         <member name="F:RM.src.RM220930.FormHomePage.allowedNames">
             <summary>
             Contiene i nomi dei task gestiti di cui si osserva lo stato per le spie a schermo
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.RegisterPages">
+            <summary>
+            Registra pagine che utilizza il navigator
             </summary>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.Update_lbl_dateTime_clock(System.Object,System.EventArgs)">

@@ -188,6 +188,7 @@
     <Compile Include="src\RM220930\Classes\Navigator\NavigateEventArgs.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\Navigator.cs" />
     <Compile Include="src\RM220930\Classes\OpenVRsupport.cs" />
+    <Compile Include="src\RM220930\Classes\PLC\ComPLC.cs" />
     <Compile Include="src\RM220930\Classes\PLC\PLCTagName.cs" />
     <Compile Include="src\RM220930\Classes\Program.cs" />
     <Compile Include="src\RM220930\Forms\FormLoading.cs">
@@ -584,6 +585,5 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
