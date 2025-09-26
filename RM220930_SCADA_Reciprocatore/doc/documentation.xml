@@ -1813,6 +1813,13 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.RefreshVariables(System.Object,RMLib.PLC.DictionaryChangedEventArgs)">
+            <summary>
+            Metodo richiamato dall'evento ValueChanged del dizionario delle variabili PLC
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.components">
             <summary> 
             Variabile di progettazione necessaria.

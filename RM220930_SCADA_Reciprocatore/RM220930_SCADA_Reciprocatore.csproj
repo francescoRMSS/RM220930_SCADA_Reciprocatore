@@ -102,10 +102,6 @@
     <Reference Include="RMLib.MessageBox">
       <HintPath>..\..\..\..\..\..\..\Support\RMLib.MessageBox.dll</HintPath>
     </Reference>
-    <Reference Include="RMLib.PLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Support\RMLib.PLC.dll</HintPath>
-    </Reference>
     <Reference Include="RMLib.Recipes">
       <HintPath>..\..\..\..\..\..\..\Support\RMLib.Recipes.dll</HintPath>
     </Reference>
@@ -461,6 +457,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\RMLib\RMLib.PLC\RMLib.PLC\RMLib.PLC.csproj">
+      <Project>{6acb4e7a-d416-46f8-836c-35509ba2fa7f}</Project>
+      <Name>RMLib.PLC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
