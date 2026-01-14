@@ -19,6 +19,8 @@ using RM.src.RM220930.Forms.ScreenSaver;
 using RM.src.RM220930.Forms.Plant;
 using RM.src.RM220930.Forms.Plant.Axis;
 using RM.src.RM220930.Classes;
+using RM.src.RM220930.Classes.Navigator;
+using System.Web.Caching;
 
 namespace RM.src.RM220930
 {
@@ -319,10 +321,6 @@ namespace RM.src.RM220930
             _navigator.RegisterPage("Test UDT", typeof(UC_testUDT));
         }
 
-        
-
-        
-
         #endregion
 
         #region Eventi di FormHomePage
@@ -355,14 +353,22 @@ namespace RM.src.RM220930
         /// <param name="e"></param>
         private void FormHomePage_Shown(object sender, EventArgs e)
         {
-            // Notifica l'alarmManager che la form è stata caricata e quindi è possibile procedere con la gestione degli allarmi 
+            // Preload sul thread UI
+            BeginInvoke(new Action(() =>
+            {
+                _navigator.PreloadPages("Axis", "Test UDT");
+            }));
+
+            // Notifica l'alarmManager
             AlarmManager.isFormReady = true;
 
-            //Configurazione screen saver manager - 5m
+            // Configurazione screen saver manager
             screenSaverManager = new ScreenSaverManager(300000, "screenSaver.mp4", false);
 
-            ChangeTaskStatus(this, EventArgs.Empty); // Chiamo il metodo per aggiornare l'interfaccia la prima volta
+            // Aggiorna interfaccia
+            ChangeTaskStatus(this, EventArgs.Empty);
         }
+
 
         /// <summary>
         /// Apertura pagina allarmi

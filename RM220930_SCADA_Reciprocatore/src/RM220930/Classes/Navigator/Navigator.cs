@@ -116,5 +116,19 @@ public class Navigator
         }
     }
 
+    public void PreloadPages(params string[] keys)
+    {
+        foreach (var key in keys)
+        {
+            if (!_pages.TryGetValue(key, out var pageType))
+                continue;
+            if (_cache.ContainsKey(key))
+                continue;
+
+            var page = (UserControl)Activator.CreateInstance(pageType);
+            page.Dock = DockStyle.Fill;
+            _cache[key] = page;
+        }
+    }
 
 }

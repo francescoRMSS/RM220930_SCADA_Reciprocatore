@@ -1,4 +1,5 @@
-﻿using RM.Properties;
+﻿using CookComputing.XmlRpc;
+using RM.Properties;
 using RM.src.RM220930.Classes.Navigator;
 using RM.src.RM220930.Classes.PLC;
 using RMLib.PLC;
@@ -47,10 +48,10 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         public UC_testUDT()
         {
             InitializeComponent();
-            //InitVar();
             // Collegamento evento ValueChanged del dizionario al metodo HandleDictionaryChange
             PLCConfig.appVariables.ValueChanged += RefreshVariables;
         }
+
         /// <summary>
         /// Gestisce l'utilizzo del parametro passato durante la navigazione
         /// </summary>
@@ -69,22 +70,6 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         }
 
-        private void InitVar()
-        {
-            Cmd_On_Axe = Convert.ToBoolean(PLCConfig.appVariables.getValue(("PLC1_" + "z" + UC_axis.axeOffset.ToString() + "_" + PLCTagName.Cmd_On_Axe)));
-
-            if (Cmd_On_Axe)
-            {
-                btn_boolValue.BackColor = Color.Green;
-                btn_boolValue.Text = "TRUE";
-            }
-            else
-            {
-                btn_boolValue.BackColor = Color.Red;
-                btn_boolValue.Text = "FALSE";
-            }
-        }
-
         /// <summary>
         /// Metodo richiamato dall'evento ValueChanged del dizionario delle variabili PLC
         /// </summary>
@@ -99,7 +84,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
                     Invoke(new Action<object, DictionaryChangedEventArgs>(RefreshVariables), sender, e);
                     return;
                 }
-               
+
                 var field = typeof(PLCTagName).GetField(varToUpdate);
 
                 string valore = field.GetValue(plcTagName)?.ToString();
@@ -110,18 +95,23 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
                 if (key == expectedKey)
                 {
-                    if (e.NewValue.ToString() == "True")
+                    switch (e.NewValue)
                     {
-                        btn_boolValue.BackColor = Color.Green;
-                        btn_boolValue.Text = "TRUE";
-                        Cmd_On_Axe = true;
+                        case bool b:
+                            btn_boolValue.BackColor = b ? Color.Green : Color.Red;
+                            btn_boolValue.Text = b ? "TRUE" : "FALSE";
+                            Cmd_On_Axe = b;
+                            break;
+
+                        case short i16:
+                            tb_intValue.Text = i16.ToString();
+                            break;
+
+                        case float f:
+                            tb_floatValue.Text = f.ToString();
+                            break;
                     }
-                    else
-                    {
-                        btn_boolValue.BackColor = Color.Red;
-                        btn_boolValue.Text = "FALSE";
-                        Cmd_On_Axe = false;
-                    }
+
                 }
             }
 
@@ -176,15 +166,64 @@ namespace RM.src.RM220930.Forms.Plant.Axis
                 btn_boolValue.BackColor = Color.Red;
                 btn_boolValue.Text = "FALSE";
                 Cmd_On_Axe = false;
-            }
-
-            
+            }           
         }
 
         private void cb_axis_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbl_selectedAxe.Text = cb_axis.SelectedItem.ToString();
             UC_axis.axeOffset = Convert.ToInt16(cb_axis.SelectedItem.ToString());
+        }
+
+        private void cb_intList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            varToUpdate = cb_intList.SelectedItem.ToString();
+            lbl_selectedInt.Text = cb_intList.SelectedItem.ToString();
+
+            var field = typeof(PLCTagName).GetField(varToUpdate);
+
+            string valore = field.GetValue(plcTagName)?.ToString();
+
+            int intValue = Convert.ToInt16(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+
+            tb_intValue.Text = intValue.ToString();
+
+        }
+
+        private void btn_sendIntValue_Click(object sender, EventArgs e)
+        {
+            var field = typeof(PLCTagName).GetField(varToUpdate);
+
+            string valore = field.GetValue(plcTagName)?.ToString();
+
+            int valToSend = Convert.ToInt16(tb_intValue.Text);
+
+            RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", valToSend, "INT16");
+        }
+
+        private void cb_floatList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            varToUpdate = cb_floatList.SelectedItem.ToString();
+            lbl_selectedFloat.Text = cb_floatList.SelectedItem.ToString();
+
+            var field = typeof(PLCTagName).GetField(varToUpdate);
+
+            string valore = field.GetValue(plcTagName)?.ToString();
+
+            float floatValue = Convert.ToInt16(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+
+            tb_floatValue.Text = floatValue.ToString();
+        }
+
+        private void btn_sendFloatValue_Click(object sender, EventArgs e)
+        {
+            var field = typeof(PLCTagName).GetField(varToUpdate);
+
+            string valore = field.GetValue(plcTagName)?.ToString();
+
+            float valToSend = float.Parse(tb_floatValue.Text);
+
+            RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", valToSend, "FLOAT");
         }
     }
 }

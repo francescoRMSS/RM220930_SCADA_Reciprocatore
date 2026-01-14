@@ -40,6 +40,12 @@
             this.pnl_pageContainer = new System.Windows.Forms.Panel();
             this.timer_dateTime_clock = new System.Windows.Forms.Timer(this.components);
             this.pnl_header = new RMLib.View.CustomPanel();
+            this.pnl_safetyTask = new System.Windows.Forms.Panel();
+            this.pnl_safetyTaskStatus = new RMLib.View.CustomPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pnl_plcTask = new System.Windows.Forms.Panel();
+            this.pnl_plcTaskStatus = new RMLib.View.CustomPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.RobotMovPanel = new System.Windows.Forms.Panel();
             this.RobotBlinkPanel = new System.Windows.Forms.Panel();
             this.pnl_appTask = new System.Windows.Forms.Panel();
@@ -48,9 +54,6 @@
             this.pnl_comRobotTask = new System.Windows.Forms.Panel();
             this.pnl_comRobotTaskStatus = new RMLib.View.CustomPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnl_plcTask = new System.Windows.Forms.Panel();
-            this.pnl_plcTaskStatus = new RMLib.View.CustomPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnl_auxTask = new System.Windows.Forms.Panel();
             this.pnl_auxTaskStatus = new RMLib.View.CustomPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,9 +80,6 @@
             this.btn_alarms = new System.Windows.Forms.Button();
             this.btn_axis = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
-            this.pnl_safetyTask = new System.Windows.Forms.Panel();
-            this.pnl_safetyTaskStatus = new RMLib.View.CustomPanel();
-            this.label13 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -88,15 +88,15 @@
             lbl_buttonHome = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
+            this.pnl_safetyTask.SuspendLayout();
+            this.pnl_plcTask.SuspendLayout();
             this.pnl_appTask.SuspendLayout();
             this.pnl_comRobotTask.SuspendLayout();
-            this.pnl_plcTask.SuspendLayout();
             this.pnl_auxTask.SuspendLayout();
             this.pnl_lowTask.SuspendLayout();
             this.pnl_highTask.SuspendLayout();
             this.PnlLogoContainer.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.pnl_safetyTask.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -193,8 +193,8 @@
             // 
             // pnl_header
             // 
-            this.pnl_header.BackColor = System.Drawing.Color.Black;
-            this.pnl_header.BackgroundColor = System.Drawing.Color.Black;
+            this.pnl_header.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnl_header.BackgroundColor = System.Drawing.Color.MidnightBlue;
             this.pnl_header.BorderColor = System.Drawing.Color.Black;
             this.pnl_header.BorderRadius = 0;
             this.pnl_header.BorderSize = 0;
@@ -223,6 +223,82 @@
             this.pnl_header.Size = new System.Drawing.Size(1030, 120);
             this.pnl_header.TabIndex = 0;
             this.pnl_header.TextColor = System.Drawing.Color.White;
+            // 
+            // pnl_safetyTask
+            // 
+            this.pnl_safetyTask.Controls.Add(this.pnl_safetyTaskStatus);
+            this.pnl_safetyTask.Controls.Add(this.label13);
+            this.pnl_safetyTask.Location = new System.Drawing.Point(694, 75);
+            this.pnl_safetyTask.Name = "pnl_safetyTask";
+            this.pnl_safetyTask.Size = new System.Drawing.Size(41, 42);
+            this.pnl_safetyTask.TabIndex = 34;
+            // 
+            // pnl_safetyTaskStatus
+            // 
+            this.pnl_safetyTaskStatus.BackColor = System.Drawing.Color.White;
+            this.pnl_safetyTaskStatus.BackgroundColor = System.Drawing.Color.White;
+            this.pnl_safetyTaskStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_safetyTaskStatus.BorderColor = System.Drawing.Color.Black;
+            this.pnl_safetyTaskStatus.BorderRadius = 10;
+            this.pnl_safetyTaskStatus.BorderSize = 0;
+            this.pnl_safetyTaskStatus.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pnl_safetyTaskStatus.ForeColor = System.Drawing.Color.White;
+            this.pnl_safetyTaskStatus.Location = new System.Drawing.Point(10, 4);
+            this.pnl_safetyTaskStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_safetyTaskStatus.Name = "pnl_safetyTaskStatus";
+            this.pnl_safetyTaskStatus.Size = new System.Drawing.Size(20, 20);
+            this.pnl_safetyTaskStatus.TabIndex = 30;
+            this.pnl_safetyTaskStatus.TextColor = System.Drawing.Color.White;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(2, 27);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "SAFE";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnl_plcTask
+            // 
+            this.pnl_plcTask.Controls.Add(this.pnl_plcTaskStatus);
+            this.pnl_plcTask.Controls.Add(this.label3);
+            this.pnl_plcTask.Location = new System.Drawing.Point(736, 75);
+            this.pnl_plcTask.Name = "pnl_plcTask";
+            this.pnl_plcTask.Size = new System.Drawing.Size(41, 42);
+            this.pnl_plcTask.TabIndex = 33;
+            // 
+            // pnl_plcTaskStatus
+            // 
+            this.pnl_plcTaskStatus.BackColor = System.Drawing.Color.White;
+            this.pnl_plcTaskStatus.BackgroundColor = System.Drawing.Color.White;
+            this.pnl_plcTaskStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_plcTaskStatus.BorderColor = System.Drawing.Color.Black;
+            this.pnl_plcTaskStatus.BorderRadius = 10;
+            this.pnl_plcTaskStatus.BorderSize = 0;
+            this.pnl_plcTaskStatus.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pnl_plcTaskStatus.ForeColor = System.Drawing.Color.White;
+            this.pnl_plcTaskStatus.Location = new System.Drawing.Point(10, 4);
+            this.pnl_plcTaskStatus.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_plcTaskStatus.Name = "pnl_plcTaskStatus";
+            this.pnl_plcTaskStatus.Size = new System.Drawing.Size(20, 20);
+            this.pnl_plcTaskStatus.TabIndex = 30;
+            this.pnl_plcTaskStatus.TextColor = System.Drawing.Color.White;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 16);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "PLC";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RobotMovPanel
             // 
@@ -323,44 +399,6 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "COM";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl_plcTask
-            // 
-            this.pnl_plcTask.Controls.Add(this.pnl_plcTaskStatus);
-            this.pnl_plcTask.Controls.Add(this.label3);
-            this.pnl_plcTask.Location = new System.Drawing.Point(736, 75);
-            this.pnl_plcTask.Name = "pnl_plcTask";
-            this.pnl_plcTask.Size = new System.Drawing.Size(41, 42);
-            this.pnl_plcTask.TabIndex = 33;
-            // 
-            // pnl_plcTaskStatus
-            // 
-            this.pnl_plcTaskStatus.BackColor = System.Drawing.Color.White;
-            this.pnl_plcTaskStatus.BackgroundColor = System.Drawing.Color.White;
-            this.pnl_plcTaskStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_plcTaskStatus.BorderColor = System.Drawing.Color.Black;
-            this.pnl_plcTaskStatus.BorderRadius = 10;
-            this.pnl_plcTaskStatus.BorderSize = 0;
-            this.pnl_plcTaskStatus.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pnl_plcTaskStatus.ForeColor = System.Drawing.Color.White;
-            this.pnl_plcTaskStatus.Location = new System.Drawing.Point(10, 4);
-            this.pnl_plcTaskStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_plcTaskStatus.Name = "pnl_plcTaskStatus";
-            this.pnl_plcTaskStatus.Size = new System.Drawing.Size(20, 20);
-            this.pnl_plcTaskStatus.TabIndex = 30;
-            this.pnl_plcTaskStatus.TextColor = System.Drawing.Color.White;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 16);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "PLC";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_auxTask
             // 
@@ -698,44 +736,6 @@
             this.btn_home.TabIndex = 326;
             this.btn_home.UseVisualStyleBackColor = false;
             // 
-            // pnl_safetyTask
-            // 
-            this.pnl_safetyTask.Controls.Add(this.pnl_safetyTaskStatus);
-            this.pnl_safetyTask.Controls.Add(this.label13);
-            this.pnl_safetyTask.Location = new System.Drawing.Point(694, 75);
-            this.pnl_safetyTask.Name = "pnl_safetyTask";
-            this.pnl_safetyTask.Size = new System.Drawing.Size(41, 42);
-            this.pnl_safetyTask.TabIndex = 34;
-            // 
-            // pnl_safetyTaskStatus
-            // 
-            this.pnl_safetyTaskStatus.BackColor = System.Drawing.Color.White;
-            this.pnl_safetyTaskStatus.BackgroundColor = System.Drawing.Color.White;
-            this.pnl_safetyTaskStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_safetyTaskStatus.BorderColor = System.Drawing.Color.Black;
-            this.pnl_safetyTaskStatus.BorderRadius = 10;
-            this.pnl_safetyTaskStatus.BorderSize = 0;
-            this.pnl_safetyTaskStatus.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pnl_safetyTaskStatus.ForeColor = System.Drawing.Color.White;
-            this.pnl_safetyTaskStatus.Location = new System.Drawing.Point(10, 4);
-            this.pnl_safetyTaskStatus.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_safetyTaskStatus.Name = "pnl_safetyTaskStatus";
-            this.pnl_safetyTaskStatus.Size = new System.Drawing.Size(20, 20);
-            this.pnl_safetyTaskStatus.TabIndex = 30;
-            this.pnl_safetyTaskStatus.TextColor = System.Drawing.Color.White;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(2, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 16);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "SAFE";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,12 +755,14 @@
             this.Load += new System.EventHandler(this.FormHomePage_Load);
             this.Shown += new System.EventHandler(this.FormHomePage_Shown);
             this.pnl_header.ResumeLayout(false);
+            this.pnl_safetyTask.ResumeLayout(false);
+            this.pnl_safetyTask.PerformLayout();
+            this.pnl_plcTask.ResumeLayout(false);
+            this.pnl_plcTask.PerformLayout();
             this.pnl_appTask.ResumeLayout(false);
             this.pnl_appTask.PerformLayout();
             this.pnl_comRobotTask.ResumeLayout(false);
             this.pnl_comRobotTask.PerformLayout();
-            this.pnl_plcTask.ResumeLayout(false);
-            this.pnl_plcTask.PerformLayout();
             this.pnl_auxTask.ResumeLayout(false);
             this.pnl_auxTask.PerformLayout();
             this.pnl_lowTask.ResumeLayout(false);
@@ -769,8 +771,6 @@
             this.pnl_highTask.PerformLayout();
             this.PnlLogoContainer.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.pnl_safetyTask.ResumeLayout(false);
-            this.pnl_safetyTask.PerformLayout();
             this.ResumeLayout(false);
 
         }
