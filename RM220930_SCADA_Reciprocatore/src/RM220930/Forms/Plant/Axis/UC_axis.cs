@@ -79,14 +79,14 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void RestorButtonColor()
         {
-            btn_axe1.BackColor = SystemColors.ControlDarkDark;
-            btn_axe2.BackColor = SystemColors.ControlDarkDark;
-            btn_axe3.BackColor = SystemColors.ControlDarkDark;
-            btn_axe4.BackColor = SystemColors.ControlDarkDark;
-            btn_axe5.BackColor = SystemColors.ControlDarkDark;
-            btn_axe6.BackColor = SystemColors.ControlDarkDark;
-            btn_axe7.BackColor = SystemColors.ControlDarkDark;
-            btn_axe8.BackColor = SystemColors.ControlDarkDark;
+            btn_axe1.BackColor = Color.Gainsboro;
+            btn_axe2.BackColor = Color.Gainsboro;
+            btn_axe3.BackColor = Color.Gainsboro;
+            btn_axe4.BackColor = Color.Gainsboro;
+            btn_axe5.BackColor = Color.Gainsboro;
+            btn_axe6.BackColor = Color.Gainsboro;
+            btn_axe7.BackColor = Color.Gainsboro;
+            btn_axe8.BackColor = Color.Gainsboro;
         }
 
         /// <summary>
@@ -153,6 +153,7 @@ namespace RM.src.RM220930.Forms.Plant
         {
             // Registrazione delle pagine
             _navigator.RegisterPage("Work Params", typeof(UC_workParams));
+            _navigator.RegisterPage("Axe Position", typeof(UC_axePosition));
         }
 
         #endregion
@@ -283,6 +284,16 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_goToWorkParams(object sender, EventArgs e)
         {
             _navigator.Navigate("Work Params", axeOffset);
+        }
+
+        /// <summary>
+        /// Apre la pagina delle posizione asse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_goToAxePosition(object sender, EventArgs e)
+        {
+            _navigator.Navigate("Axe Position", axeOffset);
         }
 
         #endregion

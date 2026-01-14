@@ -1007,6 +1007,17 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="E:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.NavigateRequested">
+            <summary>
+            Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.OnNavigatedTo(System.Object)">
+            <summary>
+            Gestisce l'utilizzo del parametro passato durante la navigazione
+            </summary>
+            <param name="parameter"></param>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.components">
             <summary> 
             Variabile di progettazione necessaria.
@@ -1192,6 +1203,13 @@
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_goToWorkParams(System.Object,System.EventArgs)">
             <summary>
             Apre la pagina dei parametri di lavoro
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_goToAxePosition(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina delle posizione asse
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -2549,7 +2567,22 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.settings_white1">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.settings32">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.settingsWhite">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.settingWhite">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

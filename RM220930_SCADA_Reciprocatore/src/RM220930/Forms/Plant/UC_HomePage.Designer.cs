@@ -43,10 +43,10 @@
             this.button13 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btn_Z5 = new System.Windows.Forms.Button();
+            this.btn_Z6 = new System.Windows.Forms.Button();
+            this.btn_Z7 = new System.Windows.Forms.Button();
+            this.btn_Z8 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
@@ -245,10 +245,10 @@
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button20);
-            this.panel3.Controls.Add(this.button21);
-            this.panel3.Controls.Add(this.button22);
+            this.panel3.Controls.Add(this.btn_Z5);
+            this.panel3.Controls.Add(this.btn_Z6);
+            this.panel3.Controls.Add(this.btn_Z7);
+            this.panel3.Controls.Add(this.btn_Z8);
             this.panel3.Controls.Add(this.button23);
             this.panel3.Controls.Add(this.button24);
             this.panel3.Controls.Add(this.button25);
@@ -279,57 +279,61 @@
             this.label6.Text = "ASSI";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // btn_Z5
             // 
-            this.button3.BackColor = System.Drawing.Color.Gainsboro;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(217, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 60);
-            this.button3.TabIndex = 350;
-            this.button3.Text = "Z5";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Z5.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_Z5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Z5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_Z5.ForeColor = System.Drawing.Color.Black;
+            this.btn_Z5.Location = new System.Drawing.Point(217, 54);
+            this.btn_Z5.Name = "btn_Z5";
+            this.btn_Z5.Size = new System.Drawing.Size(60, 60);
+            this.btn_Z5.TabIndex = 350;
+            this.btn_Z5.Text = "Z5";
+            this.btn_Z5.UseVisualStyleBackColor = false;
+            this.btn_Z5.Click += new System.EventHandler(this.ClickEvent_goToZ5);
             // 
-            // button20
+            // btn_Z6
             // 
-            this.button20.BackColor = System.Drawing.Color.Gainsboro;
-            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button20.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.button20.ForeColor = System.Drawing.Color.Black;
-            this.button20.Location = new System.Drawing.Point(217, 154);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(60, 60);
-            this.button20.TabIndex = 351;
-            this.button20.Text = "Z6";
-            this.button20.UseVisualStyleBackColor = false;
+            this.btn_Z6.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_Z6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Z6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_Z6.ForeColor = System.Drawing.Color.Black;
+            this.btn_Z6.Location = new System.Drawing.Point(217, 154);
+            this.btn_Z6.Name = "btn_Z6";
+            this.btn_Z6.Size = new System.Drawing.Size(60, 60);
+            this.btn_Z6.TabIndex = 351;
+            this.btn_Z6.Text = "Z6";
+            this.btn_Z6.UseVisualStyleBackColor = false;
+            this.btn_Z6.Click += new System.EventHandler(this.ClickEvent_goToZ6);
             // 
-            // button21
+            // btn_Z7
             // 
-            this.button21.BackColor = System.Drawing.Color.Gainsboro;
-            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.button21.ForeColor = System.Drawing.Color.Black;
-            this.button21.Location = new System.Drawing.Point(217, 254);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(60, 60);
-            this.button21.TabIndex = 352;
-            this.button21.Text = "Z7";
-            this.button21.UseVisualStyleBackColor = false;
+            this.btn_Z7.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_Z7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Z7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_Z7.ForeColor = System.Drawing.Color.Black;
+            this.btn_Z7.Location = new System.Drawing.Point(217, 254);
+            this.btn_Z7.Name = "btn_Z7";
+            this.btn_Z7.Size = new System.Drawing.Size(60, 60);
+            this.btn_Z7.TabIndex = 352;
+            this.btn_Z7.Text = "Z7";
+            this.btn_Z7.UseVisualStyleBackColor = false;
+            this.btn_Z7.Click += new System.EventHandler(this.ClickEvent_goToZ7);
             // 
-            // button22
+            // btn_Z8
             // 
-            this.button22.BackColor = System.Drawing.Color.Gainsboro;
-            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button22.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.button22.ForeColor = System.Drawing.Color.Black;
-            this.button22.Location = new System.Drawing.Point(217, 354);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(60, 60);
-            this.button22.TabIndex = 353;
-            this.button22.Text = "Z8";
-            this.button22.UseVisualStyleBackColor = false;
+            this.btn_Z8.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_Z8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Z8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_Z8.ForeColor = System.Drawing.Color.Black;
+            this.btn_Z8.Location = new System.Drawing.Point(217, 354);
+            this.btn_Z8.Name = "btn_Z8";
+            this.btn_Z8.Size = new System.Drawing.Size(60, 60);
+            this.btn_Z8.TabIndex = 353;
+            this.btn_Z8.Text = "Z8";
+            this.btn_Z8.UseVisualStyleBackColor = false;
+            this.btn_Z8.Click += new System.EventHandler(this.ClickEvent_goToZ8);
             // 
             // button23
             // 
@@ -575,10 +579,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btn_Z5;
+        private System.Windows.Forms.Button btn_Z6;
+        private System.Windows.Forms.Button btn_Z7;
+        private System.Windows.Forms.Button btn_Z8;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button25;

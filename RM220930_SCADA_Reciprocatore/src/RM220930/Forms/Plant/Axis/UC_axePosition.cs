@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RM.src.RM220930.Classes.Navigator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,31 @@ using System.Windows.Forms;
 
 namespace RM.src.RM220930.Forms.Plant.Axis
 {
-    public partial class UC_axePosition : UserControl
+    public partial class UC_axePosition : UserControl, INavigable, INavigationRequester
     {
+        #region Events
+
+        /// <summary>
+        /// Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+        /// </summary>
+        public event EventHandler<NavigateEventArgs> NavigateRequested;
+
+        #endregion
+
         public UC_axePosition()
         {
             InitializeComponent();
         }
+
+
+        /// <summary>
+        /// Gestisce l'utilizzo del parametro passato durante la navigazione
+        /// </summary>
+        /// <param name="parameter"></param>
+        public void OnNavigatedTo(object parameter)
+        {
+          
+        }
+
     }
 }

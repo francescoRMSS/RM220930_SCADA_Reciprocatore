@@ -34,7 +34,6 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
-            System.Windows.Forms.Label lbl_buttonHome;
             System.Windows.Forms.Label label12;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomePage));
             this.pnl_pageContainer = new System.Windows.Forms.Panel();
@@ -79,13 +78,11 @@
             this.bnt_exit = new System.Windows.Forms.Button();
             this.btn_alarms = new System.Windows.Forms.Button();
             this.btn_axis = new System.Windows.Forms.Button();
-            this.btn_home = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
-            lbl_buttonHome = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
             this.pnl_safetyTask.SuspendLayout();
@@ -128,7 +125,7 @@
             label9.BackColor = System.Drawing.Color.Transparent;
             label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(425, 80);
+            label9.Location = new System.Drawing.Point(321, 80);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(60, 22);
             label9.TabIndex = 331;
@@ -140,7 +137,7 @@
             label10.BackColor = System.Drawing.Color.Transparent;
             label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(325, 80);
+            label10.Location = new System.Drawing.Point(221, 80);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(60, 22);
             label10.TabIndex = 329;
@@ -152,24 +149,12 @@
             label11.BackColor = System.Drawing.Color.Transparent;
             label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label11.ForeColor = System.Drawing.SystemColors.Control;
-            label11.Location = new System.Drawing.Point(225, 80);
+            label11.Location = new System.Drawing.Point(121, 80);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(60, 22);
             label11.TabIndex = 327;
             label11.Text = "ASSI";
             label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lbl_buttonHome
-            // 
-            lbl_buttonHome.BackColor = System.Drawing.Color.Transparent;
-            lbl_buttonHome.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbl_buttonHome.ForeColor = System.Drawing.SystemColors.Control;
-            lbl_buttonHome.Location = new System.Drawing.Point(125, 80);
-            lbl_buttonHome.Name = "lbl_buttonHome";
-            lbl_buttonHome.Size = new System.Drawing.Size(60, 22);
-            lbl_buttonHome.TabIndex = 1;
-            lbl_buttonHome.Text = "CATENA";
-            lbl_buttonHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label12
             // 
@@ -646,8 +631,6 @@
             this.panel5.Controls.Add(label10);
             this.panel5.Controls.Add(this.btn_axis);
             this.panel5.Controls.Add(label11);
-            this.panel5.Controls.Add(this.btn_home);
-            this.panel5.Controls.Add(lbl_buttonHome);
             this.panel5.Location = new System.Drawing.Point(0, 663);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1024, 104);
@@ -694,7 +677,7 @@
             this.bnt_exit.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
             this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bnt_exit.Location = new System.Drawing.Point(425, 12);
+            this.bnt_exit.Location = new System.Drawing.Point(321, 12);
             this.bnt_exit.Name = "bnt_exit";
             this.bnt_exit.Size = new System.Drawing.Size(60, 60);
             this.bnt_exit.TabIndex = 332;
@@ -706,7 +689,7 @@
             this.btn_alarms.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
             this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_alarms.Location = new System.Drawing.Point(325, 12);
+            this.btn_alarms.Location = new System.Drawing.Point(221, 12);
             this.btn_alarms.Name = "btn_alarms";
             this.btn_alarms.Size = new System.Drawing.Size(60, 60);
             this.btn_alarms.TabIndex = 330;
@@ -718,23 +701,12 @@
             this.btn_axis.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_axis.BackgroundImage = global::RM.Properties.Resources.axis;
             this.btn_axis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_axis.Location = new System.Drawing.Point(225, 12);
+            this.btn_axis.Location = new System.Drawing.Point(121, 12);
             this.btn_axis.Name = "btn_axis";
             this.btn_axis.Size = new System.Drawing.Size(60, 60);
             this.btn_axis.TabIndex = 328;
             this.btn_axis.UseVisualStyleBackColor = false;
             this.btn_axis.Click += new System.EventHandler(this.ClickEvent_goToAxis);
-            // 
-            // btn_home
-            // 
-            this.btn_home.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_home.BackgroundImage = global::RM.Properties.Resources.chain;
-            this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_home.Location = new System.Drawing.Point(125, 12);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(60, 60);
-            this.btn_home.TabIndex = 326;
-            this.btn_home.UseVisualStyleBackColor = false;
             // 
             // FormHomePage
             // 
@@ -813,7 +785,6 @@
         private System.Windows.Forms.Button bnt_exit;
         private System.Windows.Forms.Button btn_alarms;
         private System.Windows.Forms.Button btn_axis;
-        private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Panel RobotMovPanel;
         private System.Windows.Forms.Panel RobotBlinkPanel;
         private System.Windows.Forms.Button btn_testUDT;

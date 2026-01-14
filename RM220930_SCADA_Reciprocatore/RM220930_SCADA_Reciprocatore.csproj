@@ -299,6 +299,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\settingsWhite.png" />
+    <None Include="Resources\settingWhite.png" />
     <None Include="Resources\lights.png" />
     <None Include="Resources\3d.png" />
     <None Include="Resources\barrier-vertical-right.png" />
