@@ -1,4 +1,6 @@
 ﻿using RM.Properties;
+using RM.src.RM220930.Classes.Navigator;
+using RM.src.RM220930.Classes.PLC;
 using RMLib.PLC;
 using System;
 using System.Collections.Generic;
@@ -12,32 +14,74 @@ using System.Windows.Forms;
 
 namespace RM.src.RM220930.Forms.Plant.Axis
 {
-    public partial class UC_testUDT : UserControl
+    public partial class UC_testUDT : UserControl, INavigable, INavigationRequester
     {
+        #region Events
+
+        /// <summary>
+        /// Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+        /// </summary>
+        public event EventHandler<NavigateEventArgs> NavigateRequested;
+
+        #endregion
+
+        #region Proprietà di UC_axis
+
+        /// <summary>
+        /// Gestisce switch tra le varie userControl degli assi
+        /// </summary>
+        private Navigator _navigator;
+
+        /// <summary>
+        /// Asse selezionato
+        /// </summary>
+        public static int axeOffset = 1;
+
+        #endregion
         bool Cmd_On_Axe = false;
+
+        string varToUpdate = string.Empty;
+
+        PLCTagName plcTagName = new PLCTagName();
 
         public UC_testUDT()
         {
             InitializeComponent();
-            InitVar();
+            //InitVar();
             // Collegamento evento ValueChanged del dizionario al metodo HandleDictionaryChange
             PLCConfig.appVariables.ValueChanged += RefreshVariables;
+        }
+        /// <summary>
+        /// Gestisce l'utilizzo del parametro passato durante la navigazione
+        /// </summary>
+        /// <param name="parameter"></param>
+        public void OnNavigatedTo(object parameter)
+        {
+            // Se il parametro è il numero di asse
+            if (parameter is int offset)
+            {
+                axeOffset = offset;
+            }
+            else // se non c'è imposto 1 di default
+            {
+                axeOffset = 1;
+            }
+
         }
 
         private void InitVar()
         {
-            Cmd_On_Axe = Convert.ToBoolean(PLCConfig.appVariables.getValue
-                (("PLC1_" + "axe" + UC_axis.axeOffset.ToString() + "_" + "Cmd_On_Axe")));
+            Cmd_On_Axe = Convert.ToBoolean(PLCConfig.appVariables.getValue(("PLC1_" + "z" + UC_axis.axeOffset.ToString() + "_" + PLCTagName.Cmd_On_Axe)));
 
             if (Cmd_On_Axe)
             {
-                btn_Cmd_On_Axe1.BackColor = Color.Green;
-                btn_Cmd_On_Axe1.Text = "TRUE";
+                btn_boolValue.BackColor = Color.Green;
+                btn_boolValue.Text = "TRUE";
             }
             else
             {
-                btn_Cmd_On_Axe1.BackColor = Color.Red;
-                btn_Cmd_On_Axe1.Text = "FALSE";
+                btn_boolValue.BackColor = Color.Red;
+                btn_boolValue.Text = "FALSE";
             }
         }
 
@@ -48,31 +92,38 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         /// <param name="e"></param>
         public void RefreshVariables(object sender, DictionaryChangedEventArgs e)
         {
-            if (InvokeRequired)
+            if (varToUpdate != string.Empty)
             {
-                Invoke(new Action<object, DictionaryChangedEventArgs>(RefreshVariables), sender, e);
-                return;
-            }
-
-            string key = e.Key;
-            string expectedKey = $"PLC1_axe{UC_axis.axeOffset}_Cmd_On_Axe";
-
-            if (key == expectedKey)
-            {
-                if (e.NewValue.ToString() == "True")
+                if (InvokeRequired)
                 {
-                    btn_Cmd_On_Axe1.BackColor = Color.Green;
-                    btn_Cmd_On_Axe1.Text = "TRUE";
-                    Cmd_On_Axe = true;
+                    Invoke(new Action<object, DictionaryChangedEventArgs>(RefreshVariables), sender, e);
+                    return;
                 }
-                else
+               
+                var field = typeof(PLCTagName).GetField(varToUpdate);
+
+                string valore = field.GetValue(plcTagName)?.ToString();
+
+                string expectedKey = $"PLC1_z{UC_axis.axeOffset}_{valore}";
+
+                string key = e.Key;
+
+                if (key == expectedKey)
                 {
-                    btn_Cmd_On_Axe1.BackColor = Color.Red;
-                    btn_Cmd_On_Axe1.Text = "FALSE";
-                    Cmd_On_Axe = false;
+                    if (e.NewValue.ToString() == "True")
+                    {
+                        btn_boolValue.BackColor = Color.Green;
+                        btn_boolValue.Text = "TRUE";
+                        Cmd_On_Axe = true;
+                    }
+                    else
+                    {
+                        btn_boolValue.BackColor = Color.Red;
+                        btn_boolValue.Text = "FALSE";
+                        Cmd_On_Axe = false;
+                    }
                 }
             }
-
 
 
         }
@@ -80,15 +131,60 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         private void ClickEvent_modifyCmd_On_axe(object sender, EventArgs e)
         {
-            if (!Cmd_On_Axe)
-                RefresherTask.AddUpdate("PLC1_" + "axe" + UC_axis.axeOffset.ToString() + "_" + "Cmd_On_Axe", true, "BOOL");
+            var field = typeof(PLCTagName).GetField(varToUpdate);
+
+            string valore = field.GetValue(plcTagName)?.ToString();
+
+            bool boolValue = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+
+            if (boolValue)
+                RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", false, "BOOL");
             else
-                RefresherTask.AddUpdate("PLC1_" + "axe" + UC_axis.axeOffset.ToString() + "_" + "Cmd_On_Axe", false, "BOOL"); 
+                RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", true, "BOOL");
+
         }
 
         private void btn_Cmd_En_Axe_Click(object sender, EventArgs e)
         {
             RefresherTask.AddUpdate("PLC1_" + "axe" + UC_axis.axeOffset.ToString() + "_" + "Cmd_En_Axe", true, "BOOL");
+        }
+
+        private void btn_Cmd_On_Axe8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_boolList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            varToUpdate = cb_boolList.SelectedItem.ToString();
+            lbl_selectedBool.Text = cb_boolList.SelectedItem.ToString();
+
+            var field = typeof(PLCTagName).GetField(varToUpdate);
+
+            string valore = field.GetValue(plcTagName)?.ToString();
+
+            bool boolValue = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+
+            if (boolValue)
+            {
+                btn_boolValue.BackColor = Color.Green;
+                btn_boolValue.Text = "TRUE";
+                Cmd_On_Axe = true;
+            }
+            else
+            {
+                btn_boolValue.BackColor = Color.Red;
+                btn_boolValue.Text = "FALSE";
+                Cmd_On_Axe = false;
+            }
+
+            
+        }
+
+        private void cb_axis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_selectedAxe.Text = cb_axis.SelectedItem.ToString();
+            UC_axis.axeOffset = Convert.ToInt16(cb_axis.SelectedItem.ToString());
         }
     }
 }

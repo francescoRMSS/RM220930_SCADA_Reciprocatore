@@ -130,14 +130,11 @@
   <data name="off_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\off-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="remove_filter_filled1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove_filter_filled1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="delete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="on_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\on-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="france_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\france_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,9 +268,6 @@
   <data name="inMov" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inMov.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="france_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\france_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="settings32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -298,11 +292,14 @@
   <data name="UC_applications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UC_applications.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="A_letter_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\A-letter-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="on_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\on-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,11 +322,14 @@
   <data name="laser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\laser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="info_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tools32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tools32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="airbrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\airbrush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="remove_filter_filled1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove_filter_filled1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="monitoring" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitoring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -351,6 +351,9 @@
   </data>
   <data name="skipBlue-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skipBlue-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barrier-vertical-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barrier-vertical-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redCircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -439,8 +442,8 @@
   <data name="clean2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clean2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="airbrush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airbrush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cabin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cabin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,11 +466,14 @@
   <data name="Cycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greenCircle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greenCircle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -502,7 +508,7 @@
   <data name="germany_flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\germany_flag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barrier-vertical-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barrier-vertical-right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lights" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

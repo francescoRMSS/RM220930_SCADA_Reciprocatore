@@ -126,6 +126,580 @@
             <param name="device"></param>
             <param name="state"></param>
         </member>
+        <member name="T:RM.src.RM220930.Classes.SCADAManager">
+            <summary>
+            Classe che contiene configurazione dello SCADA e i relativi task
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.taskManager">
+            <summary>
+            Gestisce i task in background.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.ComPLCDAO">
+            <summary>
+            Oggetto per l'accesso ai dati del robot nel database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.DatabaseConnection">
+            <summary>
+            Configurazione della connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.ConnectionString">
+            <summary>
+            Stringa di connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskHighPriorityName">
+            <summary>
+            Nome del task high priority
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskLowPriorityName">
+            <summary>
+            Nome del task low priority
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskAuxiliaryWorkerName">
+            <summary>
+            Nome del task auxiliary worker
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskPlcComHandlerName">
+            <summary>
+            Nome del task plc com handler
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskCheckRobotConneciton">
+            <summary>
+            Nome del task check robot com
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskApplicationManager">
+            <summary>
+            Nome del task application manager
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskSafetyManager">
+            <summary>
+            Nome del task safety manager
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.lowPriorityRefreshPeriod">
+            <summary>
+            Periodo di refresh per il task a bassa priorità.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.prevIsPlcConnected">
+            <summary>
+            Rappresenta lo stato precedente della connessione al PLC.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.allarmiSegnalati">
+            <summary>
+            Dizionario di allarmi per evitare segnalazioni duplicate.
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
+            <summary>
+            Evento invocato quando viene generato un allarme.
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeResettato">
+            <summary>
+            Evento invocato quando gli allarmi vengono resettati.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.formAlarmPage">
+            <summary>
+            Riferimento alla pagina degli allarmi.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.#cctor">
+            <summary>
+            Costruttore
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.InitSCADA">
+            <summary>
+            Metodo che avvia task SCADA
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckLowPriority(System.Threading.CancellationToken)">
+            <summary>
+            Thread a priorità bassa che gestisce allarmi robot e PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.AuxiliaryWorker(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckHighPriority(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.PlcComHandler(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <param name="token"></param>
+             <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Classes.SCADAManager.CheckRobotConnection(System.Threading.CancellationToken)" -->
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.ApplicationTaskManager(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.SafetyTaskManager(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckPLCConnection">
+            <summary>
+            Check su connessione PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.IsAlarmAlreadySignaled(System.String)">
+            <summary>
+            Avvisa se un allarme è già stato segnalato
+            </summary>
+            <param name="alarmKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.MarkAlarmAsSignaled(System.String)">
+            <summary>
+            Imposta l'allarme come segnalato
+            </summary>
+            <param name="alarmKey"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creazione di un allarme
+            </summary>
+            <param name="id">ID allarme</param>
+            <param name="description">Descrizione allarme</param>
+            <param name="timestamp">Timestamp allarme</param>
+            <param name="device">Device da cui deriva l'allarme</param>
+            <param name="state">ON-OFF</param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
+            <summary>
+            Metodo che aggiunge alla lista degli allarmi l'allarme
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeGenerato">
+            <summary>
+            Generazione eventi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeGenerato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarme ricevuto
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
+            <summary>
+            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeResettato">
+            <summary>
+            Trigget per avvisare che gli allarmi sono stati resettati
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeResettato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarmi resettati
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:RM.src.RM220930.Classes.PLC.PLCTagName">
+            <summary>
+            Contiene i tag degli indirizzi PLC
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.LifeBit_out">
+            <summary>
+            Clock da scrivere ogni secondo (il clock su PLC gira ogni 2s)
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.LifeBit_in">
+            <summary>
+            Clock da leggere ogni secondo (su clock su PLC gira ogni 2s)
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_On_Axe">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_En_Axe">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Go_home">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_AutoFrom_Pc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Auto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Rif_Chain">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_move">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Start_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Jog_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Jog_neg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Abs_Mode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Enable_Fifo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Enable_Grouppo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Stop_Axe">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Start_Cam_Table">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Start_Cam">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Stop_Cam">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_No_Piece">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Error">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Axe_Power_On">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Ls_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Ls_Neg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Bit_Min">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Home_Ok">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_In_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Positioning_in_Prog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Jog_in_Prog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Timeout_Home">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Home_In_Prog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Time_Home">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_From">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_For">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Axe_Mod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Distance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Advance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Delay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Start_Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_End_Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Bar_Group">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Minimim">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Maximum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Acc">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Dec">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_K_Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_K_Speed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Min_Speed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Max_Speed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Home_Speed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Min_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Max_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Preset_Home_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Offset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_No_Piece_Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Up_Correction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Down_Correction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Pos_Range">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Pos_Window">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Calculate_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Stop_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Up_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Down_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Stop_Wash_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Offset_From_Piece">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Distance_From_Center">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Wash_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Jog_Speed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Target_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Speed_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.offsetFromFloor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Act_Pos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Read_Act_Speed">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:RM.src.RM220930.TaskManager">
             <summary>
             Definisce una struttura di supporto che gestisce i task, li mette in lista, li fa partire, fermare e
@@ -359,1369 +933,6 @@
             True: aggiungi eventi mouse move a tutti gli elementi della form, False: sw normale
             </summary>
         </member>
-        <member name="T:RM.src.RM220930.Classes.PLC.ComPLC">
-            <summary>
-            Classe che gestisce task di comunicazione con PLC
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "E:RM.src.RM220930.Classes.PLC.ComPLC.AllarmeResettato" -->
-        <member name="E:RM.src.RM220930.Classes.PLC.ComPLC.AllarmeGenerato">
-            <summary>
-            Evento invocato quando viene generato un allarme.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.allarmiSegnalati">
-            <summary>
-            Dizionario di allarmi per evitare segnalazioni duplicate.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.lowPriorityRefreshPeriod">
-            <summary>
-            Delay di refresh del task
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.log">
-            <summary>
-            Logger
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.prevIsPlcConnected">
-            <summary>
-            Rappresenta lo stato precedente della connessione al PLC.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.ComPLCDAO">
-            <summary>
-            Oggetto per l'accesso ai dati del robot nel database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.DatabaseConnection">
-            <summary>
-            Configurazione della connessione al database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.ComPLC.ConnectionString">
-            <summary>
-            Stringa di connessione al database.
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.CheckLowPriority(System.Threading.CancellationToken)">
-            <summary>
-            Thread a priorità bassa che gestisce comunicazione PLC
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
-            <summary>
-            Creazione di un allarme
-            </summary>
-            <param name="id">ID allarme</param>
-            <param name="description">Descrizione allarme</param>
-            <param name="timestamp">Timestamp allarme</param>
-            <param name="device">Device da cui deriva l'allarme</param>
-            <param name="state">ON-OFF</param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.GetPLCErrorCode(System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.String},System.DateTime,System.Int64,System.DateTime,System.String)">
-            <summary>
-            Check su errori comunicati da PLC
-            </summary>
-            <param name="alarmValues"></param>
-            <param name="alarmDescriptions"></param>
-            <param name="now"></param>
-            <param name="unixTimestamp"></param>
-            <param name="dateTime"></param>
-            <param name="formattedDate"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.CheckPLCConnection">
-            <summary>
-            Check su connessione PLC
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.TriggerAllarmeResettato">
-            <summary>
-            Trigger attivato quando vengono cancellati gli allarmi
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.OnAllarmeResettato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarmi resettati
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
-            <summary>
-            Metodo che aggiunge alla lista degli allarmi l'allarme
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.TriggerAllarmeGenerato">
-            <summary>
-            Generazione eventi
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.OnAllarmeGenerato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarme ricevuto
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.IsAlarmAlreadySignaled(System.String)">
-            <summary>
-            Avvisa se un allarme è già stato segnalato
-            </summary>
-            <param name="alarmKey"></param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.PLC.ComPLC.MarkAlarmAsSignaled(System.String)">
-            <summary>
-            Imposta l'allarme come segnalato
-            </summary>
-            <param name="alarmKey"></param>
-        </member>
-        <member name="T:RM.src.RM220930.Classes.PLC.PLCTagName">
-            <summary>
-            Contiene i tag degli indirizzi PLC
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.LifeBit_out">
-            <summary>
-            Clock da scrivere ogni secondo (il clock su PLC gira ogni 2s)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hardware_Ready_To_Start">
-            <summary>
-            Se il valore è 1, indica che la lista di lavoro del robot contiene almeno un programma
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Automatic_Start">
-            <summary>
-            A 1 quando quando il robot lavora in modalità automatico
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Chain_Enable">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_2_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Program_In_Memory">
-            <summary>
-            A 1 se è presente il programma nella memoria del Robot e quindi può essere inviato
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Robot_Pos_Wash_1">
-            <summary>
-            Posizione 1 del Robot per eseguire lavaggio
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Robot_Washing_1">
-            <summary>
-            A 1 durante l'esecuzione del lavaggio nella posizione 1
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Robot_Pos_Wash_2">
-            <summary>
-            Posizione 2 del Robot per eseguire lavaggio
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Robot_Washing_2">
-            <summary>
-            A 1 durante l'esecuzione del lavaggio nella posizione 2
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_3_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_4_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_5_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_6_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.System_error">
-            <summary>
-            A 1 quando il Robot è in errore ma ha potenza
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Emergency">
-            <summary>
-            A 1 quando il robot non ha potenza
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.SafePos">
-            <summary>
-            A 1 quando il Robot si trova nella safe area 
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Auto_Cycle_End">
-            <summary>
-            A 1 quando il Robot finisce il ciclo automatico
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Start_Gun">
-            <summary>
-            1 = comando a pistola
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Home_Pos">
-            <summary>
-            A 1 quando il Robot si trova in home position
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_8_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_9_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_10_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Kv">
-            <summary>
-            kV (range 0 - 1000)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Bar_Per_100_POLVERE">
-            <summary>
-            Polvere (range 0 - 500)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Bar_Per_100_DOSAGGIO">
-            <summary>
-            Dosaggio (range 0 - 500)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Bar_Per_100_ARIA">
-            <summary>
-            Aria (range 0 - 500)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.UA">
-            <summary>
-            Microampere (range 0 - 1000)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_11_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_12_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_13_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_14_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.spare_15_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Start_Lavaggio">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_PuliziaBox">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Unit_Of_Measure">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_Reset_Alarm">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Gun_On_Off">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Start_Autotune">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Mode_Tribo_Corona">
-            <summary>
-            0...1
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_Topfreinigung">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_SysReinigeng">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_Pulver_Low_Pression">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_Dosage_Low_Pression">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_Low_Pression">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_Pulver_High_Pression">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_Dosage_High_Pression">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Air_High_Pression">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Lim_Pulver_Air">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Lim_Dosage_Air">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Lim_Air">
-            <summary>
-            0...500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.HMI_Kv">
-            <summary>
-            kV (range 0 - 1000)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.HMI_Bar_Per_100_POLVERE">
-            <summary>
-            Polvere (range 0 - 500)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.HMI_Bar_Per_100_DOSAGGIO">
-            <summary>
-            Dosaggio (range 0 - 500
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.HMI_Bar_Per_100_ARIA">
-            <summary>
-            Aria (range 0 - 500)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.HMI_UA">
-            <summary>
-            Microampere (range 0 - 1000)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.AutotuneFrequency">
-            <summary>
-            360....420
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Limit_UA_Autotune">
-            <summary>
-            10..50
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_9_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_10_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_11_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_12_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_13_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_14_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_15_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_16_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_17_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_18_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_19_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_20_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_21_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_22_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_23_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_24_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_25_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_26_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_27_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_28_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_29_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_30_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_31_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_32_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_33_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_34_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_35_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_36_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_37_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_38_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_39_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_40_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_41_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_42_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_43_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_44_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_45_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_46_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_47_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_48_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_49_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_50_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_0_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_1_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_2_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_3_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_4_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_5_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_6_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_7_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_8_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_9_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_10_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_11_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_12_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_13_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_14_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_15_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_16_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_17_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_18_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_19_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_20_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_21_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_22_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_23_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_24_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_25_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_26_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_27_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_28_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_29_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_30_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_31_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_32_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_33_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_34_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_35_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_36_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_37_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_38_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_39_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_40_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_41_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_42_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_43_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_44_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_45_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_46_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_47_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_48_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Array_Spare_49_to_write">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.x_actual_pos">
-            <summary>
-            x axis actual position [mm]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.y_actual_pos">
-            <summary>
-            y axis actual position [mm]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.z_actual_pos">
-            <summary>
-            z axis actual position [mm]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.rx_actual_pos">
-            <summary>
-            rx axis actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.ry_actual_pos">
-            <summary>
-            ry axis actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.rz_actual_pos">
-            <summary>
-            rz axis actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.j1_actual_pos">
-            <summary>
-            j1 actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.j2_actual_pos">
-            <summary>
-            j2 actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.j3_actual_pos">
-            <summary>
-            j3 actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.j4_actual_pos">
-            <summary>
-            j4 actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.j5_actual_pos">
-            <summary>
-            j5 actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.j6_actual_pos">
-            <summary>
-            j6 actual position [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.LifeBit_in">
-            <summary>
-            Clock da leggere ogni secondo (su clock su PLC gira ogni 2s)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Start_Auto_Robot">
-            <summary>
-            A 1 durante tutta la durante del ciclo
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Start_Wash_1">
-            <summary>
-            A 1 quando parte il lavaggio in posizione 1 (1s ON)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Start_Wash_2">
-            <summary>
-            A 1 quando parte il lavaggio in posizione 2 (1s ON)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Jog_Ref_type">
-            <summary>
-            0-joint, 2-base, 4-tool, 8-workpiece
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Jog_speed_set">
-            <summary>
-            Jog speed set [%]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Axis_selection">
-            <summary>
-            1=x / 2=y / 3=z / 4=rx / 5=ry / 6=rz
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.x_threshold">
-            <summary>
-            x axis threshold [mm]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.y_threshold">
-            <summary>
-            y axis threshold [mm]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.z_threshold">
-            <summary>
-            z axis threshold [mm]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.rx_threshold">
-            <summary>
-            rx axis threshold [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.ry_threshold">
-            <summary>
-            ry axis threshold [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.rz_threshold">
-            <summary>
-            rz axis threshold [°]
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Chain_Pos">
-            <summary>
-            Spostamento della catena in mm
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Enable">
-            <summary>
-            Enable robot from PLC
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Operating_Mode">
-            <summary>
-            0=Off, 1=auto, 2=man
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogX_pos">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogX_neg">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogY_pos">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogY_neg">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogZ_pos">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogZ_neg">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogRX_pos">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogRX_neg">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogRY_pos">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogRY_neg">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogRZ_pos">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.JogRZ_neg">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Vis_Lavaggio_In_Corso">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Vis_PuliziaBox">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alarm_Presence">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Buzzer_On">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Manual_Mode">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Automatic_Mode">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_SPRAY">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_Autotune_Start">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_Autotune_Err">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_Autotune_Ok">
-            <summary>
-            0...1(bool)
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_1">
-            <summary>
-            0...1(bool)ALARM 1 - Emergency not OK
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_2">
-            <summary>
-            0...1(bool)ALARM 2 - Guards not OK
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_3">
-            <summary>
-            0...1(bool)ALARM 3 - 24Vdc gun thermal protection
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_4">
-            <summary>
-            0...1(bool)ALARM 4 - Error Feedback KM Emergency
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_5">
-            <summary>
-            0...1(bool)ALARM 5 - Error Feedback KM Gards
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_6">
-            <summary>
-            0...1(bool)ALARM 6 - Error F-Input modul
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_7">
-            <summary>
-            0...1(bool)ALARM 7 - Error F-Output modul
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_8">
-            <summary>
-            0...1(bool)ALARM 8 - Com Gun
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_9">
-            <summary>
-            0...1(bool)ALARM 9 - Emergency Mobile Panel not ok
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_10">
-            <summary>
-            0...1(bool)ALARM 10 -
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_11">
-            <summary>
-            0...1(bool)ALARM 11 -
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_12">
-            <summary>
-            0...1(bool)ALARM 12 -
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_13">
-            <summary>
-            0...1(bool)ALARM 13 -
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_14">
-            <summary>
-            0...1(bool)ALARM 14 -
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alr_15">
-            <summary>
-            0...1(bool)ALARM 15 -
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_ACT_POLVERE">
-            <summary>
-            bar 100==1bar---500=5 BAR
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_ACT_DOSAGGIO">
-            <summary>
-            bar 100==1bar---500=5 BAR
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_RET_UA">
-            <summary>
-            UA 0-1000---25UA==250
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_RET_UA_TRIBO">
-            <summary>
-            UA 0-1000---25UA==250
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_RET_KV">
-            <summary>
-            kv 0-1000---25KV==250
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.GUN_1_RET_AUTOTUNING_FREQUENCY">
-            <summary>
-            360...420
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.MobilePanel_CommError">
-            <summary>
-            Errore di comunicazione con la pulsantiera
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_25_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_26_to_read">
-            <summary>
-            Libero 
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_dragMode_ON">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Cmd_teachingRec_ON">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_29_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_30_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_31_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_32_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_33_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_34_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_35_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_36_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_37_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_38_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_39_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_40_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_41_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_42_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_43_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_44_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_45_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_46_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_47_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_48_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_49_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Free_50_to_read">
-            <summary>
-            Libero
-            </summary>
-        </member>
         <member name="T:RM.src.RM220930.FormLoading">
             <summary>
             Definisce la struttura ed il comportamento della Form di loading / Splash screen
@@ -1812,6 +1023,27 @@
             Metodo necessario per il supporto della finestra di progettazione. Non modificare 
             il contenuto del metodo con l'editor di codice.
             </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.NavigateRequested">
+            <summary>
+            Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT._navigator">
+            <summary>
+            Gestisce switch tra le varie userControl degli assi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.axeOffset">
+            <summary>
+            Asse selezionato
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.OnNavigatedTo(System.Object)">
+            <summary>
+            Gestisce l'utilizzo del parametro passato durante la navigazione
+            </summary>
+            <param name="parameter"></param>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.RefreshVariables(System.Object,RMLib.PLC.DictionaryChangedEventArgs)">
             <summary>
@@ -2554,16 +1786,6 @@
             Definisce una variabile per settare ed ottenere l'allarme del PLC
             </summary>
         </member>
-        <member name="P:RM.src.RM220930.FormHomePage.RobotSafeZone">
-            <summary>
-            Definisce una variabile per settare ed ottenere safeZone
-            </summary>
-        </member>
-        <member name="E:RM.src.RM220930.FormHomePage.AllarmeResettato">
-            <summary>
-            Evento invocato quando gli allarmi vengono resettati.
-            </summary>
-        </member>
         <member name="F:RM.src.RM220930.FormHomePage.log">
             <summary>
             Logger
@@ -2594,38 +1816,15 @@
             Gestisce switch tra le varie userControl
             </summary>
         </member>
-        <member name="F:RM.src.RM220930.FormHomePage.formAlarmPage">
-            <summary>
-            Riferimento alla pagina degli allarmi.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.FormHomePage.taskManager">
-            <summary>
-            Oggetto taskManager
-            </summary>
-        </member>
         <member name="M:RM.src.RM220930.FormHomePage.#ctor">
             <summary>
             Costruisce la form di homepage
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.FormHomePage.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
+        <member name="M:RM.src.RM220930.FormHomePage.NavigatorSetup">
             <summary>
-            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+            Istanzia l'oggetto navigatore e registra le pagine che utililzzerà
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.TriggerAllarmeResettato">
-            <summary>
-            Trigget per avvisare che gli allarmi sono stati resettati
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.OnAllarmeResettato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarmi resettati
-            </summary>
-            <param name="e"></param>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.EnterFullScreenMode">
             <summary>
@@ -2642,25 +1841,6 @@
         <member name="M:RM.src.RM220930.FormHomePage.OnAllarmeResettato(System.Object,System.EventArgs)">
             <summary>
             Metodo che mette sfondo pannello allarme in grigio
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.InitParameters">
-            <summary>
-            Inizializzazione parametri
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.UpdateUI(System.Object)">
-            <summary>
-            Aggiornamento della UI
-            </summary>
-            <param name="ausiliariConnected">Stato degli ausiliari (connected/not connected)</param>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.RefreshVariables(System.Object,RMLib.PLC.DictionaryChangedEventArgs)">
-            <summary>
-            Aggiornamento della variabili ad evento da PLC
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -2764,6 +1944,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_testUDT(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina di test UDT
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:RM.src.RM220930.FormHomePage.components">
             <summary>
             Variabile di progettazione necessaria.
@@ -2798,6 +1985,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources._20250317_UC_homePage">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources._3d">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -3128,6 +2320,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.letter_m">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.lights">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

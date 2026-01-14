@@ -163,6 +163,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\RM220930\Classes\DAO\SQLite\DAOSqlite.cs" />
+    <Compile Include="src\RM220930\Classes\SCADAManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskType.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskModel.cs" />
@@ -171,7 +172,6 @@
     <Compile Include="src\RM220930\Classes\Navigator\INavigationRequester.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\NavigateEventArgs.cs" />
     <Compile Include="src\RM220930\Classes\Navigator\Navigator.cs" />
-    <Compile Include="src\RM220930\Classes\PLC\ComPLC.cs" />
     <Compile Include="src\RM220930\Classes\PLC\PLCTagName.cs" />
     <Compile Include="src\RM220930\Classes\Program.cs" />
     <Compile Include="src\RM220930\Forms\FormLoading.cs">
@@ -299,6 +299,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\lights.png" />
+    <None Include="Resources\3d.png" />
     <None Include="Resources\barrier-vertical-right.png" />
     <None Include="Resources\barrier-vertical-left.png" />
     <None Include="Resources\axe_4th_gun.png" />

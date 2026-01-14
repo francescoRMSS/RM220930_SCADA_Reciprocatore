@@ -17,9 +17,8 @@ using RMLib.Security;
 using System.Collections.Generic;
 using RM.src.RM220930.Forms.ScreenSaver;
 using RM.src.RM220930.Forms.Plant;
-using RM.src.RM220930.Classes.PLC;
-using System.Linq;
 using RM.src.RM220930.Forms.Plant.Axis;
+using RM.src.RM220930.Classes;
 
 namespace RM.src.RM220930
 {
@@ -32,6 +31,7 @@ namespace RM.src.RM220930
     public partial class FormHomePage : Form
     {
         #region Variabili d'istanza
+
         static FormHomePage _obj;
 
         /// <summary>
@@ -73,22 +73,9 @@ namespace RM.src.RM220930
             set { Pnl_PLC_alarm = value; }
         }
 
-        /// <summary>
-        /// Definisce una variabile per settare ed ottenere safeZone
-        /// </summary>
-        public Panel RobotSafeZone
-        {
-            get { return pnl_safeZone; }
-            set { pnl_safeZone = value; }
-        }
         #endregion
 
         #region Proprietà di FormHomePage
-
-        /// <summary>
-        /// Evento invocato quando gli allarmi vengono resettati.
-        /// </summary>
-        public static event EventHandler AllarmeResettato;
 
         /// <summary>
         /// Logger
@@ -124,16 +111,6 @@ namespace RM.src.RM220930
         /// </summary>
         public static Navigator _navigator;
 
-        /// <summary>
-        /// Riferimento alla pagina degli allarmi.
-        /// </summary>
-        public static FormAlarmPage formAlarmPage;
-
-        /// <summary>
-        /// Oggetto taskManager
-        /// </summary>
-        TaskManager taskManager;
-
         #endregion
 
         /// <summary>
@@ -142,35 +119,8 @@ namespace RM.src.RM220930
         public FormHomePage()
         {
             InitializeComponent();
-            
-            taskManager = new TaskManager(); // Istanzio TaskManager
-            taskManager.StartTaskChecker();
 
-            taskManager.OneTaskChangedStatus += ChangeTaskStatus;
-
-            // Aggiungo task checkLowPriority alla lista dei task
-            taskManager.AddTask(nameof(ComPLC.CheckLowPriority), ComPLC.CheckLowPriority, TaskType.LongRunning, true);
-
-            // Avvio task checkLowPriority
-            taskManager.StartTask(nameof(ComPLC.CheckLowPriority));
-
-            // Istanzio oggetto navigatore
-            _navigator = new Navigator(pnl_pageContainer);
-
-            // Registrazione della pagine dell'applicazione
-            RegisterPages();
-
-            formAlarmPage = new FormAlarmPage(); // Istanzio form di allarmi
-
-            // Collego evento di cancellazione allarmi al metodo RMLib_AlarmsCleared
-            formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
-
-            // 3. Crea l'istanza del BlinkManager
-            blinkMgr = new BlinkManager(true, Pnl_PLC_alarm, Resources.plc_connection_ok, Resources.connection_error );
-
-            blinkMgr.StartBlinking(); // Avvio servizio di blink
-
-            // EnterFullScreenMode(); // Da attivare solo in produzione su pc touch
+            //EnterFullScreenMode();
             CheckForIllegalCrossThreadCalls = false;
 
             // Avvio timer per la data
@@ -180,64 +130,34 @@ namespace RM.src.RM220930
             Translate();
             InitFont();
 
+            NavigatorSetup();
+
+            // 3. Crea l'istanza del BlinkManager
+            blinkMgr = new BlinkManager(true, Pnl_PLC_alarm, Resources.plc_connection_ok, Resources.connection_error );
+
+            blinkMgr.StartBlinking(); // Avvio servizio di blink
+
             // Iscrizione al metodo OnAllarmeGenerato quando generato evento AllarmeGenerato
-            ComPLC.AllarmeGenerato += OnAllarmeGenerato;
+            SCADAManager.AllarmeGenerato += OnAllarmeGenerato;
 
             // Iscrizione al metodo OnAllarmeResettato quando generato evento AllarmeResettato
-            AllarmeResettato += OnAllarmeResettato;
+            SCADAManager.AllarmeResettato += OnAllarmeResettato;
 
-            ScreenSaverManager.AutoAddClickEvents(this);
-
-            
+            ScreenSaverManager.AutoAddClickEvents(this); 
         }
 
         #region Metodi di FormHomePage
 
         /// <summary>
-        /// Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+        /// Istanzia l'oggetto navigatore e registra le pagine che utililzzerà
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private static void RMLib_AlarmsCleared(object sender, EventArgs e)
+        private void NavigatorSetup()
         {
-            var criteria = new List<(string device, string description)>
-            {
-                ("", "PLC disconnesso. Il ciclo è stato terminato.")
-            };
+            // Istanzio oggetto navigatore
+            _navigator = new Navigator(pnl_pageContainer);
 
-            bool isBlocking = formAlarmPage.IsBlockingAlarmPresent(criteria);
-
-            if (isBlocking)
-            {
-                // Segnalo che non ci sono più allarmi bloccanti
-                AlarmManager.blockingAlarm = false;
-            }
-
-            TriggerAllarmeResettato();
-
-            // Reset degli allarmi segnalati
-            foreach (var key in ComPLC.allarmiSegnalati.Keys.ToList())
-            {
-                ComPLC.allarmiSegnalati[key] = false;
-            }
-
-        }
-
-        /// <summary>
-        /// Trigget per avvisare che gli allarmi sono stati resettati
-        /// </summary>
-        public static void TriggerAllarmeResettato()
-        {
-            OnAllarmeResettato(EventArgs.Empty);
-        }
-
-        /// <summary>
-        /// Generazione evento da allarmi resettati
-        /// </summary>
-        /// <param name="e"></param>
-        protected static void OnAllarmeResettato(EventArgs e)
-        {
-            AllarmeResettato?.Invoke(null, e);
+            // Registrazione della pagine dell'applicazione
+            RegisterPages();
         }
 
         /// <summary>
@@ -273,73 +193,6 @@ namespace RM.src.RM220930
         }
 
         /// <summary>
-        /// Inizializzazione parametri
-        /// </summary>
-        /// <returns></returns>
-        private async Task InitParameters()
-        {
-            object ausiliariConnected;
-
-            lock (PLCConfig.appVariables)
-            {
-                ausiliariConnected = PLCConfig.appVariables.getValue("PLC1_" + "emergencyOK");
-            }
-
-            // Aggiorna la UI nel thread della UI
-            if (InvokeRequired)
-            {
-                Invoke(new Action(() =>
-                {
-                    UpdateUI(ausiliariConnected);
-                }));
-            }
-            else
-            {
-                UpdateUI(ausiliariConnected);
-            }
-        }
-
-        /// <summary>
-        /// Aggiornamento della UI
-        /// </summary>
-        /// <param name="ausiliariConnected">Stato degli ausiliari (connected/not connected)</param>
-        private void UpdateUI(object ausiliariConnected)
-        {
-            if (ausiliariConnected.ToString() == "False")
-                emergencyOK = false;
-            else
-                emergencyOK = true;
-        }
-
-        /// <summary>
-        /// Aggiornamento della variabili ad evento da PLC
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void RefreshVariables(object sender, DictionaryChangedEventArgs e)
-        {
-            if (InvokeRequired)
-            {
-                Invoke(new Action<object, DictionaryChangedEventArgs>(RefreshVariables), sender, e);
-                return;
-            }
-
-            switch (e.Key)
-            {
-                case "PLC1_" + "emergencyOK":
-                    if (e.NewValue.ToString() == "True")
-                    {
-                        emergencyOK = true;
-                    }
-                    else
-                    {
-                        emergencyOK = false;
-                    }
-                    break;
-            }
-        }
-
-        /// <summary>
         /// (TODO) Traduzione della pagina 
         /// </summary>
         private void Translate()
@@ -360,24 +213,29 @@ namespace RM.src.RM220930
         /// </summary>
         private readonly HashSet<string> allowedNames = new HashSet<string>
         {
-            "CheckHighPriority",
+           "CheckHighPriority",
             "CheckLowPriority",
             "AuxiliaryWorker",
-            "GetTrackerPose",
             "CheckRobotConnection",
-            "ApplicationTaskManager"
+            "ApplicationTaskManager",
+            "PlcComHandler",
+            "SafetyTaskManager"
         };
 
         private void ChangeTaskStatus(object sender, EventArgs e)
         {
-            pnl_highTask.Visible = false;
-            pnl_lowTask.Visible = false;
-            pnl_auxTask.Visible = false;
-            pnl_vrTask.Visible = false;
-            pnl_comRobotTask.Visible = false;
-            pnl_appTask.Visible = false;
+            Invoke((MethodInvoker)delegate
+            {
+                pnl_highTask.Visible = false;
+                pnl_lowTask.Visible = false;
+                pnl_auxTask.Visible = false;
+                pnl_comRobotTask.Visible = false;
+                pnl_appTask.Visible = false;
+                pnl_safetyTask.Visible = false;
+                pnl_plcTaskStatus.Visible = false;
+            });
 
-            List<TaskModel> taskStructs = taskManager.GetTaskList();
+            List<TaskModel> taskStructs = SCADAManager.taskManager.GetTaskList();
 
             foreach (TaskModel taskStruct in taskStructs)
             {
@@ -412,35 +270,41 @@ namespace RM.src.RM220930
                             break;
                     }
                 }
-
-                //Impostazioni visibilità
-                switch (taskStruct.Name)
+                Invoke((MethodInvoker)delegate
                 {
-                    case "CheckHighPriority":
-                        pnl_highTask.Visible = taskCreated;
-                        pnl_highTaskStatus.BackColor = fill_color;
-                        break;
-                    case "CheckLowPriority":
-                        pnl_lowTask.Visible = taskCreated;
-                        pnl_lowTaskStatus.BackColor = fill_color;
-                        break;
-                    case "AuxiliaryWorker":
-                        pnl_auxTask.Visible = taskCreated;
-                        pnl_auxTaskStatus.BackColor = fill_color;
-                        break;
-                    case "GetTrackerPose":
-                        pnl_vrTask.Visible = taskCreated;
-                        pnl_vrTaskStatus.BackColor = fill_color;
-                        break;
-                    case "CheckRobotConnection":
-                        pnl_comRobotTask.Visible = taskCreated;
-                        pnl_comRobotTaskStatus.BackColor = fill_color;
-                        break;
-                    case "ApplicationTaskManager":
-                        pnl_appTask.Visible = taskCreated;
-                        pnl_appTaskStatus.BackColor = fill_color;
-                        break;
-                }
+                    //Impostazioni visibilità
+                    switch (taskStruct.Name)
+                    {
+                        case "CheckHighPriority":
+                            pnl_highTask.Visible = taskCreated;
+                            pnl_highTaskStatus.BackColor = fill_color;
+                            break;
+                        case "CheckLowPriority":
+                            pnl_lowTask.Visible = taskCreated;
+                            pnl_lowTaskStatus.BackColor = fill_color;
+                            break;
+                        case "AuxiliaryWorker":
+                            pnl_auxTask.Visible = taskCreated;
+                            pnl_auxTaskStatus.BackColor = fill_color;
+                            break;
+                        case "CheckRobotConnection":
+                            pnl_comRobotTask.Visible = taskCreated;
+                            pnl_comRobotTaskStatus.BackColor = fill_color;
+                            break;
+                        case "ApplicationTaskManager":
+                            pnl_appTask.Visible = taskCreated;
+                            pnl_appTaskStatus.BackColor = fill_color;
+                            break;
+                        case "PlcComHandler":
+                            pnl_plcTaskStatus.Visible = taskCreated;
+                            pnl_plcTaskStatus.BackColor = fill_color;
+                            break;
+                        case "SafetyTaskManager":
+                            pnl_safetyTask.Visible = taskCreated;
+                            pnl_safetyTaskStatus.BackColor = fill_color;
+                            break;
+                    }
+                });
             }
         }
 
@@ -454,6 +318,10 @@ namespace RM.src.RM220930
             _navigator.RegisterPage("Axis", typeof(UC_axis));
             _navigator.RegisterPage("Test UDT", typeof(UC_testUDT));
         }
+
+        
+
+        
 
         #endregion
 
@@ -477,6 +345,7 @@ namespace RM.src.RM220930
         private void FormHomePage_Load(object sender, EventArgs e)
         {
             _navigator.Navigate("Home Page","HOME PAGE");
+            SCADAManager.taskManager.OneTaskChangedStatus += ChangeTaskStatus;
         }
 
         /// <summary>
@@ -486,12 +355,13 @@ namespace RM.src.RM220930
         /// <param name="e"></param>
         private void FormHomePage_Shown(object sender, EventArgs e)
         {
-            // Notifica l'alarm manager che la form è stata caricata e quindi è possibile procedere con la gestione degli allarmi 
+            // Notifica l'alarmManager che la form è stata caricata e quindi è possibile procedere con la gestione degli allarmi 
             AlarmManager.isFormReady = true;
-            // Collegamento evento ValueChanged del dizionario al metodo HandleDictionaryChange
-            // PLCConfig.appVariables.ValueChanged += RefreshVariables;
-            //screenSaverManager = new ScreenSaverManager(300000, "screenSaver.mp4",false);
-            // Task.Run(() => InitParameters());
+
+            //Configurazione screen saver manager - 5m
+            screenSaverManager = new ScreenSaverManager(300000, "screenSaver.mp4", false);
+
+            ChangeTaskStatus(this, EventArgs.Empty); // Chiamo il metodo per aggiornare l'interfaccia la prima volta
         }
 
         /// <summary>
@@ -501,7 +371,7 @@ namespace RM.src.RM220930
         /// <param name="e"></param>
         private void ClickEvent_alarms(object sender, EventArgs e)
         {
-            AlarmManager.OpenAlarmFormPage(FormHomePage.formAlarmPage);
+            AlarmManager.OpenAlarmFormPage(SCADAManager.formAlarmPage);
         }
 
         /// <summary>
@@ -611,13 +481,16 @@ namespace RM.src.RM220930
             _navigator.Navigate("Home Page", "HOME PAGE");
         }
 
+        /// <summary>
+        /// Apre la pagina di test UDT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_testUDT(object sender, EventArgs e)
         {
             _navigator.Navigate("Test UDT");
         }
 
         #endregion
-
-
     }
 }

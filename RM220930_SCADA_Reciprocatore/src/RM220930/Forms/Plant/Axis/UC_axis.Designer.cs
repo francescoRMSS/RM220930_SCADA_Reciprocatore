@@ -63,11 +63,11 @@
             this.btn_axe1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe1.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe1.Location = new System.Drawing.Point(27, 49);
+            this.btn_axe1.Location = new System.Drawing.Point(17, 49);
             this.btn_axe1.Name = "btn_axe1";
-            this.btn_axe1.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe1.Size = new System.Drawing.Size(90, 50);
             this.btn_axe1.TabIndex = 350;
-            this.btn_axe1.Text = "AXE 1";
+            this.btn_axe1.Text = "ASSE 1";
             this.btn_axe1.UseVisualStyleBackColor = false;
             this.btn_axe1.Click += new System.EventHandler(this.ClickEvent_selectAxe1);
             // 
@@ -77,11 +77,11 @@
             this.btn_axe2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe2.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe2.Location = new System.Drawing.Point(27, 112);
+            this.btn_axe2.Location = new System.Drawing.Point(17, 112);
             this.btn_axe2.Name = "btn_axe2";
-            this.btn_axe2.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe2.Size = new System.Drawing.Size(90, 50);
             this.btn_axe2.TabIndex = 351;
-            this.btn_axe2.Text = "AXE 2";
+            this.btn_axe2.Text = "ASSE 2";
             this.btn_axe2.UseVisualStyleBackColor = false;
             this.btn_axe2.Click += new System.EventHandler(this.ClickEvent_selectAxe2);
             // 
@@ -91,11 +91,11 @@
             this.btn_axe3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe3.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe3.Location = new System.Drawing.Point(27, 175);
+            this.btn_axe3.Location = new System.Drawing.Point(17, 175);
             this.btn_axe3.Name = "btn_axe3";
-            this.btn_axe3.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe3.Size = new System.Drawing.Size(90, 50);
             this.btn_axe3.TabIndex = 352;
-            this.btn_axe3.Text = "AXE 3";
+            this.btn_axe3.Text = "ASSE 3";
             this.btn_axe3.UseVisualStyleBackColor = false;
             this.btn_axe3.Click += new System.EventHandler(this.ClickEvent_selectAxe3);
             // 
@@ -105,11 +105,11 @@
             this.btn_axe4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe4.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe4.Location = new System.Drawing.Point(27, 238);
+            this.btn_axe4.Location = new System.Drawing.Point(17, 238);
             this.btn_axe4.Name = "btn_axe4";
-            this.btn_axe4.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe4.Size = new System.Drawing.Size(90, 50);
             this.btn_axe4.TabIndex = 353;
-            this.btn_axe4.Text = "AXE 4";
+            this.btn_axe4.Text = "ASSE 4";
             this.btn_axe4.UseVisualStyleBackColor = false;
             this.btn_axe4.Click += new System.EventHandler(this.ClickEvent_selectAxe4);
             // 
@@ -119,11 +119,11 @@
             this.btn_axe5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe5.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe5.Location = new System.Drawing.Point(27, 302);
+            this.btn_axe5.Location = new System.Drawing.Point(17, 302);
             this.btn_axe5.Name = "btn_axe5";
-            this.btn_axe5.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe5.Size = new System.Drawing.Size(90, 50);
             this.btn_axe5.TabIndex = 354;
-            this.btn_axe5.Text = "AXE 5";
+            this.btn_axe5.Text = "ASSE 5";
             this.btn_axe5.UseVisualStyleBackColor = false;
             this.btn_axe5.Click += new System.EventHandler(this.ClickEvent_selectAxe5);
             // 
@@ -133,11 +133,11 @@
             this.btn_axe6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe6.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe6.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe6.Location = new System.Drawing.Point(27, 365);
+            this.btn_axe6.Location = new System.Drawing.Point(17, 365);
             this.btn_axe6.Name = "btn_axe6";
-            this.btn_axe6.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe6.Size = new System.Drawing.Size(90, 50);
             this.btn_axe6.TabIndex = 355;
-            this.btn_axe6.Text = "AXE 6";
+            this.btn_axe6.Text = "ASSE 6";
             this.btn_axe6.UseVisualStyleBackColor = false;
             this.btn_axe6.Click += new System.EventHandler(this.ClickEvent_selectAxe6);
             // 
@@ -147,11 +147,11 @@
             this.btn_axe7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe7.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe7.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe7.Location = new System.Drawing.Point(27, 428);
+            this.btn_axe7.Location = new System.Drawing.Point(17, 428);
             this.btn_axe7.Name = "btn_axe7";
-            this.btn_axe7.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe7.Size = new System.Drawing.Size(90, 50);
             this.btn_axe7.TabIndex = 356;
-            this.btn_axe7.Text = "AXE 7";
+            this.btn_axe7.Text = "ASSE 7";
             this.btn_axe7.UseVisualStyleBackColor = false;
             this.btn_axe7.Click += new System.EventHandler(this.ClickEvent_selectAxe7);
             // 
@@ -161,11 +161,11 @@
             this.btn_axe8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_axe8.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.btn_axe8.ForeColor = System.Drawing.Color.Gold;
-            this.btn_axe8.Location = new System.Drawing.Point(27, 491);
+            this.btn_axe8.Location = new System.Drawing.Point(17, 491);
             this.btn_axe8.Name = "btn_axe8";
-            this.btn_axe8.Size = new System.Drawing.Size(80, 50);
+            this.btn_axe8.Size = new System.Drawing.Size(90, 50);
             this.btn_axe8.TabIndex = 357;
-            this.btn_axe8.Text = "AXE 8";
+            this.btn_axe8.Text = "ASSE 8";
             this.btn_axe8.UseVisualStyleBackColor = false;
             this.btn_axe8.Click += new System.EventHandler(this.ClickEvent_selectAxe8);
             // 

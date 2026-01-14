@@ -28,6 +28,5 @@ namespace RM.src.RM220930.Forms.Plant.Axis
                lbl_num.Text = offset.ToString();
             }
         }
-
     }
 }

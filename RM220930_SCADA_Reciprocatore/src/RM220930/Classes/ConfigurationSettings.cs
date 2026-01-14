@@ -1,4 +1,6 @@
 ﻿
+using fairino;
+using RM.src.RM220930.Classes;
 using RM.src.RM220930.Classes.PLC;
 using RMLib.Alarms;
 using RMLib.DataAccess;
@@ -156,6 +158,12 @@ namespace RM.src.RM220930
             {
                 log.Error("Error during security loading");
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during security loading");
+            }
+
+            if (!SCADAManager.InitSCADA())
+            {
+                CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Errore durante configurazione dello SCADA");
+                Application.Exit();
             }
 
             //ProgressBar a 90%
