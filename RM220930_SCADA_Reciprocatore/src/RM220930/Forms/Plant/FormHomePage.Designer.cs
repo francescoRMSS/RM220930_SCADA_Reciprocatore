@@ -87,8 +87,8 @@
             // 
             // pnl_header
             // 
-            this.pnl_header.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pnl_header.BackgroundColor = System.Drawing.Color.MidnightBlue;
+            this.pnl_header.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnl_header.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.pnl_header.BorderColor = System.Drawing.Color.Black;
             this.pnl_header.BorderRadius = 0;
             this.pnl_header.BorderSize = 0;

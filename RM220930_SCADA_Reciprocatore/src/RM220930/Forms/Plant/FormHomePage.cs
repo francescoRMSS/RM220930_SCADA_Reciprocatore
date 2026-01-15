@@ -1150,7 +1150,7 @@ namespace RM.src.RM220930
         /// <param name="e"></param>
         private void FormHomePage_Load(object sender, EventArgs e)
         {
-            _navigator.Navigate("Home Page","HOME PAGE");
+            _navigator.Navigate("Home Page","LAVORO");
             SCADAManager.taskManager.OneTaskChangedStatus += ChangeTaskStatus;
         }
 
@@ -1277,7 +1277,7 @@ namespace RM.src.RM220930
         {
             ResetButtonColor();
             customBtn_cabin.BackgroundColor = Color.DimGray;
-            _navigator.Navigate("Home Page", "HOME PAGE");
+            _navigator.Navigate("Home Page", "LAVORO");
         }
 
         /// <summary>

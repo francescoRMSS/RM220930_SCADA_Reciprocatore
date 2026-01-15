@@ -1293,6 +1293,151 @@
             Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.xSize">
+            <summary>
+            Dimensione lato x
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.ySize">
+            <summary>
+            Dimensione lato y
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.xOffsetZButton">
+            <summary>
+            Offset su asse x dei button Z
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z1">
+            <summary>
+            Button z1
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz1">
+            <summary>
+            Button OFF z1
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z2">
+            <summary>
+            Button z2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz2">
+            <summary>
+            Button OFF z2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z3">
+            <summary>
+            Button z3
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz3">
+            <summary>
+            Button OFF z3
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z4">
+            <summary>
+            Button z4
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz4">
+            <summary>
+            Button OFF z4
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z5">
+            <summary>
+            Button z5
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz5">
+            <summary>
+            Button OFF z5
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z6">
+            <summary>
+            Button z6
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz6">
+            <summary>
+            Button OFF z6
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z7">
+            <summary>
+            Button z7
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz7">
+            <summary>
+            Button OFF z7
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_z8">
+            <summary>
+            Button z8
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_OFFz8">
+            <summary>
+            Button OFF z8
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_laser">
+            <summary>
+            Button laser
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_3D">
+            <summary>
+            Button 3D
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_lights">
+            <summary>
+            Button lightd
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.lb_laser">
+            <summary>
+            Label LASER
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.lb_3D">
+            <summary>
+            Label LIVE 3D
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.lb_lights">
+            <summary>
+            Label LUCI CABINA
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_up">
+            <summary>
+            Button up
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_down">
+            <summary>
+            Button down
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.customBtn_hubOFF">
+            <summary>
+            Button hubOFF
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.lb_valHub">
+            <summary>
+            Label ValHub
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.#ctor">
             <summary>
             Costruttore
@@ -1303,6 +1448,227 @@
             Metodo eseguito dopo la richiesta di navigazione in home page
             </summary>
             <param name="parameter"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitDynamicControlsAxis">
+            <summary>
+            Crea dinamicamente tutti i controlli presenti all'interno di pnl_axis
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitDynamicControlsOptions">
+            <summary>
+            Crea dinamicamente tutti i controlli presenti all'interno di pnl_options
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitDynamicControlsHub">
+            <summary>
+            Crea dinamicamente tutti i controlli presenti all'interno di pnl_hub
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ1Button">
+            <summary>
+            Crea dinamicamente il bottone "Z1" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ1(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ2Button">
+            <summary>
+            Crea dinamicamente il bottone "Z2" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ2(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ3Button">
+            <summary>
+            Crea dinamicamente il bottone "Z3" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ3(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ4Button">
+            <summary>
+            Crea dinamicamente il bottone "Z4" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ4(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ5Button">
+            <summary>
+            Crea dinamicamente il bottone "Z5" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ5(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ6Button">
+            <summary>
+            Crea dinamicamente il bottone "Z6" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ6(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ7Button">
+            <summary>
+            Crea dinamicamente il bottone "Z7" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ7(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateZ8Button">
+            <summary>
+            Crea dinamicamente il bottone "Z7" all’interno del pannello di navigazione
+            <see cref="!:pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ8(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="!:pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateLaserButton">
+            <summary>
+            Crea dinamicamente il bottone "LASER" all’interno del pannello pnl_options
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.Create3DButton">
+            <summary>
+            Crea dinamicamente il bottone "3D" all’interno del pannello pnl_options
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateLightsButton">
+            <summary>
+            Crea dinamicamente il bottone "LUCI CABINA" all’interno del pannello pnl_options
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateUpButton" -->
+        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateDownButton" -->
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.CreateHubOFFButton">
+            <summary>
+            Crea dinamicamente il bottone "OFF" all’interno di pnl_hub
+            </summary>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ1(System.Object,System.EventArgs)">
             <summary>
@@ -2524,6 +2890,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources._3d32White">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.a">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -2849,12 +3220,22 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.laser32White">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.left_arrow">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.letter_m">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.light32White">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

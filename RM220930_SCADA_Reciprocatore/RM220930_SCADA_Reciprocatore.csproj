@@ -344,6 +344,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\light32White.png" />
+    <None Include="Resources\3d32White.png" />
+    <None Include="Resources\laser32White.png" />
     <None Include="Resources\vat32Black.png" />
     <None Include="Resources\testUDT32Black.png" />
     <None Include="Resources\service32Black.png" />
