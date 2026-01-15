@@ -252,6 +252,12 @@
     <Compile Include="src\RM220930\Forms\Plant\UC_recipe.Designer.cs">
       <DependentUpon>UC_recipe.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_service.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_service.Designer.cs">
+      <DependentUpon>UC_service.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\RM220930\Forms\ScreenSaver\ScreenSaverManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +319,9 @@
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_recipe.resx">
       <DependentUpon>UC_recipe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_service.resx">
+      <DependentUpon>UC_service.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\ScreenSaver\ScreenSaverManager.resx">
       <DependentUpon>ScreenSaverManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -335,6 +344,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\vat32Black.png" />
+    <None Include="Resources\testUDT32Black.png" />
+    <None Include="Resources\service32Black.png" />
     <None Include="Resources\prod32Black.png" />
     <None Include="Resources\recipe32Black.png" />
     <None Include="Resources\chain32Black.png" />

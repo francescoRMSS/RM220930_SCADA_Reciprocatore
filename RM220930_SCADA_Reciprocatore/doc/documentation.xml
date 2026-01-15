@@ -1604,6 +1604,34 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="E:RM.src.RM220930.Forms.Plant.UC_service.NavigateRequested">
+            <summary>
+            Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_service.OnNavigatedTo(System.Object)">
+            <summary>
+            Gestisce l'utilizzo del parametro passato durante la navigazione
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_service.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_service.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_service.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
         <member name="T:RM.src.RM220930.Forms.ScreenSaver.ScreenSaverManager">
             <summary>
             Gestisce la visualizzazione di una form che controlla lo screen saver. Per usare lo screen saver è necessaria la libreria 
@@ -1912,6 +1940,36 @@
             Button produzione
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.FormHomePage.customBtn_service">
+            <summary>
+            Button produzione
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.customBtn_axis">
+            <summary>
+            Button assi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.customBtn_alarm">
+            <summary>
+            Button allarmi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.customBtn_exit">
+            <summary>
+            Button exit
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.customBtn_testUDT">
+            <summary>
+            Button test UDT
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.customBtn_vat">
+            <summary>
+            Button vat
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.FormHomePage.lb_cabin">
             <summary>
             Label CABINA
@@ -1930,6 +1988,36 @@
         <member name="F:RM.src.RM220930.FormHomePage.lb_prod">
             <summary>
             Label PRODUZIONE
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.lb_service">
+            <summary>
+            Label SERVICE
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.lb_axis">
+            <summary>
+            Label ASSI
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.lb_alarm">
+            <summary>
+            Label ALLARMI
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.lb_exit">
+            <summary>
+            Label EXIT
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.lb_testUDT">
+            <summary>
+            Label TEST UDT
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.FormHomePage.lb_vat">
+            <summary>
+            Label VAT
             </summary>
         </member>
         <member name="P:RM.src.RM220930.FormHomePage.Instance">
@@ -1986,6 +2074,12 @@
             <summary>
             Costruisce la form di homepage
             </summary>
+            
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.InitDynamicControls">
+            <summary>
+            Crea dinamicamente tutti i controlli presenti all'interno di FormHomePage
+            </summary>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.CreateCabinButton">
             <summary>
@@ -2012,7 +2106,7 @@
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.CreateChainButton">
             <summary>
-            Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+            Crea dinamicamente il bottone "CATENA" all’interno del pannello di navigazione
             <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
             </summary>
             <remarks>
@@ -2035,14 +2129,14 @@
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.CreateRecipeButton">
             <summary>
-            Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+            Crea dinamicamente il bottone "RICETTE" all’interno del pannello di navigazione
             <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
             </summary>
             <remarks>
             Questo metodo esegue le seguenti operazioni:
             <list type="number">
                 <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
-                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToProdPage(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToRecipePage(System.Object,System.EventArgs)"/> al click del bottone.</item>
                 <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
                 <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
                 <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
@@ -2058,7 +2152,7 @@
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.CreateProdButton">
             <summary>
-            Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+            Crea dinamicamente il bottone "PRODUZIONE" all’interno del pannello di navigazione
             <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
             </summary>
             <remarks>
@@ -2079,9 +2173,157 @@
             </code>
             </example>
         </member>
+        <member name="M:RM.src.RM220930.FormHomePage.CreateServiceButton">
+            <summary>
+            Crea dinamicamente il bottone "SERVICE" all’interno del pannello di navigazione
+            <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToProdPage(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.CreateAxisButton">
+            <summary>
+            Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+            <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToAxisPage(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.CreateAlarmButton">
+            <summary>
+            Crea dinamicamente il bottone "ALLARMI" all’interno del pannello di navigazione
+            <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToAlarmPage(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.CreateExitButton">
+            <summary>
+            Crea dinamicamente il bottone "USCITA" all’interno del pannello di navigazione
+            <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_exit(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.CreateTestUDTButton">
+            <summary>
+            Crea dinamicamente il bottone "TEST UDT" all’interno del pannello di navigazione
+            <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToTestUDT(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.CreateVatButton">
+            <summary>
+            Crea dinamicamente il bottone "VAT" all’interno del pannello di navigazione
+            <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+            </summary>
+            <remarks>
+            Questo metodo esegue le seguenti operazioni:
+            <list type="number">
+                <item>Istanzia un <see cref="T:RMLib.View.CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+                <item>Iscrive l’evento <see cref="M:RM.src.RM220930.FormHomePage.ClickEvent_goToVatPage(System.Object,System.EventArgs)"/> al click del bottone.</item>
+                <item>Aggiunge il bottone al <see cref="T:System.Windows.Forms.Panel"/> di navigazione <see cref="F:RM.src.RM220930.FormHomePage.pnl_navigation"/> e lo porta in primo piano.</item>
+                <item>Istanzia una <see cref="T:System.Windows.Forms.Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+                <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+                <item>Aggiunge la label al <see cref="T:System.Windows.Forms.Panel"/> di navigazione e la porta in primo piano.</item>
+            </list>
+            </remarks>
+            <example>
+            Esempio di utilizzo:
+            <code>
+            CreateCabinButton();
+            </code>
+            </example>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ResetButtonColor">
+            <summary>
+            Resetta il colore di tutti i button presenti
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.FormHomePage.NavigatorSetup">
             <summary>
             Istanzia l'oggetto navigatore e registra le pagine che utililzzerà
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.RegisterPages">
+            <summary>
+            Registra pagine che utilizza il navigator
             </summary>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.EnterFullScreenMode">
@@ -2118,10 +2360,12 @@
             Contiene i nomi dei task gestiti di cui si osserva lo stato per le spie a schermo
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.FormHomePage.RegisterPages">
+        <member name="M:RM.src.RM220930.FormHomePage.ChangeTaskStatus(System.Object,System.EventArgs)">
             <summary>
-            Registra pagine che utilizza il navigator
+            Monitora lo stato dei task così da aggiornarne la rappresentazione grafica
             </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:RM.src.RM220930.FormHomePage.Update_lbl_dateTime_clock(System.Object,System.EventArgs)">
             <summary>
@@ -2140,13 +2384,6 @@
         <member name="M:RM.src.RM220930.FormHomePage.FormHomePage_Shown(System.Object,System.EventArgs)">
             <summary>
             Evento di visualizzazione della home page
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_alarms(System.Object,System.EventArgs)">
-            <summary>
-            Apertura pagina allarmi
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -2174,7 +2411,7 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_openVAT(System.Object,System.EventArgs)">
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToVatPage(System.Object,System.EventArgs)">
             <summary>
             Apre la VAT
             </summary>
@@ -2184,13 +2421,6 @@
         <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_exit(System.Object,System.EventArgs)">
             <summary>
             Chiude l'applicazione
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToAxis(System.Object,System.EventArgs)">
-            <summary>
-            Apre la pagina degli assi
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -2223,7 +2453,28 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_testUDT(System.Object,System.EventArgs)">
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToServicePage(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina service
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToAxisPage(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina degli assi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToAlarmPage(System.Object,System.EventArgs)">
+            <summary>
+            Apertura pagina allarmi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.FormHomePage.ClickEvent_goToTestUDT(System.Object,System.EventArgs)">
             <summary>
             Apre la pagina di test UDT
             </summary>
@@ -2833,6 +3084,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.service32Black">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.settings_64">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -2874,6 +3130,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.stopEmergencyWhite32">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.testUDT32Black">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -2934,6 +3195,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.upArrowBlue_32">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.vat32Black">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
