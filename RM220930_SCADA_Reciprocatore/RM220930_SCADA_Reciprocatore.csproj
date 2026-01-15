@@ -210,6 +210,12 @@
     <Compile Include="src\RM220930\Forms\Plant\Axis\UC_workParams.Designer.cs">
       <DependentUpon>UC_workParams.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_chain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_chain.Designer.cs">
+      <DependentUpon>UC_chain.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\UC_HomePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +239,18 @@
     </Compile>
     <Compile Include="src\RM220930\Forms\Plant\FormLanguageSelection.Designer.cs">
       <DependentUpon>FormLanguageSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_prod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_prod.Designer.cs">
+      <DependentUpon>UC_prod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_recipe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_recipe.Designer.cs">
+      <DependentUpon>UC_recipe.cs</DependentUpon>
     </Compile>
     <Compile Include="src\RM220930\Forms\ScreenSaver\ScreenSaverManager.cs">
       <SubType>Form</SubType>
@@ -274,6 +292,9 @@
     <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_workParams.resx">
       <DependentUpon>UC_workParams.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_chain.resx">
+      <DependentUpon>UC_chain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_HomePage.resx">
       <DependentUpon>UC_HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +306,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\FormLanguageSelection.resx">
       <DependentUpon>FormLanguageSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_prod.resx">
+      <DependentUpon>UC_prod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_recipe.resx">
+      <DependentUpon>UC_recipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\ScreenSaver\ScreenSaverManager.resx">
       <DependentUpon>ScreenSaverManager.cs</DependentUpon>
@@ -308,6 +335,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\prod32Black.png" />
+    <None Include="Resources\recipe32Black.png" />
+    <None Include="Resources\chain32Black.png" />
+    <None Include="Resources\chain32Black.bmp" />
     <None Include="Resources\settingsWhite.png" />
     <None Include="Resources\settingWhite.png" />
     <None Include="Resources\lights.png" />

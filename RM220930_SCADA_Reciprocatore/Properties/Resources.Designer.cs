@@ -333,6 +333,16 @@ namespace RM.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chain32Black {
+            get {
+                object obj = ResourceManager.GetObject("chain32Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check {
             get {
                 object obj = ResourceManager.GetObject("check", resourceCulture);
@@ -1013,6 +1023,16 @@ namespace RM.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap prod32Black {
+            get {
+                object obj = ResourceManager.GetObject("prod32Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ptp_line {
             get {
                 object obj = ResourceManager.GetObject("ptp-line", resourceCulture);
@@ -1026,6 +1046,16 @@ namespace RM.Properties {
         internal static System.Drawing.Bitmap rec32 {
             get {
                 object obj = ResourceManager.GetObject("rec32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recipe32Black {
+            get {
+                object obj = ResourceManager.GetObject("recipe32Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

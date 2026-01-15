@@ -32,7 +32,6 @@
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label9;
-            System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label12;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomePage));
@@ -45,8 +44,6 @@
             this.pnl_plcTask = new System.Windows.Forms.Panel();
             this.pnl_plcTaskStatus = new RMLib.View.CustomPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.RobotMovPanel = new System.Windows.Forms.Panel();
-            this.RobotBlinkPanel = new System.Windows.Forms.Panel();
             this.pnl_appTask = new System.Windows.Forms.Panel();
             this.pnl_appTaskStatus = new RMLib.View.CustomPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,27 +59,29 @@
             this.pnl_highTask = new System.Windows.Forms.Panel();
             this.pnl_highTaskStatus = new RMLib.View.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
+            this.PnlLogoContainer = new RMLib.View.CustomPanel();
+            this.lbl_pageTitle = new System.Windows.Forms.Label();
+            this.lbl_dateTime = new System.Windows.Forms.Label();
+            this.pnl_navigation = new System.Windows.Forms.Panel();
+            this.btn_VAT = new System.Windows.Forms.Button();
+            this.btn_alarms = new System.Windows.Forms.Button();
+            this.btn_axis = new System.Windows.Forms.Button();
+            this.bnt_exit = new System.Windows.Forms.Button();
+            this.RobotMovPanel = new System.Windows.Forms.Panel();
+            this.RobotBlinkPanel = new System.Windows.Forms.Panel();
             this.pnl_showScrnSvrMgr = new System.Windows.Forms.Panel();
             this.pnl_safeZone = new System.Windows.Forms.Panel();
             this.Pnl_PLC_alarm = new System.Windows.Forms.Panel();
             this.Pnl_diagnostics = new System.Windows.Forms.Panel();
             this.pnl_ActiveAlarms = new System.Windows.Forms.Panel();
-            this.PnlLogoContainer = new RMLib.View.CustomPanel();
             this.Pnl_logo_rm = new RMLib.View.CustomPanel();
-            this.lbl_pageTitle = new System.Windows.Forms.Label();
-            this.lbl_dateTime = new System.Windows.Forms.Label();
-            this.btn_axis = new System.Windows.Forms.Button();
-            this.btn_alarms = new System.Windows.Forms.Button();
-            this.bnt_exit = new System.Windows.Forms.Button();
-            this.btn_VAT = new System.Windows.Forms.Button();
             this.btn_testUDT = new System.Windows.Forms.Button();
-            this.pnl_navigation = new System.Windows.Forms.Panel();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
+            this.pnl_pageContainer.SuspendLayout();
             this.pnl_header.SuspendLayout();
             this.pnl_safetyTask.SuspendLayout();
             this.pnl_plcTask.SuspendLayout();
@@ -95,9 +94,75 @@
             this.pnl_navigation.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label11
+            // 
+            label11.BackColor = System.Drawing.Color.Transparent;
+            label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.ForeColor = System.Drawing.SystemColors.Control;
+            label11.Location = new System.Drawing.Point(224, 464);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(60, 22);
+            label11.TabIndex = 327;
+            label11.Text = "ASSI";
+            label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label10
+            // 
+            label10.BackColor = System.Drawing.Color.Transparent;
+            label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.ForeColor = System.Drawing.SystemColors.Control;
+            label10.Location = new System.Drawing.Point(565, 439);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(60, 22);
+            label10.TabIndex = 329;
+            label10.Text = "ALLARMI";
+            label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label9
+            // 
+            label9.BackColor = System.Drawing.Color.Transparent;
+            label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.ForeColor = System.Drawing.SystemColors.Control;
+            label9.Location = new System.Drawing.Point(343, 451);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(60, 22);
+            label9.TabIndex = 331;
+            label9.Text = "USCITA";
+            label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            label7.BackColor = System.Drawing.Color.Transparent;
+            label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.ForeColor = System.Drawing.SystemColors.Control;
+            label7.Location = new System.Drawing.Point(931, 80);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(60, 22);
+            label7.TabIndex = 335;
+            label7.Text = "VAT";
+            label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label12
+            // 
+            label12.BackColor = System.Drawing.Color.Transparent;
+            label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.ForeColor = System.Drawing.SystemColors.Control;
+            label12.Location = new System.Drawing.Point(829, 80);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(65, 22);
+            label12.TabIndex = 337;
+            label12.Text = "TEST UDT";
+            label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // pnl_pageContainer
             // 
             this.pnl_pageContainer.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_pageContainer.Controls.Add(this.btn_axis);
+            this.pnl_pageContainer.Controls.Add(label11);
+            this.pnl_pageContainer.Controls.Add(this.bnt_exit);
+            this.pnl_pageContainer.Controls.Add(label9);
+            this.pnl_pageContainer.Controls.Add(this.btn_alarms);
+            this.pnl_pageContainer.Controls.Add(label10);
             this.pnl_pageContainer.Location = new System.Drawing.Point(0, 110);
             this.pnl_pageContainer.Name = "pnl_pageContainer";
             this.pnl_pageContainer.Size = new System.Drawing.Size(1024, 557);
@@ -211,30 +276,6 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "PLC";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // RobotMovPanel
-            // 
-            this.RobotMovPanel.BackColor = System.Drawing.Color.Transparent;
-            this.RobotMovPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
-            this.RobotMovPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RobotMovPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RobotMovPanel.Location = new System.Drawing.Point(688, 29);
-            this.RobotMovPanel.Name = "RobotMovPanel";
-            this.RobotMovPanel.Size = new System.Drawing.Size(40, 40);
-            this.RobotMovPanel.TabIndex = 30;
-            this.RobotMovPanel.Visible = false;
-            // 
-            // RobotBlinkPanel
-            // 
-            this.RobotBlinkPanel.BackColor = System.Drawing.Color.Transparent;
-            this.RobotBlinkPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
-            this.RobotBlinkPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.RobotBlinkPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RobotBlinkPanel.Location = new System.Drawing.Point(642, 29);
-            this.RobotBlinkPanel.Name = "RobotBlinkPanel";
-            this.RobotBlinkPanel.Size = new System.Drawing.Size(40, 40);
-            this.RobotBlinkPanel.TabIndex = 30;
-            this.RobotBlinkPanel.Visible = false;
             // 
             // pnl_appTask
             // 
@@ -426,6 +467,130 @@
             this.label4.Text = "HIGH";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PnlLogoContainer
+            // 
+            this.PnlLogoContainer.BackColor = System.Drawing.Color.White;
+            this.PnlLogoContainer.BackgroundColor = System.Drawing.Color.White;
+            this.PnlLogoContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PnlLogoContainer.BorderColor = System.Drawing.Color.Black;
+            this.PnlLogoContainer.BorderRadius = 20;
+            this.PnlLogoContainer.BorderSize = 0;
+            this.PnlLogoContainer.Controls.Add(this.Pnl_logo_rm);
+            this.PnlLogoContainer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PnlLogoContainer.ForeColor = System.Drawing.Color.White;
+            this.PnlLogoContainer.Location = new System.Drawing.Point(20, 42);
+            this.PnlLogoContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.PnlLogoContainer.Name = "PnlLogoContainer";
+            this.PnlLogoContainer.Size = new System.Drawing.Size(208, 54);
+            this.PnlLogoContainer.TabIndex = 28;
+            this.PnlLogoContainer.TextColor = System.Drawing.Color.White;
+            // 
+            // lbl_pageTitle
+            // 
+            this.lbl_pageTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_pageTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pageTitle.Location = new System.Drawing.Point(-2, 74);
+            this.lbl_pageTitle.Name = "lbl_pageTitle";
+            this.lbl_pageTitle.Size = new System.Drawing.Size(1030, 34);
+            this.lbl_pageTitle.TabIndex = 25;
+            this.lbl_pageTitle.Text = "SISTEMA VERNICIAUTRA";
+            this.lbl_pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_dateTime
+            // 
+            this.lbl_dateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dateTime.Location = new System.Drawing.Point(298, 29);
+            this.lbl_dateTime.Name = "lbl_dateTime";
+            this.lbl_dateTime.Size = new System.Drawing.Size(427, 25);
+            this.lbl_dateTime.TabIndex = 4;
+            this.lbl_dateTime.Text = "12:34:56";
+            this.lbl_dateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnl_navigation
+            // 
+            this.pnl_navigation.BackColor = System.Drawing.Color.Black;
+            this.pnl_navigation.Controls.Add(this.btn_testUDT);
+            this.pnl_navigation.Controls.Add(label12);
+            this.pnl_navigation.Controls.Add(this.btn_VAT);
+            this.pnl_navigation.Controls.Add(label7);
+            this.pnl_navigation.Location = new System.Drawing.Point(0, 663);
+            this.pnl_navigation.Name = "pnl_navigation";
+            this.pnl_navigation.Size = new System.Drawing.Size(1024, 104);
+            this.pnl_navigation.TabIndex = 325;
+            // 
+            // btn_VAT
+            // 
+            this.btn_VAT.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_VAT.BackgroundImage = global::RM.Properties.Resources.vatView;
+            this.btn_VAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_VAT.Location = new System.Drawing.Point(931, 12);
+            this.btn_VAT.Name = "btn_VAT";
+            this.btn_VAT.Size = new System.Drawing.Size(60, 60);
+            this.btn_VAT.TabIndex = 336;
+            this.btn_VAT.UseVisualStyleBackColor = false;
+            this.btn_VAT.Click += new System.EventHandler(this.ClickEvent_openVAT);
+            // 
+            // btn_alarms
+            // 
+            this.btn_alarms.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
+            this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_alarms.Location = new System.Drawing.Point(565, 371);
+            this.btn_alarms.Name = "btn_alarms";
+            this.btn_alarms.Size = new System.Drawing.Size(60, 60);
+            this.btn_alarms.TabIndex = 330;
+            this.btn_alarms.UseVisualStyleBackColor = false;
+            this.btn_alarms.Click += new System.EventHandler(this.ClickEvent_alarms);
+            // 
+            // btn_axis
+            // 
+            this.btn_axis.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_axis.BackgroundImage = global::RM.Properties.Resources.axis;
+            this.btn_axis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_axis.Location = new System.Drawing.Point(224, 396);
+            this.btn_axis.Name = "btn_axis";
+            this.btn_axis.Size = new System.Drawing.Size(60, 60);
+            this.btn_axis.TabIndex = 328;
+            this.btn_axis.UseVisualStyleBackColor = false;
+            this.btn_axis.Click += new System.EventHandler(this.ClickEvent_goToAxis);
+            // 
+            // bnt_exit
+            // 
+            this.bnt_exit.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
+            this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bnt_exit.Location = new System.Drawing.Point(343, 383);
+            this.bnt_exit.Name = "bnt_exit";
+            this.bnt_exit.Size = new System.Drawing.Size(60, 60);
+            this.bnt_exit.TabIndex = 332;
+            this.bnt_exit.UseVisualStyleBackColor = false;
+            this.bnt_exit.Click += new System.EventHandler(this.ClickEvent_exit);
+            // 
+            // RobotMovPanel
+            // 
+            this.RobotMovPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RobotMovPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.RobotMovPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RobotMovPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RobotMovPanel.Location = new System.Drawing.Point(688, 29);
+            this.RobotMovPanel.Name = "RobotMovPanel";
+            this.RobotMovPanel.Size = new System.Drawing.Size(40, 40);
+            this.RobotMovPanel.TabIndex = 30;
+            this.RobotMovPanel.Visible = false;
+            // 
+            // RobotBlinkPanel
+            // 
+            this.RobotBlinkPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RobotBlinkPanel.BackgroundImage = global::RM.Properties.Resources.resumeMonitoringBlue_32;
+            this.RobotBlinkPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.RobotBlinkPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RobotBlinkPanel.Location = new System.Drawing.Point(642, 29);
+            this.RobotBlinkPanel.Name = "RobotBlinkPanel";
+            this.RobotBlinkPanel.Size = new System.Drawing.Size(40, 40);
+            this.RobotBlinkPanel.TabIndex = 30;
+            this.RobotBlinkPanel.Visible = false;
+            // 
             // pnl_showScrnSvrMgr
             // 
             this.pnl_showScrnSvrMgr.BackColor = System.Drawing.Color.Transparent;
@@ -486,24 +651,6 @@
             this.pnl_ActiveAlarms.TabIndex = 25;
             this.pnl_ActiveAlarms.Click += new System.EventHandler(this.ClickEvent_alarms);
             // 
-            // PnlLogoContainer
-            // 
-            this.PnlLogoContainer.BackColor = System.Drawing.Color.White;
-            this.PnlLogoContainer.BackgroundColor = System.Drawing.Color.White;
-            this.PnlLogoContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PnlLogoContainer.BorderColor = System.Drawing.Color.Black;
-            this.PnlLogoContainer.BorderRadius = 20;
-            this.PnlLogoContainer.BorderSize = 0;
-            this.PnlLogoContainer.Controls.Add(this.Pnl_logo_rm);
-            this.PnlLogoContainer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PnlLogoContainer.ForeColor = System.Drawing.Color.White;
-            this.PnlLogoContainer.Location = new System.Drawing.Point(20, 42);
-            this.PnlLogoContainer.Margin = new System.Windows.Forms.Padding(0);
-            this.PnlLogoContainer.Name = "PnlLogoContainer";
-            this.PnlLogoContainer.Size = new System.Drawing.Size(208, 54);
-            this.PnlLogoContainer.TabIndex = 28;
-            this.PnlLogoContainer.TextColor = System.Drawing.Color.White;
-            // 
             // Pnl_logo_rm
             // 
             this.Pnl_logo_rm.BackColor = System.Drawing.Color.White;
@@ -521,148 +668,6 @@
             this.Pnl_logo_rm.TextColor = System.Drawing.Color.White;
             this.Pnl_logo_rm.DoubleClick += new System.EventHandler(this.DoubleClickEvent_showSwVersion);
             // 
-            // lbl_pageTitle
-            // 
-            this.lbl_pageTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_pageTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pageTitle.Location = new System.Drawing.Point(-2, 74);
-            this.lbl_pageTitle.Name = "lbl_pageTitle";
-            this.lbl_pageTitle.Size = new System.Drawing.Size(1030, 34);
-            this.lbl_pageTitle.TabIndex = 25;
-            this.lbl_pageTitle.Text = "SISTEMA VERNICIAUTRA";
-            this.lbl_pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_dateTime
-            // 
-            this.lbl_dateTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dateTime.Location = new System.Drawing.Point(298, 29);
-            this.lbl_dateTime.Name = "lbl_dateTime";
-            this.lbl_dateTime.Size = new System.Drawing.Size(427, 25);
-            this.lbl_dateTime.TabIndex = 4;
-            this.lbl_dateTime.Text = "12:34:56";
-            this.lbl_dateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            label11.BackColor = System.Drawing.Color.Transparent;
-            label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.ForeColor = System.Drawing.SystemColors.Control;
-            label11.Location = new System.Drawing.Point(121, 80);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(60, 22);
-            label11.TabIndex = 327;
-            label11.Text = "ASSI";
-            label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btn_axis
-            // 
-            this.btn_axis.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_axis.BackgroundImage = global::RM.Properties.Resources.axis;
-            this.btn_axis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_axis.Location = new System.Drawing.Point(121, 12);
-            this.btn_axis.Name = "btn_axis";
-            this.btn_axis.Size = new System.Drawing.Size(60, 60);
-            this.btn_axis.TabIndex = 328;
-            this.btn_axis.UseVisualStyleBackColor = false;
-            this.btn_axis.Click += new System.EventHandler(this.ClickEvent_goToAxis);
-            // 
-            // label10
-            // 
-            label10.BackColor = System.Drawing.Color.Transparent;
-            label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(221, 80);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(60, 22);
-            label10.TabIndex = 329;
-            label10.Text = "ALLARMI";
-            label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btn_alarms
-            // 
-            this.btn_alarms.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
-            this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_alarms.Location = new System.Drawing.Point(221, 12);
-            this.btn_alarms.Name = "btn_alarms";
-            this.btn_alarms.Size = new System.Drawing.Size(60, 60);
-            this.btn_alarms.TabIndex = 330;
-            this.btn_alarms.UseVisualStyleBackColor = false;
-            this.btn_alarms.Click += new System.EventHandler(this.ClickEvent_alarms);
-            // 
-            // label9
-            // 
-            label9.BackColor = System.Drawing.Color.Transparent;
-            label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(321, 80);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(60, 22);
-            label9.TabIndex = 331;
-            label9.Text = "USCITA";
-            label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // bnt_exit
-            // 
-            this.bnt_exit.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
-            this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bnt_exit.Location = new System.Drawing.Point(321, 12);
-            this.bnt_exit.Name = "bnt_exit";
-            this.bnt_exit.Size = new System.Drawing.Size(60, 60);
-            this.bnt_exit.TabIndex = 332;
-            this.bnt_exit.UseVisualStyleBackColor = false;
-            this.bnt_exit.Click += new System.EventHandler(this.ClickEvent_exit);
-            // 
-            // label8
-            // 
-            label8.BackColor = System.Drawing.Color.Transparent;
-            label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.ForeColor = System.Drawing.SystemColors.Control;
-            label8.Location = new System.Drawing.Point(25, 80);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(60, 22);
-            label8.TabIndex = 333;
-            label8.Text = "CABINA";
-            label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label7
-            // 
-            label7.BackColor = System.Drawing.Color.Transparent;
-            label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(931, 80);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(60, 22);
-            label7.TabIndex = 335;
-            label7.Text = "VAT";
-            label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btn_VAT
-            // 
-            this.btn_VAT.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_VAT.BackgroundImage = global::RM.Properties.Resources.vatView;
-            this.btn_VAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_VAT.Location = new System.Drawing.Point(931, 12);
-            this.btn_VAT.Name = "btn_VAT";
-            this.btn_VAT.Size = new System.Drawing.Size(60, 60);
-            this.btn_VAT.TabIndex = 336;
-            this.btn_VAT.UseVisualStyleBackColor = false;
-            this.btn_VAT.Click += new System.EventHandler(this.ClickEvent_openVAT);
-            // 
-            // label12
-            // 
-            label12.BackColor = System.Drawing.Color.Transparent;
-            label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label12.ForeColor = System.Drawing.SystemColors.Control;
-            label12.Location = new System.Drawing.Point(829, 80);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(65, 22);
-            label12.TabIndex = 337;
-            label12.Text = "TEST UDT";
-            label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // btn_testUDT
             // 
             this.btn_testUDT.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -674,25 +679,6 @@
             this.btn_testUDT.TabIndex = 338;
             this.btn_testUDT.UseVisualStyleBackColor = false;
             this.btn_testUDT.Click += new System.EventHandler(this.ClickEvent_testUDT);
-            // 
-            // pnl_navigation
-            // 
-            this.pnl_navigation.BackColor = System.Drawing.Color.Black;
-            this.pnl_navigation.Controls.Add(this.btn_testUDT);
-            this.pnl_navigation.Controls.Add(label12);
-            this.pnl_navigation.Controls.Add(this.btn_VAT);
-            this.pnl_navigation.Controls.Add(label7);
-            this.pnl_navigation.Controls.Add(label8);
-            this.pnl_navigation.Controls.Add(this.bnt_exit);
-            this.pnl_navigation.Controls.Add(label9);
-            this.pnl_navigation.Controls.Add(this.btn_alarms);
-            this.pnl_navigation.Controls.Add(label10);
-            this.pnl_navigation.Controls.Add(this.btn_axis);
-            this.pnl_navigation.Controls.Add(label11);
-            this.pnl_navigation.Location = new System.Drawing.Point(0, 663);
-            this.pnl_navigation.Name = "pnl_navigation";
-            this.pnl_navigation.Size = new System.Drawing.Size(1024, 104);
-            this.pnl_navigation.TabIndex = 325;
             // 
             // FormHomePage
             // 
@@ -712,6 +698,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClosingEvent_homePageClosing);
             this.Load += new System.EventHandler(this.FormHomePage_Load);
             this.Shown += new System.EventHandler(this.FormHomePage_Shown);
+            this.pnl_pageContainer.ResumeLayout(false);
             this.pnl_header.ResumeLayout(false);
             this.pnl_safetyTask.ResumeLayout(false);
             this.pnl_safetyTask.PerformLayout();
@@ -774,8 +761,8 @@
         private System.Windows.Forms.Button btn_alarms;
         private System.Windows.Forms.Button bnt_exit;
         private System.Windows.Forms.Button btn_VAT;
-        private System.Windows.Forms.Button btn_testUDT;
         private System.Windows.Forms.Panel pnl_navigation;
+        private System.Windows.Forms.Button btn_testUDT;
     }
 }
 

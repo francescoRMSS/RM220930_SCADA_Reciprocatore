@@ -36,12 +36,61 @@ namespace RM.src.RM220930
 
         #region Custom button
 
-        private CustomButton customBtn_service;
+        #region pnl_navigation
 
+        /// <summary>
+        /// Button cabin
+        /// </summary>
         private CustomButton customBtn_cabin;
+
+        /// <summary>
+        /// Button catena
+        /// </summary>
+        private CustomButton customBtn_chain;
+
+        /// <summary>
+        /// Button ricette
+        /// </summary>
+        private CustomButton customBtn_recipe;
+
+        /// <summary>
+        /// Button produzione
+        /// </summary>
+        private CustomButton customBtn_prod;
+
+        private CustomButton customBtn_service;
 
         #endregion
 
+        #endregion
+
+        #region Label
+
+        #region pnl_navigation
+
+        /// <summary>
+        /// Label CABINA
+        /// </summary>
+        private Label lb_cabin;
+
+        /// <summary>
+        /// Label CHAIN
+        /// </summary>
+        private Label lb_chain;
+
+        /// <summary>
+        /// Label RICETTE
+        /// </summary>
+        private Label lb_recipe;
+
+        /// <summary>
+        /// Label PRODUZIONE
+        /// </summary>
+        private Label lb_prod;
+
+        #endregion
+
+        #endregion
 
         #endregion
 
@@ -169,7 +218,269 @@ namespace RM.src.RM220930
         {
             CreateServiceButton();
             CreateCabinButton();
+            CreateChainButton();
+            CreateRecipeButton();
+            CreateProdButton();
         }
+
+        /// <summary>
+        /// Crea dinamicamente il bottone "CABINA" all’interno del pannello di navigazione
+        /// <see cref="pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+        /// </summary>
+        /// <remarks>
+        /// Questo metodo esegue le seguenti operazioni:
+        /// <list type="number">
+        ///     <item>Istanzia un <see cref="CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+        ///     <item>Iscrive l’evento <see cref="ClickEvent_goToHomePage"/> al click del bottone.</item>
+        ///     <item>Aggiunge il bottone al <see cref="Panel"/> di navigazione <see cref="pnl_navigation"/> e lo porta in primo piano.</item>
+        ///     <item>Istanzia una <see cref="Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+        ///     <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+        ///     <item>Aggiunge la label al <see cref="Panel"/> di navigazione e la porta in primo piano.</item>
+        /// </list>
+        /// </remarks>
+        /// <example>
+        /// Esempio di utilizzo:
+        /// <code>
+        /// CreateCabinButton();
+        /// </code>
+        /// </example>
+        private void CreateCabinButton()
+        {
+            // Creazione del CustomButton
+            customBtn_cabin = new CustomButton
+            {
+                Name = "customBtn_cabin",
+                Size = new Size(55, 55),
+                Location = new Point(25, 12), // relativo a panelNavigation
+                BackgroundColor = SystemColors.ActiveBorder,
+                BackgroundImage = Resources.cabin,
+                BackgroundImageLayout = ImageLayout.Center,
+                BorderRadius = 15,
+                BorderSize = 1,
+                BorderColor = Color.DimGray
+            };
+
+            // Evento click per navigare
+            customBtn_cabin.Click += ClickEvent_goToHomePage;
+
+            // Aggiunge il bottone al pannello
+            pnl_navigation.Controls.Add(customBtn_cabin);
+            customBtn_cabin.BringToFront();
+
+            // Creazione della label centrata sotto il bottone
+            lb_cabin = new Label
+            {
+                Text = "CABINA",
+                AutoSize = true, // importante per centrare correttamente
+                ForeColor = Color.White,
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                TextAlign = ContentAlignment.TopCenter // centra il testo
+            };
+
+            // Calcolo della posizione della label
+            int labelX = customBtn_cabin.Left + (customBtn_cabin.Width - lb_cabin.PreferredWidth) / 2;
+            int labelY = customBtn_cabin.Bottom + 5; // 5px di margine sotto il bottone
+            lb_cabin.Location = new Point(labelX, labelY);
+
+            // Aggiunge la label al pannello
+            pnl_navigation.Controls.Add(lb_cabin);
+            lb_cabin.BringToFront();
+        }
+
+        /// <summary>
+        /// Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+        /// <see cref="pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+        /// </summary>
+        /// <remarks>
+        /// Questo metodo esegue le seguenti operazioni:
+        /// <list type="number">
+        ///     <item>Istanzia un <see cref="CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+        ///     <item>Iscrive l’evento <see cref="ClickEvent_goToChainPage"/> al click del bottone.</item>
+        ///     <item>Aggiunge il bottone al <see cref="Panel"/> di navigazione <see cref="pnl_navigation"/> e lo porta in primo piano.</item>
+        ///     <item>Istanzia una <see cref="Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+        ///     <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+        ///     <item>Aggiunge la label al <see cref="Panel"/> di navigazione e la porta in primo piano.</item>
+        /// </list>
+        /// </remarks>
+        /// <example>
+        /// Esempio di utilizzo:
+        /// <code>
+        /// CreateCabinButton();
+        /// </code>
+        /// </example>
+        private void CreateChainButton()
+        {
+            // Creazione del CustomButton
+            customBtn_chain = new CustomButton
+            {
+                Name = "customBtn_chain",
+                Size = new Size(55, 55),
+                Location = new Point(125, 12), // relativo a panelNavigation
+                BackgroundColor = SystemColors.ActiveBorder,
+                BackgroundImage = Resources.chain32Black,
+                BackgroundImageLayout = ImageLayout.Center,
+                BorderRadius = 15,
+                BorderSize = 1,
+                BorderColor = Color.DimGray
+            };
+
+            // Evento click per navigare
+            customBtn_chain.Click += ClickEvent_goToChainPage;
+
+            // Aggiunge il bottone al pannello
+            pnl_navigation.Controls.Add(customBtn_chain);
+            customBtn_chain.BringToFront();
+
+            // Creazione della label centrata sotto il bottone
+            lb_chain = new Label
+            {
+                Text = "CATENA",
+                AutoSize = true, // importante per centrare correttamente
+                ForeColor = Color.White,
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                TextAlign = ContentAlignment.TopCenter // centra il testo
+            };
+
+            // Calcolo della posizione della label
+            int labelX = customBtn_chain.Left + (customBtn_chain.Width - lb_chain.PreferredWidth) / 2;
+            int labelY = customBtn_chain.Bottom + 5; // 5px di margine sotto il bottone
+            lb_chain.Location = new Point(labelX, labelY);
+
+            // Aggiunge la label al pannello
+            pnl_navigation.Controls.Add(lb_chain);
+            lb_chain.BringToFront();
+        }
+
+        /// <summary>
+        /// Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+        /// <see cref="pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+        /// </summary>
+        /// <remarks>
+        /// Questo metodo esegue le seguenti operazioni:
+        /// <list type="number">
+        ///     <item>Istanzia un <see cref="CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+        ///     <item>Iscrive l’evento <see cref="ClickEvent_goToProdPage"/> al click del bottone.</item>
+        ///     <item>Aggiunge il bottone al <see cref="Panel"/> di navigazione <see cref="pnl_navigation"/> e lo porta in primo piano.</item>
+        ///     <item>Istanzia una <see cref="Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+        ///     <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+        ///     <item>Aggiunge la label al <see cref="Panel"/> di navigazione e la porta in primo piano.</item>
+        /// </list>
+        /// </remarks>
+        /// <example>
+        /// Esempio di utilizzo:
+        /// <code>
+        /// CreateCabinButton();
+        /// </code>
+        /// </example>
+        private void CreateRecipeButton()
+        {
+            // Creazione del CustomButton
+            customBtn_recipe = new CustomButton
+            {
+                Name = "customBtn_recipe",
+                Size = new Size(55, 55),
+                Location = new Point(225, 12), // relativo a panelNavigation
+                BackgroundColor = SystemColors.ActiveBorder,
+                BackgroundImage = Resources.recipe32Black,
+                BackgroundImageLayout = ImageLayout.Center,
+                BorderRadius = 15,
+                BorderSize = 1,
+                BorderColor = Color.DimGray
+            };
+
+            // Evento click per navigare
+            customBtn_recipe.Click += ClickEvent_goToRecipePage;
+
+            // Aggiunge il bottone al pannello
+            pnl_navigation.Controls.Add(customBtn_recipe);
+            customBtn_recipe.BringToFront();
+
+            // Creazione della label centrata sotto il bottone
+            lb_recipe = new Label
+            {
+                Text = "RICETTE",
+                AutoSize = true, // importante per centrare correttamente
+                ForeColor = Color.White,
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                TextAlign = ContentAlignment.TopCenter // centra il testo
+            };
+
+            // Calcolo della posizione della label
+            int labelX = customBtn_recipe.Left + (customBtn_recipe.Width - lb_recipe.PreferredWidth) / 2;
+            int labelY = customBtn_recipe.Bottom + 5; // 5px di margine sotto il bottone
+            lb_recipe.Location = new Point(labelX, labelY);
+
+            // Aggiunge la label al pannello
+            pnl_navigation.Controls.Add(lb_recipe);
+            lb_recipe.BringToFront();
+        }
+
+        /// <summary>
+        /// Crea dinamicamente il bottone "ASSI" all’interno del pannello di navigazione
+        /// <see cref="pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
+        /// </summary>
+        /// <remarks>
+        /// Questo metodo esegue le seguenti operazioni:
+        /// <list type="number">
+        ///     <item>Istanzia un <see cref="CustomButton"/> con dimensioni, posizione, colore di sfondo, immagine, bordi arrotondati e bordo colorato.</item>
+        ///     <item>Iscrive l’evento <see cref="ClickEvent_goToProdPage"/> al click del bottone.</item>
+        ///     <item>Aggiunge il bottone al <see cref="Panel"/> di navigazione <see cref="pnl_navigation"/> e lo porta in primo piano.</item>
+        ///     <item>Istanzia una <see cref="Label"/> con il testo "CABINA", centrata orizzontalmente sotto il bottone.</item>
+        ///     <item>Calcola dinamicamente la posizione della label in base alla larghezza del bottone e della label.</item>
+        ///     <item>Aggiunge la label al <see cref="Panel"/> di navigazione e la porta in primo piano.</item>
+        /// </list>
+        /// </remarks>
+        /// <example>
+        /// Esempio di utilizzo:
+        /// <code>
+        /// CreateCabinButton();
+        /// </code>
+        /// </example>
+        private void CreateProdButton()
+        {
+            // Creazione del CustomButton
+            customBtn_prod = new CustomButton
+            {
+                Name = "customBtn_prod",
+                Size = new Size(55, 55),
+                Location = new Point(325, 12), // relativo a panelNavigation
+                BackgroundColor = SystemColors.ActiveBorder,
+                BackgroundImage = Resources.prod32Black,
+                BackgroundImageLayout = ImageLayout.Center,
+                BorderRadius = 15,
+                BorderSize = 1,
+                BorderColor = Color.DimGray
+            };
+
+            // Evento click per navigare
+            customBtn_prod.Click += ClickEvent_goToProdPage;
+
+            // Aggiunge il bottone al pannello
+            pnl_navigation.Controls.Add(customBtn_prod);
+            customBtn_prod.BringToFront();
+
+            // Creazione della label centrata sotto il bottone
+            lb_prod = new Label
+            {
+                Text = "PRODUZIONE",
+                AutoSize = true, // importante per centrare correttamente
+                ForeColor = Color.White,
+                Font = new Font("Arial", 8, FontStyle.Bold),
+                TextAlign = ContentAlignment.TopCenter // centra il testo
+            };
+
+            // Calcolo della posizione della label
+            int labelX = customBtn_prod.Left + (customBtn_prod.Width - lb_prod.PreferredWidth) / 2;
+            int labelY = customBtn_prod.Bottom + 5; // 5px di margine sotto il bottone
+            lb_prod.Location = new Point(labelX, labelY);
+
+            // Aggiunge la label al pannello
+            pnl_navigation.Controls.Add(lb_prod);
+            lb_prod.BringToFront();
+        }
+
+      
+
 
         private void CreateServiceButton()
         {
@@ -190,26 +501,8 @@ namespace RM.src.RM220930
             customBtn_service.BringToFront();
         }
 
-        private void CreateCabinButton()
-        {
-            customBtn_cabin = new CustomButton
-            {
-                Name = "customBtn_cabin",
-                Size = new Size(55, 55),
-                Location = new Point(25, 12), // relativo a panelNavigation
-                BackgroundColor = SystemColors.ActiveBorder,
-                BackgroundImage = Resources.cabin,
-                BackgroundImageLayout = ImageLayout.Center,
-                BorderRadius = 20,
-                BorderSize = 1,
-                BorderColor = Color.DimGray
-            };
+       
 
-            customBtn_cabin.Click += ClickEvent_goToHomePage;
-
-            pnl_navigation.Controls.Add(customBtn_cabin);
-            customBtn_cabin.BringToFront();
-        }
 
 
         #region Metodi di FormHomePage
@@ -381,8 +674,20 @@ namespace RM.src.RM220930
         {
             // Registrazione delle pagine
             _navigator.RegisterPage("Home Page", typeof(UC_HomePage));
+            _navigator.RegisterPage("Chain", typeof(UC_chain));
+            _navigator.RegisterPage("Recipe", typeof(UC_recipe));
+            _navigator.RegisterPage("Prod", typeof(UC_prod));
             _navigator.RegisterPage("Axis", typeof(UC_axis));
             _navigator.RegisterPage("Test UDT", typeof(UC_testUDT));
+
+        }
+
+        private void ResetButtonColor()
+        {
+            customBtn_cabin.BackColor = SystemColors.ActiveBorder;
+            customBtn_chain.BackColor = SystemColors.ActiveBorder;
+            customBtn_recipe.BackColor = SystemColors.ActiveBorder;
+            customBtn_prod.BackColor = SystemColors.ActiveBorder;
         }
 
         #endregion
@@ -548,8 +853,47 @@ namespace RM.src.RM220930
         /// <param name="e"></param>
         private void ClickEvent_goToHomePage(object sender, EventArgs e)
         {
+            ResetButtonColor();
+            customBtn_cabin.BackgroundColor = Color.DimGray;
             _navigator.Navigate("Home Page", "HOME PAGE");
         }
+
+        /// <summary>
+        /// Apre la pagina della catena
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_goToChainPage(object sender, EventArgs e)
+        {
+            ResetButtonColor();
+            customBtn_chain.BackgroundColor = Color.DimGray;
+            _navigator.Navigate("Chain", "CATENA");
+        }
+
+        /// <summary>
+        /// Apre la pagina delle ricette
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_goToRecipePage(object sender, EventArgs e)
+        {
+            ResetButtonColor();
+            customBtn_recipe.BackgroundColor = Color.DimGray;
+            _navigator.Navigate("Recipe", "RICETTE");
+        }
+
+        /// <summary>
+        /// Apre la pagina produzione
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_goToProdPage(object sender, EventArgs e)
+        {
+            ResetButtonColor();
+            customBtn_prod.BackgroundColor = Color.DimGray;
+            _navigator.Navigate("Prod", "RICETTE");
+        }
+
 
         /// <summary>
         /// Apre la pagina di test UDT
