@@ -32,6 +32,19 @@ namespace RM.src.RM220930
     /// </summary> 
     public partial class FormHomePage : Form
     {
+        #region Graphic interface
+
+        #region Custom button
+
+        private CustomButton customBtn_service;
+
+        private CustomButton customBtn_cabin;
+
+        #endregion
+
+
+        #endregion
+
         #region Variabili d'istanza
 
         static FormHomePage _obj;
@@ -121,6 +134,7 @@ namespace RM.src.RM220930
         public FormHomePage()
         {
             InitializeComponent();
+            InitDynamicControls();
 
             //EnterFullScreenMode();
             CheckForIllegalCrossThreadCalls = false;
@@ -145,8 +159,58 @@ namespace RM.src.RM220930
             // Iscrizione al metodo OnAllarmeResettato quando generato evento AllarmeResettato
             SCADAManager.AllarmeResettato += OnAllarmeResettato;
 
-            ScreenSaverManager.AutoAddClickEvents(this); 
+            ScreenSaverManager.AutoAddClickEvents(this);
+
+        
+
         }
+
+        private void InitDynamicControls()
+        {
+            CreateServiceButton();
+            CreateCabinButton();
+        }
+
+        private void CreateServiceButton()
+        {
+            customBtn_service = new CustomButton
+            {
+                Name = "customBtn_service",
+                Text = "Service",
+                Size = new Size(55, 55),
+                Location = new Point(430, 12), // relativo a panelNavigation
+                Anchor = AnchorStyles.Top | AnchorStyles.Left,
+                BackgroundColor = SystemColors.ActiveBorder,
+                BorderRadius = 20
+            };
+
+            // customBtn_service.Click += CustomBtn_service_Click;
+
+            pnl_navigation.Controls.Add(customBtn_service);
+            customBtn_service.BringToFront();
+        }
+
+        private void CreateCabinButton()
+        {
+            customBtn_cabin = new CustomButton
+            {
+                Name = "customBtn_cabin",
+                Size = new Size(55, 55),
+                Location = new Point(25, 12), // relativo a panelNavigation
+                BackgroundColor = SystemColors.ActiveBorder,
+                BackgroundImage = Resources.cabin,
+                BackgroundImageLayout = ImageLayout.Center,
+                BorderRadius = 20,
+                BorderSize = 1,
+                BorderColor = Color.DimGray
+            };
+
+            customBtn_cabin.Click += ClickEvent_goToHomePage;
+
+            pnl_navigation.Controls.Add(customBtn_cabin);
+            customBtn_cabin.BringToFront();
+        }
+
 
         #region Metodi di FormHomePage
 

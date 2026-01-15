@@ -180,6 +180,12 @@
     <Compile Include="src\RM220930\Forms\FormLoading.Designer.cs">
       <DependentUpon>FormLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axeConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axeConfiguration.Designer.cs">
+      <DependentUpon>UC_axeConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\Axis\UC_axePosition.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </Compile>
     <EmbeddedResource Include="src\RM220930\Forms\FormLoading.resx">
       <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_axeConfiguration.resx">
+      <DependentUpon>UC_axeConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\Axis\UC_axePosition.resx">
       <DependentUpon>UC_axePosition.cs</DependentUpon>

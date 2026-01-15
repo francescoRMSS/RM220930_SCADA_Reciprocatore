@@ -1007,6 +1007,23 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
+            </summary>
+        </member>
         <member name="E:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.NavigateRequested">
             <summary>
             Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
@@ -1210,6 +1227,13 @@
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_goToAxePosition(System.Object,System.EventArgs)">
             <summary>
             Apre la pagina delle posizione asse
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_goToAxeConfiguration(System.Object,System.EventArgs)">
+            <summary>
+            Apre la pagina della configurazione asse
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -2705,6 +2729,24 @@
             - Caching (le pagine già create vengono riutilizzate)
             - Passaggio di parametri tramite l’interfaccia <see cref="T:INavigable"/>
             </summary>
+        </member>
+        <member name="P:Navigator.HasCurrentPage">
+            <summary>
+            Indica se il Navigator ha attualmente una pagina attiva.
+            </summary>
+            <remarks>
+            Restituisce <c>true</c> dopo la prima chiamata a <see cref="M:Navigator.Navigate(System.String,System.Object)"/>.
+            Può essere utilizzato per evitare navigazioni ripetute o inizializzazioni multiple.
+            </remarks>
+        </member>
+        <member name="P:Navigator.CurrentPageKey">
+            <summary>
+            Restituisce la chiave della pagina attualmente visualizzata.
+            </summary>
+            <remarks>
+            La proprietà è di sola lettura e viene aggiornata internamente dal Navigator
+            ogni volta che viene effettuata una navigazione.
+            </remarks>
         </member>
         <member name="M:Navigator.#ctor(System.Windows.Forms.Panel)">
             <summary>

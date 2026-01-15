@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label label7;
-            System.Windows.Forms.Label label8;
-            System.Windows.Forms.Label label9;
-            System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
+            System.Windows.Forms.Label label10;
+            System.Windows.Forms.Label label9;
+            System.Windows.Forms.Label label8;
+            System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label12;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomePage));
             this.pnl_pageContainer = new System.Windows.Forms.Panel();
@@ -71,18 +71,17 @@
             this.Pnl_logo_rm = new RMLib.View.CustomPanel();
             this.lbl_pageTitle = new System.Windows.Forms.Label();
             this.lbl_dateTime = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_testUDT = new System.Windows.Forms.Button();
-            this.btn_VAT = new System.Windows.Forms.Button();
-            this.btn_homePage = new System.Windows.Forms.Button();
-            this.bnt_exit = new System.Windows.Forms.Button();
-            this.btn_alarms = new System.Windows.Forms.Button();
             this.btn_axis = new System.Windows.Forms.Button();
-            label7 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
+            this.btn_alarms = new System.Windows.Forms.Button();
+            this.bnt_exit = new System.Windows.Forms.Button();
+            this.btn_VAT = new System.Windows.Forms.Button();
+            this.btn_testUDT = new System.Windows.Forms.Button();
+            this.pnl_navigation = new System.Windows.Forms.Panel();
             label11 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
             this.pnl_header.SuspendLayout();
             this.pnl_safetyTask.SuspendLayout();
@@ -93,80 +92,8 @@
             this.pnl_lowTask.SuspendLayout();
             this.pnl_highTask.SuspendLayout();
             this.PnlLogoContainer.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pnl_navigation.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            label7.BackColor = System.Drawing.Color.Transparent;
-            label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(931, 80);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(60, 22);
-            label7.TabIndex = 335;
-            label7.Text = "VAT";
-            label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            label8.BackColor = System.Drawing.Color.Transparent;
-            label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.ForeColor = System.Drawing.SystemColors.Control;
-            label8.Location = new System.Drawing.Point(25, 80);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(60, 22);
-            label8.TabIndex = 333;
-            label8.Text = "CABINA";
-            label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            label9.BackColor = System.Drawing.Color.Transparent;
-            label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(321, 80);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(60, 22);
-            label9.TabIndex = 331;
-            label9.Text = "USCITA";
-            label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label10
-            // 
-            label10.BackColor = System.Drawing.Color.Transparent;
-            label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(221, 80);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(60, 22);
-            label10.TabIndex = 329;
-            label10.Text = "ALLARMI";
-            label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label11
-            // 
-            label11.BackColor = System.Drawing.Color.Transparent;
-            label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.ForeColor = System.Drawing.SystemColors.Control;
-            label11.Location = new System.Drawing.Point(121, 80);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(60, 22);
-            label11.TabIndex = 327;
-            label11.Text = "ASSI";
-            label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label12
-            // 
-            label12.BackColor = System.Drawing.Color.Transparent;
-            label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label12.ForeColor = System.Drawing.SystemColors.Control;
-            label12.Location = new System.Drawing.Point(829, 80);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(65, 22);
-            label12.TabIndex = 337;
-            label12.Text = "TEST UDT";
-            label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pnl_pageContainer
             // 
@@ -616,85 +543,17 @@
             this.lbl_dateTime.Text = "12:34:56";
             this.lbl_dateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
+            // label11
             // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Controls.Add(this.btn_testUDT);
-            this.panel5.Controls.Add(label12);
-            this.panel5.Controls.Add(this.btn_VAT);
-            this.panel5.Controls.Add(label7);
-            this.panel5.Controls.Add(this.btn_homePage);
-            this.panel5.Controls.Add(label8);
-            this.panel5.Controls.Add(this.bnt_exit);
-            this.panel5.Controls.Add(label9);
-            this.panel5.Controls.Add(this.btn_alarms);
-            this.panel5.Controls.Add(label10);
-            this.panel5.Controls.Add(this.btn_axis);
-            this.panel5.Controls.Add(label11);
-            this.panel5.Location = new System.Drawing.Point(0, 663);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1024, 104);
-            this.panel5.TabIndex = 325;
-            // 
-            // btn_testUDT
-            // 
-            this.btn_testUDT.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_testUDT.BackgroundImage = global::RM.Properties.Resources.config;
-            this.btn_testUDT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_testUDT.Location = new System.Drawing.Point(834, 12);
-            this.btn_testUDT.Name = "btn_testUDT";
-            this.btn_testUDT.Size = new System.Drawing.Size(60, 60);
-            this.btn_testUDT.TabIndex = 338;
-            this.btn_testUDT.UseVisualStyleBackColor = false;
-            this.btn_testUDT.Click += new System.EventHandler(this.ClickEvent_testUDT);
-            // 
-            // btn_VAT
-            // 
-            this.btn_VAT.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_VAT.BackgroundImage = global::RM.Properties.Resources.vatView;
-            this.btn_VAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_VAT.Location = new System.Drawing.Point(931, 12);
-            this.btn_VAT.Name = "btn_VAT";
-            this.btn_VAT.Size = new System.Drawing.Size(60, 60);
-            this.btn_VAT.TabIndex = 336;
-            this.btn_VAT.UseVisualStyleBackColor = false;
-            this.btn_VAT.Click += new System.EventHandler(this.ClickEvent_openVAT);
-            // 
-            // btn_homePage
-            // 
-            this.btn_homePage.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_homePage.BackgroundImage = global::RM.Properties.Resources.cabin;
-            this.btn_homePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_homePage.Location = new System.Drawing.Point(25, 12);
-            this.btn_homePage.Name = "btn_homePage";
-            this.btn_homePage.Size = new System.Drawing.Size(60, 60);
-            this.btn_homePage.TabIndex = 334;
-            this.btn_homePage.UseVisualStyleBackColor = false;
-            this.btn_homePage.Click += new System.EventHandler(this.ClickEvent_goToHomePage);
-            // 
-            // bnt_exit
-            // 
-            this.bnt_exit.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
-            this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.bnt_exit.Location = new System.Drawing.Point(321, 12);
-            this.bnt_exit.Name = "bnt_exit";
-            this.bnt_exit.Size = new System.Drawing.Size(60, 60);
-            this.bnt_exit.TabIndex = 332;
-            this.bnt_exit.UseVisualStyleBackColor = false;
-            this.bnt_exit.Click += new System.EventHandler(this.ClickEvent_exit);
-            // 
-            // btn_alarms
-            // 
-            this.btn_alarms.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
-            this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_alarms.Location = new System.Drawing.Point(221, 12);
-            this.btn_alarms.Name = "btn_alarms";
-            this.btn_alarms.Size = new System.Drawing.Size(60, 60);
-            this.btn_alarms.TabIndex = 330;
-            this.btn_alarms.UseVisualStyleBackColor = false;
-            this.btn_alarms.Click += new System.EventHandler(this.ClickEvent_alarms);
+            label11.BackColor = System.Drawing.Color.Transparent;
+            label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.ForeColor = System.Drawing.SystemColors.Control;
+            label11.Location = new System.Drawing.Point(121, 80);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(60, 22);
+            label11.TabIndex = 327;
+            label11.Text = "ASSI";
+            label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btn_axis
             // 
@@ -708,6 +567,133 @@
             this.btn_axis.UseVisualStyleBackColor = false;
             this.btn_axis.Click += new System.EventHandler(this.ClickEvent_goToAxis);
             // 
+            // label10
+            // 
+            label10.BackColor = System.Drawing.Color.Transparent;
+            label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.ForeColor = System.Drawing.SystemColors.Control;
+            label10.Location = new System.Drawing.Point(221, 80);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(60, 22);
+            label10.TabIndex = 329;
+            label10.Text = "ALLARMI";
+            label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_alarms
+            // 
+            this.btn_alarms.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_alarms.BackgroundImage = global::RM.Properties.Resources.alarm;
+            this.btn_alarms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_alarms.Location = new System.Drawing.Point(221, 12);
+            this.btn_alarms.Name = "btn_alarms";
+            this.btn_alarms.Size = new System.Drawing.Size(60, 60);
+            this.btn_alarms.TabIndex = 330;
+            this.btn_alarms.UseVisualStyleBackColor = false;
+            this.btn_alarms.Click += new System.EventHandler(this.ClickEvent_alarms);
+            // 
+            // label9
+            // 
+            label9.BackColor = System.Drawing.Color.Transparent;
+            label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.ForeColor = System.Drawing.SystemColors.Control;
+            label9.Location = new System.Drawing.Point(321, 80);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(60, 22);
+            label9.TabIndex = 331;
+            label9.Text = "USCITA";
+            label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // bnt_exit
+            // 
+            this.bnt_exit.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.bnt_exit.BackgroundImage = global::RM.Properties.Resources.power_off;
+            this.bnt_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.bnt_exit.Location = new System.Drawing.Point(321, 12);
+            this.bnt_exit.Name = "bnt_exit";
+            this.bnt_exit.Size = new System.Drawing.Size(60, 60);
+            this.bnt_exit.TabIndex = 332;
+            this.bnt_exit.UseVisualStyleBackColor = false;
+            this.bnt_exit.Click += new System.EventHandler(this.ClickEvent_exit);
+            // 
+            // label8
+            // 
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.ForeColor = System.Drawing.SystemColors.Control;
+            label8.Location = new System.Drawing.Point(25, 80);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(60, 22);
+            label8.TabIndex = 333;
+            label8.Text = "CABINA";
+            label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            label7.BackColor = System.Drawing.Color.Transparent;
+            label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.ForeColor = System.Drawing.SystemColors.Control;
+            label7.Location = new System.Drawing.Point(931, 80);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(60, 22);
+            label7.TabIndex = 335;
+            label7.Text = "VAT";
+            label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_VAT
+            // 
+            this.btn_VAT.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_VAT.BackgroundImage = global::RM.Properties.Resources.vatView;
+            this.btn_VAT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_VAT.Location = new System.Drawing.Point(931, 12);
+            this.btn_VAT.Name = "btn_VAT";
+            this.btn_VAT.Size = new System.Drawing.Size(60, 60);
+            this.btn_VAT.TabIndex = 336;
+            this.btn_VAT.UseVisualStyleBackColor = false;
+            this.btn_VAT.Click += new System.EventHandler(this.ClickEvent_openVAT);
+            // 
+            // label12
+            // 
+            label12.BackColor = System.Drawing.Color.Transparent;
+            label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.ForeColor = System.Drawing.SystemColors.Control;
+            label12.Location = new System.Drawing.Point(829, 80);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(65, 22);
+            label12.TabIndex = 337;
+            label12.Text = "TEST UDT";
+            label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_testUDT
+            // 
+            this.btn_testUDT.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_testUDT.BackgroundImage = global::RM.Properties.Resources.config;
+            this.btn_testUDT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_testUDT.Location = new System.Drawing.Point(834, 12);
+            this.btn_testUDT.Name = "btn_testUDT";
+            this.btn_testUDT.Size = new System.Drawing.Size(60, 60);
+            this.btn_testUDT.TabIndex = 338;
+            this.btn_testUDT.UseVisualStyleBackColor = false;
+            this.btn_testUDT.Click += new System.EventHandler(this.ClickEvent_testUDT);
+            // 
+            // pnl_navigation
+            // 
+            this.pnl_navigation.BackColor = System.Drawing.Color.Black;
+            this.pnl_navigation.Controls.Add(this.btn_testUDT);
+            this.pnl_navigation.Controls.Add(label12);
+            this.pnl_navigation.Controls.Add(this.btn_VAT);
+            this.pnl_navigation.Controls.Add(label7);
+            this.pnl_navigation.Controls.Add(label8);
+            this.pnl_navigation.Controls.Add(this.bnt_exit);
+            this.pnl_navigation.Controls.Add(label9);
+            this.pnl_navigation.Controls.Add(this.btn_alarms);
+            this.pnl_navigation.Controls.Add(label10);
+            this.pnl_navigation.Controls.Add(this.btn_axis);
+            this.pnl_navigation.Controls.Add(label11);
+            this.pnl_navigation.Location = new System.Drawing.Point(0, 663);
+            this.pnl_navigation.Name = "pnl_navigation";
+            this.pnl_navigation.Size = new System.Drawing.Size(1024, 104);
+            this.pnl_navigation.TabIndex = 325;
+            // 
             // FormHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,7 +702,7 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 767);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pnl_navigation);
             this.Controls.Add(this.pnl_pageContainer);
             this.Controls.Add(this.pnl_header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -742,7 +728,7 @@
             this.pnl_highTask.ResumeLayout(false);
             this.pnl_highTask.PerformLayout();
             this.PnlLogoContainer.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.pnl_navigation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -779,18 +765,17 @@
         private System.Windows.Forms.Panel pnl_appTask;
         private RMLib.View.CustomPanel pnl_appTaskStatus;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btn_VAT;
-        private System.Windows.Forms.Button btn_homePage;
-        private System.Windows.Forms.Button bnt_exit;
-        private System.Windows.Forms.Button btn_alarms;
-        private System.Windows.Forms.Button btn_axis;
         private System.Windows.Forms.Panel RobotMovPanel;
         private System.Windows.Forms.Panel RobotBlinkPanel;
-        private System.Windows.Forms.Button btn_testUDT;
         private System.Windows.Forms.Panel pnl_safetyTask;
         private RMLib.View.CustomPanel pnl_safetyTaskStatus;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btn_axis;
+        private System.Windows.Forms.Button btn_alarms;
+        private System.Windows.Forms.Button bnt_exit;
+        private System.Windows.Forms.Button btn_VAT;
+        private System.Windows.Forms.Button btn_testUDT;
+        private System.Windows.Forms.Panel pnl_navigation;
     }
 }
 

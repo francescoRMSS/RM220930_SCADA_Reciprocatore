@@ -70,8 +70,10 @@ namespace RM.src.RM220930.Forms.Plant
 
             SelectAxe(); // Seleziono graficamente l'asse
 
-            // Apro la pagina dei parametri di lavoro relativa
-            _navigator.Navigate("Work Params", axeOffset);
+            if (!_navigator.HasCurrentPage)
+            {
+                _navigator.Navigate("Work Params", axeOffset);
+            }
         }
 
         /// <summary>
@@ -154,6 +156,7 @@ namespace RM.src.RM220930.Forms.Plant
             // Registrazione delle pagine
             _navigator.RegisterPage("Work Params", typeof(UC_workParams));
             _navigator.RegisterPage("Axe Position", typeof(UC_axePosition));
+            _navigator.RegisterPage("Axe Configuration", typeof(UC_axeConfiguration));
         }
 
         #endregion
@@ -173,7 +176,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
             btn_axe1.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -187,7 +189,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
             btn_axe2.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -201,7 +202,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
             btn_axe3.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -215,7 +215,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
             btn_axe4.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -229,7 +228,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
             btn_axe5.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -243,7 +241,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
             btn_axe6.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -257,7 +254,6 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
             btn_axe7.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         /// <summary>
@@ -271,10 +267,11 @@ namespace RM.src.RM220930.Forms.Plant
             RestorButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
             btn_axe8.BackColor = SystemColors.ButtonHighlight;
-            _navigator.Navigate("Work Params", axeOffset);
         }
 
         #endregion
+
+        #region selezione impostazione
 
         /// <summary>
         /// Apre la pagina dei parametri di lavoro
@@ -295,6 +292,18 @@ namespace RM.src.RM220930.Forms.Plant
         {
             _navigator.Navigate("Axe Position", axeOffset);
         }
+
+        /// <summary>
+        /// Apre la pagina della configurazione asse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_goToAxeConfiguration(object sender, EventArgs e)
+        {
+            _navigator.Navigate("Axe Configuration", axeOffset);
+        }
+
+        #endregion
 
         #endregion
     }

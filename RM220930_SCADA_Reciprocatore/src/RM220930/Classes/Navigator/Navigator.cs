@@ -22,6 +22,25 @@ public class Navigator
     private readonly Dictionary<string, UserControl> _cache;
 
     /// <summary>
+    /// Indica se il Navigator ha attualmente una pagina attiva.
+    /// </summary>
+    /// <remarks>
+    /// Restituisce <c>true</c> dopo la prima chiamata a <see cref="Navigate(string, object)"/>.
+    /// Può essere utilizzato per evitare navigazioni ripetute o inizializzazioni multiple.
+    /// </remarks>
+    public bool HasCurrentPage => _currentPageKey != null;
+
+    /// <summary>
+    /// Restituisce la chiave della pagina attualmente visualizzata.
+    /// </summary>
+    /// <remarks>
+    /// La proprietà è di sola lettura e viene aggiornata internamente dal Navigator
+    /// ogni volta che viene effettuata una navigazione.
+    /// </remarks>
+    public string CurrentPageKey => _currentPageKey;
+
+
+    /// <summary>
     /// Inizializza una nuova istanza del <see cref="Navigator"/>.
     /// </summary>
     /// <param name="hostPanel">

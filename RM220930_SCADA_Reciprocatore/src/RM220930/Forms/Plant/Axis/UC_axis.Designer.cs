@@ -46,10 +46,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_axeConfiguration = new System.Windows.Forms.Button();
+            this.btn_axePosition = new System.Windows.Forms.Button();
+            this.btn_axeWorkParams = new System.Windows.Forms.Button();
             this.pnl_axeImage = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             label8 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -240,11 +240,11 @@
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(label3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btn_axeConfiguration);
             this.panel1.Controls.Add(label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_axePosition);
             this.panel1.Controls.Add(label8);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btn_axeWorkParams);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(213, 215);
             this.panel1.Name = "panel1";
@@ -263,30 +263,6 @@
             this.label1.TabIndex = 361;
             this.label1.Text = "Impostazioni";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.BackgroundImage = global::RM.Properties.Resources.settingsWhite;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(16, 41);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 60);
-            this.button5.TabIndex = 362;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.ClickEvent_goToWorkParams);
-            // 
-            // pnl_axeImage
-            // 
-            this.pnl_axeImage.BackColor = System.Drawing.Color.Gray;
-            this.pnl_axeImage.BackgroundImage = global::RM.Properties.Resources.axe_1st_gun;
-            this.pnl_axeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_axeImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_axeImage.Location = new System.Drawing.Point(213, 42);
-            this.pnl_axeImage.Name = "pnl_axeImage";
-            this.pnl_axeImage.Size = new System.Drawing.Size(196, 167);
-            this.pnl_axeImage.TabIndex = 359;
             // 
             // label8
             // 
@@ -312,19 +288,6 @@
             label2.Text = "Posizione asse";
             label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.BackgroundImage = global::RM.Properties.Resources.settingsWhite;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(16, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 60);
-            this.button1.TabIndex = 370;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.ClickEvent_goToAxePosition);
-            // 
             // label3
             // 
             label3.BackColor = System.Drawing.Color.Gray;
@@ -337,17 +300,55 @@
             label3.Text = "Configurazione";
             label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // btn_axeConfiguration
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.BackgroundImage = global::RM.Properties.Resources.settingsWhite;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(16, 229);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 60);
-            this.button2.TabIndex = 372;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_axeConfiguration.BackColor = System.Drawing.Color.Black;
+            this.btn_axeConfiguration.BackgroundImage = global::RM.Properties.Resources.settingsWhite;
+            this.btn_axeConfiguration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_axeConfiguration.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.btn_axeConfiguration.Location = new System.Drawing.Point(16, 229);
+            this.btn_axeConfiguration.Name = "btn_axeConfiguration";
+            this.btn_axeConfiguration.Size = new System.Drawing.Size(165, 60);
+            this.btn_axeConfiguration.TabIndex = 372;
+            this.btn_axeConfiguration.UseVisualStyleBackColor = false;
+            this.btn_axeConfiguration.Click += new System.EventHandler(this.ClickEvent_goToAxeConfiguration);
+            // 
+            // btn_axePosition
+            // 
+            this.btn_axePosition.BackColor = System.Drawing.Color.Black;
+            this.btn_axePosition.BackgroundImage = global::RM.Properties.Resources.settingsWhite;
+            this.btn_axePosition.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_axePosition.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.btn_axePosition.Location = new System.Drawing.Point(16, 133);
+            this.btn_axePosition.Name = "btn_axePosition";
+            this.btn_axePosition.Size = new System.Drawing.Size(165, 60);
+            this.btn_axePosition.TabIndex = 370;
+            this.btn_axePosition.UseVisualStyleBackColor = false;
+            this.btn_axePosition.Click += new System.EventHandler(this.ClickEvent_goToAxePosition);
+            // 
+            // btn_axeWorkParams
+            // 
+            this.btn_axeWorkParams.BackColor = System.Drawing.Color.Black;
+            this.btn_axeWorkParams.BackgroundImage = global::RM.Properties.Resources.settingsWhite;
+            this.btn_axeWorkParams.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_axeWorkParams.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
+            this.btn_axeWorkParams.Location = new System.Drawing.Point(16, 41);
+            this.btn_axeWorkParams.Name = "btn_axeWorkParams";
+            this.btn_axeWorkParams.Size = new System.Drawing.Size(165, 60);
+            this.btn_axeWorkParams.TabIndex = 362;
+            this.btn_axeWorkParams.UseVisualStyleBackColor = false;
+            this.btn_axeWorkParams.Click += new System.EventHandler(this.ClickEvent_goToWorkParams);
+            // 
+            // pnl_axeImage
+            // 
+            this.pnl_axeImage.BackColor = System.Drawing.Color.Gray;
+            this.pnl_axeImage.BackgroundImage = global::RM.Properties.Resources.axe_1st_gun;
+            this.pnl_axeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnl_axeImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_axeImage.Location = new System.Drawing.Point(213, 42);
+            this.pnl_axeImage.Name = "pnl_axeImage";
+            this.pnl_axeImage.Size = new System.Drawing.Size(196, 167);
+            this.pnl_axeImage.TabIndex = 359;
             // 
             // UC_axis
             // 
@@ -385,8 +386,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_axeWorkParams;
+        private System.Windows.Forms.Button btn_axeConfiguration;
+        private System.Windows.Forms.Button btn_axePosition;
     }
 }
