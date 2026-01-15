@@ -25,8 +25,9 @@ namespace RM.src.RM220930.Forms.Plant
 
         #endregion
 
+        
         #region Graphic interface
-
+        /*
         #region pnl_axis
 
         #region Custom button
@@ -209,9 +210,9 @@ namespace RM.src.RM220930.Forms.Plant
         #endregion
 
         #endregion
-
+        */
         #endregion
-
+        
         /// <summary>
         /// Costruttore
         /// </summary>
@@ -242,6 +243,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void InitDynamicControlsAxis()
         {
+            /*
             CreateZ1Button();
             CreateZ2Button();
             CreateZ3Button();
@@ -250,6 +252,7 @@ namespace RM.src.RM220930.Forms.Plant
             CreateZ6Button();
             CreateZ7Button();
             CreateZ8Button();
+            */
         }
 
         /// <summary>
@@ -257,9 +260,11 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void InitDynamicControlsOptions()
         {
+            /*
             CreateLaserButton();
             Create3DButton();
             CreateLightsButton();
+            */
         }
 
         /// <summary>
@@ -267,14 +272,16 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void InitDynamicControlsHub()
         {
+            /*
             CreateUpButton();
             CreateDownButton();
             CreateValHubPanelLabel();
             CreateHubOFFButton();
+            */
         }
 
         #region Creazione Assi
-
+        /*
         /// <summary>
         /// Crea dinamicamente il bottone "Z1" all’interno del pannello di navigazione
         /// <see cref="pnl_navigation"/> e aggiunge un'etichetta centrata sotto di esso.
@@ -850,11 +857,11 @@ namespace RM.src.RM220930.Forms.Plant
             pnl_axis.Controls.Add(customBtn_OFFz8);
             customBtn_OFFz8.BringToFront();
         }
-
+        */
         #endregion
 
         #region Creazione opzioni
-
+        /*
         /// <summary>
         /// Crea dinamicamente il bottone "LASER" all’interno del pannello pnl_options
         /// </summary>
@@ -986,11 +993,11 @@ namespace RM.src.RM220930.Forms.Plant
             pnl_options.Controls.Add(lb_lights);
             lb_lights.BringToFront();
         }
-
+        */
         #endregion
 
         #region Creazione hub
-
+        /*
         /// <summary>
         /// Crea dinamicamente il bottone "UP" all’interno di pnl_hub
         ///
@@ -1125,7 +1132,7 @@ namespace RM.src.RM220930.Forms.Plant
             pnl_hub.Controls.Add(customBtn_hubOFF);
             customBtn_hubOFF.BringToFront();
         }
-
+        */
         #endregion
 
         #endregion
@@ -1219,9 +1226,9 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="e"></param>
         private void UC_HomePage_Load(object sender, EventArgs e)
         {
-            InitDynamicControlsAxis();
-            InitDynamicControlsOptions();
-            InitDynamicControlsHub();
+            //InitDynamicControlsAxis();
+            //InitDynamicControlsOptions();
+            //InitDynamicControlsHub();
         }
 
         #endregion
