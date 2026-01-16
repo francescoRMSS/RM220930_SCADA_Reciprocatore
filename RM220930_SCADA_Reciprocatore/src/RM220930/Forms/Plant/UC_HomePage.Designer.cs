@@ -63,6 +63,8 @@
             this.customButton20 = new RMLib.View.CustomButton();
             this.customButton21 = new RMLib.View.CustomButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.customButton1 = new RMLib.View.CustomButton();
+            this.customButton2 = new RMLib.View.CustomButton();
             this.pnl_axis.SuspendLayout();
             this.pnl_options.SuspendLayout();
             this.pnl_hub.SuspendLayout();
@@ -85,6 +87,8 @@
             // 
             this.pnl_axis.BackColor = System.Drawing.Color.Gray;
             this.pnl_axis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_axis.Controls.Add(this.customButton1);
+            this.pnl_axis.Controls.Add(this.customButton2);
             this.pnl_axis.Controls.Add(this.customButton13);
             this.pnl_axis.Controls.Add(this.customButton14);
             this.pnl_axis.Controls.Add(this.customButton15);
@@ -104,7 +108,7 @@
             this.pnl_axis.Controls.Add(this.label6);
             this.pnl_axis.Location = new System.Drawing.Point(319, 50);
             this.pnl_axis.Name = "pnl_axis";
-            this.pnl_axis.Size = new System.Drawing.Size(382, 459);
+            this.pnl_axis.Size = new System.Drawing.Size(382, 479);
             this.pnl_axis.TabIndex = 358;
             // 
             // customButton13
@@ -119,7 +123,7 @@
             this.customButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton13.ForeColor = System.Drawing.Color.White;
-            this.customButton13.Location = new System.Drawing.Point(287, 245);
+            this.customButton13.Location = new System.Drawing.Point(287, 305);
             this.customButton13.Name = "customButton13";
             this.customButton13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton13.Size = new System.Drawing.Size(80, 60);
@@ -140,7 +144,7 @@
             this.customButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton14.ForeColor = System.Drawing.Color.White;
-            this.customButton14.Location = new System.Drawing.Point(287, 329);
+            this.customButton14.Location = new System.Drawing.Point(287, 389);
             this.customButton14.Name = "customButton14";
             this.customButton14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton14.Size = new System.Drawing.Size(80, 60);
@@ -161,7 +165,7 @@
             this.customButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton15.ForeColor = System.Drawing.Color.White;
-            this.customButton15.Location = new System.Drawing.Point(287, 161);
+            this.customButton15.Location = new System.Drawing.Point(287, 221);
             this.customButton15.Name = "customButton15";
             this.customButton15.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton15.Size = new System.Drawing.Size(80, 60);
@@ -182,7 +186,7 @@
             this.customButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton16.ForeColor = System.Drawing.Color.White;
-            this.customButton16.Location = new System.Drawing.Point(287, 80);
+            this.customButton16.Location = new System.Drawing.Point(287, 140);
             this.customButton16.Name = "customButton16";
             this.customButton16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton16.Size = new System.Drawing.Size(80, 60);
@@ -203,7 +207,7 @@
             this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Location = new System.Drawing.Point(96, 246);
+            this.customButton9.Location = new System.Drawing.Point(96, 306);
             this.customButton9.Name = "customButton9";
             this.customButton9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton9.Size = new System.Drawing.Size(80, 60);
@@ -224,7 +228,7 @@
             this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton10.ForeColor = System.Drawing.Color.White;
-            this.customButton10.Location = new System.Drawing.Point(96, 330);
+            this.customButton10.Location = new System.Drawing.Point(96, 390);
             this.customButton10.Name = "customButton10";
             this.customButton10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton10.Size = new System.Drawing.Size(80, 60);
@@ -245,7 +249,7 @@
             this.customButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton11.ForeColor = System.Drawing.Color.White;
-            this.customButton11.Location = new System.Drawing.Point(96, 162);
+            this.customButton11.Location = new System.Drawing.Point(96, 222);
             this.customButton11.Name = "customButton11";
             this.customButton11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton11.Size = new System.Drawing.Size(80, 60);
@@ -266,7 +270,7 @@
             this.customButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton12.ForeColor = System.Drawing.Color.White;
-            this.customButton12.Location = new System.Drawing.Point(96, 81);
+            this.customButton12.Location = new System.Drawing.Point(96, 141);
             this.customButton12.Name = "customButton12";
             this.customButton12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton12.Size = new System.Drawing.Size(80, 60);
@@ -287,7 +291,7 @@
             this.btn_z7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z7.ForeColor = System.Drawing.Color.Black;
-            this.btn_z7.Location = new System.Drawing.Point(205, 245);
+            this.btn_z7.Location = new System.Drawing.Point(205, 305);
             this.btn_z7.Name = "btn_z7";
             this.btn_z7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z7.Size = new System.Drawing.Size(80, 60);
@@ -309,7 +313,7 @@
             this.btn_z8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z8.ForeColor = System.Drawing.Color.Black;
-            this.btn_z8.Location = new System.Drawing.Point(205, 329);
+            this.btn_z8.Location = new System.Drawing.Point(205, 389);
             this.btn_z8.Name = "btn_z8";
             this.btn_z8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z8.Size = new System.Drawing.Size(80, 60);
@@ -331,7 +335,7 @@
             this.btn_z6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z6.ForeColor = System.Drawing.Color.Black;
-            this.btn_z6.Location = new System.Drawing.Point(205, 161);
+            this.btn_z6.Location = new System.Drawing.Point(205, 221);
             this.btn_z6.Name = "btn_z6";
             this.btn_z6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z6.Size = new System.Drawing.Size(80, 60);
@@ -353,7 +357,7 @@
             this.btn_z5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z5.ForeColor = System.Drawing.Color.Black;
-            this.btn_z5.Location = new System.Drawing.Point(205, 80);
+            this.btn_z5.Location = new System.Drawing.Point(205, 140);
             this.btn_z5.Name = "btn_z5";
             this.btn_z5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z5.Size = new System.Drawing.Size(80, 60);
@@ -375,7 +379,7 @@
             this.btn_z3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z3.ForeColor = System.Drawing.Color.Black;
-            this.btn_z3.Location = new System.Drawing.Point(14, 245);
+            this.btn_z3.Location = new System.Drawing.Point(14, 305);
             this.btn_z3.Name = "btn_z3";
             this.btn_z3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z3.Size = new System.Drawing.Size(80, 60);
@@ -397,7 +401,7 @@
             this.btn_z4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z4.ForeColor = System.Drawing.Color.Black;
-            this.btn_z4.Location = new System.Drawing.Point(14, 329);
+            this.btn_z4.Location = new System.Drawing.Point(14, 389);
             this.btn_z4.Name = "btn_z4";
             this.btn_z4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z4.Size = new System.Drawing.Size(80, 60);
@@ -419,7 +423,7 @@
             this.btn_z2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z2.ForeColor = System.Drawing.Color.Black;
-            this.btn_z2.Location = new System.Drawing.Point(14, 161);
+            this.btn_z2.Location = new System.Drawing.Point(14, 221);
             this.btn_z2.Name = "btn_z2";
             this.btn_z2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z2.Size = new System.Drawing.Size(80, 60);
@@ -441,7 +445,7 @@
             this.btn_z1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_z1.ForeColor = System.Drawing.Color.Black;
-            this.btn_z1.Location = new System.Drawing.Point(14, 80);
+            this.btn_z1.Location = new System.Drawing.Point(14, 140);
             this.btn_z1.Name = "btn_z1";
             this.btn_z1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_z1.Size = new System.Drawing.Size(80, 60);
@@ -477,7 +481,7 @@
             this.pnl_options.Controls.Add(this.label7);
             this.pnl_options.Location = new System.Drawing.Point(733, 50);
             this.pnl_options.Name = "pnl_options";
-            this.pnl_options.Size = new System.Drawing.Size(260, 459);
+            this.pnl_options.Size = new System.Drawing.Size(260, 479);
             this.pnl_options.TabIndex = 359;
             // 
             // label3
@@ -485,7 +489,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(-1, 392);
+            this.label3.Location = new System.Drawing.Point(-1, 371);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(260, 15);
             this.label3.TabIndex = 390;
@@ -497,7 +501,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(-1, 268);
+            this.label2.Location = new System.Drawing.Point(-1, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(260, 15);
             this.label2.TabIndex = 389;
@@ -509,7 +513,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(-1, 144);
+            this.label11.Location = new System.Drawing.Point(-1, 123);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(260, 15);
             this.label11.TabIndex = 388;
@@ -529,7 +533,7 @@
             this.customButton19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton19.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton19.ForeColor = System.Drawing.Color.Black;
-            this.customButton19.Location = new System.Drawing.Point(89, 329);
+            this.customButton19.Location = new System.Drawing.Point(89, 308);
             this.customButton19.Name = "customButton19";
             this.customButton19.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton19.Size = new System.Drawing.Size(80, 60);
@@ -550,7 +554,7 @@
             this.customButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton18.ForeColor = System.Drawing.Color.Black;
-            this.customButton18.Location = new System.Drawing.Point(89, 206);
+            this.customButton18.Location = new System.Drawing.Point(89, 185);
             this.customButton18.Name = "customButton18";
             this.customButton18.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton18.Size = new System.Drawing.Size(80, 60);
@@ -571,7 +575,7 @@
             this.customButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton17.ForeColor = System.Drawing.Color.Black;
-            this.customButton17.Location = new System.Drawing.Point(89, 81);
+            this.customButton17.Location = new System.Drawing.Point(89, 60);
             this.customButton17.Name = "customButton17";
             this.customButton17.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton17.Size = new System.Drawing.Size(80, 60);
@@ -595,7 +599,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 154);
+            this.label1.Location = new System.Drawing.Point(176, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 362;
@@ -612,7 +616,7 @@
             this.pnl_hub.Controls.Add(this.label1);
             this.pnl_hub.Location = new System.Drawing.Point(23, 50);
             this.pnl_hub.Name = "pnl_hub";
-            this.pnl_hub.Size = new System.Drawing.Size(260, 459);
+            this.pnl_hub.Size = new System.Drawing.Size(260, 479);
             this.pnl_hub.TabIndex = 360;
             // 
             // customButton22
@@ -627,7 +631,7 @@
             this.customButton22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton22.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton22.ForeColor = System.Drawing.Color.White;
-            this.customButton22.Location = new System.Drawing.Point(141, 162);
+            this.customButton22.Location = new System.Drawing.Point(138, 142);
             this.customButton22.Name = "customButton22";
             this.customButton22.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton22.Size = new System.Drawing.Size(80, 60);
@@ -645,7 +649,7 @@
             this.customPanel1.BorderSize = 2;
             this.customPanel1.Controls.Add(this.label4);
             this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(141, 80);
+            this.customPanel1.Location = new System.Drawing.Point(138, 60);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Size = new System.Drawing.Size(80, 60);
             this.customPanel1.TabIndex = 373;
@@ -676,7 +680,7 @@
             this.customButton20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton20.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton20.ForeColor = System.Drawing.Color.White;
-            this.customButton20.Location = new System.Drawing.Point(43, 161);
+            this.customButton20.Location = new System.Drawing.Point(40, 141);
             this.customButton20.Name = "customButton20";
             this.customButton20.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton20.Size = new System.Drawing.Size(60, 60);
@@ -697,7 +701,7 @@
             this.customButton21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton21.ForeColor = System.Drawing.Color.White;
-            this.customButton21.Location = new System.Drawing.Point(43, 80);
+            this.customButton21.Location = new System.Drawing.Point(40, 60);
             this.customButton21.Name = "customButton21";
             this.customButton21.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton21.Size = new System.Drawing.Size(60, 60);
@@ -717,6 +721,48 @@
             this.label5.TabIndex = 361;
             this.label5.Text = "HUB";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.customButton1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton1.BorderRadius = 15;
+            this.customButton1.BorderSize = 2;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(96, 60);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton1.Size = new System.Drawing.Size(80, 60);
+            this.customButton1.TabIndex = 383;
+            this.customButton1.Text = "OFF";
+            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 2;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
+            this.customButton2.Location = new System.Drawing.Point(14, 59);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton2.Size = new System.Drawing.Size(80, 60);
+            this.customButton2.TabIndex = 382;
+            this.customButton2.Text = "REC";
+            this.customButton2.TextColor = System.Drawing.Color.Black;
+            this.customButton2.UseVisualStyleBackColor = false;
             // 
             // UC_HomePage
             // 
@@ -776,5 +822,7 @@
         private RMLib.View.CustomButton customButton22;
         private RMLib.View.CustomPanel customPanel1;
         private System.Windows.Forms.Label label4;
+        private RMLib.View.CustomButton customButton1;
+        private RMLib.View.CustomButton customButton2;
     }
 }
