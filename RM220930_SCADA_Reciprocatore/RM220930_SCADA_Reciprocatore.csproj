@@ -240,6 +240,12 @@
     <Compile Include="src\RM220930\Forms\Plant\FormLanguageSelection.Designer.cs">
       <DependentUpon>FormLanguageSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_MotorPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\RM220930\Forms\Plant\UC_MotorPanel.Designer.cs">
+      <DependentUpon>UC_MotorPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\RM220930\Forms\Plant\UC_prod.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -313,6 +319,9 @@
     <EmbeddedResource Include="src\RM220930\Forms\Plant\FormLanguageSelection.resx">
       <DependentUpon>FormLanguageSelection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_MotorPanel.resx">
+      <DependentUpon>UC_MotorPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\RM220930\Forms\Plant\UC_prod.resx">
       <DependentUpon>UC_prod.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +353,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logoRM.ico" />
+    <None Include="Resources\load32White.png" />
+    <None Include="Resources\save32White.png" />
+    <None Include="Resources\delete32White.png" />
     <None Include="Resources\x32Black.png" />
     <None Include="Resources\light32White.png" />
     <None Include="Resources\3d32White.png" />

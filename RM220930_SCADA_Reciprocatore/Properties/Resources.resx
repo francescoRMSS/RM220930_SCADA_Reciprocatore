@@ -550,4 +550,13 @@
   <data name="x32Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x32Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete32White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete32White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load32White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\load32White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save32White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save32White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

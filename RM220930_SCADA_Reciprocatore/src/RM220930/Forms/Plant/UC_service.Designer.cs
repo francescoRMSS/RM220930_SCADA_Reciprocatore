@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.pnl_contatorePezzi = new System.Windows.Forms.Panel();
-            this.lb_contatorePezzi = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.customButton1 = new RMLib.View.CustomButton();
+            this.label20 = new System.Windows.Forms.Label();
+            this.customPanel1 = new RMLib.View.CustomPanel();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.customPanel8 = new RMLib.View.CustomPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.customButton11 = new RMLib.View.CustomButton();
             this.customButton12 = new RMLib.View.CustomButton();
-            this.customPanel1 = new RMLib.View.CustomPanel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.customButton1 = new RMLib.View.CustomButton();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lb_contatorePezzi = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -173,9 +173,9 @@
             this.label79 = new System.Windows.Forms.Label();
             this.label80 = new System.Windows.Forms.Label();
             this.pnl_contatorePezzi.SuspendLayout();
-            this.customPanel8.SuspendLayout();
-            this.customPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.customPanel1.SuspendLayout();
+            this.customPanel8.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.customPanel2.SuspendLayout();
@@ -232,26 +232,109 @@
             this.pnl_contatorePezzi.Size = new System.Drawing.Size(319, 177);
             this.pnl_contatorePezzi.TabIndex = 363;
             // 
-            // lb_contatorePezzi
+            // label24
             // 
-            this.lb_contatorePezzi.BackColor = System.Drawing.Color.Gray;
-            this.lb_contatorePezzi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lb_contatorePezzi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lb_contatorePezzi.ForeColor = System.Drawing.Color.White;
-            this.lb_contatorePezzi.Location = new System.Drawing.Point(-1, -1);
-            this.lb_contatorePezzi.Name = "lb_contatorePezzi";
-            this.lb_contatorePezzi.Size = new System.Drawing.Size(319, 39);
-            this.lb_contatorePezzi.TabIndex = 361;
-            this.lb_contatorePezzi.Text = "MOTORE REC";
-            this.lb_contatorePezzi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(169, 142);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(60, 15);
+            this.label24.TabIndex = 412;
+            this.label24.Text = "50";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // label23
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 362;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(88, 142);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(60, 15);
+            this.label23.TabIndex = 411;
+            this.label23.Text = "25";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(7, 142);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(60, 15);
+            this.label21.TabIndex = 410;
+            this.label21.Text = "0";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(22, 112);
+            this.trackBar1.Maximum = 50;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(190, 45);
+            this.trackBar1.TabIndex = 409;
+            this.trackBar1.TickFrequency = 5;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton1.BackgroundImage = global::RM.Properties.Resources.x32Black;
+            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton1.BorderRadius = 15;
+            this.customButton1.BorderSize = 2;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(233, 112);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton1.Size = new System.Drawing.Size(60, 40);
+            this.customButton1.TabIndex = 408;
+            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(233, 94);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 15);
+            this.label20.TabIndex = 407;
+            this.label20.Text = "Attuale";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.customPanel1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.customPanel1.BorderColor = System.Drawing.Color.DimGray;
+            this.customPanel1.BorderRadius = 15;
+            this.customPanel1.BorderSize = 2;
+            this.customPanel1.Controls.Add(this.label19);
+            this.customPanel1.ForeColor = System.Drawing.Color.White;
+            this.customPanel1.Location = new System.Drawing.Point(233, 51);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(60, 40);
+            this.customPanel1.TabIndex = 406;
+            this.customPanel1.TextColor = System.Drawing.Color.White;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(10, 7);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 27);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "0";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
@@ -333,109 +416,26 @@
             this.customButton12.TextColor = System.Drawing.Color.White;
             this.customButton12.UseVisualStyleBackColor = false;
             // 
-            // customPanel1
+            // lb_contatorePezzi
             // 
-            this.customPanel1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.customPanel1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.customPanel1.BorderColor = System.Drawing.Color.DimGray;
-            this.customPanel1.BorderRadius = 15;
-            this.customPanel1.BorderSize = 2;
-            this.customPanel1.Controls.Add(this.label19);
-            this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(233, 51);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(60, 40);
-            this.customPanel1.TabIndex = 406;
-            this.customPanel1.TextColor = System.Drawing.Color.White;
+            this.lb_contatorePezzi.BackColor = System.Drawing.Color.Gray;
+            this.lb_contatorePezzi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_contatorePezzi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lb_contatorePezzi.ForeColor = System.Drawing.Color.White;
+            this.lb_contatorePezzi.Location = new System.Drawing.Point(-1, -1);
+            this.lb_contatorePezzi.Name = "lb_contatorePezzi";
+            this.lb_contatorePezzi.Size = new System.Drawing.Size(319, 39);
+            this.lb_contatorePezzi.TabIndex = 361;
+            this.lb_contatorePezzi.Text = "MOTORE REC";
+            this.lb_contatorePezzi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // label1
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(10, 7);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 27);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "0";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(233, 94);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 15);
-            this.label20.TabIndex = 407;
-            this.label20.Text = "Attuale";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundImage = global::RM.Properties.Resources.x32Black;
-            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(233, 112);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton1.Size = new System.Drawing.Size(60, 40);
-            this.customButton1.TabIndex = 408;
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(22, 112);
-            this.trackBar1.Maximum = 50;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(190, 45);
-            this.trackBar1.TabIndex = 409;
-            this.trackBar1.TickFrequency = 5;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(7, 142);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(60, 15);
-            this.label21.TabIndex = 410;
-            this.label21.Text = "0";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(88, 142);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(60, 15);
-            this.label23.TabIndex = 411;
-            this.label23.Text = "25";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(169, 142);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(60, 15);
-            this.label24.TabIndex = 412;
-            this.label24.Text = "50";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(172, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 362;
             // 
             // panel5
             // 
@@ -2271,9 +2271,9 @@
             this.Size = new System.Drawing.Size(1024, 557);
             this.pnl_contatorePezzi.ResumeLayout(false);
             this.pnl_contatorePezzi.PerformLayout();
-            this.customPanel8.ResumeLayout(false);
-            this.customPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();

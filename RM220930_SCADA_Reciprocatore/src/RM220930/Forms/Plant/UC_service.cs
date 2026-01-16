@@ -25,6 +25,8 @@ namespace RM.src.RM220930.Forms.Plant
         public UC_service()
         {
             InitializeComponent();
+            // Abilita il double buffering per questo UserControl
+            this.DoubleBuffered = true;
         }
 
         /// <summary>
