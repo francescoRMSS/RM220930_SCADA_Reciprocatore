@@ -3251,6 +3251,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.x32Black">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="T:INavigable">
             <summary>
             Interfaccia che definisce un contratto per le pagine navigabili.

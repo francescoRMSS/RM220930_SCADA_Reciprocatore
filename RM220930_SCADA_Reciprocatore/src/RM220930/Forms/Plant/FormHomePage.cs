@@ -1325,7 +1325,7 @@ namespace RM.src.RM220930
         {
             ResetButtonColor();
             customBtn_service.BackgroundColor = Color.DimGray;
-            _navigator.Navigate("Prod", "SERVICE");
+            _navigator.Navigate("Service", "SERVICE");
         }
 
         /// <summary>

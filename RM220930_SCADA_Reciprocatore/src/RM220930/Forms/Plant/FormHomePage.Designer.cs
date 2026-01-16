@@ -511,7 +511,7 @@
             this.lbl_pageTitle.Name = "lbl_pageTitle";
             this.lbl_pageTitle.Size = new System.Drawing.Size(1030, 34);
             this.lbl_pageTitle.TabIndex = 25;
-            this.lbl_pageTitle.Text = "SISTEMA VERNICIAUTRA";
+            this.lbl_pageTitle.Text = "SISTEMA VERNICIATURA";
             this.lbl_pageTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_dateTime
