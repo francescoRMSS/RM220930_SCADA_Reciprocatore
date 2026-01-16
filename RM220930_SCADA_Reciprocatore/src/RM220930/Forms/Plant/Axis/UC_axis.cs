@@ -79,16 +79,16 @@ namespace RM.src.RM220930.Forms.Plant
         /// <summary>
         /// Ripristina colore dei button degli assi
         /// </summary>
-        private void RestorButtonColor()
+        private void RestoreButtonColor()
         {
-            btn_axe1.BackColor = Color.Gainsboro;
-            btn_axe2.BackColor = Color.Gainsboro;
-            btn_axe3.BackColor = Color.Gainsboro;
-            btn_axe4.BackColor = Color.Gainsboro;
-            btn_axe5.BackColor = Color.Gainsboro;
-            btn_axe6.BackColor = Color.Gainsboro;
-            btn_axe7.BackColor = Color.Gainsboro;
-            btn_axe8.BackColor = Color.Gainsboro;
+            btn_axe1.BackColor = SystemColors.ActiveBorder;
+            btn_axe2.BackColor = SystemColors.ActiveBorder;
+            btn_axe3.BackColor = SystemColors.ActiveBorder;
+            btn_axe4.BackColor = SystemColors.ActiveBorder;
+            btn_axe5.BackColor = SystemColors.ActiveBorder;
+            btn_axe6.BackColor = SystemColors.ActiveBorder;
+            btn_axe7.BackColor = SystemColors.ActiveBorder;
+            btn_axe8.BackColor = SystemColors.ActiveBorder;
         }
 
         /// <summary>
@@ -99,51 +99,51 @@ namespace RM.src.RM220930.Forms.Plant
             switch (axeOffset)
             {
                 case 1:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-                    btn_axe1.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe1.BackColor = Color.DimGray;
                     break;
 
                 case 2:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-                    btn_axe2.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe2.BackColor = Color.DimGray;
                     break;
 
                 case 3:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-                    btn_axe3.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe3.BackColor = Color.DimGray;
                     break;
 
                 case 4:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-                    btn_axe4.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe4.BackColor = Color.DimGray;
                     break;
 
                 case 5:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-                    btn_axe5.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe5.BackColor = Color.DimGray;
                     break;
 
                 case 6:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-                    btn_axe6.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe6.BackColor = Color.DimGray;
                     break;
 
                 case 7:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-                    btn_axe7.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe7.BackColor = Color.DimGray;
                     break;
 
                 case 8:
-                    RestorButtonColor();
+                    RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-                    btn_axe8.BackColor = SystemColors.ButtonHighlight;
+                    btn_axe8.BackColor = Color.DimGray;
                     break;
             }
         }
@@ -173,9 +173,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe1(object sender, EventArgs e)
         {
             axeOffset = 1;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-            btn_axe1.BackColor = SystemColors.ButtonHighlight;
+            btn_axe1.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -186,9 +186,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe2(object sender, EventArgs e)
         {
             axeOffset = 2;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-            btn_axe2.BackColor = SystemColors.ButtonHighlight;
+            btn_axe2.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -199,9 +199,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe3(object sender, EventArgs e)
         {
             axeOffset = 3;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-            btn_axe3.BackColor = SystemColors.ButtonHighlight;
+            btn_axe3.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -212,9 +212,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe4(object sender, EventArgs e)
         {
             axeOffset = 4;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-            btn_axe4.BackColor = SystemColors.ButtonHighlight;
+            btn_axe4.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -225,9 +225,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe5(object sender, EventArgs e)
         {
             axeOffset = 5;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-            btn_axe5.BackColor = SystemColors.ButtonHighlight;
+            btn_axe5.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -238,9 +238,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe6(object sender, EventArgs e)
         {
             axeOffset = 6;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-            btn_axe6.BackColor = SystemColors.ButtonHighlight;
+            btn_axe6.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -251,9 +251,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe7(object sender, EventArgs e)
         {
             axeOffset = 7;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-            btn_axe7.BackColor = SystemColors.ButtonHighlight;
+            btn_axe7.BackColor = Color.DimGray;
         }
 
         /// <summary>
@@ -264,9 +264,9 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_selectAxe8(object sender, EventArgs e)
         {
             axeOffset = 8;
-            RestorButtonColor();
+            RestoreButtonColor();
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-            btn_axe8.BackColor = SystemColors.ButtonHighlight;
+            btn_axe8.BackColor = Color.DimGray;
         }
 
         #endregion

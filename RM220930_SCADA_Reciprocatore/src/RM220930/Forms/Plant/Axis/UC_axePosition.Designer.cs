@@ -28,216 +28,321 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label5;
-            System.Windows.Forms.Label label6;
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            label3 = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.customPanel1 = new RMLib.View.CustomPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.customButton2 = new RMLib.View.CustomButton();
+            this.customButton3 = new RMLib.View.CustomButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.customPanel2 = new RMLib.View.CustomPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customButton1 = new RMLib.View.CustomButton();
+            this.customButton4 = new RMLib.View.CustomButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.customPanel3 = new RMLib.View.CustomPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.customButton5 = new RMLib.View.CustomButton();
+            this.customButton6 = new RMLib.View.CustomButton();
+            this.customPanel1.SuspendLayout();
+            this.customPanel2.SuspendLayout();
+            this.customPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = global::RM.Properties.Resources.barrier_vertical_left;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(220, 125);
+            this.panel3.Location = new System.Drawing.Point(252, 95);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(44, 230);
+            this.panel3.Size = new System.Drawing.Size(44, 273);
             this.panel3.TabIndex = 388;
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::RM.Properties.Resources.axe;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(14, 125);
+            this.panel1.Location = new System.Drawing.Point(14, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 230);
+            this.panel1.Size = new System.Drawing.Size(232, 273);
             this.panel1.TabIndex = 387;
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::RM.Properties.Resources.barrier_vertical_right;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(270, 125);
+            this.panel2.Location = new System.Drawing.Point(302, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(44, 230);
+            this.panel2.Size = new System.Drawing.Size(44, 273);
             this.panel2.TabIndex = 388;
             // 
-            // label3
+            // label16
             // 
-            label3.BackColor = System.Drawing.Color.Black;
-            label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(429, 112);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(55, 55);
-            label3.TabIndex = 399;
-            label3.Text = "0";
-            label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(376, 138);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(190, 15);
+            this.label16.TabIndex = 410;
+            this.label16.Text = "Ritardo";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel1
+            // 
+            this.customPanel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.customPanel1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.customPanel1.BorderColor = System.Drawing.Color.DimGray;
+            this.customPanel1.BorderRadius = 15;
+            this.customPanel1.BorderSize = 2;
+            this.customPanel1.Controls.Add(this.label1);
+            this.customPanel1.ForeColor = System.Drawing.Color.White;
+            this.customPanel1.Location = new System.Drawing.Point(441, 95);
+            this.customPanel1.Name = "customPanel1";
+            this.customPanel1.Size = new System.Drawing.Size(60, 40);
+            this.customPanel1.TabIndex = 413;
+            this.customPanel1.TextColor = System.Drawing.Color.White;
             // 
             // label1
             // 
-            label1.BackColor = System.Drawing.Color.Gray;
-            label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            label1.ForeColor = System.Drawing.Color.White;
-            label1.Location = new System.Drawing.Point(339, 86);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(232, 22);
-            label1.TabIndex = 398;
-            label1.Text = "Ritardo";
-            label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(10, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 27);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "0";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button14
+            // customButton2
             // 
-            this.button14.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button14.BackgroundImage = global::RM.Properties.Resources.plus;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button14.Location = new System.Drawing.Point(511, 110);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(60, 60);
-            this.button14.TabIndex = 397;
-            this.button14.UseVisualStyleBackColor = false;
+            this.customButton2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton2.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton2.BorderRadius = 15;
+            this.customButton2.BorderSize = 2;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.Location = new System.Drawing.Point(506, 95);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton2.Size = new System.Drawing.Size(60, 40);
+            this.customButton2.TabIndex = 412;
+            this.customButton2.TextColor = System.Drawing.Color.White;
+            this.customButton2.UseVisualStyleBackColor = false;
             // 
-            // button15
+            // customButton3
             // 
-            this.button15.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button15.BackgroundImage = global::RM.Properties.Resources.minus;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button15.Location = new System.Drawing.Point(339, 110);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(60, 60);
-            this.button15.TabIndex = 396;
-            this.button15.UseVisualStyleBackColor = false;
+            this.customButton3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton3.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton3.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton3.BorderRadius = 15;
+            this.customButton3.BorderSize = 2;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton3.ForeColor = System.Drawing.Color.White;
+            this.customButton3.Location = new System.Drawing.Point(376, 95);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton3.Size = new System.Drawing.Size(60, 40);
+            this.customButton3.TabIndex = 411;
+            this.customButton3.TextColor = System.Drawing.Color.White;
+            this.customButton3.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
-            label2.BackColor = System.Drawing.Color.Black;
-            label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            label2.ForeColor = System.Drawing.SystemColors.Control;
-            label2.Location = new System.Drawing.Point(429, 211);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(55, 55);
-            label2.TabIndex = 403;
-            label2.Text = "0";
-            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(376, 248);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 15);
+            this.label2.TabIndex = 414;
+            this.label2.Text = "Anticipo";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customPanel2
+            // 
+            this.customPanel2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.customPanel2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.customPanel2.BorderColor = System.Drawing.Color.DimGray;
+            this.customPanel2.BorderRadius = 15;
+            this.customPanel2.BorderSize = 2;
+            this.customPanel2.Controls.Add(this.label3);
+            this.customPanel2.ForeColor = System.Drawing.Color.White;
+            this.customPanel2.Location = new System.Drawing.Point(441, 205);
+            this.customPanel2.Name = "customPanel2";
+            this.customPanel2.Size = new System.Drawing.Size(60, 40);
+            this.customPanel2.TabIndex = 417;
+            this.customPanel2.TextColor = System.Drawing.Color.White;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(10, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 27);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "0";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton1.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton1.BorderRadius = 15;
+            this.customButton1.BorderSize = 2;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(506, 205);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton1.Size = new System.Drawing.Size(60, 40);
+            this.customButton1.TabIndex = 416;
+            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton4.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton4.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton4.BorderRadius = 15;
+            this.customButton4.BorderSize = 2;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton4.ForeColor = System.Drawing.Color.White;
+            this.customButton4.Location = new System.Drawing.Point(376, 205);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton4.Size = new System.Drawing.Size(60, 40);
+            this.customButton4.TabIndex = 415;
+            this.customButton4.TextColor = System.Drawing.Color.White;
+            this.customButton4.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
-            label4.BackColor = System.Drawing.Color.Gray;
-            label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            label4.ForeColor = System.Drawing.Color.White;
-            label4.Location = new System.Drawing.Point(339, 185);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(232, 22);
-            label4.TabIndex = 402;
-            label4.Text = "Anticipo";
-            label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(376, 354);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(190, 15);
+            this.label4.TabIndex = 418;
+            this.label4.Text = "Distanza";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // customPanel3
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.BackgroundImage = global::RM.Properties.Resources.plus;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Location = new System.Drawing.Point(511, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 60);
-            this.button1.TabIndex = 401;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.BackgroundImage = global::RM.Properties.Resources.minus;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Location = new System.Drawing.Point(339, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 60);
-            this.button2.TabIndex = 400;
-            this.button2.UseVisualStyleBackColor = false;
+            this.customPanel3.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.customPanel3.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.customPanel3.BorderColor = System.Drawing.Color.DimGray;
+            this.customPanel3.BorderRadius = 15;
+            this.customPanel3.BorderSize = 2;
+            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.ForeColor = System.Drawing.Color.White;
+            this.customPanel3.Location = new System.Drawing.Point(441, 311);
+            this.customPanel3.Name = "customPanel3";
+            this.customPanel3.Size = new System.Drawing.Size(60, 40);
+            this.customPanel3.TabIndex = 421;
+            this.customPanel3.TextColor = System.Drawing.Color.White;
             // 
             // label5
             // 
-            label5.BackColor = System.Drawing.Color.Black;
-            label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            label5.ForeColor = System.Drawing.SystemColors.Control;
-            label5.Location = new System.Drawing.Point(429, 315);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(55, 55);
-            label5.TabIndex = 407;
-            label5.Text = "0";
-            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(10, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 27);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "0";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // customButton5
             // 
-            label6.BackColor = System.Drawing.Color.Gray;
-            label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            label6.ForeColor = System.Drawing.Color.White;
-            label6.Location = new System.Drawing.Point(339, 289);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(232, 22);
-            label6.TabIndex = 406;
-            label6.Text = "Distanza";
-            label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.customButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton5.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton5.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton5.BorderRadius = 15;
+            this.customButton5.BorderSize = 2;
+            this.customButton5.FlatAppearance.BorderSize = 0;
+            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton5.ForeColor = System.Drawing.Color.White;
+            this.customButton5.Location = new System.Drawing.Point(506, 311);
+            this.customButton5.Name = "customButton5";
+            this.customButton5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton5.Size = new System.Drawing.Size(60, 40);
+            this.customButton5.TabIndex = 420;
+            this.customButton5.TextColor = System.Drawing.Color.White;
+            this.customButton5.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // customButton6
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button3.BackgroundImage = global::RM.Properties.Resources.plus;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Location = new System.Drawing.Point(511, 313);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(60, 60);
-            this.button3.TabIndex = 405;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.BackgroundImage = global::RM.Properties.Resources.minus;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Location = new System.Drawing.Point(339, 313);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(60, 60);
-            this.button4.TabIndex = 404;
-            this.button4.UseVisualStyleBackColor = false;
+            this.customButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customButton6.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.customButton6.BorderColor = System.Drawing.Color.DimGray;
+            this.customButton6.BorderRadius = 15;
+            this.customButton6.BorderSize = 2;
+            this.customButton6.FlatAppearance.BorderSize = 0;
+            this.customButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton6.ForeColor = System.Drawing.Color.White;
+            this.customButton6.Location = new System.Drawing.Point(376, 311);
+            this.customButton6.Name = "customButton6";
+            this.customButton6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.customButton6.Size = new System.Drawing.Size(60, 40);
+            this.customButton6.TabIndex = 419;
+            this.customButton6.TextColor = System.Drawing.Color.White;
+            this.customButton6.UseVisualStyleBackColor = false;
             // 
             // UC_axePosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.Controls.Add(label5);
-            this.Controls.Add(label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(label2);
-            this.Controls.Add(label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(label3);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button15);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.customPanel3);
+            this.Controls.Add(this.customButton5);
+            this.Controls.Add(this.customButton6);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.customPanel2);
+            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.customButton4);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.customPanel1);
+            this.Controls.Add(this.customButton2);
+            this.Controls.Add(this.customButton3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "UC_axePosition";
             this.Size = new System.Drawing.Size(590, 510);
+            this.customPanel1.ResumeLayout(false);
+            this.customPanel2.ResumeLayout(false);
+            this.customPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -246,11 +351,20 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label16;
+        private RMLib.View.CustomPanel customPanel1;
+        private System.Windows.Forms.Label label1;
+        private RMLib.View.CustomButton customButton2;
+        private RMLib.View.CustomButton customButton3;
+        private System.Windows.Forms.Label label2;
+        private RMLib.View.CustomPanel customPanel2;
+        private System.Windows.Forms.Label label3;
+        private RMLib.View.CustomButton customButton1;
+        private RMLib.View.CustomButton customButton4;
+        private System.Windows.Forms.Label label4;
+        private RMLib.View.CustomPanel customPanel3;
+        private System.Windows.Forms.Label label5;
+        private RMLib.View.CustomButton customButton5;
+        private RMLib.View.CustomButton customButton6;
     }
 }
