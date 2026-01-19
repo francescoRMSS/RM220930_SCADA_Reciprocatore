@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_axePosition));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -115,12 +116,13 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // customButton2
             // 
             this.customButton2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton2.BackgroundImage")));
             this.customButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton2.BorderColor = System.Drawing.Color.DimGray;
             this.customButton2.BorderRadius = 15;
@@ -141,7 +143,7 @@
             // 
             this.customButton3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton3.BackgroundImage")));
             this.customButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton3.BorderColor = System.Drawing.Color.DimGray;
             this.customButton3.BorderRadius = 15;
@@ -195,12 +197,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "0";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // customButton1
             // 
             this.customButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton1.BackgroundImage")));
             this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton1.BorderColor = System.Drawing.Color.DimGray;
             this.customButton1.BorderRadius = 15;
@@ -221,7 +224,7 @@
             // 
             this.customButton4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton4.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton4.BackgroundImage")));
             this.customButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton4.BorderColor = System.Drawing.Color.DimGray;
             this.customButton4.BorderRadius = 15;
@@ -275,12 +278,13 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "0";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // customButton5
             // 
             this.customButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton5.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton5.BackgroundImage")));
             this.customButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton5.BorderColor = System.Drawing.Color.DimGray;
             this.customButton5.BorderRadius = 15;
@@ -301,7 +305,7 @@
             // 
             this.customButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton6.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton6.BackgroundImage")));
             this.customButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton6.BorderColor = System.Drawing.Color.DimGray;
             this.customButton6.BorderRadius = 15;

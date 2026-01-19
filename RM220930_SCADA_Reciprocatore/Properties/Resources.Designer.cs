@@ -893,6 +893,16 @@ namespace RM.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus32Black {
+            get {
+                object obj = ResourceManager.GetObject("minus32Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap modifyBlue_32 {
             get {
                 object obj = ResourceManager.GetObject("modifyBlue-32", resourceCulture);
@@ -1016,6 +1026,16 @@ namespace RM.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus32Black {
+            get {
+                object obj = ResourceManager.GetObject("plus32Black", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

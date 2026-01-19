@@ -37,5 +37,19 @@ namespace RM.src.RM220930.Forms.Plant.Axis
           
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+            // Cmd_Distance
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            // Cmd_Advance
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // Cmd_Delay
+        }
     }
 }

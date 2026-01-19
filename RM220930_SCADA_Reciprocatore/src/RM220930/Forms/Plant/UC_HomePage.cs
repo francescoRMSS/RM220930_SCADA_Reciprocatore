@@ -1231,8 +1231,12 @@ namespace RM.src.RM220930.Forms.Plant
             //InitDynamicControlsHub();
         }
 
+
         #endregion
 
-
+        private void btn_recOFF_Click(object sender, EventArgs e)
+        {
+            // Cmd_On_Axe
+        }
     }
 }

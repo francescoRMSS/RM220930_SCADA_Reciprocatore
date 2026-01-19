@@ -140,6 +140,7 @@
             this.customButton1.Text = "Disabilitato";
             this.customButton1.TextColor = System.Drawing.Color.White;
             this.customButton1.UseVisualStyleBackColor = false;
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // label27
             // 
@@ -178,6 +179,7 @@
             this.label28.TabIndex = 3;
             this.label28.Text = "0";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // customButton2
             // 
@@ -258,6 +260,7 @@
             this.label26.TabIndex = 3;
             this.label26.Text = "0";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // customButton4
             // 
@@ -338,6 +341,7 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // customButton6
             // 
@@ -418,6 +422,7 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "0";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // customButton8
             // 
@@ -498,6 +503,7 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "0";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // customButton10
             // 
@@ -578,6 +584,7 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "0";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // customButton12
             // 
@@ -658,6 +665,7 @@
             this.label16.TabIndex = 3;
             this.label16.Text = "0";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // customButton14
             // 
@@ -738,6 +746,7 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "0";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // customButton16
             // 
@@ -818,6 +827,7 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "0";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // customButton18
             // 
@@ -898,6 +908,7 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "0";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // customButton20
             // 
@@ -978,6 +989,7 @@
             this.label24.TabIndex = 3;
             this.label24.Text = "0";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // customButton22
             // 
@@ -1058,6 +1070,7 @@
             this.label22.TabIndex = 3;
             this.label22.Text = "0";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // customButton24
             // 
@@ -1138,6 +1151,7 @@
             this.label20.TabIndex = 3;
             this.label20.Text = "0";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // customButton26
             // 

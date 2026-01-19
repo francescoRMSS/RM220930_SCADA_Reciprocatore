@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_chain));
             this.lbl_title = new System.Windows.Forms.Label();
             this.pnl_hub = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.customPanel1 = new RMLib.View.CustomPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pnl_clockCounter = new RMLib.View.CustomPanel();
+            this.lbl_clockCounter = new System.Windows.Forms.Label();
             this.lbl_buttonParameters = new System.Windows.Forms.Label();
             this.pnl_power = new RMLib.View.CustomPanel();
             this.lbl_power = new System.Windows.Forms.Label();
             this.customButton5 = new RMLib.View.CustomButton();
             this.customButton6 = new RMLib.View.CustomButton();
             this.customButton4 = new RMLib.View.CustomButton();
-            this.customButton3 = new RMLib.View.CustomButton();
-            this.customButton2 = new RMLib.View.CustomButton();
-            this.customButton1 = new RMLib.View.CustomButton();
+            this.btn_04s = new RMLib.View.CustomButton();
+            this.btn_clockSoftwareOFF = new RMLib.View.CustomButton();
+            this.btn_clockReset = new RMLib.View.CustomButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -94,7 +95,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.customButton16 = new RMLib.View.CustomButton();
             this.pnl_hub.SuspendLayout();
-            this.customPanel1.SuspendLayout();
+            this.pnl_clockCounter.SuspendLayout();
             this.pnl_power.SuspendLayout();
             this.panel1.SuspendLayout();
             this.customPanel4.SuspendLayout();
@@ -123,15 +124,15 @@
             this.pnl_hub.BackColor = System.Drawing.Color.Gray;
             this.pnl_hub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_hub.Controls.Add(this.label10);
-            this.pnl_hub.Controls.Add(this.customPanel1);
+            this.pnl_hub.Controls.Add(this.pnl_clockCounter);
             this.pnl_hub.Controls.Add(this.lbl_buttonParameters);
             this.pnl_hub.Controls.Add(this.pnl_power);
             this.pnl_hub.Controls.Add(this.customButton5);
             this.pnl_hub.Controls.Add(this.customButton6);
             this.pnl_hub.Controls.Add(this.customButton4);
-            this.pnl_hub.Controls.Add(this.customButton3);
-            this.pnl_hub.Controls.Add(this.customButton2);
-            this.pnl_hub.Controls.Add(this.customButton1);
+            this.pnl_hub.Controls.Add(this.btn_04s);
+            this.pnl_hub.Controls.Add(this.btn_clockSoftwareOFF);
+            this.pnl_hub.Controls.Add(this.btn_clockReset);
             this.pnl_hub.Controls.Add(this.label5);
             this.pnl_hub.Controls.Add(this.label1);
             this.pnl_hub.Location = new System.Drawing.Point(67, 53);
@@ -151,31 +152,31 @@
             this.label10.Text = "Spazio clock [mm]";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customPanel1
+            // pnl_clockCounter
             // 
-            this.customPanel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.customPanel1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.customPanel1.BorderColor = System.Drawing.Color.DimGray;
-            this.customPanel1.BorderRadius = 15;
-            this.customPanel1.BorderSize = 2;
-            this.customPanel1.Controls.Add(this.label3);
-            this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(37, 60);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(80, 60);
-            this.customPanel1.TabIndex = 372;
-            this.customPanel1.TextColor = System.Drawing.Color.White;
+            this.pnl_clockCounter.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_clockCounter.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_clockCounter.BorderColor = System.Drawing.Color.DimGray;
+            this.pnl_clockCounter.BorderRadius = 15;
+            this.pnl_clockCounter.BorderSize = 2;
+            this.pnl_clockCounter.Controls.Add(this.lbl_clockCounter);
+            this.pnl_clockCounter.ForeColor = System.Drawing.Color.White;
+            this.pnl_clockCounter.Location = new System.Drawing.Point(37, 60);
+            this.pnl_clockCounter.Name = "pnl_clockCounter";
+            this.pnl_clockCounter.Size = new System.Drawing.Size(80, 60);
+            this.pnl_clockCounter.TabIndex = 372;
+            this.pnl_clockCounter.TextColor = System.Drawing.Color.White;
             // 
-            // label3
+            // lbl_clockCounter
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(9, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 42);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_clockCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_clockCounter.ForeColor = System.Drawing.Color.Black;
+            this.lbl_clockCounter.Location = new System.Drawing.Point(9, 10);
+            this.lbl_clockCounter.Name = "lbl_clockCounter";
+            this.lbl_clockCounter.Size = new System.Drawing.Size(61, 42);
+            this.lbl_clockCounter.TabIndex = 3;
+            this.lbl_clockCounter.Text = "0";
+            this.lbl_clockCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_buttonParameters
             // 
@@ -219,7 +220,7 @@
             // 
             this.customButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton5.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton5.BackgroundImage = global::RM.Properties.Resources.plus32Black;
             this.customButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton5.BorderColor = System.Drawing.Color.DimGray;
             this.customButton5.BorderRadius = 15;
@@ -240,7 +241,7 @@
             // 
             this.customButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton6.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton6.BackgroundImage = global::RM.Properties.Resources.minus32Black;
             this.customButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton6.BorderColor = System.Drawing.Color.DimGray;
             this.customButton6.BorderRadius = 15;
@@ -278,68 +279,68 @@
             this.customButton4.TextColor = System.Drawing.Color.Black;
             this.customButton4.UseVisualStyleBackColor = false;
             // 
-            // customButton3
+            // btn_04s
             // 
-            this.customButton3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton3.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton3.BorderRadius = 15;
-            this.customButton3.BorderSize = 2;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton3.ForeColor = System.Drawing.Color.Black;
-            this.customButton3.Location = new System.Drawing.Point(37, 249);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton3.Size = new System.Drawing.Size(80, 60);
-            this.customButton3.TabIndex = 367;
-            this.customButton3.Text = "0.4 [s]";
-            this.customButton3.TextColor = System.Drawing.Color.Black;
-            this.customButton3.UseVisualStyleBackColor = false;
+            this.btn_04s.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_04s.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_04s.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_04s.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_04s.BorderRadius = 15;
+            this.btn_04s.BorderSize = 2;
+            this.btn_04s.FlatAppearance.BorderSize = 0;
+            this.btn_04s.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_04s.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_04s.ForeColor = System.Drawing.Color.Black;
+            this.btn_04s.Location = new System.Drawing.Point(37, 249);
+            this.btn_04s.Name = "btn_04s";
+            this.btn_04s.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_04s.Size = new System.Drawing.Size(80, 60);
+            this.btn_04s.TabIndex = 367;
+            this.btn_04s.Text = "0.4 [s]";
+            this.btn_04s.TextColor = System.Drawing.Color.Black;
+            this.btn_04s.UseVisualStyleBackColor = false;
             // 
-            // customButton2
+            // btn_clockSoftwareOFF
             // 
-            this.customButton2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 2;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(93, 163);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton2.Size = new System.Drawing.Size(80, 60);
-            this.customButton2.TabIndex = 366;
-            this.customButton2.Text = "Clock software OFF";
-            this.customButton2.TextColor = System.Drawing.Color.Black;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.btn_clockSoftwareOFF.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_clockSoftwareOFF.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_clockSoftwareOFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_clockSoftwareOFF.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_clockSoftwareOFF.BorderRadius = 15;
+            this.btn_clockSoftwareOFF.BorderSize = 2;
+            this.btn_clockSoftwareOFF.FlatAppearance.BorderSize = 0;
+            this.btn_clockSoftwareOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clockSoftwareOFF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_clockSoftwareOFF.ForeColor = System.Drawing.Color.Black;
+            this.btn_clockSoftwareOFF.Location = new System.Drawing.Point(93, 163);
+            this.btn_clockSoftwareOFF.Name = "btn_clockSoftwareOFF";
+            this.btn_clockSoftwareOFF.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_clockSoftwareOFF.Size = new System.Drawing.Size(80, 60);
+            this.btn_clockSoftwareOFF.TabIndex = 366;
+            this.btn_clockSoftwareOFF.Text = "Clock software OFF";
+            this.btn_clockSoftwareOFF.TextColor = System.Drawing.Color.Black;
+            this.btn_clockSoftwareOFF.UseVisualStyleBackColor = false;
             // 
-            // customButton1
+            // btn_clockReset
             // 
-            this.customButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(147, 60);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton1.Size = new System.Drawing.Size(80, 60);
-            this.customButton1.TabIndex = 365;
-            this.customButton1.Text = "Clock reset";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.btn_clockReset.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_clockReset.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_clockReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_clockReset.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_clockReset.BorderRadius = 15;
+            this.btn_clockReset.BorderSize = 2;
+            this.btn_clockReset.FlatAppearance.BorderSize = 0;
+            this.btn_clockReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clockReset.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_clockReset.ForeColor = System.Drawing.Color.Black;
+            this.btn_clockReset.Location = new System.Drawing.Point(147, 60);
+            this.btn_clockReset.Name = "btn_clockReset";
+            this.btn_clockReset.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_clockReset.Size = new System.Drawing.Size(80, 60);
+            this.btn_clockReset.TabIndex = 365;
+            this.btn_clockReset.Text = "Clock reset";
+            this.btn_clockReset.TextColor = System.Drawing.Color.Black;
+            this.btn_clockReset.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -433,7 +434,7 @@
             // 
             this.customButton11.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton11.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton11.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton11.BackgroundImage")));
             this.customButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton11.BorderColor = System.Drawing.Color.DimGray;
             this.customButton11.BorderRadius = 15;
@@ -454,7 +455,7 @@
             // 
             this.customButton12.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton12.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton12.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton12.BackgroundImage")));
             this.customButton12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton12.BorderColor = System.Drawing.Color.DimGray;
             this.customButton12.BorderRadius = 15;
@@ -529,7 +530,7 @@
             // 
             this.customButton9.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton9.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton9.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton9.BackgroundImage")));
             this.customButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton9.BorderColor = System.Drawing.Color.DimGray;
             this.customButton9.BorderRadius = 15;
@@ -558,7 +559,7 @@
             // 
             this.customButton10.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton10.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton10.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton10.BackgroundImage")));
             this.customButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton10.BorderColor = System.Drawing.Color.DimGray;
             this.customButton10.BorderRadius = 15;
@@ -633,7 +634,7 @@
             // 
             this.customButton7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton7.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton7.BackgroundImage")));
             this.customButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton7.BorderColor = System.Drawing.Color.DimGray;
             this.customButton7.BorderRadius = 15;
@@ -662,7 +663,7 @@
             // 
             this.customButton8.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton8.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton8.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton8.BackgroundImage")));
             this.customButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton8.BorderColor = System.Drawing.Color.DimGray;
             this.customButton8.BorderRadius = 15;
@@ -793,7 +794,7 @@
             // 
             this.customButton13.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton13.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton13.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton13.BackgroundImage")));
             this.customButton13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton13.BorderColor = System.Drawing.Color.DimGray;
             this.customButton13.BorderRadius = 15;
@@ -840,7 +841,7 @@
             // 
             this.customButton14.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton14.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton14.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton14.BackgroundImage")));
             this.customButton14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton14.BorderColor = System.Drawing.Color.DimGray;
             this.customButton14.BorderRadius = 15;
@@ -877,7 +878,7 @@
             // 
             this.customButton18.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton18.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton18.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton18.BackgroundImage")));
             this.customButton18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton18.BorderColor = System.Drawing.Color.DimGray;
             this.customButton18.BorderRadius = 15;
@@ -926,7 +927,7 @@
             // 
             this.customButton17.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton17.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton17.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton17.BackgroundImage")));
             this.customButton17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton17.BorderColor = System.Drawing.Color.DimGray;
             this.customButton17.BorderRadius = 15;
@@ -981,7 +982,7 @@
             // 
             this.customButton15.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton15.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton15.BackgroundImage = global::RM.Properties.Resources.right_arrow;
+            this.customButton15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton15.BackgroundImage")));
             this.customButton15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton15.BorderColor = System.Drawing.Color.DimGray;
             this.customButton15.BorderRadius = 15;
@@ -1030,7 +1031,7 @@
             // 
             this.customButton16.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.customButton16.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton16.BackgroundImage = global::RM.Properties.Resources.left_arrow;
+            this.customButton16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton16.BackgroundImage")));
             this.customButton16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.customButton16.BorderColor = System.Drawing.Color.DimGray;
             this.customButton16.BorderRadius = 15;
@@ -1060,7 +1061,7 @@
             this.Size = new System.Drawing.Size(1024, 557);
             this.pnl_hub.ResumeLayout(false);
             this.pnl_hub.PerformLayout();
-            this.customPanel1.ResumeLayout(false);
+            this.pnl_clockCounter.ResumeLayout(false);
             this.pnl_power.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1093,12 +1094,12 @@
         private RMLib.View.CustomButton customButton5;
         private RMLib.View.CustomButton customButton6;
         private RMLib.View.CustomButton customButton4;
-        private RMLib.View.CustomButton customButton3;
-        private RMLib.View.CustomButton customButton2;
-        private RMLib.View.CustomButton customButton1;
+        private RMLib.View.CustomButton btn_04s;
+        private RMLib.View.CustomButton btn_clockSoftwareOFF;
+        private RMLib.View.CustomButton btn_clockReset;
         private System.Windows.Forms.Label lbl_buttonParameters;
-        private RMLib.View.CustomPanel customPanel1;
-        private System.Windows.Forms.Label label3;
+        private RMLib.View.CustomPanel pnl_clockCounter;
+        private System.Windows.Forms.Label lbl_clockCounter;
         private RMLib.View.CustomPanel pnl_power;
         private System.Windows.Forms.Label lbl_power;
         private System.Windows.Forms.Label label10;
