@@ -4,332 +4,6 @@
         <name>RM220930_SCADA_Reciprocatore</name>
     </assembly>
     <members>
-        <member name="T:RM.src.RM220930.Configuration">
-            <summary>
-            Gestisce la configurazione di sistema per l'avvio corretto del programma in base alla riga di comando passata. 
-            Serve quindi per aprire il programma in modalità LOCAL, DEBUG o PRODUCTION
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.log">
-            <summary>
-            Logger
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_CONN_STRING">
-            <summary>
-            Stringa di connessione per comunicare con il database
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_DRIVER_CLASS">
-            <summary>
-            Driver per la comunicazione
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_USR">
-            <summary>
-            Username del db
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_PSW">
-            <summary>
-            Password per il db
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_HOST_IP">
-            <summary>
-            IP del database
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_DB_NAME">
-            <summary>
-            Nome identificativo del database
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Configuration.DB_HOST_PORT">
-            <summary>
-            Porta del database
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Configuration.basicConfigurationFromFile">
-            <summary>
-            Funzione generica per get dei parametri dai file config
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:RM.src.RM220930.ConfigurationSettings">
-            <summary>
-            Classe che gestisce la FormLoading
-            e che configura e avvia comunicazione con PLC
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.ConfigurationSettings.log">
-            <summary>
-            Logger
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.ConfigurationSettings.configurationProperties">
-            <summary>
-            Data table che conterrà la tabella omonima del database con le configurazioni di base del progetto
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.ConfigurationSettings.className">
-            <summary>
-            Metodo attuale in esecuzione
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.ConfigurationSettings.#ctor">
-            <summary>
-            Costruttore vuoto
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.ConfigurationSettings.Setup(System.Windows.Forms.Label,RMLib.View.CustomProgressBar,RM.src.RM220930.FormLoading,System.String[])">
-            <summary>
-            Metodo che gestisce avanzamento progressBar della FormLoading.
-            Viene fatto il get del setting dal database.
-            Avvio e gestione comunicazione con PLC
-            </summary>
-            <param name="lb_ProgressBar">Etichetta ProgressBar avanzameto</param>
-            <param name="progressBar1">ProgressBar avanzamento</param>
-            <param name="formLoading">Form di caricamento</param>
-        </member>
-        <member name="M:RM.src.RM220930.ConfigurationSettings.GetConfigureProperties(System.String)">
-            <summary>
-            Metodo che esegue get della tabella database configuration_properties
-            </summary>
-            <param name="connectionString">Stringa di connessione</param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.ConfigurationSettings.ExisistingInstanceProgram">
-            <summary>
-            Controlla se è già avviata un'altra istanza dell'applicativo
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:RM.src.RM220930.DAOSqlite">
-            <summary>
-            DAO contenente procedure database
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.DAOSqlite.log">
-            <summary>
-            Logger
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.DAOSqlite.SaveAlarm(System.String,System.Int32,System.String,System.String,System.String,System.String)">
-            <summary>
-            Salva sul db l'allarme
-            </summary>
-            <param name="connectionString"></param>
-            <param name="id"></param>
-            <param name="description"></param>
-            <param name="timpestamp"></param>
-            <param name="device"></param>
-            <param name="state"></param>
-        </member>
-        <member name="T:RM.src.RM220930.Classes.SCADAManager">
-            <summary>
-            Classe che contiene configurazione dello SCADA e i relativi task
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.log">
-            <summary>
-            Logger
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.taskManager">
-            <summary>
-            Gestisce i task in background.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.ComPLCDAO">
-            <summary>
-            Oggetto per l'accesso ai dati del robot nel database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.DatabaseConnection">
-            <summary>
-            Configurazione della connessione al database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.ConnectionString">
-            <summary>
-            Stringa di connessione al database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskHighPriorityName">
-            <summary>
-            Nome del task high priority
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskLowPriorityName">
-            <summary>
-            Nome del task low priority
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskAuxiliaryWorkerName">
-            <summary>
-            Nome del task auxiliary worker
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskPlcComHandlerName">
-            <summary>
-            Nome del task plc com handler
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskCheckRobotConneciton">
-            <summary>
-            Nome del task check robot com
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskApplicationManager">
-            <summary>
-            Nome del task application manager
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskSafetyManager">
-            <summary>
-            Nome del task safety manager
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.lowPriorityRefreshPeriod">
-            <summary>
-            Periodo di refresh per il task a bassa priorità.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.prevIsPlcConnected">
-            <summary>
-            Rappresenta lo stato precedente della connessione al PLC.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.allarmiSegnalati">
-            <summary>
-            Dizionario di allarmi per evitare segnalazioni duplicate.
-            </summary>
-        </member>
-        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
-            <summary>
-            Evento invocato quando viene generato un allarme.
-            </summary>
-        </member>
-        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeResettato">
-            <summary>
-            Evento invocato quando gli allarmi vengono resettati.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.formAlarmPage">
-            <summary>
-            Riferimento alla pagina degli allarmi.
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.#cctor">
-            <summary>
-            Costruttore
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.InitSCADA">
-            <summary>
-            Metodo che avvia task SCADA
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckLowPriority(System.Threading.CancellationToken)">
-            <summary>
-            Thread a priorità bassa che gestisce allarmi robot e PLC
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.AuxiliaryWorker(System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckHighPriority(System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.PlcComHandler(System.Threading.CancellationToken)">
-             <summary>
-            
-             </summary>
-             <param name="token"></param>
-             <returns></returns>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Classes.SCADAManager.CheckRobotConnection(System.Threading.CancellationToken)" -->
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.ApplicationTaskManager(System.Threading.CancellationToken)">
-             <summary>
-            
-             </summary>
-             <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.SafetyTaskManager(System.Threading.CancellationToken)">
-             <summary>
-            
-             </summary>
-             <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckPLCConnection">
-            <summary>
-            Check su connessione PLC
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.IsAlarmAlreadySignaled(System.String)">
-            <summary>
-            Avvisa se un allarme è già stato segnalato
-            </summary>
-            <param name="alarmKey"></param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.MarkAlarmAsSignaled(System.String)">
-            <summary>
-            Imposta l'allarme come segnalato
-            </summary>
-            <param name="alarmKey"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
-            <summary>
-            Creazione di un allarme
-            </summary>
-            <param name="id">ID allarme</param>
-            <param name="description">Descrizione allarme</param>
-            <param name="timestamp">Timestamp allarme</param>
-            <param name="device">Device da cui deriva l'allarme</param>
-            <param name="state">ON-OFF</param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
-            <summary>
-            Metodo che aggiunge alla lista degli allarmi l'allarme
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeGenerato">
-            <summary>
-            Generazione eventi
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeGenerato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarme ricevuto
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
-            <summary>
-            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeResettato">
-            <summary>
-            Trigget per avvisare che gli allarmi sono stati resettati
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeResettato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarmi resettati
-            </summary>
-            <param name="e"></param>
-        </member>
         <member name="T:RM.src.RM220930.Classes.PLC.PLCTagName">
             <summary>
             Contiene i tag degli indirizzi PLC
@@ -700,6 +374,496 @@
             
             </summary>
         </member>
+        <member name="T:RM.src.RM220930.Classes.SCADAManager">
+            <summary>
+            Classe che contiene configurazione dello SCADA e i relativi task
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.taskManager">
+            <summary>
+            Gestisce i task in background.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.ComPLCDAO">
+            <summary>
+            Oggetto per l'accesso ai dati del robot nel database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.DatabaseConnection">
+            <summary>
+            Configurazione della connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.ConnectionString">
+            <summary>
+            Stringa di connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskHighPriorityName">
+            <summary>
+            Nome del task high priority
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskLowPriorityName">
+            <summary>
+            Nome del task low priority
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskAuxiliaryWorkerName">
+            <summary>
+            Nome del task auxiliary worker
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskPlcComHandlerName">
+            <summary>
+            Nome del task plc com handler
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskCheckRobotConneciton">
+            <summary>
+            Nome del task check robot com
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskApplicationManager">
+            <summary>
+            Nome del task application manager
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskSafetyManager">
+            <summary>
+            Nome del task safety manager
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.lowPriorityRefreshPeriod">
+            <summary>
+            Periodo di refresh per il task a bassa priorità.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.plcComhandlerRefreshPeriod">
+            <summary>
+            Periodo di refresh per il task a bassa priorità.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.prevIsPlcConnected">
+            <summary>
+            Rappresenta lo stato precedente della connessione al PLC.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.allarmiSegnalati">
+            <summary>
+            Dizionario di allarmi per evitare segnalazioni duplicate.
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
+            <summary>
+            Evento invocato quando viene generato un allarme.
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeResettato">
+            <summary>
+            Evento invocato quando gli allarmi vengono resettati.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.formAlarmPage">
+            <summary>
+            Riferimento alla pagina degli allarmi.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.#cctor">
+            <summary>
+            Costruttore
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.InitSCADA">
+            <summary>
+            Metodo che avvia task SCADA
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckLowPriority(System.Threading.CancellationToken)">
+            <summary>
+            Thread a priorità bassa che gestisce allarmi robot e PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.AuxiliaryWorker(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckHighPriority(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.PlcComHandler(System.Threading.CancellationToken)">
+            <summary>
+            Gestisce aggiornamento variabili PLC
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF">
+            <summary>
+            Contiene la lista di indicatori nella pagina monitor ciclo
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Classes.SCADAManager.CheckRobotConnection(System.Threading.CancellationToken)" -->
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.ApplicationTaskManager(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.SafetyTaskManager(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckPLCConnection">
+            <summary>
+            Check su connessione PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.IsAlarmAlreadySignaled(System.String)">
+            <summary>
+            Avvisa se un allarme è già stato segnalato
+            </summary>
+            <param name="alarmKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.MarkAlarmAsSignaled(System.String)">
+            <summary>
+            Imposta l'allarme come segnalato
+            </summary>
+            <param name="alarmKey"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creazione di un allarme
+            </summary>
+            <param name="id">ID allarme</param>
+            <param name="description">Descrizione allarme</param>
+            <param name="timestamp">Timestamp allarme</param>
+            <param name="device">Device da cui deriva l'allarme</param>
+            <param name="state">ON-OFF</param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
+            <summary>
+            Metodo che aggiunge alla lista degli allarmi l'allarme
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeGenerato">
+            <summary>
+            Generazione eventi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeGenerato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarme ricevuto
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
+            <summary>
+            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeResettato">
+            <summary>
+            Trigget per avvisare che gli allarmi sono stati resettati
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeResettato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarmi resettati
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:RM.src.RM220930.Classes.UiBinder.BiStateButton">
+            <summary>
+            Rappresenta un pulsante a 2 stati
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton._button">
+            <summary>
+            Riferimento a custom button
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.state">
+            <summary>
+            Contiene lo stato corrente del pulsante: 0 - non attivo, 1 - attivo
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.defaultNotActiveColor">
+            <summary>
+            Colore pulsante non attivo - stato 0
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.defaultActiveColor">
+            <summary>
+            Colore pulsante attivo - stato 1
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.notActiveColor">
+            <summary>
+            Colore pulsante non attivo - stato 0
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.activeColor">
+            <summary>
+            Colore pulsante attivo - stato 1
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.activeImage">
+            <summary>
+            Immagine di sfondo per stato attivo
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.notActiveImage">
+            <summary>
+            Immagine di sfondo per stato non attivo
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.useImages">
+            <summary>
+            Specifica se bisogna usare o no le immagini di sfondo
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.useColors">
+            <summary>
+            Specifica se bisogna ricolorare o no i puslanti
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton)">
+            <summary>
+            Costruisce un riferimento a pulsante a due stati
+            </summary>
+            <param name="button"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton,System.Drawing.Image,System.Drawing.Image)">
+            <summary>
+            Costruisce un riferimento a pulsante a due stati
+            </summary>
+            <param name="button"></param>
+            <param name="activeImg"></param>
+            <param name="notActiveImg"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Costruisce un riferimento a pulsante a due stati
+            </summary>
+            <param name="button"></param>
+            <param name="activeCol"></param>
+            <param name="notActiveCol"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton,System.Drawing.Color,System.Drawing.Color,System.Drawing.Image,System.Drawing.Image)">
+            <summary>
+            Costruisce un riferimento a pulsante a due stati
+            </summary>
+            <param name="button"></param>
+            <param name="activeCol"></param>
+            <param name="notActiveCol"></param>
+            <param name="activeImg"></param>
+            <param name="notActiveImg"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor">
+            <summary>
+            Costruisce un riferimento nullo
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeButtonRef(RMLib.View.CustomButton)">
+            <summary>
+            Cambia il riferimento al pulsante 
+            </summary>
+            <param name="newButton"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeStatus">
+            <summary>
+            Cambia stato al puslante
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeStatus(System.Boolean)">
+            <summary>
+            Imposta lo stato desiderato
+            </summary>
+            <param name="newState"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.GetCorrectStatusColor">
+            <summary>
+            Restituisce il colore corretto per lo stato
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.GetCorrectStatusImage">
+            <summary>
+            Restituisce l'immagine corretta per lo stato 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ResetStatus">
+            <summary>
+            Reset dello stato
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeObjectColor">
+            <summary>
+            Cambia il colore al pulsante
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeObjectImage">
+            <summary>
+            Cambia l'immagine di background al pulsante
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.SetText(System.String)">
+            <summary>
+            Cambia il testo al pulsante
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.SetBackImage(System.Drawing.Image)">
+            <summary>
+            Cambia l'immagine di background al pulsante
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ReadState">
+            <summary>
+            Legge lo stato del pulsante
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RM.src.RM220930.Configuration">
+            <summary>
+            Gestisce la configurazione di sistema per l'avvio corretto del programma in base alla riga di comando passata. 
+            Serve quindi per aprire il programma in modalità LOCAL, DEBUG o PRODUCTION
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_CONN_STRING">
+            <summary>
+            Stringa di connessione per comunicare con il database
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_DRIVER_CLASS">
+            <summary>
+            Driver per la comunicazione
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_USR">
+            <summary>
+            Username del db
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_PSW">
+            <summary>
+            Password per il db
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_HOST_IP">
+            <summary>
+            IP del database
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_DB_NAME">
+            <summary>
+            Nome identificativo del database
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Configuration.DB_HOST_PORT">
+            <summary>
+            Porta del database
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Configuration.basicConfigurationFromFile">
+            <summary>
+            Funzione generica per get dei parametri dai file config
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RM.src.RM220930.ConfigurationSettings">
+            <summary>
+            Classe che gestisce la FormLoading
+            e che configura e avvia comunicazione con PLC
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.ConfigurationSettings.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.ConfigurationSettings.configurationProperties">
+            <summary>
+            Data table che conterrà la tabella omonima del database con le configurazioni di base del progetto
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.ConfigurationSettings.className">
+            <summary>
+            Metodo attuale in esecuzione
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.ConfigurationSettings.#ctor">
+            <summary>
+            Costruttore vuoto
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.ConfigurationSettings.Setup(System.Windows.Forms.Label,RMLib.View.CustomProgressBar,RM.src.RM220930.FormLoading,System.String[])">
+            <summary>
+            Metodo che gestisce avanzamento progressBar della FormLoading.
+            Viene fatto il get del setting dal database.
+            Avvio e gestione comunicazione con PLC
+            </summary>
+            <param name="lb_ProgressBar">Etichetta ProgressBar avanzameto</param>
+            <param name="progressBar1">ProgressBar avanzamento</param>
+            <param name="formLoading">Form di caricamento</param>
+        </member>
+        <member name="M:RM.src.RM220930.ConfigurationSettings.GetConfigureProperties(System.String)">
+            <summary>
+            Metodo che esegue get della tabella database configuration_properties
+            </summary>
+            <param name="connectionString">Stringa di connessione</param>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.ConfigurationSettings.ExisistingInstanceProgram">
+            <summary>
+            Controlla se è già avviata un'altra istanza dell'applicativo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RM.src.RM220930.DAOSqlite">
+            <summary>
+            DAO contenente procedure database
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.DAOSqlite.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.DAOSqlite.SaveAlarm(System.String,System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Salva sul db l'allarme
+            </summary>
+            <param name="connectionString"></param>
+            <param name="id"></param>
+            <param name="description"></param>
+            <param name="timpestamp"></param>
+            <param name="device"></param>
+            <param name="state"></param>
+        </member>
         <member name="T:RM.src.RM220930.TaskManager">
             <summary>
             Definisce una struttura di supporto che gestisce i task, li mette in lista, li fa partire, fermare e
@@ -1067,18 +1231,18 @@
             Asse selezionato
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.OnNavigatedTo(System.Object)">
-            <summary>
-            Gestisce l'utilizzo del parametro passato durante la navigazione
-            </summary>
-            <param name="parameter"></param>
-        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.RefreshVariables(System.Object,RMLib.PLC.DictionaryChangedEventArgs)">
             <summary>
             Metodo richiamato dall'evento ValueChanged del dizionario delle variabili PLC
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.OnNavigatedTo(System.Object)">
+            <summary>
+            Gestisce l'utilizzo del parametro passato durante la navigazione
+            </summary>
+            <param name="parameter"></param>
         </member>
         <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_testUDT.components">
             <summary> 
@@ -1146,7 +1310,7 @@
             </summary>
             <param name="parameter"></param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.RestorButtonColor">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.RestoreButtonColor">
             <summary>
             Ripristina colore dei button degli assi
             </summary>
@@ -1298,86 +1462,37 @@
             Costruttore
             </summary>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitZONOFFButtonList">
+            <summary>
+            Inizializzazione della lista di button z ON-OFF
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitializeZButtons">
+            <summary>
+            Assegna tag ai button degli Z asse e collega l'evento click
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitializeGoToZButtons">
+            <summary>
+            Assegna l'evento ad ogni tasto Z asse
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.OnNavigatedTo(System.Object)">
             <summary>
             Metodo eseguito dopo la richiesta di navigazione in home page
             </summary>
             <param name="parameter"></param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitDynamicControlsAxis">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ(System.Object,System.EventArgs)">
             <summary>
-            Crea dinamicamente tutti i controlli presenti all'interno di pnl_axis
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitDynamicControlsOptions">
-            <summary>
-            Crea dinamicamente tutti i controlli presenti all'interno di pnl_options
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitDynamicControlsHub">
-            <summary>
-            Crea dinamicamente tutti i controlli presenti all'interno di pnl_hub
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ1(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 1
+            Apre la gestione dell'asse selezionato
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ2(System.Object,System.EventArgs)">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_EnableDisableZ(System.Object,System.EventArgs)">
             <summary>
-            Apre la gestione dell'asse 2
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ3(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 3
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ4(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 4
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ5(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 5
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ6(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 6
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ7(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 7
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ8(System.Object,System.EventArgs)">
-            <summary>
-            Apre la gestione dell'asse 8
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.UC_HomePage_Load(System.Object,System.EventArgs)">
-            <summary>
-            Caricamento della homePage
+            Gestisce abilitazione/disabilitazione Z assi
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -1568,6 +1683,23 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Forms.Plant.UC_MotorPanel.components">
+            <summary> 
+            Variabile di progettazione necessaria.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_MotorPanel.Dispose(System.Boolean)">
+            <summary> 
+            Pulire le risorse in uso.
+            </summary>
+            <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_MotorPanel.InitializeComponent">
+            <summary> 
+            Metodo necessario per il supporto della finestra di progettazione. Non modificare 
+            il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
         <member name="E:RM.src.RM220930.Forms.Plant.UC_prod.NavigateRequested">
@@ -2746,6 +2878,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.delete32White">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.demo">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -2921,6 +3058,11 @@
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:RM.Properties.Resources.load32White">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
         <member name="P:RM.Properties.Resources.loading_gif">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -2937,6 +3079,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.minus32">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.minus32Black">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -3002,6 +3149,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.plus">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.plus32Black">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>
@@ -3112,6 +3264,11 @@
             </summary>
         </member>
         <member name="P:RM.Properties.Resources.save32">
+            <summary>
+              Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:RM.Properties.Resources.save32White">
             <summary>
               Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
             </summary>

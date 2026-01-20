@@ -1,6 +1,7 @@
 ﻿using CookComputing.XmlRpc;
 using fairino;
 using RM.src.RM220930.Classes.PLC;
+using RM.src.RM220930.Classes.UiBinder;
 using RM.src.RM220930.Forms.Plant;
 using RMLib.Alarms;
 using RMLib.DataAccess;
@@ -8,6 +9,7 @@ using RMLib.Logger;
 using RMLib.PLC;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -89,6 +91,11 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private readonly static int lowPriorityRefreshPeriod = 300;
 
+        /// <summary>
+        /// Periodo di refresh per il task a bassa priorità.
+        /// </summary>
+        private readonly static int plcComhandlerRefreshPeriod = 300;
+
         #endregion
 
         #region Variabili di Stato per la Logica di Controllo
@@ -127,6 +134,12 @@ namespace RM.src.RM220930.Classes
 
         #endregion
 
+        #region Variabili comunicazione PLC
+
+        public static bool Cmd_On_Axe = false;
+
+        #endregion
+
         /// <summary>
         /// Costruttore
         /// </summary>
@@ -146,7 +159,7 @@ namespace RM.src.RM220930.Classes
         {
             formAlarmPage = new FormAlarmPage();
             formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
-
+            
             // Faccio partire i task
             taskManager.AddTask(TaskCheckRobotConneciton, CheckRobotConnection, TaskType.LongRunning, true);
             taskManager.AddTask(TaskHighPriorityName, CheckHighPriority, TaskType.LongRunning, true);
@@ -219,14 +232,108 @@ namespace RM.src.RM220930.Classes
         }
 
         /// <summary>
-        ///
+        /// Gestisce aggiornamento variabili PLC
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
         private async static Task PlcComHandler(CancellationToken token)
         {
+            try
+            {
+                while (!token.IsCancellationRequested)
+                {
+                    UpdateVariablesFromPlcValues();
+                    //SendVariablesValuesToPlc();
 
+                    await Task.Delay(plcComhandlerRefreshPeriod, token);
+                }
+                token.ThrowIfCancellationRequested();
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                log.Error($"[TASK] {TaskLowPriorityName}: {ex}");
+                throw;
+            }
+            finally
+            {
+
+            }
         }
+
+        
+
+        /// <summary>
+        /// Contiene la lista di indicatori nella pagina monitor ciclo
+        /// </summary>
+        public static readonly List<BiStateButton> Z_ONOFF = new List<BiStateButton>();
+        // Stato precedente letto dal PLC (per aggiornare UI)
+        public static bool[] _prevZValues = new bool[8];
+
+        // Stato corrente interno (accessibile dalle altre classi)
+        public static bool[] Z_State { get; private set; } = new bool[8];
+
+        // Stato da inviare al PLC
+        public static bool[] Z_StateToSend { get; private set; } = new bool[8];
+
+        // Ultimo valore inviato al PLC (per inviare solo se cambia)
+        public static bool[] _lastSentState = new bool[8];
+        private static void UpdateVariablesFromPlcValues()
+        {
+            if (Z_ONOFF.Count == 0) return;
+
+            for (int i = 0; i < 8; i++)
+            {
+                bool plcValue = Convert.ToBoolean(
+                    PLCConfig.appVariables.getValue($"PLC1_z{i + 1}_{PLCTagName.Cmd_On_Axe}")
+                );
+
+                // Aggiorna solo lo stato interno letto dal PLC
+                Z_State[i] = plcValue;
+
+                // Aggiorna UI solo se cambia rispetto a _prevZValues
+                if (_prevZValues[i] != plcValue)
+                {
+                    _prevZValues[i] = plcValue;
+
+                    if (i < Z_ONOFF.Count)
+                    {
+                        var btn = Z_ONOFF[i]._button;
+                        btn.Text = plcValue ? "ON" : "OFF";
+                        btn.BackColor = plcValue ? Color.Green : Color.Red;
+                    }
+                }
+            }
+        }
+
+        private static void SendVariablesValuesToPlc()
+        {
+            if (Z_ONOFF.Count == 0) return;
+
+            for (int i = 0; i < 8; i++)
+            {
+                bool valueToSend = Z_StateToSend[i]; // solo i click dell’utente
+
+                // invia solo se diverso dall’ultimo inviato
+                if (Z_State[i] != valueToSend)
+                {
+                    RefresherTask.AddUpdate($"PLC1_z{i + 1}_{PLCTagName.Cmd_On_Axe}", valueToSend, "BOOL");
+                }
+            }
+        }
+
+        // Click generico
+        private void ClickEvent_EnableDisableZ(int index)
+        {
+            Z_StateToSend[index] = !Z_StateToSend[index];
+        }
+
+
+
+
 
         /// <summary>
         ///

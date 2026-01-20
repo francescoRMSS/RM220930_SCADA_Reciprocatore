@@ -45,7 +45,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -101,6 +101,10 @@
     </Reference>
     <Reference Include="RMLib.MessageBox">
       <HintPath>..\..\..\..\..\..\..\Support\RMLib.MessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="RMLib.PLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Support\RMLib.PLC.dll</HintPath>
     </Reference>
     <Reference Include="RMLib.Recipes">
       <HintPath>..\..\..\..\..\..\..\Support\RMLib.Recipes.dll</HintPath>
@@ -162,6 +166,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\RM220930\Classes\DAO\SQLite\DAOSqlite.cs" />
+    <Compile Include="src\RM220930\Classes\PLC\PlcTagMap.cs" />
     <Compile Include="src\RM220930\Classes\SCADAManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskType.cs" />
@@ -173,6 +178,7 @@
     <Compile Include="src\RM220930\Classes\Navigator\Navigator.cs" />
     <Compile Include="src\RM220930\Classes\PLC\PLCTagName.cs" />
     <Compile Include="src\RM220930\Classes\Program.cs" />
+    <Compile Include="src\RM220930\Classes\UiBinder\BiStateButton.cs" />
     <Compile Include="src\RM220930\Forms\FormLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -534,12 +540,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\RMLib\RMLib.PLC\RMLib.PLC\RMLib.PLC.csproj">
-      <Project>{838d8f7b-9e0a-43a3-a626-150a678d67ee}</Project>
-      <Name>RMLib.PLC</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

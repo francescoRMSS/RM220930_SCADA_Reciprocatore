@@ -383,5 +383,32 @@ namespace RM.src.RM220930.Classes.PLC
         public const string Read_Act_Speed = "array_float_30";
 
         #endregion
+
+        public static void ParsePlcVariableName(
+    string fullName,
+    out string axe,
+    out string variableName)
+        {
+            axe = string.Empty;
+            variableName = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(fullName))
+                return;
+
+            var firstUnderscore = fullName.IndexOf('_');
+            if (firstUnderscore < 0)
+                return;
+
+            var secondUnderscore = fullName.IndexOf('_', firstUnderscore + 1);
+            if (secondUnderscore < 0)
+                return;
+
+            axe = fullName.Substring(
+                firstUnderscore + 1,
+                secondUnderscore - firstUnderscore - 1);
+
+            variableName = fullName.Substring(secondUnderscore + 1);
+        }
+
     }
 }

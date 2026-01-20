@@ -53,24 +53,6 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         }
 
         /// <summary>
-        /// Gestisce l'utilizzo del parametro passato durante la navigazione
-        /// </summary>
-        /// <param name="parameter"></param>
-        public void OnNavigatedTo(object parameter)
-        {
-            // Se il parametro è il numero di asse
-            if (parameter is int offset)
-            {
-                axeOffset = offset;
-            }
-            else // se non c'è imposto 1 di default
-            {
-                axeOffset = 1;
-            }
-
-        }
-
-        /// <summary>
         /// Metodo richiamato dall'evento ValueChanged del dizionario delle variabili PLC
         /// </summary>
         /// <param name="sender"></param>
@@ -117,6 +99,26 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
 
         }
+
+        /// <summary>
+        /// Gestisce l'utilizzo del parametro passato durante la navigazione
+        /// </summary>
+        /// <param name="parameter"></param>
+        public void OnNavigatedTo(object parameter)
+        {
+            // Se il parametro è il numero di asse
+            if (parameter is int offset)
+            {
+                axeOffset = offset;
+            }
+            else // se non c'è imposto 1 di default
+            {
+                axeOffset = 1;
+            }
+
+        }
+
+      
     
 
         private void ClickEvent_modifyCmd_On_axe(object sender, EventArgs e)
