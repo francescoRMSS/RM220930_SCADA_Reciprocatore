@@ -179,6 +179,7 @@
     <Compile Include="src\RM220930\Classes\PLC\PLCTagName.cs" />
     <Compile Include="src\RM220930\Classes\Program.cs" />
     <Compile Include="src\RM220930\Classes\UiBinder\BiStateButton.cs" />
+    <Compile Include="src\RM220930\Classes\UiBinder\UiLabel.cs" />
     <Compile Include="src\RM220930\Forms\FormLoading.cs">
       <SubType>Form</SubType>
     </Compile>
