@@ -110,6 +110,31 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private static readonly Dictionary<string, bool> allarmiSegnalati = new Dictionary<string, bool>();
 
+        /// <summary>
+        /// Numero di assi
+        /// </summary>
+        private static int numZ = 9;
+
+        /// <summary>
+        /// Contiene la lista di indicatori ON/OFF nella pagina monitor ciclo
+        /// </summary>
+        public static readonly List<BiStateButton> Z_ONOFF = new List<BiStateButton>();
+
+        /// <summary>
+        /// Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
+        /// </summary>
+        public static readonly List<UiLabel> z_actualPos = new List<UiLabel>();
+
+        /// <summary>
+        /// Oggetto che rappresenta lo stato dell'asse
+        /// </summary>
+        public static ZAxisState[] _zState;
+
+        /// <summary>
+        /// Oggetto che rappresenta lo stato precedente dell'asse
+        /// </summary>
+        private static ZAxisState[] _prevZState;
+
         #endregion
 
         #region Eventi Pubblici
@@ -134,12 +159,6 @@ namespace RM.src.RM220930.Classes
 
         #endregion
 
-        #region Variabili comunicazione PLC
-
-        public static bool Cmd_On_Axe = false;
-
-        #endregion
-
         /// <summary>
         /// Costruttore
         /// </summary>
@@ -160,15 +179,7 @@ namespace RM.src.RM220930.Classes
             formAlarmPage = new FormAlarmPage();
             formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
 
-            _zState = new ZAxisState[numZ];
-            _prevZState = new ZAxisState[numZ];
-
-            for (int i = 0; i < numZ; i++)
-            {
-                _zState[i] = new ZAxisState();
-                _prevZState[i] = new ZAxisState();
-            }
-
+            InitZAxisState();
 
             // Faccio partire i task
             taskManager.AddTask(TaskCheckRobotConneciton, CheckRobotConnection, TaskType.LongRunning, true);
@@ -253,7 +264,6 @@ namespace RM.src.RM220930.Classes
                 while (!token.IsCancellationRequested)
                 {
                     UpdateVariablesFromPlcValues();
-                    //SendVariablesValuesToPlc();
 
                     await Task.Delay(plcComhandlerRefreshPeriod, token);
                 }
@@ -274,26 +284,52 @@ namespace RM.src.RM220930.Classes
             }
         }
 
-        private static int numZ = 9;
+        /// <summary>
+        ///
+        /// <returns></returns>
+        private async static Task CheckRobotConnection(CancellationToken token)
+        {
+        }
 
         /// <summary>
-        /// Contiene la lista di indicatori nella pagina monitor ciclo
+        ///
         /// </summary>
-        public static readonly List<BiStateButton> Z_ONOFF = new List<BiStateButton>();
-
-
-
+        /// <returns></returns>
+        private async static Task ApplicationTaskManager(CancellationToken token)
+        {   
+        }
 
         /// <summary>
-        /// Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
+        ///
         /// </summary>
-        public static readonly List<UiLabel> z_actualPos = new List<UiLabel>();
+        /// <returns></returns>
+        private async static Task SafetyTaskManager(CancellationToken token)
+        {
 
-        public static ZAxisState[] _zState;
-        private static ZAxisState[] _prevZState;
+        }
 
+        #endregion
 
+        #region Metodi helper
 
+        /// <summary>
+        /// Inizializza gli oggetti che rappresentato lo stato degli assi
+        /// </summary>
+        private static void InitZAxisState()
+        {
+            _zState = new ZAxisState[numZ];
+            _prevZState = new ZAxisState[numZ];
+
+            for (int i = 0; i < numZ; i++)
+            {
+                _zState[i] = new ZAxisState();
+                _prevZState[i] = new ZAxisState();
+            }
+        }
+
+        /// <summary>
+        /// Aggiorna le variabili dal dizionario PLC
+        /// </summary>
         private static void UpdateVariablesFromPlcValues()
         {
             if (Z_ONOFF.Count == 0) return;
@@ -340,37 +376,6 @@ namespace RM.src.RM220930.Classes
                 */
             }
         }
-
-
-
-
-        /// <summary>
-        ///
-        /// <returns></returns>
-        private async static Task CheckRobotConnection(CancellationToken token)
-        {
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <returns></returns>
-        private async static Task ApplicationTaskManager(CancellationToken token)
-        {   
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <returns></returns>
-        private async static Task SafetyTaskManager(CancellationToken token)
-        {
-
-        }
-
-        #endregion
-
-        #region Metodi helper
 
         /// <summary>
         /// Check su connessione PLC

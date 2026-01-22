@@ -7,13 +7,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RM.src.RM220930.Classes.UiBinder
-{
+{ 
+    /// <summary>
+    /// Contiene il riferimento ad una label
+    /// Permette ad un task di usare la label senza eventi
+    /// </summary>
     public class UiLabel
     {
+        #region Proprietà di UiLabel
+
         /// <summary>
         /// Riferimento alla label
         /// </summary>
         public Label _label;
+
+        #endregion
+
+        #region Costruttori di UiLabel
 
         /// <summary>
         /// Costruisce il container della label
@@ -31,6 +41,10 @@ namespace RM.src.RM220930.Classes.UiBinder
         {
             _label = null;
         }
+
+        #endregion
+
+        #region Metodi di UiLabel
 
         /// <summary>
         /// Cambia il riferimento alla label
@@ -126,5 +140,7 @@ namespace RM.src.RM220930.Classes.UiBinder
             if (double.TryParse(val, NumberStyles.Any, CultureInfo.InvariantCulture, out double result)) return result;
             return 0.0;
         }
+
+        #endregion
     }
 }

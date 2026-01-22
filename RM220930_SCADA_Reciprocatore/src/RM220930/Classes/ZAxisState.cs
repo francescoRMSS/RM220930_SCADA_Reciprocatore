@@ -6,18 +6,34 @@ using System.Threading.Tasks;
 
 namespace RM.src.RM220930.Classes
 {
+    /// <summary>
+    /// Rappresenta lo stato di un asse Z del robot/PLC.
+    /// Contiene le principali variabili lette dal PLC per ciascun asse.
+    /// </summary>
     public class ZAxisState
     {
-        // BOOL
+        #region Boolean Variables (BOOL)
+        /// <summary>
+        /// Comando ON/OFF dell'asse letto dal PLC.
+        /// True = asse attivo, False = asse spento.
+        /// </summary>
         public bool CmdOnAxe { get; set; }
+        #endregion
 
-        // REAL
+        #region Floating Point Variables (REAL / float)
+        /// <summary>
+        /// Posizione attuale dell'asse letta dal PLC.
+        /// </summary>
         public float ActPosition { get; set; }
+        #endregion
 
-        // INT
+        #region Integer Variables (INT / short)
+        /// <summary>
+        /// Codice di errore dell'asse letto dal PLC.
+        /// 0 = nessun errore.
+        /// </summary>
         public short ErrorCode { get; set; }
-
-        // altri tag futuri...
+        #endregion
     }
 
 }

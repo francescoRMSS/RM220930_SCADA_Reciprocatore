@@ -4,6 +4,250 @@
         <name>RM220930_SCADA_Reciprocatore</name>
     </assembly>
     <members>
+        <member name="T:RM.src.RM220930.Classes.SCADAManager">
+            <summary>
+            Classe che contiene configurazione dello SCADA e i relativi task
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.log">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.taskManager">
+            <summary>
+            Gestisce i task in background.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.ComPLCDAO">
+            <summary>
+            Oggetto per l'accesso ai dati del robot nel database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.DatabaseConnection">
+            <summary>
+            Configurazione della connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.ConnectionString">
+            <summary>
+            Stringa di connessione al database.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskHighPriorityName">
+            <summary>
+            Nome del task high priority
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskLowPriorityName">
+            <summary>
+            Nome del task low priority
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskAuxiliaryWorkerName">
+            <summary>
+            Nome del task auxiliary worker
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskPlcComHandlerName">
+            <summary>
+            Nome del task plc com handler
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskCheckRobotConneciton">
+            <summary>
+            Nome del task check robot com
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskApplicationManager">
+            <summary>
+            Nome del task application manager
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskSafetyManager">
+            <summary>
+            Nome del task safety manager
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.lowPriorityRefreshPeriod">
+            <summary>
+            Periodo di refresh per il task a bassa priorità.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.plcComhandlerRefreshPeriod">
+            <summary>
+            Periodo di refresh per il task a bassa priorità.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.prevIsPlcConnected">
+            <summary>
+            Rappresenta lo stato precedente della connessione al PLC.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.allarmiSegnalati">
+            <summary>
+            Dizionario di allarmi per evitare segnalazioni duplicate.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.numZ">
+            <summary>
+            Numero di assi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF">
+            <summary>
+            Contiene la lista di indicatori ON/OFF nella pagina monitor ciclo
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.z_actualPos">
+            <summary>
+            Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager._zState">
+            <summary>
+            Oggetto che rappresenta lo stato dell'asse
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager._prevZState">
+            <summary>
+            Oggetto che rappresenta lo stato precedente dell'asse
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
+            <summary>
+            Evento invocato quando viene generato un allarme.
+            </summary>
+        </member>
+        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeResettato">
+            <summary>
+            Evento invocato quando gli allarmi vengono resettati.
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.formAlarmPage">
+            <summary>
+            Riferimento alla pagina degli allarmi.
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.#cctor">
+            <summary>
+            Costruttore
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.InitSCADA">
+            <summary>
+            Metodo che avvia task SCADA
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckLowPriority(System.Threading.CancellationToken)">
+            <summary>
+            Thread a priorità bassa che gestisce allarmi robot e PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.AuxiliaryWorker(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckHighPriority(System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.PlcComHandler(System.Threading.CancellationToken)">
+            <summary>
+            Gestisce aggiornamento variabili PLC
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Classes.SCADAManager.CheckRobotConnection(System.Threading.CancellationToken)" -->
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.ApplicationTaskManager(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.SafetyTaskManager(System.Threading.CancellationToken)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.InitZAxisState">
+            <summary>
+            Inizializza gli oggetti che rappresentato lo stato degli assi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.UpdateVariablesFromPlcValues">
+            <summary>
+            Aggiorna le variabili dal dizionario PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckPLCConnection">
+            <summary>
+            Check su connessione PLC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.IsAlarmAlreadySignaled(System.String)">
+            <summary>
+            Avvisa se un allarme è già stato segnalato
+            </summary>
+            <param name="alarmKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.MarkAlarmAsSignaled(System.String)">
+            <summary>
+            Imposta l'allarme come segnalato
+            </summary>
+            <param name="alarmKey"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creazione di un allarme
+            </summary>
+            <param name="id">ID allarme</param>
+            <param name="description">Descrizione allarme</param>
+            <param name="timestamp">Timestamp allarme</param>
+            <param name="device">Device da cui deriva l'allarme</param>
+            <param name="state">ON-OFF</param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
+            <summary>
+            Metodo che aggiunge alla lista degli allarmi l'allarme
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeGenerato">
+            <summary>
+            Generazione eventi
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeGenerato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarme ricevuto
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
+            <summary>
+            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeResettato">
+            <summary>
+            Trigget per avvisare che gli allarmi sono stati resettati
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeResettato(System.EventArgs)">
+            <summary>
+            Generazione evento da allarmi resettati
+            </summary>
+            <param name="e"></param>
+        </member>
         <member name="T:RM.src.RM220930.Classes.PLC.PLCTagName">
             <summary>
             Contiene i tag degli indirizzi PLC
@@ -374,225 +618,6 @@
             
             </summary>
         </member>
-        <member name="T:RM.src.RM220930.Classes.SCADAManager">
-            <summary>
-            Classe che contiene configurazione dello SCADA e i relativi task
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.log">
-            <summary>
-            Logger
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.taskManager">
-            <summary>
-            Gestisce i task in background.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.ComPLCDAO">
-            <summary>
-            Oggetto per l'accesso ai dati del robot nel database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.DatabaseConnection">
-            <summary>
-            Configurazione della connessione al database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.ConnectionString">
-            <summary>
-            Stringa di connessione al database.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskHighPriorityName">
-            <summary>
-            Nome del task high priority
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskLowPriorityName">
-            <summary>
-            Nome del task low priority
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskAuxiliaryWorkerName">
-            <summary>
-            Nome del task auxiliary worker
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskPlcComHandlerName">
-            <summary>
-            Nome del task plc com handler
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskCheckRobotConneciton">
-            <summary>
-            Nome del task check robot com
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskApplicationManager">
-            <summary>
-            Nome del task application manager
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.TaskSafetyManager">
-            <summary>
-            Nome del task safety manager
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.lowPriorityRefreshPeriod">
-            <summary>
-            Periodo di refresh per il task a bassa priorità.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.plcComhandlerRefreshPeriod">
-            <summary>
-            Periodo di refresh per il task a bassa priorità.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.prevIsPlcConnected">
-            <summary>
-            Rappresenta lo stato precedente della connessione al PLC.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.allarmiSegnalati">
-            <summary>
-            Dizionario di allarmi per evitare segnalazioni duplicate.
-            </summary>
-        </member>
-        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
-            <summary>
-            Evento invocato quando viene generato un allarme.
-            </summary>
-        </member>
-        <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeResettato">
-            <summary>
-            Evento invocato quando gli allarmi vengono resettati.
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.formAlarmPage">
-            <summary>
-            Riferimento alla pagina degli allarmi.
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.#cctor">
-            <summary>
-            Costruttore
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.InitSCADA">
-            <summary>
-            Metodo che avvia task SCADA
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckLowPriority(System.Threading.CancellationToken)">
-            <summary>
-            Thread a priorità bassa che gestisce allarmi robot e PLC
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.AuxiliaryWorker(System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckHighPriority(System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.PlcComHandler(System.Threading.CancellationToken)">
-            <summary>
-            Gestisce aggiornamento variabili PLC
-            </summary>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF">
-            <summary>
-            Contiene la lista di indicatori nella pagina monitor ciclo
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Classes.SCADAManager.z_actualPos">
-            <summary>
-            Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Classes.SCADAManager.CheckRobotConnection(System.Threading.CancellationToken)" -->
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.ApplicationTaskManager(System.Threading.CancellationToken)">
-             <summary>
-            
-             </summary>
-             <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.SafetyTaskManager(System.Threading.CancellationToken)">
-             <summary>
-            
-             </summary>
-             <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CheckPLCConnection">
-            <summary>
-            Check su connessione PLC
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.IsAlarmAlreadySignaled(System.String)">
-            <summary>
-            Avvisa se un allarme è già stato segnalato
-            </summary>
-            <param name="alarmKey"></param>
-            <returns></returns>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.MarkAlarmAsSignaled(System.String)">
-            <summary>
-            Imposta l'allarme come segnalato
-            </summary>
-            <param name="alarmKey"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.CreateAlarm(System.String,System.String,System.String,System.String,System.String)">
-            <summary>
-            Creazione di un allarme
-            </summary>
-            <param name="id">ID allarme</param>
-            <param name="description">Descrizione allarme</param>
-            <param name="timestamp">Timestamp allarme</param>
-            <param name="device">Device da cui deriva l'allarme</param>
-            <param name="state">ON-OFF</param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAlarm(RMLib.Alarms.RobotAlarmsEventArgs)">
-            <summary>
-            Metodo che aggiunge alla lista degli allarmi l'allarme
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeGenerato">
-            <summary>
-            Generazione eventi
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeGenerato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarme ricevuto
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.RMLib_AlarmsCleared(System.Object,System.EventArgs)">
-            <summary>
-            Gestore dell'evento allarmi cancellati presente nella libreria RMLib.Alarms
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.TriggerAllarmeResettato">
-            <summary>
-            Trigget per avvisare che gli allarmi sono stati resettati
-            </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Classes.SCADAManager.OnAllarmeResettato(System.EventArgs)">
-            <summary>
-            Generazione evento da allarmi resettati
-            </summary>
-            <param name="e"></param>
-        </member>
         <member name="T:RM.src.RM220930.Classes.UiBinder.BiStateButton">
             <summary>
             Rappresenta un pulsante a 2 stati
@@ -789,6 +814,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:RM.src.RM220930.Classes.UiBinder.UiLabel">
+            <summary>
+            Contiene il riferimento ad una label
+            Permette ad un task di usare la label senza eventi
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.UiBinder.UiLabel._label">
             <summary>
             Riferimento alla label
@@ -840,6 +871,29 @@
             Restituisce la stringa nella label come double
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:RM.src.RM220930.Classes.ZAxisState">
+            <summary>
+            Rappresenta lo stato di un asse Z del robot/PLC.
+            Contiene le principali variabili lette dal PLC per ciascun asse.
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdOnAxe">
+            <summary>
+            Comando ON/OFF dell'asse letto dal PLC.
+            True = asse attivo, False = asse spento.
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.ActPosition">
+            <summary>
+            Posizione attuale dell'asse letta dal PLC.
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
+            <summary>
+            Codice di errore dell'asse letto dal PLC.
+            0 = nessun errore.
+            </summary>
         </member>
         <member name="T:RM.src.RM220930.Configuration">
             <summary>

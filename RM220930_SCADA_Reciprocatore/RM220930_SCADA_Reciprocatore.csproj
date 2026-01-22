@@ -166,7 +166,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="src\RM220930\Classes\DAO\SQLite\DAOSqlite.cs" />
-    <Compile Include="src\RM220930\Classes\PLC\PlcTagMap.cs" />
     <Compile Include="src\RM220930\Classes\SCADAManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskType.cs" />
