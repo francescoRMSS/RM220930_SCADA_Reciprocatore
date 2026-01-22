@@ -34,6 +34,8 @@ namespace RM.src.RM220930.Forms.Plant
 
         #endregion
 
+        private Label[] _labels;
+
         /// <summary>
         /// Costruttore
         /// </summary>
@@ -52,15 +54,15 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void InitZONOFFButtonList()
         {
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z0ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z1ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z2ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z3ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z4ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z5ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z6ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z7ONOFF, Color.Green, "ON", Color.Red, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z8ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z0ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z1ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z2ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z3ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z4ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z5ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z6ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z7ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z8ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
         }
 
         /// <summary>
@@ -153,6 +155,47 @@ namespace RM.src.RM220930.Forms.Plant
 
         }
 
+        /// <summary>
+        /// Applica il jog positivo all'asse relativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseDown_valuePos(object sender, MouseEventArgs e)
+        {
+            var btn = sender as Button;
+            int index = Convert.ToInt32(btn.Tag);
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", true, "BOOL");
+        }
+
+        /// <summary>
+        /// Applica il jog negativo all'asse relativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseDown_valueNeg(object sender, MouseEventArgs e)
+        {
+            var btn = sender as Button;
+            int index = Convert.ToInt32(btn.Tag);
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_neg}", true, "BOOL");
+        }
+
+        private void ClickEvent_openLaser(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
+        }
+
+        private void ClickEvent_open3DLive(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
+        }
+
+        private void ClickEvent_cabinLight(object sender, EventArgs e)
+        {
+            CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
+        }
+
         #endregion
 
         #region TODO
@@ -179,6 +222,10 @@ namespace RM.src.RM220930.Forms.Plant
             // Cmd_Jog_Pos
         }
 
+
+
         #endregion
+
+       
     }
 }

@@ -271,17 +271,27 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         public static readonly List<BiStateButton> Z_ONOFF = new List<BiStateButton>();
 
-        // Stato precedente letto dal PLC (per aggiornare UI)
+        /// <summary>
+        /// Stato precedente letto dal PLC (per aggiornare UI)
+        /// </summary>
         public static bool[] _prevZValues = new bool[numZ];
 
-        // Stato corrente interno (accessibile dalle altre classi)
+        /// <summary>
+        /// Stato corrente interno (accessibile dalle altre classi)
+        /// </summary>
         public static bool[] Z_State { get; private set; } = new bool[numZ];
 
-        // Stato da inviare al PLC
+        /// <summary>
+        /// Stato da inviare al PLC
+        /// </summary>
         public static bool[] Z_StateToSend { get; private set; } = new bool[numZ];
 
-        // Ultimo valore inviato al PLC (per inviare solo se cambia)
+        /// <summary>
+        /// Ultimo valore inviato al PLC (per inviare solo se cambia)
+        /// </summary>
         public static bool[] _lastSentState = new bool[numZ];
+
+
         private static void UpdateVariablesFromPlcValues()
         {
             if (Z_ONOFF.Count == 0) return;

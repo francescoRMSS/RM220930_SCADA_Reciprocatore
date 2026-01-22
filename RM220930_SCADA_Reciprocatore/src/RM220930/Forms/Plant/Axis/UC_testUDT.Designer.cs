@@ -539,6 +539,7 @@
             this.cb_axis.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.cb_axis.FormattingEnabled = true;
             this.cb_axis.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",

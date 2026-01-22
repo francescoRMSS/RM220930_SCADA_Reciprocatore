@@ -1539,6 +1539,20 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDown_valuePos(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Applica il jog positivo all'asse relativo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDown_valueNeg(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Applica il jog negativo all'asse relativo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.UC_HomePage.components">
             <summary> 
             Variabile di progettazione necessaria.
