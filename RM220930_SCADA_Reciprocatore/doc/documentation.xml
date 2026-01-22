@@ -643,6 +643,16 @@
             Specifica se bisogna ricolorare o no i puslanti
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.activeTextButton">
+            <summary>
+            Testo utilizzato in stato active
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.BiStateButton.notActiveTextButton">
+            <summary>
+            Testo utilizzato in stato notActive
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton)">
             <summary>
             Costruisce un riferimento a pulsante a due stati
@@ -664,6 +674,16 @@
             <param name="button"></param>
             <param name="activeCol"></param>
             <param name="notActiveCol"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton,System.Drawing.Color,System.String,System.Drawing.Color,System.String)">
+            <summary>
+            Costruisce un riferimento a pulsante a due stati
+            </summary>
+            <param name="button"></param>
+            <param name="activeCol"></param>
+            <param name="activeText"></param>
+            <param name="notActiveCol"></param>
+            <param name="notActiveText"></param>
         </member>
         <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.#ctor(RMLib.View.CustomButton,System.Drawing.Color,System.Drawing.Color,System.Drawing.Image,System.Drawing.Image)">
             <summary>
@@ -691,13 +711,30 @@
             Cambia stato al puslante
             </summary>
         </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeStatusCustom">
+            <summary>
+            Cambia stato in modo personalizzato cambiando testo e colori
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeStatus(System.Boolean)">
             <summary>
             Imposta lo stato desiderato
             </summary>
             <param name="newState"></param>
         </member>
-        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.GetCorrectStatusColor">
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.GetCorrectStatusDefaultColor">
+            <summary>
+            Restituisce il colore di default corretto per lo stato
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.GetCorrectStatusCustomColor">
+            <summary>
+            Restituisce il colore custom corretto per lo stato
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.GetCorrectText">
             <summary>
             Restituisce il colore corretto per lo stato
             </summary>
@@ -714,9 +751,14 @@
             Reset dello stato
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeObjectColor">
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeObjectColor(System.Boolean)">
             <summary>
             Cambia il colore al pulsante
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeObjectText">
+            <summary>
+            Cambia il testo al pulsante
             </summary>
         </member>
         <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ChangeObjectImage">

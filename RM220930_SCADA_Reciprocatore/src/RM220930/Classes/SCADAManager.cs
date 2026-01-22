@@ -94,7 +94,7 @@ namespace RM.src.RM220930.Classes
         /// <summary>
         /// Periodo di refresh per il task a bassa priorità.
         /// </summary>
-        private readonly static int plcComhandlerRefreshPeriod = 300;
+        private readonly static int plcComhandlerRefreshPeriod = 20;
 
         #endregion
 
@@ -264,31 +264,32 @@ namespace RM.src.RM220930.Classes
             }
         }
 
-        
+        private static int numZ = 9;
 
         /// <summary>
         /// Contiene la lista di indicatori nella pagina monitor ciclo
         /// </summary>
         public static readonly List<BiStateButton> Z_ONOFF = new List<BiStateButton>();
+
         // Stato precedente letto dal PLC (per aggiornare UI)
-        public static bool[] _prevZValues = new bool[8];
+        public static bool[] _prevZValues = new bool[numZ];
 
         // Stato corrente interno (accessibile dalle altre classi)
-        public static bool[] Z_State { get; private set; } = new bool[8];
+        public static bool[] Z_State { get; private set; } = new bool[numZ];
 
         // Stato da inviare al PLC
-        public static bool[] Z_StateToSend { get; private set; } = new bool[8];
+        public static bool[] Z_StateToSend { get; private set; } = new bool[numZ];
 
         // Ultimo valore inviato al PLC (per inviare solo se cambia)
-        public static bool[] _lastSentState = new bool[8];
+        public static bool[] _lastSentState = new bool[numZ];
         private static void UpdateVariablesFromPlcValues()
         {
             if (Z_ONOFF.Count == 0) return;
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < numZ; i++)
             {
                 bool plcValue = Convert.ToBoolean(
-                    PLCConfig.appVariables.getValue($"PLC1_z{i + 1}_{PLCTagName.Cmd_On_Axe}")
+                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}")
                 );
 
                 // Aggiorna solo lo stato interno letto dal PLC
@@ -301,9 +302,7 @@ namespace RM.src.RM220930.Classes
 
                     if (i < Z_ONOFF.Count)
                     {
-                        var btn = Z_ONOFF[i]._button;
-                        btn.Text = plcValue ? "ON" : "OFF";
-                        btn.BackColor = plcValue ? Color.Green : Color.Red;
+                        Z_ONOFF[i].ChangeStatusCustom();                    
                     }
                 }
             }

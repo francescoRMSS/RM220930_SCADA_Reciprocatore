@@ -14,6 +14,8 @@ namespace RM.src.RM220930.Classes.UiBinder
     /// </summary>
     public class BiStateButton
     {
+        #region Proprietà di BiStateButton
+
         /// <summary>
         /// Riferimento a custom button
         /// </summary>
@@ -54,6 +56,18 @@ namespace RM.src.RM220930.Classes.UiBinder
         /// Specifica se bisogna ricolorare o no i puslanti
         /// </summary>
         private bool useColors;
+        /// <summary>
+        /// Testo utilizzato in stato active
+        /// </summary>
+        private string activeTextButton;
+        /// <summary>
+        /// Testo utilizzato in stato notActive
+        /// </summary>
+        private string notActiveTextButton;
+
+        #endregion
+
+        #region Costruttori
 
         /// <summary>
         /// Costruisce un riferimento a pulsante a due stati
@@ -63,7 +77,6 @@ namespace RM.src.RM220930.Classes.UiBinder
         {
             _button = button;
             state = false;
-            /*
             useImages = false;
             useColors = true;
             notActiveColor = defaultNotActiveColor;
@@ -71,8 +84,8 @@ namespace RM.src.RM220930.Classes.UiBinder
             activeImage = null;
             notActiveImage = null;
 
-            ChangeObjectColor();
-            ChangeObjectImage();*/
+            ChangeObjectColor(true); // Utilizzo colori di default
+            ChangeObjectImage();
         }
 
         /// <summary>
@@ -92,7 +105,7 @@ namespace RM.src.RM220930.Classes.UiBinder
             activeImage = activeImg;
             notActiveImage = notActiveImg;
 
-            ChangeObjectColor();
+            ChangeObjectColor(true); // Utilizzo colori di default
             ChangeObjectImage();
         }
 
@@ -113,7 +126,30 @@ namespace RM.src.RM220930.Classes.UiBinder
             activeImage = null;
             notActiveImage = null;
 
-            ChangeObjectColor();
+            ChangeObjectColor(true); // Utilizzo colori di default
+            ChangeObjectImage();
+        }
+
+        /// <summary>
+        /// Costruisce un riferimento a pulsante a due stati
+        /// </summary>
+        /// <param name="button"></param>
+        /// <param name="activeCol"></param>
+        /// <param name="activeText"></param>
+        /// <param name="notActiveCol"></param>
+        /// <param name="notActiveText"></param>
+        public BiStateButton(CustomButton button, Color activeCol, string activeText, Color notActiveCol, string notActiveText)
+        {
+            _button = button;
+            useColors = true;
+            activeColor = activeCol;
+            notActiveColor = notActiveCol;
+            activeImage = null;
+            notActiveImage = null;
+            activeTextButton = activeText;
+            notActiveTextButton = notActiveText;
+
+            ChangeObjectColor(false); // Utilizzo colori custom
             ChangeObjectImage();
         }
 
@@ -136,7 +172,7 @@ namespace RM.src.RM220930.Classes.UiBinder
             activeImage = activeImg;
             notActiveImage = notActiveImg;
 
-            ChangeObjectColor();
+            ChangeObjectColor(true); // Utilizzo colori di default
             ChangeObjectImage();
         }
 
@@ -154,9 +190,13 @@ namespace RM.src.RM220930.Classes.UiBinder
             activeImage = null;
             notActiveImage = null;
 
-            ChangeObjectColor();
+            ChangeObjectColor(true); // Utilizzo colori di default
             ChangeObjectImage();
         }
+
+        #endregion
+
+        #region Metodi di BiStateButton
 
         /// <summary>
         /// Cambia il riferimento al pulsante 
@@ -165,7 +205,7 @@ namespace RM.src.RM220930.Classes.UiBinder
         public void ChangeButtonRef(CustomButton newButton)
         {
             _button = newButton;
-            ChangeObjectColor();
+            ChangeObjectColor(true);
             ChangeObjectImage();
         }
 
@@ -175,7 +215,20 @@ namespace RM.src.RM220930.Classes.UiBinder
         public void ChangeStatus()
         {
             state = !state;
-            ChangeObjectColor();
+
+            ChangeObjectColor(true);
+            ChangeObjectImage();
+        }
+
+        /// <summary>
+        /// Cambia stato in modo personalizzato cambiando testo e colori
+        /// </summary>
+        public void ChangeStatusCustom()
+        {
+            state = !state;
+
+            ChangeObjectText();
+            ChangeObjectColor(false);
             ChangeObjectImage();
         }
 
@@ -186,18 +239,38 @@ namespace RM.src.RM220930.Classes.UiBinder
         public void ChangeStatus(bool newState)
         {
             state = newState;
-            ChangeObjectColor();
+            ChangeObjectColor(true);
             ChangeObjectImage();
+        }
+
+        /// <summary>
+        /// Restituisce il colore di default corretto per lo stato
+        /// </summary>
+        /// <returns></returns>
+        private Color GetCorrectStatusDefaultColor()
+        {
+            if (state) return defaultActiveColor;
+            else return defaultNotActiveColor;
+        }
+
+        /// <summary>
+        /// Restituisce il colore custom corretto per lo stato
+        /// </summary>
+        /// <returns></returns>
+        private Color GetCorrectStatusCustomColor()
+        {
+            if (state) return activeColor;
+            else return notActiveColor;
         }
 
         /// <summary>
         /// Restituisce il colore corretto per lo stato
         /// </summary>
         /// <returns></returns>
-        private Color GetCorrectStatusColor()
+        private string GetCorrectText()
         {
-            if (state) return defaultActiveColor;
-            else return defaultNotActiveColor;
+            if (state) return activeTextButton;
+            else return notActiveTextButton;
         }
 
         /// <summary>
@@ -216,19 +289,24 @@ namespace RM.src.RM220930.Classes.UiBinder
         public void ResetStatus()
         {
             state = false;
-            ChangeObjectColor();
+            ChangeObjectColor(true);
             ChangeObjectImage();
         }
 
         /// <summary>
         /// Cambia il colore al pulsante
         /// </summary>
-        private void ChangeObjectColor()
+        private void ChangeObjectColor(bool useDefaultColor)
         {
             if (!useColors) return;
             if (_button == null || _button.IsDisposed) return;
 
-            Color colorToUse = GetCorrectStatusColor();
+            Color colorToUse;
+
+            if (useDefaultColor)
+                 colorToUse = GetCorrectStatusDefaultColor();
+            else // Se è stato richiesto un colore custom
+                 colorToUse = GetCorrectStatusCustomColor();
 
             if (_button.InvokeRequired)
             {
@@ -243,6 +321,32 @@ namespace RM.src.RM220930.Classes.UiBinder
             else
             {
                 _button.BackColor = colorToUse;
+            }
+        }
+
+        /// <summary>
+        /// Cambia il testo al pulsante
+        /// </summary>
+        private void ChangeObjectText()
+        {
+            if (!useColors) return;
+            if (_button == null || _button.IsDisposed) return;
+
+            string textToUse = GetCorrectText();
+
+            if (_button.InvokeRequired)
+            {
+                _button.BeginInvoke(new MethodInvoker(() =>
+                {
+                    if (!_button.IsDisposed && _button.Text != textToUse)
+                    {
+                        _button.Text = textToUse;
+                    }
+                }));
+            }
+            else
+            {
+                _button.Text = textToUse;
             }
         }
 
@@ -329,5 +433,6 @@ namespace RM.src.RM220930.Classes.UiBinder
             return state;
         }
 
+        #endregion
     }
 }

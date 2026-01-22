@@ -52,14 +52,15 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void InitZONOFFButtonList()
         {
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z1ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z2ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z3ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z4ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z5ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z6ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z7ONOFF));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z8ONOFF));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z0ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z1ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z2ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z3ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z4ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z5ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z6ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z7ONOFF, Color.Green, "ON", Color.Red, "OFF"));
+            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z8ONOFF, Color.Green, "ON", Color.Red, "OFF"));
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace RM.src.RM220930.Forms.Plant
             if (!(sender is Button btn)) return;        // Sicurezza: verifica che sia un Button
             if (!(btn.Tag is int index)) return;       // Recupera l'indice dell'asse dal Tag
 
-            UC_axis.axeOffset = index + 1;             // Se vuoi mantenere axeOffset
+            UC_axis.axeOffset = index;             // Se vuoi mantenere axeOffset
 
             if (SCADAManager.Z_State[index])
             {

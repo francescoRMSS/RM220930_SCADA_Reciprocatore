@@ -93,7 +93,7 @@
             this.customPanel9 = new RMLib.View.CustomPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.customButton17 = new RMLib.View.CustomButton();
-            this.btn_recOFF = new RMLib.View.CustomButton();
+            this.btn_z0ONOFF = new RMLib.View.CustomButton();
             this.customButton18 = new RMLib.View.CustomButton();
             this.customButton19 = new RMLib.View.CustomButton();
             this.btn_valueHubDown = new RMLib.View.CustomButton();
@@ -1245,7 +1245,7 @@
             this.pnl_hub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_hub.Controls.Add(this.customPanel9);
             this.pnl_hub.Controls.Add(this.customButton17);
-            this.pnl_hub.Controls.Add(this.btn_recOFF);
+            this.pnl_hub.Controls.Add(this.btn_z0ONOFF);
             this.pnl_hub.Controls.Add(this.customButton18);
             this.pnl_hub.Controls.Add(this.btn_rec);
             this.pnl_hub.Controls.Add(this.customButton19);
@@ -1308,27 +1308,27 @@
             this.customButton17.TextColor = System.Drawing.Color.White;
             this.customButton17.UseVisualStyleBackColor = false;
             // 
-            // btn_recOFF
+            // btn_z0ONOFF
             // 
-            this.btn_recOFF.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btn_recOFF.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.btn_recOFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_recOFF.BorderColor = System.Drawing.Color.DimGray;
-            this.btn_recOFF.BorderRadius = 15;
-            this.btn_recOFF.BorderSize = 2;
-            this.btn_recOFF.FlatAppearance.BorderSize = 0;
-            this.btn_recOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_recOFF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_recOFF.ForeColor = System.Drawing.Color.White;
-            this.btn_recOFF.Location = new System.Drawing.Point(91, 322);
-            this.btn_recOFF.Name = "btn_recOFF";
-            this.btn_recOFF.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.btn_recOFF.Size = new System.Drawing.Size(80, 50);
-            this.btn_recOFF.TabIndex = 383;
-            this.btn_recOFF.Text = "OFF";
-            this.btn_recOFF.TextColor = System.Drawing.Color.White;
-            this.btn_recOFF.UseVisualStyleBackColor = false;
-            this.btn_recOFF.Click += new System.EventHandler(this.btn_recOFF_Click);
+            this.btn_z0ONOFF.BackColor = System.Drawing.Color.Red;
+            this.btn_z0ONOFF.BackgroundColor = System.Drawing.Color.Red;
+            this.btn_z0ONOFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_z0ONOFF.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_z0ONOFF.BorderRadius = 15;
+            this.btn_z0ONOFF.BorderSize = 2;
+            this.btn_z0ONOFF.FlatAppearance.BorderSize = 0;
+            this.btn_z0ONOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_z0ONOFF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_z0ONOFF.ForeColor = System.Drawing.Color.White;
+            this.btn_z0ONOFF.Location = new System.Drawing.Point(91, 322);
+            this.btn_z0ONOFF.Name = "btn_z0ONOFF";
+            this.btn_z0ONOFF.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_z0ONOFF.Size = new System.Drawing.Size(80, 50);
+            this.btn_z0ONOFF.TabIndex = 383;
+            this.btn_z0ONOFF.Text = "OFF";
+            this.btn_z0ONOFF.TextColor = System.Drawing.Color.White;
+            this.btn_z0ONOFF.UseVisualStyleBackColor = false;
+            this.btn_z0ONOFF.Click += new System.EventHandler(this.btn_recOFF_Click);
             // 
             // customButton18
             // 
@@ -1544,7 +1544,7 @@
         private RMLib.View.CustomButton btn_rec;
         private RMLib.View.CustomButton customButton1;
         private RMLib.View.CustomButton customButton2;
-        private RMLib.View.CustomButton btn_recOFF;
+        private RMLib.View.CustomButton btn_z0ONOFF;
         private RMLib.View.CustomPanel customPanel4;
         private System.Windows.Forms.Label label5;
         private RMLib.View.CustomPanel customPanel2;
