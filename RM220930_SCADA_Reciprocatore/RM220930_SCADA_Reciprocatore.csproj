@@ -157,16 +157,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\RM220930\Classes\BufferedPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="src\RM220930\Classes\Configuration.cs" />
     <Compile Include="src\RM220930\Classes\ConfigurationSettings.cs" />
-    <Compile Include="src\RM220930\Classes\CustomRadioButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="src\RM220930\Classes\DAO\SQLite\DAOSqlite.cs" />
-    <Compile Include="src\RM220930\Classes\SCADAManager.cs" />
+    <Compile Include="src\RM220930\Classes\SCADA\SCADAManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskManager.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskType.cs" />
     <Compile Include="src\RM220930\Classes\TaskManager\TaskModel.cs" />
@@ -179,7 +173,7 @@
     <Compile Include="src\RM220930\Classes\Program.cs" />
     <Compile Include="src\RM220930\Classes\UiBinder\BiStateButton.cs" />
     <Compile Include="src\RM220930\Classes\UiBinder\UiLabel.cs" />
-    <Compile Include="src\RM220930\Classes\ZAxisState.cs" />
+    <Compile Include="src\RM220930\Classes\SCADA\ZAxisState.cs" />
     <Compile Include="src\RM220930\Forms\FormLoading.cs">
       <SubType>Form</SubType>
     </Compile>
