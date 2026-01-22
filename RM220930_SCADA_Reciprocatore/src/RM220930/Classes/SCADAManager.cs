@@ -159,7 +159,17 @@ namespace RM.src.RM220930.Classes
         {
             formAlarmPage = new FormAlarmPage();
             formAlarmPage.AlarmsCleared += RMLib_AlarmsCleared;
-            
+
+            _zState = new ZAxisState[numZ];
+            _prevZState = new ZAxisState[numZ];
+
+            for (int i = 0; i < numZ; i++)
+            {
+                _zState[i] = new ZAxisState();
+                _prevZState[i] = new ZAxisState();
+            }
+
+
             // Faccio partire i task
             taskManager.AddTask(TaskCheckRobotConneciton, CheckRobotConnection, TaskType.LongRunning, true);
             taskManager.AddTask(TaskHighPriorityName, CheckHighPriority, TaskType.LongRunning, true);
@@ -271,25 +281,17 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         public static readonly List<BiStateButton> Z_ONOFF = new List<BiStateButton>();
 
-        /// <summary>
-        /// Stato precedente letto dal PLC (per aggiornare UI)
-        /// </summary>
-        public static bool[] _prevZValues = new bool[numZ];
+
+
 
         /// <summary>
-        /// Stato corrente interno (accessibile dalle altre classi)
+        /// Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
         /// </summary>
-        public static bool[] Z_State { get; private set; } = new bool[numZ];
+        public static readonly List<UiLabel> z_actualPos = new List<UiLabel>();
 
-        /// <summary>
-        /// Stato da inviare al PLC
-        /// </summary>
-        public static bool[] Z_StateToSend { get; private set; } = new bool[numZ];
+        public static ZAxisState[] _zState;
+        private static ZAxisState[] _prevZState;
 
-        /// <summary>
-        /// Ultimo valore inviato al PLC (per inviare solo se cambia)
-        /// </summary>
-        public static bool[] _lastSentState = new bool[numZ];
 
 
         private static void UpdateVariablesFromPlcValues()
@@ -298,48 +300,46 @@ namespace RM.src.RM220930.Classes
 
             for (int i = 0; i < numZ; i++)
             {
-                bool plcValue = Convert.ToBoolean(
+                // ===== READ PLC =====
+                var cmdOn = Convert.ToBoolean(
                     PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}")
                 );
 
-                // Aggiorna solo lo stato interno letto dal PLC
-                Z_State[i] = plcValue;
+                var actPos = Convert.ToSingle(
+                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}")
+                );
 
-                // Aggiorna UI solo se cambia rispetto a _prevZValues
-                if (_prevZValues[i] != plcValue)
+                /*
+                var errorCode = Convert.ToInt16(
+                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Error_Code}")
+                );
+                */
+                // ===== UPDATE STATE =====
+                _zState[i].CmdOnAxe = cmdOn;
+                _zState[i].ActPosition = actPos;
+                //_zState[i].ErrorCode = errorCode;
+
+                // ===== UI UPDATE (solo se cambia) =====
+                if (_prevZState[i].CmdOnAxe != cmdOn)
                 {
-                    _prevZValues[i] = plcValue;
-
-                    if (i < Z_ONOFF.Count)
-                    {
-                        Z_ONOFF[i].ChangeStatusCustom();                    
-                    }
+                    _prevZState[i].CmdOnAxe = cmdOn;
+                    Z_ONOFF[i].ChangeStatusCustom();
                 }
+
+                if (_prevZState[i].ActPosition != actPos)
+                {
+                    _prevZState[i].ActPosition = actPos;
+                    z_actualPos[i].Write(actPos.ToString());
+                }
+                /*
+                if (_prevZState[i].ErrorCode != errorCode)
+                {
+                    _prevZState[i].ErrorCode = errorCode;
+                    // aggiorna allarmi / colore / icona
+                }
+                */
             }
         }
-
-        private static void SendVariablesValuesToPlc()
-        {
-            if (Z_ONOFF.Count == 0) return;
-
-            for (int i = 0; i < 8; i++)
-            {
-                bool valueToSend = Z_StateToSend[i]; // solo i click dell’utente
-
-                // invia solo se diverso dall’ultimo inviato
-                if (Z_State[i] != valueToSend)
-                {
-                    RefresherTask.AddUpdate($"PLC1_z{i + 1}_{PLCTagName.Cmd_On_Axe}", valueToSend, "BOOL");
-                }
-            }
-        }
-
-        // Click generico
-        private void ClickEvent_EnableDisableZ(int index)
-        {
-            Z_StateToSend[index] = !Z_StateToSend[index];
-        }
-
 
 
 

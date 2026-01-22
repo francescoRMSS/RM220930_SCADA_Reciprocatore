@@ -512,6 +512,11 @@
             Contiene la lista di indicatori nella pagina monitor ciclo
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.z_actualPos">
+            <summary>
+            Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:RM.src.RM220930.Classes.SCADAManager.CheckRobotConnection(System.Threading.CancellationToken)" -->
         <member name="M:RM.src.RM220930.Classes.SCADAManager.ApplicationTaskManager(System.Threading.CancellationToken)">
              <summary>
@@ -781,6 +786,58 @@
         <member name="M:RM.src.RM220930.Classes.UiBinder.BiStateButton.ReadState">
             <summary>
             Legge lo stato del pulsante
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.UiBinder.UiLabel._label">
+            <summary>
+            Riferimento alla label
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.#ctor(System.Windows.Forms.Label)">
+            <summary>
+            Costruisce il container della label
+            </summary>
+            <param name="label"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.#ctor">
+            <summary>
+            Costruttore vuoto
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.ChangeLabelRef(System.Windows.Forms.Label)">
+            <summary>
+            Cambia il riferimento alla label
+            </summary>
+            <param name="newLabel"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.Write(System.Object)">
+            <summary>
+            Scrive alla label se possibile
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.ReadString">
+            <summary>
+            Restituisce la stringa nella label
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.ReadInt">
+            <summary>
+            Restituisce la stringa nella label come intero 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.ReadFloat">
+            <summary>
+            Restituisce la stringa nella label come float
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RM.src.RM220930.Classes.UiBinder.UiLabel.ReadDouble">
+            <summary>
+            Restituisce la stringa nella label come double
             </summary>
             <returns></returns>
         </member>
@@ -1519,9 +1576,14 @@
             Assegna l'evento ad ogni tasto Z asse
             </summary>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitZActualPoslabelList">
+            <summary>
+            Inizializzazione della lista di label z pos
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.OnNavigatedTo(System.Object)">
             <summary>
-            Metodo eseguito dopo la richiesta di navigazione in home page
+            Metodo che interecetta evento di navigazione sulla pagina
             </summary>
             <param name="parameter"></param>
         </member>
@@ -1549,6 +1611,27 @@
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDown_valueNeg(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             Applica il jog negativo all'asse relativo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_openLaser(System.Object,System.EventArgs)">
+            <summary>
+            Apre pagina laser (non implementata)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_open3DLive(System.Object,System.EventArgs)">
+            <summary>
+            Apre pagina 3D Live (non implementata)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_cabinLight(System.Object,System.EventArgs)">
+            <summary>
+            Apre pagina luci cabina (non implementata)
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

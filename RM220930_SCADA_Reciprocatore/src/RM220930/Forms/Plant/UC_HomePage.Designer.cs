@@ -34,35 +34,35 @@
             this.lbl_valueZ1 = new System.Windows.Forms.Label();
             this.customPanel4 = new RMLib.View.CustomPanel();
             this.lbl_valueZ8 = new System.Windows.Forms.Label();
-            this.customButton9 = new RMLib.View.CustomButton();
-            this.customButton5 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ8 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ4 = new RMLib.View.CustomButton();
             this.customPanel1 = new RMLib.View.CustomPanel();
             this.lbl_valueZ2 = new System.Windows.Forms.Label();
             this.customPanel2 = new RMLib.View.CustomPanel();
             this.lbl_valueZ4 = new System.Windows.Forms.Label();
-            this.customButton10 = new RMLib.View.CustomButton();
-            this.customButton3 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ6 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ2 = new RMLib.View.CustomButton();
             this.customPanel5 = new RMLib.View.CustomPanel();
             this.lbl_valueZ6 = new System.Windows.Forms.Label();
-            this.customButton11 = new RMLib.View.CustomButton();
-            this.customButton6 = new RMLib.View.CustomButton();
-            this.customButton12 = new RMLib.View.CustomButton();
-            this.customButton13 = new RMLib.View.CustomButton();
-            this.customButton7 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ8 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ4 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ7 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ6 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ3 = new RMLib.View.CustomButton();
             this.customPanel3 = new RMLib.View.CustomPanel();
             this.lbl_valueZ3 = new System.Windows.Forms.Label();
             this.customPanel6 = new RMLib.View.CustomPanel();
             this.lbl_valueZ7 = new System.Windows.Forms.Label();
-            this.customButton14 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ7 = new RMLib.View.CustomButton();
             this.customPanel7 = new RMLib.View.CustomPanel();
             this.lbl_valueZ5 = new System.Windows.Forms.Label();
-            this.customButton4 = new RMLib.View.CustomButton();
-            this.customButton15 = new RMLib.View.CustomButton();
-            this.customButton8 = new RMLib.View.CustomButton();
-            this.customButton16 = new RMLib.View.CustomButton();
-            this.customButton1 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ2 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ5 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ3 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ5 = new RMLib.View.CustomButton();
+            this.btn_jogPosZ1 = new RMLib.View.CustomButton();
             this.btn_z7ONOFF = new RMLib.View.CustomButton();
-            this.customButton2 = new RMLib.View.CustomButton();
+            this.btn_jogNegZ1 = new RMLib.View.CustomButton();
             this.btn_z8 = new RMLib.View.CustomButton();
             this.btn_z8ONOFF = new RMLib.View.CustomButton();
             this.btn_z6ONOFF = new RMLib.View.CustomButton();
@@ -90,8 +90,8 @@
             this.lbl_options = new System.Windows.Forms.Label();
             this.pnl_hub = new System.Windows.Forms.Panel();
             this.btn_z0ONOFF = new RMLib.View.CustomButton();
-            this.btn_valueRecDown = new RMLib.View.CustomButton();
-            this.btn_valueRecUp = new RMLib.View.CustomButton();
+            this.btn_jogPosRec = new RMLib.View.CustomButton();
+            this.btn_jogNegRec = new RMLib.View.CustomButton();
             this.lbl_hub = new System.Windows.Forms.Label();
             this.pnl_valueRec = new RMLib.View.CustomPanel();
             this.lbl_valueRec = new System.Windows.Forms.Label();
@@ -127,29 +127,29 @@
             this.pnl_axis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_axis.Controls.Add(this.customPanel8);
             this.pnl_axis.Controls.Add(this.customPanel4);
-            this.pnl_axis.Controls.Add(this.customButton9);
-            this.pnl_axis.Controls.Add(this.customButton5);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ8);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ4);
             this.pnl_axis.Controls.Add(this.customPanel1);
             this.pnl_axis.Controls.Add(this.customPanel2);
-            this.pnl_axis.Controls.Add(this.customButton10);
-            this.pnl_axis.Controls.Add(this.customButton3);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ6);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ2);
             this.pnl_axis.Controls.Add(this.customPanel5);
-            this.pnl_axis.Controls.Add(this.customButton11);
-            this.pnl_axis.Controls.Add(this.customButton6);
-            this.pnl_axis.Controls.Add(this.customButton12);
-            this.pnl_axis.Controls.Add(this.customButton13);
-            this.pnl_axis.Controls.Add(this.customButton7);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ8);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ4);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ7);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ6);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ3);
             this.pnl_axis.Controls.Add(this.customPanel3);
             this.pnl_axis.Controls.Add(this.customPanel6);
-            this.pnl_axis.Controls.Add(this.customButton14);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ7);
             this.pnl_axis.Controls.Add(this.customPanel7);
-            this.pnl_axis.Controls.Add(this.customButton4);
-            this.pnl_axis.Controls.Add(this.customButton15);
-            this.pnl_axis.Controls.Add(this.customButton8);
-            this.pnl_axis.Controls.Add(this.customButton16);
-            this.pnl_axis.Controls.Add(this.customButton1);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ2);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ5);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ3);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ5);
+            this.pnl_axis.Controls.Add(this.btn_jogPosZ1);
             this.pnl_axis.Controls.Add(this.btn_z7ONOFF);
-            this.pnl_axis.Controls.Add(this.customButton2);
+            this.pnl_axis.Controls.Add(this.btn_jogNegZ1);
             this.pnl_axis.Controls.Add(this.btn_z8);
             this.pnl_axis.Controls.Add(this.btn_z8ONOFF);
             this.pnl_axis.Controls.Add(this.btn_z6ONOFF);
@@ -225,51 +225,51 @@
             this.lbl_valueZ8.Text = "0";
             this.lbl_valueZ8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton9
+            // btn_jogPosZ8
             // 
-            this.customButton9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton9.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton9.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton9.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton9.BorderRadius = 15;
-            this.customButton9.BorderSize = 2;
-            this.customButton9.FlatAppearance.BorderSize = 0;
-            this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Location = new System.Drawing.Point(385, 430);
-            this.customButton9.Name = "customButton9";
-            this.customButton9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton9.Size = new System.Drawing.Size(60, 50);
-            this.customButton9.TabIndex = 406;
-            this.customButton9.Tag = "8";
-            this.customButton9.TextColor = System.Drawing.Color.White;
-            this.customButton9.UseVisualStyleBackColor = false;
-            this.customButton9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ8.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ8.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ8.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ8.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ8.BorderRadius = 15;
+            this.btn_jogPosZ8.BorderSize = 2;
+            this.btn_jogPosZ8.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ8.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ8.Location = new System.Drawing.Point(385, 430);
+            this.btn_jogPosZ8.Name = "btn_jogPosZ8";
+            this.btn_jogPosZ8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ8.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ8.TabIndex = 406;
+            this.btn_jogPosZ8.Tag = "8";
+            this.btn_jogPosZ8.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ8.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
-            // customButton5
+            // btn_jogPosZ4
             // 
-            this.customButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton5.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton5.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton5.BorderRadius = 15;
-            this.customButton5.BorderSize = 2;
-            this.customButton5.FlatAppearance.BorderSize = 0;
-            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton5.ForeColor = System.Drawing.Color.White;
-            this.customButton5.Location = new System.Drawing.Point(385, 210);
-            this.customButton5.Name = "customButton5";
-            this.customButton5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton5.Size = new System.Drawing.Size(60, 50);
-            this.customButton5.TabIndex = 394;
-            this.customButton5.Tag = "4";
-            this.customButton5.TextColor = System.Drawing.Color.White;
-            this.customButton5.UseVisualStyleBackColor = false;
-            this.customButton5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ4.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ4.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ4.BorderRadius = 15;
+            this.btn_jogPosZ4.BorderSize = 2;
+            this.btn_jogPosZ4.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ4.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ4.Location = new System.Drawing.Point(385, 210);
+            this.btn_jogPosZ4.Name = "btn_jogPosZ4";
+            this.btn_jogPosZ4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ4.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ4.TabIndex = 394;
+            this.btn_jogPosZ4.Tag = "4";
+            this.btn_jogPosZ4.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ4.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
             // customPanel1
             // 
@@ -325,51 +325,51 @@
             this.lbl_valueZ4.Text = "0";
             this.lbl_valueZ4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton10
+            // btn_jogPosZ6
             // 
-            this.customButton10.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton10.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton10.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton10.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton10.BorderRadius = 15;
-            this.customButton10.BorderSize = 2;
-            this.customButton10.FlatAppearance.BorderSize = 0;
-            this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton10.ForeColor = System.Drawing.Color.White;
-            this.customButton10.Location = new System.Drawing.Point(385, 320);
-            this.customButton10.Name = "customButton10";
-            this.customButton10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton10.Size = new System.Drawing.Size(60, 50);
-            this.customButton10.TabIndex = 400;
-            this.customButton10.Tag = "6";
-            this.customButton10.TextColor = System.Drawing.Color.White;
-            this.customButton10.UseVisualStyleBackColor = false;
-            this.customButton10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ6.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ6.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ6.BorderRadius = 15;
+            this.btn_jogPosZ6.BorderSize = 2;
+            this.btn_jogPosZ6.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ6.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ6.Location = new System.Drawing.Point(385, 320);
+            this.btn_jogPosZ6.Name = "btn_jogPosZ6";
+            this.btn_jogPosZ6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ6.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ6.TabIndex = 400;
+            this.btn_jogPosZ6.Tag = "6";
+            this.btn_jogPosZ6.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ6.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
-            // customButton3
+            // btn_jogPosZ2
             // 
-            this.customButton3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton3.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton3.BorderRadius = 15;
-            this.customButton3.BorderSize = 2;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(385, 100);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton3.Size = new System.Drawing.Size(60, 50);
-            this.customButton3.TabIndex = 388;
-            this.customButton3.Tag = "2";
-            this.customButton3.TextColor = System.Drawing.Color.White;
-            this.customButton3.UseVisualStyleBackColor = false;
-            this.customButton3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ2.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ2.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ2.BorderRadius = 15;
+            this.btn_jogPosZ2.BorderSize = 2;
+            this.btn_jogPosZ2.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ2.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ2.Location = new System.Drawing.Point(385, 100);
+            this.btn_jogPosZ2.Name = "btn_jogPosZ2";
+            this.btn_jogPosZ2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ2.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ2.TabIndex = 388;
+            this.btn_jogPosZ2.Tag = "2";
+            this.btn_jogPosZ2.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ2.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
             // customPanel5
             // 
@@ -398,120 +398,120 @@
             this.lbl_valueZ6.Text = "0";
             this.lbl_valueZ6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton11
+            // btn_jogNegZ8
             // 
-            this.customButton11.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton11.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton11.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton11.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton11.BorderRadius = 15;
-            this.customButton11.BorderSize = 2;
-            this.customButton11.FlatAppearance.BorderSize = 0;
-            this.customButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton11.ForeColor = System.Drawing.Color.White;
-            this.customButton11.Location = new System.Drawing.Point(319, 430);
-            this.customButton11.Name = "customButton11";
-            this.customButton11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton11.Size = new System.Drawing.Size(60, 50);
-            this.customButton11.TabIndex = 405;
-            this.customButton11.Tag = "8";
-            this.customButton11.TextColor = System.Drawing.Color.White;
-            this.customButton11.UseVisualStyleBackColor = false;
-            this.customButton11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ8.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ8.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ8.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ8.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ8.BorderRadius = 15;
+            this.btn_jogNegZ8.BorderSize = 2;
+            this.btn_jogNegZ8.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ8.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ8.Location = new System.Drawing.Point(319, 430);
+            this.btn_jogNegZ8.Name = "btn_jogNegZ8";
+            this.btn_jogNegZ8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ8.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ8.TabIndex = 405;
+            this.btn_jogNegZ8.Tag = "8";
+            this.btn_jogNegZ8.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ8.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
-            // customButton6
+            // btn_jogNegZ4
             // 
-            this.customButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton6.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton6.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton6.BorderRadius = 15;
-            this.customButton6.BorderSize = 2;
-            this.customButton6.FlatAppearance.BorderSize = 0;
-            this.customButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton6.ForeColor = System.Drawing.Color.White;
-            this.customButton6.Location = new System.Drawing.Point(319, 210);
-            this.customButton6.Name = "customButton6";
-            this.customButton6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton6.Size = new System.Drawing.Size(60, 50);
-            this.customButton6.TabIndex = 393;
-            this.customButton6.Tag = "4";
-            this.customButton6.TextColor = System.Drawing.Color.White;
-            this.customButton6.UseVisualStyleBackColor = false;
-            this.customButton6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ4.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ4.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ4.BorderRadius = 15;
+            this.btn_jogNegZ4.BorderSize = 2;
+            this.btn_jogNegZ4.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ4.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ4.Location = new System.Drawing.Point(319, 210);
+            this.btn_jogNegZ4.Name = "btn_jogNegZ4";
+            this.btn_jogNegZ4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ4.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ4.TabIndex = 393;
+            this.btn_jogNegZ4.Tag = "4";
+            this.btn_jogNegZ4.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ4.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
-            // customButton12
+            // btn_jogPosZ7
             // 
-            this.customButton12.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton12.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton12.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton12.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton12.BorderRadius = 15;
-            this.customButton12.BorderSize = 2;
-            this.customButton12.FlatAppearance.BorderSize = 0;
-            this.customButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton12.ForeColor = System.Drawing.Color.White;
-            this.customButton12.Location = new System.Drawing.Point(385, 375);
-            this.customButton12.Name = "customButton12";
-            this.customButton12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton12.Size = new System.Drawing.Size(60, 50);
-            this.customButton12.TabIndex = 403;
-            this.customButton12.Tag = "7";
-            this.customButton12.TextColor = System.Drawing.Color.White;
-            this.customButton12.UseVisualStyleBackColor = false;
-            this.customButton12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ7.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ7.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ7.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ7.BorderRadius = 15;
+            this.btn_jogPosZ7.BorderSize = 2;
+            this.btn_jogPosZ7.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ7.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ7.Location = new System.Drawing.Point(385, 375);
+            this.btn_jogPosZ7.Name = "btn_jogPosZ7";
+            this.btn_jogPosZ7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ7.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ7.TabIndex = 403;
+            this.btn_jogPosZ7.Tag = "7";
+            this.btn_jogPosZ7.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ7.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
-            // customButton13
+            // btn_jogNegZ6
             // 
-            this.customButton13.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton13.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton13.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton13.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton13.BorderRadius = 15;
-            this.customButton13.BorderSize = 2;
-            this.customButton13.FlatAppearance.BorderSize = 0;
-            this.customButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton13.ForeColor = System.Drawing.Color.White;
-            this.customButton13.Location = new System.Drawing.Point(319, 320);
-            this.customButton13.Name = "customButton13";
-            this.customButton13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton13.Size = new System.Drawing.Size(60, 50);
-            this.customButton13.TabIndex = 399;
-            this.customButton13.Tag = "6";
-            this.customButton13.TextColor = System.Drawing.Color.White;
-            this.customButton13.UseVisualStyleBackColor = false;
-            this.customButton13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ6.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ6.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ6.BorderRadius = 15;
+            this.btn_jogNegZ6.BorderSize = 2;
+            this.btn_jogNegZ6.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ6.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ6.Location = new System.Drawing.Point(319, 320);
+            this.btn_jogNegZ6.Name = "btn_jogNegZ6";
+            this.btn_jogNegZ6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ6.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ6.TabIndex = 399;
+            this.btn_jogNegZ6.Tag = "6";
+            this.btn_jogNegZ6.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ6.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
-            // customButton7
+            // btn_jogPosZ3
             // 
-            this.customButton7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton7.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton7.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton7.BorderRadius = 15;
-            this.customButton7.BorderSize = 2;
-            this.customButton7.FlatAppearance.BorderSize = 0;
-            this.customButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton7.ForeColor = System.Drawing.Color.White;
-            this.customButton7.Location = new System.Drawing.Point(385, 155);
-            this.customButton7.Name = "customButton7";
-            this.customButton7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton7.Size = new System.Drawing.Size(60, 50);
-            this.customButton7.TabIndex = 391;
-            this.customButton7.Tag = "3";
-            this.customButton7.TextColor = System.Drawing.Color.White;
-            this.customButton7.UseVisualStyleBackColor = false;
-            this.customButton7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ3.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ3.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ3.BorderRadius = 15;
+            this.btn_jogPosZ3.BorderSize = 2;
+            this.btn_jogPosZ3.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ3.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ3.Location = new System.Drawing.Point(385, 155);
+            this.btn_jogPosZ3.Name = "btn_jogPosZ3";
+            this.btn_jogPosZ3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ3.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ3.TabIndex = 391;
+            this.btn_jogPosZ3.Tag = "3";
+            this.btn_jogPosZ3.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ3.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
             // customPanel3
             // 
@@ -567,28 +567,28 @@
             this.lbl_valueZ7.Text = "0";
             this.lbl_valueZ7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton14
+            // btn_jogNegZ7
             // 
-            this.customButton14.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton14.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton14.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton14.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton14.BorderRadius = 15;
-            this.customButton14.BorderSize = 2;
-            this.customButton14.FlatAppearance.BorderSize = 0;
-            this.customButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton14.ForeColor = System.Drawing.Color.White;
-            this.customButton14.Location = new System.Drawing.Point(319, 375);
-            this.customButton14.Name = "customButton14";
-            this.customButton14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton14.Size = new System.Drawing.Size(60, 50);
-            this.customButton14.TabIndex = 402;
-            this.customButton14.Tag = "7";
-            this.customButton14.TextColor = System.Drawing.Color.White;
-            this.customButton14.UseVisualStyleBackColor = false;
-            this.customButton14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ7.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ7.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ7.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ7.BorderRadius = 15;
+            this.btn_jogNegZ7.BorderSize = 2;
+            this.btn_jogNegZ7.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ7.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ7.Location = new System.Drawing.Point(319, 375);
+            this.btn_jogNegZ7.Name = "btn_jogNegZ7";
+            this.btn_jogNegZ7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ7.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ7.TabIndex = 402;
+            this.btn_jogNegZ7.Tag = "7";
+            this.btn_jogNegZ7.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ7.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
             // customPanel7
             // 
@@ -617,120 +617,120 @@
             this.lbl_valueZ5.Text = "0";
             this.lbl_valueZ5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton4
+            // btn_jogNegZ2
             // 
-            this.customButton4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton4.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton4.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton4.BorderRadius = 15;
-            this.customButton4.BorderSize = 2;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Location = new System.Drawing.Point(319, 100);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton4.Size = new System.Drawing.Size(60, 50);
-            this.customButton4.TabIndex = 387;
-            this.customButton4.Tag = "2";
-            this.customButton4.TextColor = System.Drawing.Color.White;
-            this.customButton4.UseVisualStyleBackColor = false;
-            this.customButton4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ2.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ2.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ2.BorderRadius = 15;
+            this.btn_jogNegZ2.BorderSize = 2;
+            this.btn_jogNegZ2.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ2.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ2.Location = new System.Drawing.Point(319, 100);
+            this.btn_jogNegZ2.Name = "btn_jogNegZ2";
+            this.btn_jogNegZ2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ2.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ2.TabIndex = 387;
+            this.btn_jogNegZ2.Tag = "2";
+            this.btn_jogNegZ2.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ2.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
-            // customButton15
+            // btn_jogPosZ5
             // 
-            this.customButton15.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton15.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton15.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton15.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton15.BorderRadius = 15;
-            this.customButton15.BorderSize = 2;
-            this.customButton15.FlatAppearance.BorderSize = 0;
-            this.customButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton15.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton15.ForeColor = System.Drawing.Color.White;
-            this.customButton15.Location = new System.Drawing.Point(385, 265);
-            this.customButton15.Name = "customButton15";
-            this.customButton15.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton15.Size = new System.Drawing.Size(60, 50);
-            this.customButton15.TabIndex = 397;
-            this.customButton15.Tag = "5";
-            this.customButton15.TextColor = System.Drawing.Color.White;
-            this.customButton15.UseVisualStyleBackColor = false;
-            this.customButton15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ5.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ5.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ5.BorderRadius = 15;
+            this.btn_jogPosZ5.BorderSize = 2;
+            this.btn_jogPosZ5.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ5.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ5.Location = new System.Drawing.Point(385, 265);
+            this.btn_jogPosZ5.Name = "btn_jogPosZ5";
+            this.btn_jogPosZ5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ5.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ5.TabIndex = 397;
+            this.btn_jogPosZ5.Tag = "5";
+            this.btn_jogPosZ5.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ5.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
-            // customButton8
+            // btn_jogNegZ3
             // 
-            this.customButton8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton8.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton8.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton8.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton8.BorderRadius = 15;
-            this.customButton8.BorderSize = 2;
-            this.customButton8.FlatAppearance.BorderSize = 0;
-            this.customButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton8.ForeColor = System.Drawing.Color.White;
-            this.customButton8.Location = new System.Drawing.Point(319, 155);
-            this.customButton8.Name = "customButton8";
-            this.customButton8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton8.Size = new System.Drawing.Size(60, 50);
-            this.customButton8.TabIndex = 390;
-            this.customButton8.Tag = "3";
-            this.customButton8.TextColor = System.Drawing.Color.White;
-            this.customButton8.UseVisualStyleBackColor = false;
-            this.customButton8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ3.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ3.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ3.BorderRadius = 15;
+            this.btn_jogNegZ3.BorderSize = 2;
+            this.btn_jogNegZ3.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ3.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ3.Location = new System.Drawing.Point(319, 155);
+            this.btn_jogNegZ3.Name = "btn_jogNegZ3";
+            this.btn_jogNegZ3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ3.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ3.TabIndex = 390;
+            this.btn_jogNegZ3.Tag = "3";
+            this.btn_jogNegZ3.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ3.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
-            // customButton16
+            // btn_jogNegZ5
             // 
-            this.customButton16.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton16.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton16.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton16.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton16.BorderRadius = 15;
-            this.customButton16.BorderSize = 2;
-            this.customButton16.FlatAppearance.BorderSize = 0;
-            this.customButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton16.ForeColor = System.Drawing.Color.White;
-            this.customButton16.Location = new System.Drawing.Point(319, 265);
-            this.customButton16.Name = "customButton16";
-            this.customButton16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton16.Size = new System.Drawing.Size(60, 50);
-            this.customButton16.TabIndex = 396;
-            this.customButton16.Tag = "5";
-            this.customButton16.TextColor = System.Drawing.Color.White;
-            this.customButton16.UseVisualStyleBackColor = false;
-            this.customButton16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ5.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ5.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ5.BorderRadius = 15;
+            this.btn_jogNegZ5.BorderSize = 2;
+            this.btn_jogNegZ5.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ5.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ5.Location = new System.Drawing.Point(319, 265);
+            this.btn_jogNegZ5.Name = "btn_jogNegZ5";
+            this.btn_jogNegZ5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ5.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ5.TabIndex = 396;
+            this.btn_jogNegZ5.Tag = "5";
+            this.btn_jogNegZ5.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ5.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
-            // customButton1
+            // btn_jogPosZ1
             // 
-            this.customButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton1.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(385, 45);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton1.Size = new System.Drawing.Size(60, 50);
-            this.customButton1.TabIndex = 385;
-            this.customButton1.Tag = "1";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosZ1.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosZ1.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosZ1.BorderRadius = 15;
+            this.btn_jogPosZ1.BorderSize = 2;
+            this.btn_jogPosZ1.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosZ1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosZ1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosZ1.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosZ1.Location = new System.Drawing.Point(385, 45);
+            this.btn_jogPosZ1.Name = "btn_jogPosZ1";
+            this.btn_jogPosZ1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosZ1.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosZ1.TabIndex = 385;
+            this.btn_jogPosZ1.Tag = "1";
+            this.btn_jogPosZ1.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosZ1.UseVisualStyleBackColor = false;
+            this.btn_jogPosZ1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
             // btn_z7ONOFF
             // 
@@ -753,29 +753,28 @@
             this.btn_z7ONOFF.TextColor = System.Drawing.Color.White;
             this.btn_z7ONOFF.UseVisualStyleBackColor = false;
             // 
-            // customButton2
+            // btn_jogNegZ1
             // 
-            this.customButton2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.customButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 2;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(319, 45);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton2.Size = new System.Drawing.Size(60, 50);
-            this.customButton2.TabIndex = 384;
-            this.customButton2.Tag = "1";
-            this.customButton2.TextColor = System.Drawing.Color.White;
-            this.customButton2.UseVisualStyleBackColor = false;
-            this.customButton2.Click += new System.EventHandler(this.customButton2_Click);
-            this.customButton2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegZ1.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegZ1.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegZ1.BorderRadius = 15;
+            this.btn_jogNegZ1.BorderSize = 2;
+            this.btn_jogNegZ1.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegZ1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegZ1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegZ1.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegZ1.Location = new System.Drawing.Point(319, 45);
+            this.btn_jogNegZ1.Name = "btn_jogNegZ1";
+            this.btn_jogNegZ1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegZ1.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegZ1.TabIndex = 384;
+            this.btn_jogNegZ1.Tag = "1";
+            this.btn_jogNegZ1.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegZ1.UseVisualStyleBackColor = false;
+            this.btn_jogNegZ1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
             // btn_z8
             // 
@@ -1263,8 +1262,8 @@
             this.pnl_hub.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_hub.Controls.Add(this.btn_z0ONOFF);
             this.pnl_hub.Controls.Add(this.btn_rec);
-            this.pnl_hub.Controls.Add(this.btn_valueRecDown);
-            this.pnl_hub.Controls.Add(this.btn_valueRecUp);
+            this.pnl_hub.Controls.Add(this.btn_jogPosRec);
+            this.pnl_hub.Controls.Add(this.btn_jogNegRec);
             this.pnl_hub.Controls.Add(this.lbl_hub);
             this.pnl_hub.Controls.Add(this.pnl_valueRec);
             this.pnl_hub.Location = new System.Drawing.Point(7, 50);
@@ -1292,53 +1291,52 @@
             this.btn_z0ONOFF.Text = "OFF";
             this.btn_z0ONOFF.TextColor = System.Drawing.Color.White;
             this.btn_z0ONOFF.UseVisualStyleBackColor = false;
-            this.btn_z0ONOFF.Click += new System.EventHandler(this.btn_recOFF_Click);
             // 
-            // btn_valueRecDown
+            // btn_jogPosRec
             // 
-            this.btn_valueRecDown.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_valueRecDown.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_valueRecDown.BackgroundImage = global::RM.Properties.Resources.plus32Black;
-            this.btn_valueRecDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_valueRecDown.BorderColor = System.Drawing.Color.DimGray;
-            this.btn_valueRecDown.BorderRadius = 15;
-            this.btn_valueRecDown.BorderSize = 2;
-            this.btn_valueRecDown.FlatAppearance.BorderSize = 0;
-            this.btn_valueRecDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_valueRecDown.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_valueRecDown.ForeColor = System.Drawing.Color.White;
-            this.btn_valueRecDown.Location = new System.Drawing.Point(178, 100);
-            this.btn_valueRecDown.Name = "btn_valueRecDown";
-            this.btn_valueRecDown.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.btn_valueRecDown.Size = new System.Drawing.Size(60, 50);
-            this.btn_valueRecDown.TabIndex = 372;
-            this.btn_valueRecDown.Tag = "0";
-            this.btn_valueRecDown.TextColor = System.Drawing.Color.White;
-            this.btn_valueRecDown.UseVisualStyleBackColor = false;
-            this.btn_valueRecDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosRec.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosRec.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogPosRec.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogPosRec.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogPosRec.BorderRadius = 15;
+            this.btn_jogPosRec.BorderSize = 2;
+            this.btn_jogPosRec.FlatAppearance.BorderSize = 0;
+            this.btn_jogPosRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogPosRec.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogPosRec.ForeColor = System.Drawing.Color.White;
+            this.btn_jogPosRec.Location = new System.Drawing.Point(178, 100);
+            this.btn_jogPosRec.Name = "btn_jogPosRec";
+            this.btn_jogPosRec.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogPosRec.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogPosRec.TabIndex = 372;
+            this.btn_jogPosRec.Tag = "0";
+            this.btn_jogPosRec.TextColor = System.Drawing.Color.White;
+            this.btn_jogPosRec.UseVisualStyleBackColor = false;
+            this.btn_jogPosRec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
             // 
-            // btn_valueRecUp
+            // btn_jogNegRec
             // 
-            this.btn_valueRecUp.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_valueRecUp.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_valueRecUp.BackgroundImage = global::RM.Properties.Resources.minus32Black;
-            this.btn_valueRecUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_valueRecUp.BorderColor = System.Drawing.Color.DimGray;
-            this.btn_valueRecUp.BorderRadius = 15;
-            this.btn_valueRecUp.BorderSize = 2;
-            this.btn_valueRecUp.FlatAppearance.BorderSize = 0;
-            this.btn_valueRecUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_valueRecUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_valueRecUp.ForeColor = System.Drawing.Color.White;
-            this.btn_valueRecUp.Location = new System.Drawing.Point(115, 100);
-            this.btn_valueRecUp.Name = "btn_valueRecUp";
-            this.btn_valueRecUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.btn_valueRecUp.Size = new System.Drawing.Size(60, 50);
-            this.btn_valueRecUp.TabIndex = 371;
-            this.btn_valueRecUp.Tag = "0";
-            this.btn_valueRecUp.TextColor = System.Drawing.Color.White;
-            this.btn_valueRecUp.UseVisualStyleBackColor = false;
-            this.btn_valueRecUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegRec.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegRec.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_jogNegRec.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_jogNegRec.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_jogNegRec.BorderRadius = 15;
+            this.btn_jogNegRec.BorderSize = 2;
+            this.btn_jogNegRec.FlatAppearance.BorderSize = 0;
+            this.btn_jogNegRec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogNegRec.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_jogNegRec.ForeColor = System.Drawing.Color.White;
+            this.btn_jogNegRec.Location = new System.Drawing.Point(115, 100);
+            this.btn_jogNegRec.Name = "btn_jogNegRec";
+            this.btn_jogNegRec.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_jogNegRec.Size = new System.Drawing.Size(60, 50);
+            this.btn_jogNegRec.TabIndex = 371;
+            this.btn_jogNegRec.Tag = "0";
+            this.btn_jogNegRec.TextColor = System.Drawing.Color.White;
+            this.btn_jogNegRec.UseVisualStyleBackColor = false;
+            this.btn_jogNegRec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
             // 
             // lbl_hub
             // 
@@ -1379,7 +1377,6 @@
             this.lbl_valueRec.TabIndex = 3;
             this.lbl_valueRec.Text = "0";
             this.lbl_valueRec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_valueRec.Click += new System.EventHandler(this.lbl_valueHub_Click);
             // 
             // UC_HomePage
             // 
@@ -1439,13 +1436,13 @@
         private System.Windows.Forms.Label lbl_cabinLights;
         private System.Windows.Forms.Label lbl_live3D;
         private System.Windows.Forms.Label lbl_laser;
-        private RMLib.View.CustomButton btn_valueRecDown;
-        private RMLib.View.CustomButton btn_valueRecUp;
+        private RMLib.View.CustomButton btn_jogPosRec;
+        private RMLib.View.CustomButton btn_jogNegRec;
         private RMLib.View.CustomPanel pnl_valueRec;
         private System.Windows.Forms.Label lbl_valueRec;
         private RMLib.View.CustomButton btn_rec;
-        private RMLib.View.CustomButton customButton1;
-        private RMLib.View.CustomButton customButton2;
+        private RMLib.View.CustomButton btn_jogPosZ1;
+        private RMLib.View.CustomButton btn_jogNegZ1;
         private RMLib.View.CustomButton btn_z0ONOFF;
         private RMLib.View.CustomPanel customPanel4;
         private System.Windows.Forms.Label lbl_valueZ8;
@@ -1455,26 +1452,26 @@
         private System.Windows.Forms.Label lbl_valueZ6;
         private RMLib.View.CustomPanel customPanel1;
         private System.Windows.Forms.Label lbl_valueZ2;
-        private RMLib.View.CustomButton customButton9;
-        private RMLib.View.CustomButton customButton5;
-        private RMLib.View.CustomButton customButton10;
-        private RMLib.View.CustomButton customButton3;
+        private RMLib.View.CustomButton btn_jogPosZ8;
+        private RMLib.View.CustomButton btn_jogPosZ4;
+        private RMLib.View.CustomButton btn_jogPosZ6;
+        private RMLib.View.CustomButton btn_jogPosZ2;
         private RMLib.View.CustomPanel customPanel6;
         private System.Windows.Forms.Label lbl_valueZ7;
         private RMLib.View.CustomPanel customPanel3;
         private System.Windows.Forms.Label lbl_valueZ3;
-        private RMLib.View.CustomButton customButton11;
-        private RMLib.View.CustomButton customButton6;
+        private RMLib.View.CustomButton btn_jogNegZ8;
+        private RMLib.View.CustomButton btn_jogNegZ4;
         private RMLib.View.CustomPanel customPanel7;
         private System.Windows.Forms.Label lbl_valueZ5;
-        private RMLib.View.CustomButton customButton12;
-        private RMLib.View.CustomButton customButton13;
-        private RMLib.View.CustomButton customButton7;
-        private RMLib.View.CustomButton customButton14;
-        private RMLib.View.CustomButton customButton4;
-        private RMLib.View.CustomButton customButton15;
-        private RMLib.View.CustomButton customButton8;
-        private RMLib.View.CustomButton customButton16;
+        private RMLib.View.CustomButton btn_jogPosZ7;
+        private RMLib.View.CustomButton btn_jogNegZ6;
+        private RMLib.View.CustomButton btn_jogPosZ3;
+        private RMLib.View.CustomButton btn_jogNegZ7;
+        private RMLib.View.CustomButton btn_jogNegZ2;
+        private RMLib.View.CustomButton btn_jogPosZ5;
+        private RMLib.View.CustomButton btn_jogNegZ3;
+        private RMLib.View.CustomButton btn_jogNegZ5;
         private RMLib.View.CustomPanel customPanel8;
         private System.Windows.Forms.Label lbl_valueZ1;
     }

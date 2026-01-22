@@ -34,8 +34,6 @@ namespace RM.src.RM220930.Forms.Plant
 
         #endregion
 
-        private Label[] _labels;
-
         /// <summary>
         /// Costruttore
         /// </summary>
@@ -45,6 +43,7 @@ namespace RM.src.RM220930.Forms.Plant
             InitZONOFFButtonList();
             InitializeZButtons();
             InitializeGoToZButtons();
+            InitZActualPoslabelList();
         }
 
         #region Metodi di UC_HomePage
@@ -92,7 +91,23 @@ namespace RM.src.RM220930.Forms.Plant
         }
 
         /// <summary>
-        /// Metodo eseguito dopo la richiesta di navigazione in home page
+        /// Inizializzazione della lista di label z pos
+        /// </summary>
+        private void InitZActualPoslabelList()
+        {
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueRec));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ1));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ2));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ3));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ4));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ5));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ6));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ7));
+            SCADAManager.z_actualPos.Add(new UiLabel(lbl_valueZ8));
+        }
+
+        /// <summary>
+        /// Metodo che interecetta evento di navigazione sulla pagina
         /// </summary>
         /// <param name="parameter"></param>
         public void OnNavigatedTo(object parameter)
@@ -130,29 +145,23 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="e"></param>
         private void ClickEvent_EnableDisableZ(object sender, EventArgs e)
         {
-            if (!(sender is Button btn)) return;        // Sicurezza: verifica che sia un Button
-            if (!(btn.Tag is int index)) return;       // Recupera l'indice dell'asse dal Tag
+            if (!(sender is Button btn)) return;
+            if (!(btn.Tag is int index)) return;
 
-            UC_axis.axeOffset = index;             // Se vuoi mantenere axeOffset
+            UC_axis.axeOffset = index;
 
-            if (SCADAManager.Z_State[index])
-            {
-                SCADAManager.Z_StateToSend[index] = false;
+            // Stato attuale letto dal PLC
+            bool currentCmdOn = SCADAManager._zState[index].CmdOnAxe;
 
-                RefresherTask.AddUpdate(
-                    $"PLC1_z{UC_axis.axeOffset}_{PLCTagName.Cmd_On_Axe}",
-                    SCADAManager.Z_StateToSend[index],
-                    "BOOL");
-            }
-            else
-            {
-                SCADAManager.Z_StateToSend[index] = true;
-                RefresherTask.AddUpdate(
-                    $"PLC1_z{UC_axis.axeOffset}_{PLCTagName.Cmd_On_Axe}",
-                    SCADAManager.Z_StateToSend[index],
-                    "BOOL");
-            }
+            // Toggle logico
+            bool newCmdOn = !currentCmdOn;
 
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{index}_{PLCTagName.Cmd_On_Axe}",
+                newCmdOn,
+                "BOOL"
+            );
         }
 
         /// <summary>
@@ -181,51 +190,36 @@ namespace RM.src.RM220930.Forms.Plant
             RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_neg}", true, "BOOL");
         }
 
+        /// <summary>
+        /// Apre pagina laser (non implementata)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_openLaser(object sender, EventArgs e)
         {
             CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
         }
 
+        /// <summary>
+        /// Apre pagina 3D Live (non implementata)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_open3DLive(object sender, EventArgs e)
         {
             CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
         }
 
+        /// <summary>
+        /// Apre pagina luci cabina (non implementata)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_cabinLight(object sender, EventArgs e)
         {
             CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
         }
 
         #endregion
-
-        #region TODO
-
-        private void btn_recOFF_Click(object sender, EventArgs e)
-        {
-            // Cmd_On_Axe
-        }
-
-        private void customButton2_Click(object sender, EventArgs e)
-        {
-            // Cmd_Jog_Neg
-        }
-
-      
-
-        private void lbl_valueHub_Click(object sender, EventArgs e)
-        {
-            // Read_Act_Pos
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
-        {
-            // Cmd_Jog_Pos
-        }
-
-
-
-        #endregion
-
-       
     }
 }
