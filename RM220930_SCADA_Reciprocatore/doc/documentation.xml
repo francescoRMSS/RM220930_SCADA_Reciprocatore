@@ -1526,6 +1526,11 @@
             Inizializzazione della lista di button z ON-OFF
             </summary>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.InitSelectAxisEvents">
+            <summary>
+            Collega i button di selezione asse al relativo evento
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.OnNavigatedTo(System.Object)">
             <summary>
             Gestisce l'utilizzo del parametro passato durante la navigazione
@@ -1537,75 +1542,21 @@
             Ripristina colore dei button degli assi
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.SelectAxe">
-            <summary>
-            Seleziona graficamente l'asse
-            </summary>
-        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.RegisterPages">
             <summary>
             Registra le pagine che verranno switchate all'interno del panel contenitore
             </summary>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectRec(System.Object,System.EventArgs)">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.SelectAxe(System.Int32,System.Windows.Forms.Button)">
             <summary>
-            Seleziona rec
+            Seleziona l'asse relativo
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
+            <param name="axeIndex"></param>
+            <param name="btn"></param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe1(System.Object,System.EventArgs)">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe_Generic(System.Object,System.EventArgs)">
             <summary>
-            Seleziona l'asse 1
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe2(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 2
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe3(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 3
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe4(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 4
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe5(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 5
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe6(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 6
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe7(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 7
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.ClickEvent_selectAxe8(System.Object,System.EventArgs)">
-            <summary>
-            Seleziona l'asse 8
+            Seleziona l'asse relativo
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

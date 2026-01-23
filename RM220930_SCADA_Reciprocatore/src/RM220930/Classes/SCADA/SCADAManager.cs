@@ -111,6 +111,7 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private static readonly Dictionary<string, bool> allarmiSegnalati = new Dictionary<string, bool>();
 
+        public static int numAxe = 1;
 
         /// <summary>
         /// Numero di assi

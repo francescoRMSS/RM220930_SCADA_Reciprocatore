@@ -51,10 +51,35 @@ namespace RM.src.RM220930.Forms.Plant
             _navigator = new Navigator(pnl_container);
 
             InitSelectedAxisList();
+            InitSelectAxisEvents();
 
             // Registro le pagine che dovrà genire il panel contenitore
             RegisterPages();
+        }
 
+        #region Metodi di UC_axis
+
+        /// <summary>
+        /// Inizializzazione della lista di button z ON-OFF
+        /// </summary>
+        private void InitSelectedAxisList()
+        {
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_rec, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe1, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe2, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe3, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe4, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe5, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe6, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe7, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe8, Color.DimGray, SystemColors.ActiveBorder));
+        }
+
+        /// <summary>
+        /// Collega i button di selezione asse al relativo evento
+        /// </summary>
+        private void InitSelectAxisEvents()
+        {
             btn_rec.Tag = 0;
             btn_axe1.Tag = 1;
             btn_axe2.Tag = 2;
@@ -75,25 +100,6 @@ namespace RM.src.RM220930.Forms.Plant
             btn_axe6.Click += ClickEvent_selectAxe_Generic;
             btn_axe7.Click += ClickEvent_selectAxe_Generic;
             btn_axe8.Click += ClickEvent_selectAxe_Generic;
-
-        }
-
-        #region Metodi di UC_axis
-
-        /// <summary>
-        /// Inizializzazione della lista di button z ON-OFF
-        /// </summary>
-        private void InitSelectedAxisList()
-        {
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_rec, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe1, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe2, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe3, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe4, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe5, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe6, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe7, Color.DimGray, SystemColors.ActiveBorder));
-            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe8, Color.DimGray, SystemColors.ActiveBorder));
         }
 
         /// <summary>
@@ -137,69 +143,6 @@ namespace RM.src.RM220930.Forms.Plant
         }
 
         /// <summary>
-        /// Seleziona graficamente l'asse
-        /// </summary>
-        private void SelectAxe()
-        {
-            switch (axeOffset)
-            {
-                case 0:
-                    RestoreButtonColor();
-                    //pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-                    btn_rec.BackColor = Color.DimGray;
-                    break;
-
-                case 1:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-                    btn_axe1.BackColor = Color.DimGray;
-                    break;
-
-                case 2:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-                    btn_axe2.BackColor = Color.DimGray;
-                    break;
-
-                case 3:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-                    btn_axe3.BackColor = Color.DimGray;
-                    break;
-
-                case 4:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-                    btn_axe4.BackColor = Color.DimGray;
-                    break;
-
-                case 5:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-                    btn_axe5.BackColor = Color.DimGray;
-                    break;
-
-                case 6:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-                    btn_axe6.BackColor = Color.DimGray;
-                    break;
-
-                case 7:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-                    btn_axe7.BackColor = Color.DimGray;
-                    break;
-
-                case 8:
-                    RestoreButtonColor();
-                    pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-                    btn_axe8.BackColor = Color.DimGray;
-                    break;
-            }
-        }
-
-        /// <summary>
         /// Registra le pagine che verranno switchate all'interno del panel contenitore
         /// </summary>
         private void RegisterPages()
@@ -216,138 +159,11 @@ namespace RM.src.RM220930.Forms.Plant
 
         }
 
-        #endregion
-
-        #region Eventi di UC_axis
-
-        #region Selezione assi
-
         /// <summary>
-        /// Seleziona rec
+        /// Seleziona l'asse relativo
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectRec(object sender, EventArgs e)
-        {
-            axeOffset = 0;
-            RestoreButtonColor();
-            //pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-            btn_rec.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 1
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe1(object sender, EventArgs e)
-        {
-            axeOffset = 1;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-            btn_axe1.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 2
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe2(object sender, EventArgs e)
-        {
-            axeOffset = 2;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-            btn_axe2.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 3
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe3(object sender, EventArgs e)
-        {
-            axeOffset = 3;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-            btn_axe3.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 4
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe4(object sender, EventArgs e)
-        {
-            axeOffset = 4;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-            btn_axe4.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 5
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe5(object sender, EventArgs e)
-        {
-            axeOffset = 5;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
-            btn_axe5.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 6
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe6(object sender, EventArgs e)
-        {
-            axeOffset = 6;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_2nd_gun;
-            btn_axe6.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 7
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe7(object sender, EventArgs e)
-        {
-            axeOffset = 7;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_3rd_gun;
-            btn_axe7.BackColor = Color.DimGray;
-        }
-
-        /// <summary>
-        /// Seleziona l'asse 8
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ClickEvent_selectAxe8(object sender, EventArgs e)
-        {
-            axeOffset = 8;
-            RestoreButtonColor();
-            pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
-            btn_axe8.BackColor = Color.DimGray;
-        }
-
-        private void ClickEvent_selectAxe_Generic(object sender, EventArgs e)
-        {
-            if (!(sender is Button btn)) return;
-
-            int axeIndex = (int)btn.Tag;
-            SelectAxe(axeIndex, btn);
-        }
-
-
+        /// <param name="axeIndex"></param>
+        /// <param name="btn"></param>
         private void SelectAxe(int axeIndex, Button btn)
         {
             // Aggiorna l'asse selezionato
@@ -377,11 +193,22 @@ namespace RM.src.RM220930.Forms.Plant
             btn.BackColor = Color.DimGray;
         }
 
-
-
-
-
         #endregion
+
+        #region Eventi di UC_axis
+
+        /// <summary>
+        /// Seleziona l'asse relativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_selectAxe_Generic(object sender, EventArgs e)
+        {
+            if (!(sender is Button btn)) return;
+
+            int axeIndex = (int)btn.Tag;
+            SelectAxe(axeIndex, btn);
+        }
 
         #region selezione impostazione
 
