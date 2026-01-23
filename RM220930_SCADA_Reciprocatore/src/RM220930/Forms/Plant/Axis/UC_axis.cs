@@ -1,5 +1,8 @@
-﻿using RM.src.RM220930.Classes.Navigator;
+﻿using RM.src.RM220930.Classes;
+using RM.src.RM220930.Classes.Navigator;
+using RM.src.RM220930.Classes.PLC;
 using RM.src.RM220930.Forms.Plant.Axis;
+using RMLib.PLC;
 using System;
 using System.Drawing;
 using System.Linq.Expressions;
@@ -81,6 +84,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void RestoreButtonColor()
         {
+            btn_rec.BackColor = SystemColors.ActiveBorder;
             btn_axe1.BackColor = SystemColors.ActiveBorder;
             btn_axe2.BackColor = SystemColors.ActiveBorder;
             btn_axe3.BackColor = SystemColors.ActiveBorder;
@@ -98,6 +102,12 @@ namespace RM.src.RM220930.Forms.Plant
         {
             switch (axeOffset)
             {
+                case 0:
+                    RestoreButtonColor();
+                    //pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
+                    btn_rec.BackColor = Color.DimGray;
+                    break;
+
                 case 1:
                     RestoreButtonColor();
                     pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
@@ -157,6 +167,12 @@ namespace RM.src.RM220930.Forms.Plant
             _navigator.RegisterPage("Work Params", typeof(UC_workParams));
             _navigator.RegisterPage("Axe Position", typeof(UC_axePosition));
             _navigator.RegisterPage("Axe Configuration", typeof(UC_axeConfiguration));
+
+            UserControl page;
+            page = (UserControl)Activator.CreateInstance(typeof(UC_workParams));
+            page.Dock = DockStyle.Fill;
+            _navigator._cache["Work Params"] = page;
+
         }
 
         #endregion
@@ -164,6 +180,19 @@ namespace RM.src.RM220930.Forms.Plant
         #region Eventi di UC_axis
 
         #region Selezione assi
+
+        /// <summary>
+        /// Seleziona rec
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_selectRec(object sender, EventArgs e)
+        {
+            axeOffset = 0;
+            RestoreButtonColor();
+            //pnl_axeImage.BackgroundImage = Properties.Resources.axe_1st_gun;
+            btn_rec.BackColor = Color.DimGray;
+        }
 
         /// <summary>
         /// Seleziona l'asse 1

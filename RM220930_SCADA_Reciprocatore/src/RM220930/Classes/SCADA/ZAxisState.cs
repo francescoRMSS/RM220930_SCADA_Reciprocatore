@@ -18,6 +18,10 @@ namespace RM.src.RM220930.Classes
         /// True = asse attivo, False = asse spento.
         /// </summary>
         public bool CmdOnAxe { get; set; }
+        /// <summary>
+        /// Feedback ritorno in Home
+        /// </summary>
+        public bool ReadHomeOK { get; set; }
         #endregion
 
         #region Floating Point Variables (REAL / float)

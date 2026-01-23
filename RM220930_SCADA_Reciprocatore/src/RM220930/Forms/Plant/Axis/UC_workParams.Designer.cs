@@ -33,7 +33,7 @@
             this.lbl_num = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_home = new RMLib.View.CustomButton();
-            this.customButton1 = new RMLib.View.CustomButton();
+            this.btn_z_onoff = new RMLib.View.CustomButton();
             this.customPanel8 = new RMLib.View.CustomPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.customButton11 = new RMLib.View.CustomButton();
@@ -66,7 +66,7 @@
             this.customButton13 = new RMLib.View.CustomButton();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.customButton14 = new RMLib.View.CustomButton();
+            this.btn_autoONOFF = new RMLib.View.CustomButton();
             this.label14 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.customPanel8.SuspendLayout();
@@ -116,17 +116,17 @@
             // 
             // btn_home
             // 
-            this.btn_home.BackColor = System.Drawing.Color.Black;
-            this.btn_home.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_home.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_home.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_home.BorderColor = System.Drawing.Color.DimGray;
             this.btn_home.BorderRadius = 15;
-            this.btn_home.BorderSize = 1;
+            this.btn_home.BorderSize = 2;
             this.btn_home.FlatAppearance.BorderSize = 0;
             this.btn_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_home.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btn_home.ForeColor = System.Drawing.Color.White;
-            this.btn_home.Location = new System.Drawing.Point(409, 15);
+            this.btn_home.Location = new System.Drawing.Point(388, 15);
             this.btn_home.Name = "btn_home";
             this.btn_home.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_home.Size = new System.Drawing.Size(80, 60);
@@ -134,29 +134,29 @@
             this.btn_home.Text = "HOME";
             this.btn_home.TextColor = System.Drawing.Color.White;
             this.btn_home.UseVisualStyleBackColor = false;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            this.btn_home.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_home_MouseDown);
             // 
-            // customButton1
+            // btn_z_onoff
             // 
-            this.customButton1.BackColor = System.Drawing.Color.Black;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Black;
-            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 1;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(491, 15);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton1.Size = new System.Drawing.Size(80, 60);
-            this.customButton1.TabIndex = 394;
-            this.customButton1.Text = "OFF";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
+            this.btn_z_onoff.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_z_onoff.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btn_z_onoff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_z_onoff.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_z_onoff.BorderRadius = 15;
+            this.btn_z_onoff.BorderSize = 2;
+            this.btn_z_onoff.FlatAppearance.BorderSize = 0;
+            this.btn_z_onoff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_z_onoff.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_z_onoff.ForeColor = System.Drawing.Color.White;
+            this.btn_z_onoff.Location = new System.Drawing.Point(474, 15);
+            this.btn_z_onoff.Name = "btn_z_onoff";
+            this.btn_z_onoff.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_z_onoff.Size = new System.Drawing.Size(80, 60);
+            this.btn_z_onoff.TabIndex = 394;
+            this.btn_z_onoff.Text = "OFF";
+            this.btn_z_onoff.TextColor = System.Drawing.Color.White;
+            this.btn_z_onoff.UseVisualStyleBackColor = false;
+            this.btn_z_onoff.Click += new System.EventHandler(this.ClickEvent_EnableDisableZ);
             // 
             // customPanel8
             // 
@@ -668,34 +668,34 @@
             this.label13.Text = "Z ASSI";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customButton14
+            // btn_autoONOFF
             // 
-            this.customButton14.BackColor = System.Drawing.Color.Black;
-            this.customButton14.BackgroundColor = System.Drawing.Color.Black;
-            this.customButton14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton14.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton14.BorderRadius = 15;
-            this.customButton14.BorderSize = 1;
-            this.customButton14.FlatAppearance.BorderSize = 0;
-            this.customButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.customButton14.ForeColor = System.Drawing.Color.White;
-            this.customButton14.Location = new System.Drawing.Point(310, 27);
-            this.customButton14.Name = "customButton14";
-            this.customButton14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton14.Size = new System.Drawing.Size(80, 60);
-            this.customButton14.TabIndex = 429;
-            this.customButton14.Text = "AUTO ON/ AUTO OFF";
-            this.customButton14.TextColor = System.Drawing.Color.White;
-            this.customButton14.UseVisualStyleBackColor = false;
-            this.customButton14.Click += new System.EventHandler(this.customButton14_Click);
+            this.btn_autoONOFF.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_autoONOFF.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btn_autoONOFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_autoONOFF.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_autoONOFF.BorderRadius = 15;
+            this.btn_autoONOFF.BorderSize = 2;
+            this.btn_autoONOFF.FlatAppearance.BorderSize = 0;
+            this.btn_autoONOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_autoONOFF.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_autoONOFF.ForeColor = System.Drawing.Color.White;
+            this.btn_autoONOFF.Location = new System.Drawing.Point(302, 15);
+            this.btn_autoONOFF.Name = "btn_autoONOFF";
+            this.btn_autoONOFF.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_autoONOFF.Size = new System.Drawing.Size(80, 60);
+            this.btn_autoONOFF.TabIndex = 429;
+            this.btn_autoONOFF.Text = "AUTO ON/ AUTO OFF";
+            this.btn_autoONOFF.TextColor = System.Drawing.Color.White;
+            this.btn_autoONOFF.UseVisualStyleBackColor = false;
+            this.btn_autoONOFF.Click += new System.EventHandler(this.customButton14_Click);
             // 
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(314, 9);
+            this.label14.Location = new System.Drawing.Point(291, 151);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(76, 15);
             this.label14.TabIndex = 430;
@@ -708,7 +708,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.customButton14);
+            this.Controls.Add(this.btn_autoONOFF);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
@@ -735,7 +735,7 @@
             this.Controls.Add(this.customPanel8);
             this.Controls.Add(this.customButton11);
             this.Controls.Add(this.customButton12);
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btn_z_onoff);
             this.Controls.Add(this.btn_home);
             this.Controls.Add(this.panel6);
             this.Name = "UC_workParams";
@@ -757,7 +757,7 @@
         private System.Windows.Forms.Label lbl_num;
         private System.Windows.Forms.Label label8;
         private RMLib.View.CustomButton btn_home;
-        private RMLib.View.CustomButton customButton1;
+        private RMLib.View.CustomButton btn_z_onoff;
         private RMLib.View.CustomPanel customPanel8;
         private System.Windows.Forms.Label label22;
         private RMLib.View.CustomButton customButton11;
@@ -790,7 +790,7 @@
         private RMLib.View.CustomButton customButton13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private RMLib.View.CustomButton customButton14;
+        private RMLib.View.CustomButton btn_autoONOFF;
         private System.Windows.Forms.Label label14;
     }
 }

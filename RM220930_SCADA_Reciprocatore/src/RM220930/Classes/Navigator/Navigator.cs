@@ -19,7 +19,7 @@ public class Navigator
 {
     private readonly Panel _hostPanel;
     private readonly Dictionary<string, Type> _pages;
-    private readonly Dictionary<string, UserControl> _cache;
+    public readonly Dictionary<string, UserControl> _cache;
 
     /// <summary>
     /// Indica se il Navigator ha attualmente una pagina attiva.

@@ -1,4 +1,7 @@
-﻿using RM.src.RM220930.Classes.Navigator;
+﻿using RM.src.RM220930.Classes;
+using RM.src.RM220930.Classes.Navigator;
+using RM.src.RM220930.Classes.PLC;
+using RM.src.RM220930.Classes.UiBinder;
 using RMLib.PLC;
 using System;
 using System.Collections.Generic;
@@ -17,6 +20,10 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         public UC_workParams()
         {
             InitializeComponent();
+
+            SCADAManager.Z_ONOFF_workParams = new BiStateButton(btn_z_onoff, Color.ForestGreen, "ON", Color.Firebrick, "OFF");
+            SCADAManager.Z_Home = new BiStateButton(btn_home, Color.ForestGreen, Color.Firebrick);
+            SCADAManager.Z_Auto = new BiStateButton(btn_autoONOFF, Color.ForestGreen, Color.Firebrick);
         }
 
         public event EventHandler<NavigateEventArgs> NavigateRequested;
@@ -26,11 +33,41 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             if (parameter is int offset)
             {
                lbl_num.Text = offset.ToString();
+
             }
         }
 
+
+        /// <summary>
+        /// Gestisce abilitazione/disabilitazione Z assi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_EnableDisableZ(object sender, EventArgs e)
+        {
+            if (!(sender is Button btn)) return;
+            //if (!(btn.Tag is int index)) return;
+
+            int index = UC_axis.axeOffset;
+
+            // Stato attuale letto dal PLC
+            bool currentCmdOn = SCADAManager._zState[index].CmdOnAxe;
+
+            // Toggle logico
+            bool newCmdOn = !currentCmdOn;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{index}_{PLCTagName.Cmd_On_Axe}",
+                newCmdOn,
+                "BOOL"
+            );
+        }
+
+
         private void customButton1_Click(object sender, EventArgs e)
         {
+            
             // Cmd_On_Axe
         }
 
@@ -73,6 +110,13 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         private void customButton14_Click(object sender, EventArgs e)
         {
             // Cmd_AutoFrom_Pc
+        }
+
+        private void btn_home_MouseDown(object sender, MouseEventArgs e)
+        {
+            int index = UC_axis.axeOffset;
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Go_home}", true, "BOOL");
         }
     }
 }

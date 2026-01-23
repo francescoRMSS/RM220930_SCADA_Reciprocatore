@@ -64,6 +64,10 @@ namespace RM.src.RM220930.Classes.UiBinder
         /// Testo utilizzato in stato notActive
         /// </summary>
         private string notActiveTextButton;
+        /// <summary>
+        /// Button con visii
+        /// </summary>
+        private bool manageVisibilityButton;
 
         #endregion
 
@@ -118,17 +122,15 @@ namespace RM.src.RM220930.Classes.UiBinder
         public BiStateButton(CustomButton button, Color activeCol, Color notActiveCol)
         {
             _button = button;
-            state = false;
-            useImages = false;
             useColors = true;
-            notActiveColor = activeCol;
-            activeColor = notActiveCol;
-            activeImage = null;
-            notActiveImage = null;
+            notActiveColor = notActiveCol;
+            activeColor = activeCol;
 
-            ChangeObjectColor(true); // Utilizzo colori di default
+            ChangeObjectColor(false); // Utilizzo colori di default
             ChangeObjectImage();
         }
+
+
 
         /// <summary>
         /// Costruisce un riferimento a pulsante a due stati
@@ -223,9 +225,9 @@ namespace RM.src.RM220930.Classes.UiBinder
         /// <summary>
         /// Cambia stato in modo personalizzato cambiando testo e colori
         /// </summary>
-        public void ChangeStatusCustom()
+        public void ChangeStatusCustom(bool newState)
         {
-            state = !state;
+            state = newState;
 
             ChangeObjectText();
             ChangeObjectColor(false);
@@ -239,7 +241,7 @@ namespace RM.src.RM220930.Classes.UiBinder
         public void ChangeStatus(bool newState)
         {
             state = newState;
-            ChangeObjectColor(true);
+            ChangeObjectColor(false);
             ChangeObjectImage();
         }
 
@@ -321,6 +323,36 @@ namespace RM.src.RM220930.Classes.UiBinder
             else
             {
                 _button.BackColor = colorToUse;
+            }
+        }
+
+        /// <summary>
+        /// Cambia la visibilità al pulsante
+        /// </summary>
+        public void ChangeVisibility(bool visible)
+        {
+            if (_button == null || _button.IsDisposed) return;
+
+            bool visibility;
+
+            if (visible)
+                visibility = true;
+            else // Se è stato richiesto un colore custom
+                visibility = false;
+
+            if (_button.InvokeRequired)
+            {
+                _button.BeginInvoke(new MethodInvoker(() =>
+                {
+                    if (!_button.IsDisposed && _button.Visible != visibility)
+                    {
+                        _button.Visible = visibility;
+                    }
+                }));
+            }
+            else
+            {
+                _button.Visible = visibility;
             }
         }
 

@@ -972,6 +972,15 @@ namespace RM.src.RM220930
             _navigator.RegisterPage("Service", typeof(UC_service));
             _navigator.RegisterPage("Axis", typeof(UC_axis));
             _navigator.RegisterPage("Test UDT", typeof(UC_testUDT));
+
+            UserControl page;
+            page = (UserControl)Activator.CreateInstance(typeof(UC_HomePage));
+            page.Dock = DockStyle.Fill;
+            _navigator._cache["Home Page"] = page;
+
+            page = (UserControl)Activator.CreateInstance(typeof(UC_axis));
+            page.Dock = DockStyle.Fill;
+            _navigator._cache["Axis"] = page;
         }
 
         #endregion

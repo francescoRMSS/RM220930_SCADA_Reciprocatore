@@ -135,6 +135,12 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private static ZAxisState[] _prevZState;
 
+        public static BiStateButton Z_ONOFF_workParams = new BiStateButton();
+
+        public static BiStateButton Z_Home = new BiStateButton();
+
+        public static BiStateButton Z_Auto = new BiStateButton();
+
         #endregion
 
         #region Eventi Pubblici
@@ -341,6 +347,10 @@ namespace RM.src.RM220930.Classes
                     PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}")
                 );
 
+                var readHomeOK = Convert.ToBoolean(
+                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Home_Ok}")
+                );
+
                 var actPos = Convert.ToSingle(
                     PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}")
                 );
@@ -352,28 +362,55 @@ namespace RM.src.RM220930.Classes
                 */
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
+                _zState[i].ReadHomeOK = readHomeOK;
                 _zState[i].ActPosition = actPos;
                 //_zState[i].ErrorCode = errorCode;
 
                 // ===== UI UPDATE (solo se cambia) =====
+                #region BOOL
+
                 if (_prevZState[i].CmdOnAxe != cmdOn)
                 {
                     _prevZState[i].CmdOnAxe = cmdOn;
-                    Z_ONOFF[i].ChangeStatusCustom();
+                    if (cmdOn)
+                    {
+                        Z_ONOFF[i].ChangeStatusCustom(true);
+                        //Z_ONOFF_workParams.ChangeStatusCustom(true);
+                    }
+                    else
+                    {
+                        Z_ONOFF[i].ChangeStatusCustom(false);
+                       //Z_ONOFF_workParams.ChangeStatusCustom(false);
+                    }
                 }
+
+                #endregion
+
+                #region FLOAT
 
                 if (_prevZState[i].ActPosition != actPos)
                 {
                     _prevZState[i].ActPosition = actPos;
                     z_actualPos[i].Write(actPos.ToString());
                 }
-                /*
-                if (_prevZState[i].ErrorCode != errorCode)
-                {
-                    _prevZState[i].ErrorCode = errorCode;
-                    // aggiorna allarmi / colore / icona
-                }
-                */
+
+                #endregion
+
+            }
+
+            int idx = UC_axis.axeOffset;
+            Z_ONOFF_workParams.ChangeStatusCustom(_zState[idx].CmdOnAxe);
+            Z_Home.ChangeStatus(_zState[idx].ReadHomeOK);
+
+            if (idx == 0)
+            {
+                if (Z_Auto._button.Visible)
+                    Z_Auto.ChangeVisibility(false);
+            }
+            else
+            {
+                if (!Z_Auto._button.Visible)
+                    Z_Auto.ChangeVisibility(true);
             }
         }
 

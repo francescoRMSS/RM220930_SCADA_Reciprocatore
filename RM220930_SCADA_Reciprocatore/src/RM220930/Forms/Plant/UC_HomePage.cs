@@ -81,7 +81,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private void InitializeGoToZButtons()
         {
-            Button[] goToZButtons = { btn_z1, btn_z2, btn_z3, btn_z4, btn_z5, btn_z6, btn_z7, btn_z8 };
+            Button[] goToZButtons = { btn_rec, btn_z1, btn_z2, btn_z3, btn_z4, btn_z5, btn_z6, btn_z7, btn_z8 };
 
             for (int i = 0; i < goToZButtons.Length; i++)
             {
@@ -134,8 +134,8 @@ namespace RM.src.RM220930.Forms.Plant
             if (!(sender is Button btn)) return;        // Sicurezza
             if (!(btn.Tag is int index)) return;       // Recupera l'indice dal Tag
 
-            UC_axis.axeOffset = index + 1;             // Mantieni axeOffset coerente
-            FormHomePage._navigator.Navigate("Axis", index + 1);
+            UC_axis.axeOffset = index;             // Mantieni axeOffset coerente
+            FormHomePage._navigator.Navigate("Axis", index);
         }
 
         /// <summary>
