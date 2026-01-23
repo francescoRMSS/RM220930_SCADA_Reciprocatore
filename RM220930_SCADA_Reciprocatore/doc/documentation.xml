@@ -236,6 +236,36 @@
             Oggetto che rappresenta lo stato precedente dell'asse
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.selectedAxe_axis">
+            <summary>
+            Contiene la lista di button degli assi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager._prevWorkParamsState">
+            <summary>
+            Stato precedente per l'asse selezionato (WorkParams)
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF_workParams">
+            <summary>
+            Tasto ON-OFF dell'asse selzionato in workParams
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_Home_workParams">
+            <summary>
+            Tasto Home dell'asse selezionato in workParams
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_Auto_workParams">
+            <summary>
+            Tasto auto ON-OFF dell'asse selezionato in workParams
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.numAxe_workParams">
+            <summary>
+            Etichetta con numero di asse selezionato
+            </summary>
+        </member>
         <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
             <summary>
             Evento invocato quando viene generato un allarme.
@@ -1021,6 +1051,11 @@
             Feedback ritorno in Home
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdAutoFromPc">
+            <summary>
+            Comando AUTO ON/OFF
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ActPosition">
             <summary>
             Posizione attuale dell'asse letta dal PLC.
@@ -1436,6 +1471,13 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_EnableDisableAUTO(System.Object,System.EventArgs)">
+            <summary>
+            Gestisce abilitazione/disabilitazione Z assi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.components">
             <summary> 
             Variabile di progettazione necessaria.
@@ -1477,6 +1519,11 @@
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.#ctor">
             <summary>
             Costruttura user control axis
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.InitSelectedAxisList">
+            <summary>
+            Inizializzazione della lista di button z ON-OFF
             </summary>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.OnNavigatedTo(System.Object)">

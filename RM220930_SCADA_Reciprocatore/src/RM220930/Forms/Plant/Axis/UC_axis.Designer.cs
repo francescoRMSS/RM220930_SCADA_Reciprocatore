@@ -114,7 +114,6 @@
             this.btn_axe8.Text = "Z8";
             this.btn_axe8.TextColor = System.Drawing.Color.Black;
             this.btn_axe8.UseVisualStyleBackColor = false;
-            this.btn_axe8.Click += new System.EventHandler(this.ClickEvent_selectAxe8);
             // 
             // btn_axe7
             // 
@@ -136,7 +135,6 @@
             this.btn_axe7.Text = "Z7";
             this.btn_axe7.TextColor = System.Drawing.Color.Black;
             this.btn_axe7.UseVisualStyleBackColor = false;
-            this.btn_axe7.Click += new System.EventHandler(this.ClickEvent_selectAxe7);
             // 
             // btn_axe6
             // 
@@ -158,7 +156,6 @@
             this.btn_axe6.Text = "Z6";
             this.btn_axe6.TextColor = System.Drawing.Color.Black;
             this.btn_axe6.UseVisualStyleBackColor = false;
-            this.btn_axe6.Click += new System.EventHandler(this.ClickEvent_selectAxe6);
             // 
             // btn_axe5
             // 
@@ -180,7 +177,6 @@
             this.btn_axe5.Text = "Z5";
             this.btn_axe5.TextColor = System.Drawing.Color.Black;
             this.btn_axe5.UseVisualStyleBackColor = false;
-            this.btn_axe5.Click += new System.EventHandler(this.ClickEvent_selectAxe5);
             // 
             // btn_axe4
             // 
@@ -202,7 +198,6 @@
             this.btn_axe4.Text = "Z4";
             this.btn_axe4.TextColor = System.Drawing.Color.Black;
             this.btn_axe4.UseVisualStyleBackColor = false;
-            this.btn_axe4.Click += new System.EventHandler(this.ClickEvent_selectAxe4);
             // 
             // btn_axe3
             // 
@@ -224,7 +219,6 @@
             this.btn_axe3.Text = "Z3";
             this.btn_axe3.TextColor = System.Drawing.Color.Black;
             this.btn_axe3.UseVisualStyleBackColor = false;
-            this.btn_axe3.Click += new System.EventHandler(this.ClickEvent_selectAxe3);
             // 
             // btn_axe2
             // 
@@ -246,7 +240,6 @@
             this.btn_axe2.Text = "Z2";
             this.btn_axe2.TextColor = System.Drawing.Color.Black;
             this.btn_axe2.UseVisualStyleBackColor = false;
-            this.btn_axe2.Click += new System.EventHandler(this.ClickEvent_selectAxe2);
             // 
             // btn_axe1
             // 
@@ -268,7 +261,6 @@
             this.btn_axe1.Text = "Z1";
             this.btn_axe1.TextColor = System.Drawing.Color.Black;
             this.btn_axe1.UseVisualStyleBackColor = false;
-            this.btn_axe1.Click += new System.EventHandler(this.ClickEvent_selectAxe1);
             // 
             // btn_rec
             // 
@@ -290,7 +282,6 @@
             this.btn_rec.Text = "REC";
             this.btn_rec.TextColor = System.Drawing.Color.Black;
             this.btn_rec.UseVisualStyleBackColor = false;
-            this.btn_rec.Click += new System.EventHandler(this.ClickEvent_selectRec);
             // 
             // label5
             // 

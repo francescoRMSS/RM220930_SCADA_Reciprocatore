@@ -1,6 +1,7 @@
 ﻿using RM.src.RM220930.Classes;
 using RM.src.RM220930.Classes.Navigator;
 using RM.src.RM220930.Classes.PLC;
+using RM.src.RM220930.Classes.UiBinder;
 using RM.src.RM220930.Forms.Plant.Axis;
 using RMLib.PLC;
 using System;
@@ -49,11 +50,51 @@ namespace RM.src.RM220930.Forms.Plant
             // Istanzio il navigator assegnandogli il panel contenitore
             _navigator = new Navigator(pnl_container);
 
+            InitSelectedAxisList();
+
             // Registro le pagine che dovrà genire il panel contenitore
             RegisterPages();
+
+            btn_rec.Tag = 0;
+            btn_axe1.Tag = 1;
+            btn_axe2.Tag = 2;
+            btn_axe3.Tag = 3;
+            btn_axe4.Tag = 4;
+            btn_axe5.Tag = 5;
+            btn_axe6.Tag = 6;
+            btn_axe7.Tag = 7;
+            btn_axe8.Tag = 8;
+
+            // Collega tutti allo stesso handler
+            btn_rec.Click += ClickEvent_selectAxe_Generic;
+            btn_axe1.Click += ClickEvent_selectAxe_Generic;
+            btn_axe2.Click += ClickEvent_selectAxe_Generic;
+            btn_axe3.Click += ClickEvent_selectAxe_Generic;
+            btn_axe4.Click += ClickEvent_selectAxe_Generic;
+            btn_axe5.Click += ClickEvent_selectAxe_Generic;
+            btn_axe6.Click += ClickEvent_selectAxe_Generic;
+            btn_axe7.Click += ClickEvent_selectAxe_Generic;
+            btn_axe8.Click += ClickEvent_selectAxe_Generic;
+
         }
 
         #region Metodi di UC_axis
+
+        /// <summary>
+        /// Inizializzazione della lista di button z ON-OFF
+        /// </summary>
+        private void InitSelectedAxisList()
+        {
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_rec, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe1, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe2, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe3, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe4, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe5, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe6, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe7, Color.DimGray, SystemColors.ActiveBorder));
+            SCADAManager.selectedAxe_axis.Add(new BiStateButton(btn_axe8, Color.DimGray, SystemColors.ActiveBorder));
+        }
 
         /// <summary>
         /// Gestisce l'utilizzo del parametro passato durante la navigazione
@@ -71,7 +112,7 @@ namespace RM.src.RM220930.Forms.Plant
                 axeOffset = 1;
             }
 
-            SelectAxe(); // Seleziono graficamente l'asse
+            //SelectAxe(); // Seleziono graficamente l'asse
 
             if (!_navigator.HasCurrentPage)
             {
@@ -82,7 +123,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// <summary>
         /// Ripristina colore dei button degli assi
         /// </summary>
-        private void RestoreButtonColor()
+        public void RestoreButtonColor()
         {
             btn_rec.BackColor = SystemColors.ActiveBorder;
             btn_axe1.BackColor = SystemColors.ActiveBorder;
@@ -297,6 +338,48 @@ namespace RM.src.RM220930.Forms.Plant
             pnl_axeImage.BackgroundImage = Properties.Resources.axe_4th_gun;
             btn_axe8.BackColor = Color.DimGray;
         }
+
+        private void ClickEvent_selectAxe_Generic(object sender, EventArgs e)
+        {
+            if (!(sender is Button btn)) return;
+
+            int axeIndex = (int)btn.Tag;
+            SelectAxe(axeIndex, btn);
+        }
+
+
+        private void SelectAxe(int axeIndex, Button btn)
+        {
+            // Aggiorna l'asse selezionato
+            axeOffset = axeIndex;
+
+            // Ripristina colore dei pulsanti precedenti
+            RestoreButtonColor();
+
+            Image[] axeImages = new Image[]
+                 {
+                    Properties.Resources.axe_1st_gun, // 0
+                    Properties.Resources.axe_1st_gun, // 1
+                    Properties.Resources.axe_2nd_gun, // 2
+                    Properties.Resources.axe_3rd_gun, // 3
+                    Properties.Resources.axe_4th_gun, // 4
+                    Properties.Resources.axe_1st_gun, // 5
+                    Properties.Resources.axe_2nd_gun, // 6
+                    Properties.Resources.axe_3rd_gun, // 7
+                    Properties.Resources.axe_4th_gun, // 8
+                 };
+
+            if (axeIndex >= 0 && axeIndex < axeImages.Length)
+                pnl_axeImage.BackgroundImage = axeImages[axeIndex];
+
+
+            // Colora il pulsante selezionato
+            btn.BackColor = Color.DimGray;
+        }
+
+
+
+
 
         #endregion
 

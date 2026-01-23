@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using static EasyModbus.ModbusServer;
+using static System.Windows.Forms.AxHost;
 
 namespace RM.src.RM220930.Classes
 {
@@ -110,6 +111,7 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private static readonly Dictionary<string, bool> allarmiSegnalati = new Dictionary<string, bool>();
 
+
         /// <summary>
         /// Numero di assi
         /// </summary>
@@ -135,11 +137,35 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private static ZAxisState[] _prevZState;
 
+        /// <summary>
+        /// Contiene la lista di button degli assi
+        /// </summary>
+        public static readonly List<BiStateButton> selectedAxe_axis = new List<BiStateButton>();
+
+        /// <summary>
+        /// Stato precedente per l'asse selezionato (WorkParams)
+        /// </summary>
+        private static ZAxisState _prevWorkParamsState = new ZAxisState();
+
+        /// <summary>
+        /// Tasto ON-OFF dell'asse selzionato in workParams
+        /// </summary>
         public static BiStateButton Z_ONOFF_workParams = new BiStateButton();
 
-        public static BiStateButton Z_Home = new BiStateButton();
+        /// <summary>
+        /// Tasto Home dell'asse selezionato in workParams
+        /// </summary>
+        public static BiStateButton Z_Home_workParams = new BiStateButton();
 
-        public static BiStateButton Z_Auto = new BiStateButton();
+        /// <summary>
+        /// Tasto auto ON-OFF dell'asse selezionato in workParams
+        /// </summary>
+        public static BiStateButton Z_Auto_workParams = new BiStateButton();
+
+        /// <summary>
+        /// Etichetta con numero di asse selezionato
+        /// </summary>
+        public static UiLabel numAxe_workParams = new UiLabel();
 
         #endregion
 
@@ -340,78 +366,80 @@ namespace RM.src.RM220930.Classes
         {
             if (Z_ONOFF.Count == 0) return;
 
+            bool changed = false; // Segnala il cambiamento di una variabile
+
             for (int i = 0; i < numZ; i++)
             {
                 // ===== READ PLC =====
-                var cmdOn = Convert.ToBoolean(
-                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}")
-                );
+                var cmdOn = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}"));
+                var readHomeOK = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Home_Ok}"));
+                var cmdAutoFromPc = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_AutoFrom_Pc}"));
+                var actPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}"));
 
-                var readHomeOK = Convert.ToBoolean(
-                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Home_Ok}")
-                );
-
-                var actPos = Convert.ToSingle(
-                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}")
-                );
-
-                /*
-                var errorCode = Convert.ToInt16(
-                    PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Error_Code}")
-                );
-                */
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
                 _zState[i].ReadHomeOK = readHomeOK;
+                _zState[i].CmdAutoFromPc = cmdAutoFromPc;
                 _zState[i].ActPosition = actPos;
-                //_zState[i].ErrorCode = errorCode;
 
                 // ===== UI UPDATE (solo se cambia) =====
-                #region BOOL
-
-                if (_prevZState[i].CmdOnAxe != cmdOn)
+                changed = _prevZState[i].CmdOnAxe != cmdOn;
+                if (changed)
                 {
                     _prevZState[i].CmdOnAxe = cmdOn;
-                    if (cmdOn)
-                    {
-                        Z_ONOFF[i].ChangeStatusCustom(true);
-                        //Z_ONOFF_workParams.ChangeStatusCustom(true);
-                    }
-                    else
-                    {
-                        Z_ONOFF[i].ChangeStatusCustom(false);
-                       //Z_ONOFF_workParams.ChangeStatusCustom(false);
-                    }
+                    Z_ONOFF[i].ChangeStatusCustom(cmdOn);
                 }
 
-                #endregion
-
-                #region FLOAT
-
-                if (_prevZState[i].ActPosition != actPos)
+                changed = _prevZState[i].ActPosition != actPos;
+                if (changed)
                 {
                     _prevZState[i].ActPosition = actPos;
                     z_actualPos[i].Write(actPos.ToString());
                 }
 
-                #endregion
-
             }
 
+            // ===== UI WORKPARAMS (asse selezionato, solo se cambia) =====
             int idx = UC_axis.axeOffset;
-            Z_ONOFF_workParams.ChangeStatusCustom(_zState[idx].CmdOnAxe);
-            Z_Home.ChangeStatus(_zState[idx].ReadHomeOK);
+            int prev_idx = 99;
+            var state = _zState[idx];
 
-            if (idx == 0)
+            changed = _prevWorkParamsState.CmdOnAxe != state.CmdOnAxe;
+            if (changed)
             {
-                if (Z_Auto._button.Visible)
-                    Z_Auto.ChangeVisibility(false);
+                _prevWorkParamsState.CmdOnAxe = state.CmdOnAxe;
+                Z_ONOFF_workParams.ChangeStatusCustom(state.CmdOnAxe);
             }
-            else
+
+            changed = _prevWorkParamsState.ReadHomeOK != state.ReadHomeOK;
+            if (changed)
             {
-                if (!Z_Auto._button.Visible)
-                    Z_Auto.ChangeVisibility(true);
+                _prevWorkParamsState.ReadHomeOK = state.ReadHomeOK;
+                Z_Home_workParams.ChangeStatus(state.ReadHomeOK);
             }
+
+            changed = _prevWorkParamsState.CmdAutoFromPc != state.CmdAutoFromPc;
+            if (changed)
+            {
+                _prevWorkParamsState.CmdAutoFromPc = state.CmdAutoFromPc;
+                Z_Auto_workParams.ChangeStatus(state.CmdAutoFromPc);
+            }
+
+            changed = prev_idx != idx;
+            if (changed)
+            {
+                prev_idx = idx;
+                numAxe_workParams.Write(idx.ToString());
+                foreach (var axe in selectedAxe_axis)
+                    axe.ChangeStatus(false);
+
+                selectedAxe_axis[idx].ChangeStatus(true);
+            }
+
+            // ===== VISIBILITÀ Z_Auto =====
+            bool shouldBeVisible = idx != 0;
+            if (Z_Auto_workParams._button.Visible != shouldBeVisible)
+                Z_Auto_workParams.ChangeVisibility(shouldBeVisible);
         }
 
         /// <summary>

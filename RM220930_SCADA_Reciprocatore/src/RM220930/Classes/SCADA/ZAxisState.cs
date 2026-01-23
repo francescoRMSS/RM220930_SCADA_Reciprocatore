@@ -22,6 +22,10 @@ namespace RM.src.RM220930.Classes
         /// Feedback ritorno in Home
         /// </summary>
         public bool ReadHomeOK { get; set; }
+        /// <summary>
+        /// Comando AUTO ON/OFF
+        /// </summary>
+        public bool CmdAutoFromPc { get; set; }
         #endregion
 
         #region Floating Point Variables (REAL / float)
