@@ -111,12 +111,20 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         private static readonly Dictionary<string, bool> allarmiSegnalati = new Dictionary<string, bool>();
 
-        public static int numAxe = 1;
+        /// <summary>
+        /// Numero di asse
+        /// </summary>
+        public static int axeOffset = 1;
+
+        /// <summary>
+        /// Numero precednete di asse
+        /// </summary>
+        public static int _prevAxeOffset = 99;
 
         /// <summary>
         /// Numero di assi
         /// </summary>
-        private static int numZ = 9;
+        public static int numZ = 9;
 
         /// <summary>
         /// Contiene la lista di indicatori ON/OFF nella pagina monitor ciclo
@@ -401,8 +409,7 @@ namespace RM.src.RM220930.Classes
             }
 
             // ===== UI WORKPARAMS (asse selezionato, solo se cambia) =====
-            int idx = UC_axis.axeOffset;
-            int prev_idx = 99;
+            int idx = SCADAManager.axeOffset;
             var state = _zState[idx];
 
             changed = _prevWorkParamsState.CmdOnAxe != state.CmdOnAxe;
@@ -426,10 +433,10 @@ namespace RM.src.RM220930.Classes
                 Z_Auto_workParams.ChangeStatus(state.CmdAutoFromPc);
             }
 
-            changed = prev_idx != idx;
+            changed = _prevAxeOffset != idx;
             if (changed)
             {
-                prev_idx = idx;
+                _prevAxeOffset = idx;
                 numAxe_workParams.Write(idx.ToString());
                 foreach (var axe in selectedAxe_axis)
                     axe.ChangeStatus(false);

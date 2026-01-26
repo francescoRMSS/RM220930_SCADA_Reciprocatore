@@ -134,7 +134,7 @@ namespace RM.src.RM220930.Forms.Plant
             if (!(sender is Button btn)) return;        // Sicurezza
             if (!(btn.Tag is int index)) return;       // Recupera l'indice dal Tag
 
-            UC_axis.axeOffset = index;             // Mantieni axeOffset coerente
+            SCADAManager.axeOffset = index;             // Mantieni axeOffset coerente
             FormHomePage._navigator.Navigate("Axis", index);
         }
 
@@ -148,7 +148,7 @@ namespace RM.src.RM220930.Forms.Plant
             if (!(sender is Button btn)) return;
             if (!(btn.Tag is int index)) return;
 
-            UC_axis.axeOffset = index;
+            SCADAManager.axeOffset = index;
 
             // Stato attuale letto dal PLC
             bool currentCmdOn = SCADAManager._zState[index].CmdOnAxe;
@@ -171,10 +171,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="e"></param>
         private void MouseDown_valuePos(object sender, MouseEventArgs e)
         {
-            var btn = sender as Button;
-            int index = Convert.ToInt32(btn.Tag);
-
-            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", true, "BOOL");
+            RefresherTask.AddUpdate($"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}", true, "BOOL");
         }
 
         /// <summary>

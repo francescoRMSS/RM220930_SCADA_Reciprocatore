@@ -33,11 +33,6 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         private Navigator _navigator;
 
-        /// <summary>
-        /// Asse selezionato
-        /// </summary>
-        public static int axeOffset = 1;
-
         #endregion
 
         /// <summary>
@@ -108,21 +103,10 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="parameter"></param>
         public void OnNavigatedTo(object parameter)
         {
-            // Se il parametro è il numero di asse
-            if (parameter is int offset)
-            {
-                axeOffset = offset;   
-            }
-            else // se non c'è imposto 1 di default
-            {
-                axeOffset = 1;
-            }
-
-            //SelectAxe(); // Seleziono graficamente l'asse
 
             if (!_navigator.HasCurrentPage)
             {
-                _navigator.Navigate("Work Params", axeOffset);
+                _navigator.Navigate("Work Params", SCADAManager.axeOffset);
             }
         }
 
@@ -167,7 +151,7 @@ namespace RM.src.RM220930.Forms.Plant
         private void SelectAxe(int axeIndex, Button btn)
         {
             // Aggiorna l'asse selezionato
-            axeOffset = axeIndex;
+            SCADAManager.axeOffset = axeIndex;
 
             // Ripristina colore dei pulsanti precedenti
             RestoreButtonColor();
@@ -219,7 +203,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="e"></param>
         private void ClickEvent_goToWorkParams(object sender, EventArgs e)
         {
-            _navigator.Navigate("Work Params", axeOffset);
+            _navigator.Navigate("Work Params", SCADAManager.axeOffset);
         }
 
         /// <summary>
@@ -229,7 +213,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="e"></param>
         private void ClickEvent_goToAxePosition(object sender, EventArgs e)
         {
-            _navigator.Navigate("Axe Position", axeOffset);
+            _navigator.Navigate("Axe Position", SCADAManager.axeOffset);
         }
 
         /// <summary>
@@ -239,7 +223,7 @@ namespace RM.src.RM220930.Forms.Plant
         /// <param name="e"></param>
         private void ClickEvent_goToAxeConfiguration(object sender, EventArgs e)
         {
-            _navigator.Navigate("Axe Configuration", axeOffset);
+            _navigator.Navigate("Axe Configuration", SCADAManager.axeOffset);
         }
 
         #endregion

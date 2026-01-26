@@ -37,10 +37,10 @@
             this.btn_numAxeUp = new RMLib.View.CustomButton();
             this.btn_numAxeDown = new RMLib.View.CustomButton();
             this.label16 = new System.Windows.Forms.Label();
-            this.customPanel1 = new RMLib.View.CustomPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.customButton2 = new RMLib.View.CustomButton();
-            this.customButton3 = new RMLib.View.CustomButton();
+            this.pnl_speed = new RMLib.View.CustomPanel();
+            this.lbl_speed = new System.Windows.Forms.Label();
+            this.btn_speedUp = new RMLib.View.CustomButton();
+            this.btn_speedDown = new RMLib.View.CustomButton();
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new RMLib.View.CustomPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btn_autoONOFF = new RMLib.View.CustomButton();
             this.customPanel8.SuspendLayout();
-            this.customPanel1.SuspendLayout();
+            this.pnl_speed.SuspendLayout();
             this.customPanel2.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel4.SuspendLayout();
@@ -210,74 +210,75 @@
             this.label16.Text = "Velocità [m/min]";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customPanel1
+            // pnl_speed
             // 
-            this.customPanel1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.customPanel1.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.customPanel1.BorderColor = System.Drawing.Color.DimGray;
-            this.customPanel1.BorderRadius = 15;
-            this.customPanel1.BorderSize = 2;
-            this.customPanel1.Controls.Add(this.label1);
-            this.customPanel1.ForeColor = System.Drawing.Color.White;
-            this.customPanel1.Location = new System.Drawing.Point(426, 117);
-            this.customPanel1.Name = "customPanel1";
-            this.customPanel1.Size = new System.Drawing.Size(60, 40);
-            this.customPanel1.TabIndex = 409;
-            this.customPanel1.TextColor = System.Drawing.Color.White;
+            this.pnl_speed.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_speed.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_speed.BorderColor = System.Drawing.Color.DimGray;
+            this.pnl_speed.BorderRadius = 15;
+            this.pnl_speed.BorderSize = 2;
+            this.pnl_speed.Controls.Add(this.lbl_speed);
+            this.pnl_speed.ForeColor = System.Drawing.Color.White;
+            this.pnl_speed.Location = new System.Drawing.Point(426, 117);
+            this.pnl_speed.Name = "pnl_speed";
+            this.pnl_speed.Size = new System.Drawing.Size(60, 40);
+            this.pnl_speed.TabIndex = 409;
+            this.pnl_speed.TextColor = System.Drawing.Color.White;
             // 
-            // label1
+            // lbl_speed
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(10, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 27);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_speed.ForeColor = System.Drawing.Color.Black;
+            this.lbl_speed.Location = new System.Drawing.Point(10, 7);
+            this.lbl_speed.Name = "lbl_speed";
+            this.lbl_speed.Size = new System.Drawing.Size(42, 27);
+            this.lbl_speed.TabIndex = 3;
+            this.lbl_speed.Text = "0";
+            this.lbl_speed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_speed.Click += new System.EventHandler(this.label1_Click);
             // 
-            // customButton2
+            // btn_speedUp
             // 
-            this.customButton2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton2.BackgroundImage")));
-            this.customButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton2.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton2.BorderRadius = 15;
-            this.customButton2.BorderSize = 2;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton2.ForeColor = System.Drawing.Color.White;
-            this.customButton2.Location = new System.Drawing.Point(491, 117);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton2.Size = new System.Drawing.Size(60, 40);
-            this.customButton2.TabIndex = 408;
-            this.customButton2.TextColor = System.Drawing.Color.White;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.btn_speedUp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_speedUp.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_speedUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_speedUp.BackgroundImage")));
+            this.btn_speedUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_speedUp.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_speedUp.BorderRadius = 15;
+            this.btn_speedUp.BorderSize = 2;
+            this.btn_speedUp.FlatAppearance.BorderSize = 0;
+            this.btn_speedUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_speedUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_speedUp.ForeColor = System.Drawing.Color.White;
+            this.btn_speedUp.Location = new System.Drawing.Point(491, 117);
+            this.btn_speedUp.Name = "btn_speedUp";
+            this.btn_speedUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_speedUp.Size = new System.Drawing.Size(60, 40);
+            this.btn_speedUp.TabIndex = 408;
+            this.btn_speedUp.TextColor = System.Drawing.Color.White;
+            this.btn_speedUp.UseVisualStyleBackColor = false;
+            this.btn_speedUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_SpeedUp);
             // 
-            // customButton3
+            // btn_speedDown
             // 
-            this.customButton3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton3.BackgroundImage")));
-            this.customButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton3.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton3.BorderRadius = 15;
-            this.customButton3.BorderSize = 2;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton3.ForeColor = System.Drawing.Color.White;
-            this.customButton3.Location = new System.Drawing.Point(361, 117);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton3.Size = new System.Drawing.Size(60, 40);
-            this.customButton3.TabIndex = 407;
-            this.customButton3.TextColor = System.Drawing.Color.White;
-            this.customButton3.UseVisualStyleBackColor = false;
+            this.btn_speedDown.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_speedDown.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_speedDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_speedDown.BackgroundImage")));
+            this.btn_speedDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_speedDown.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_speedDown.BorderRadius = 15;
+            this.btn_speedDown.BorderSize = 2;
+            this.btn_speedDown.FlatAppearance.BorderSize = 0;
+            this.btn_speedDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_speedDown.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_speedDown.ForeColor = System.Drawing.Color.White;
+            this.btn_speedDown.Location = new System.Drawing.Point(361, 117);
+            this.btn_speedDown.Name = "btn_speedDown";
+            this.btn_speedDown.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_speedDown.Size = new System.Drawing.Size(60, 40);
+            this.btn_speedDown.TabIndex = 407;
+            this.btn_speedDown.TextColor = System.Drawing.Color.White;
+            this.btn_speedDown.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -687,9 +688,9 @@
             this.Controls.Add(this.customButton4);
             this.Controls.Add(this.customButton5);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.customPanel1);
-            this.Controls.Add(this.customButton2);
-            this.Controls.Add(this.customButton3);
+            this.Controls.Add(this.pnl_speed);
+            this.Controls.Add(this.btn_speedUp);
+            this.Controls.Add(this.btn_speedDown);
             this.Controls.Add(this.customPanel8);
             this.Controls.Add(this.btn_numAxeUp);
             this.Controls.Add(this.btn_numAxeDown);
@@ -699,7 +700,7 @@
             this.Name = "UC_workParams";
             this.Size = new System.Drawing.Size(590, 510);
             this.customPanel8.ResumeLayout(false);
-            this.customPanel1.ResumeLayout(false);
+            this.pnl_speed.ResumeLayout(false);
             this.customPanel2.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
@@ -717,10 +718,10 @@
         private RMLib.View.CustomButton btn_numAxeUp;
         private RMLib.View.CustomButton btn_numAxeDown;
         private System.Windows.Forms.Label label16;
-        private RMLib.View.CustomPanel customPanel1;
-        private System.Windows.Forms.Label label1;
-        private RMLib.View.CustomButton customButton2;
-        private RMLib.View.CustomButton customButton3;
+        private RMLib.View.CustomPanel pnl_speed;
+        private System.Windows.Forms.Label lbl_speed;
+        private RMLib.View.CustomButton btn_speedUp;
+        private RMLib.View.CustomButton btn_speedDown;
         private System.Windows.Forms.Label label3;
         private RMLib.View.CustomPanel customPanel2;
         private System.Windows.Forms.Label label4;

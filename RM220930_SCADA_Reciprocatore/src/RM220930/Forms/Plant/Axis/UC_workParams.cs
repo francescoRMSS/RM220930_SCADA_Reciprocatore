@@ -2,6 +2,7 @@
 using RM.src.RM220930.Classes.Navigator;
 using RM.src.RM220930.Classes.PLC;
 using RM.src.RM220930.Classes.UiBinder;
+using RMLib.MessageBox;
 using RMLib.PLC;
 using System;
 using System.Collections.Generic;
@@ -49,7 +50,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             if (!(sender is Button btn)) return;
             //if (!(btn.Tag is int index)) return;
 
-            int index = UC_axis.axeOffset;
+            int index = SCADAManager.axeOffset;
 
             // Stato attuale letto dal PLC
             bool currentCmdOn = SCADAManager._zState[index].CmdOnAxe;
@@ -111,7 +112,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         private void customButton14_Click(object sender, EventArgs e)
         {
             // Cmd_AutoFrom_Pc
-            int index = UC_axis.axeOffset;
+            int index = SCADAManager.axeOffset;
 
             RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_AutoFrom_Pc}", true, "BOOL");
         }
@@ -124,7 +125,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         private void ClickEvent_EnableDisableAUTO(object sender, EventArgs e)
         {
             if (!(sender is Button btn)) return;
-            int index = UC_axis.axeOffset;
+            int index = SCADAManager.axeOffset;
 
             // Stato attuale letto dal PLC
             bool currentAutoOn = SCADAManager._zState[index].CmdAutoFromPc;
@@ -143,7 +144,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         private void btn_home_MouseDown(object sender, MouseEventArgs e)
         {
-            int index = UC_axis.axeOffset;
+            int index = SCADAManager.axeOffset;
 
             RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Go_home}", true, "BOOL");
         }
@@ -151,17 +152,35 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         private void btn_numAxeUp_Click(object sender, EventArgs e)
         {
             int numAxe = Convert.ToInt16(lbl_numAxe.Text);
+            if (numAxe >= SCADAManager.numZ - 1)
+            {
+                CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Indice non consentito");
+                return;
+            }
             numAxe++;
-            UC_axis.axeOffset = numAxe;
+            SCADAManager.axeOffset = numAxe;
             // lbl_numAxe.Text = numAxe.ToString();
         }
 
         private void btn_numAxeDown_Click(object sender, EventArgs e)
         {
             int numAxe = Convert.ToInt16(lbl_numAxe.Text);
+            if (numAxe < 1)
+            {
+                CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Indice non consentito");
+                return;
+            }
             numAxe--;
-            UC_axis.axeOffset = numAxe;
+            SCADAManager.axeOffset = numAxe;
             // lbl_numAxe.Text = numAxe.ToString();
+        }
+
+        private void MouseDownEvent_SpeedUp(object sender, MouseEventArgs e)
+        {
+            var btn = sender as Button;
+            int index = Convert.ToInt32(btn.Tag);
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", true, "BOOL");
         }
     }
 }

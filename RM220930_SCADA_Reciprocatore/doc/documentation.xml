@@ -211,6 +211,16 @@
             Dizionario di allarmi per evitare segnalazioni duplicate.
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.axeOffset">
+            <summary>
+            Numero di asse
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager._prevAxeOffset">
+            <summary>
+            Numero precednete di asse
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager.numZ">
             <summary>
             Numero di assi
@@ -1509,11 +1519,6 @@
         <member name="F:RM.src.RM220930.Forms.Plant.UC_axis._navigator">
             <summary>
             Gestisce switch tra le varie userControl degli assi
-            </summary>
-        </member>
-        <member name="F:RM.src.RM220930.Forms.Plant.UC_axis.axeOffset">
-            <summary>
-            Asse selezionato
             </summary>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_axis.#ctor">

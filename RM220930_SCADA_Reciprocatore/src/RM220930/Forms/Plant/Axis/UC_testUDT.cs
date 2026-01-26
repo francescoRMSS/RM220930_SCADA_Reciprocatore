@@ -1,5 +1,6 @@
 ﻿using CookComputing.XmlRpc;
 using RM.Properties;
+using RM.src.RM220930.Classes;
 using RM.src.RM220930.Classes.Navigator;
 using RM.src.RM220930.Classes.PLC;
 using RMLib.PLC;
@@ -71,7 +72,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
                 string valore = field.GetValue(plcTagName)?.ToString();
 
-                string expectedKey = $"PLC1_z{UC_axis.axeOffset}_{valore}";
+                string expectedKey = $"PLC1_z{SCADAManager.axeOffset}_{valore}";
 
                 string key = e.Key;
 
@@ -127,18 +128,18 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             string valore = field.GetValue(plcTagName)?.ToString();
 
-            bool boolValue = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+            bool boolValue = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{SCADAManager.axeOffset}_{valore}"));
 
             if (boolValue)
-                RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", false, "BOOL");
+                RefresherTask.AddUpdate($"PLC1_z{SCADAManager.axeOffset}_{valore}", false, "BOOL");
             else
-                RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", true, "BOOL");
+                RefresherTask.AddUpdate($"PLC1_z{SCADAManager.axeOffset}_{valore}", true, "BOOL");
 
         }
 
         private void btn_Cmd_En_Axe_Click(object sender, EventArgs e)
         {
-            RefresherTask.AddUpdate("PLC1_" + "axe" + UC_axis.axeOffset.ToString() + "_" + "Cmd_En_Axe", true, "BOOL");
+            RefresherTask.AddUpdate("PLC1_" + "axe" + SCADAManager.axeOffset.ToString() + "_" + "Cmd_En_Axe", true, "BOOL");
         }
 
         private void btn_Cmd_On_Axe8_Click(object sender, EventArgs e)
@@ -155,7 +156,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             string valore = field.GetValue(plcTagName)?.ToString();
 
-            bool boolValue = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+            bool boolValue = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{SCADAManager.axeOffset}_{valore}"));
 
             if (boolValue)
             {
@@ -174,7 +175,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         private void cb_axis_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbl_selectedAxe.Text = cb_axis.SelectedItem.ToString();
-            UC_axis.axeOffset = Convert.ToInt16(cb_axis.SelectedItem.ToString());
+            SCADAManager.axeOffset = Convert.ToInt16(cb_axis.SelectedItem.ToString());
         }
 
         private void cb_intList_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,7 +187,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             string valore = field.GetValue(plcTagName)?.ToString();
 
-            int intValue = Convert.ToInt16(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+            int intValue = Convert.ToInt16(PLCConfig.appVariables.getValue($"PLC1_z{SCADAManager.axeOffset}_{valore}"));
 
             tb_intValue.Text = intValue.ToString();
 
@@ -200,7 +201,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             int valToSend = Convert.ToInt16(tb_intValue.Text);
 
-            RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", valToSend, "INT16");
+            RefresherTask.AddUpdate($"PLC1_z{SCADAManager.axeOffset}_{valore}", valToSend, "INT16");
         }
 
         private void cb_floatList_SelectedIndexChanged(object sender, EventArgs e)
@@ -212,7 +213,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             string valore = field.GetValue(plcTagName)?.ToString();
 
-            float floatValue = Convert.ToInt16(PLCConfig.appVariables.getValue($"PLC1_z{UC_axis.axeOffset}_{valore}"));
+            float floatValue = Convert.ToInt16(PLCConfig.appVariables.getValue($"PLC1_z{SCADAManager.axeOffset}_{valore}"));
 
             tb_floatValue.Text = floatValue.ToString();
         }
@@ -225,7 +226,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             float valToSend = float.Parse(tb_floatValue.Text);
 
-            RefresherTask.AddUpdate($"PLC1_z{UC_axis.axeOffset}_{valore}", valToSend, "FLOAT");
+            RefresherTask.AddUpdate($"PLC1_z{SCADAManager.axeOffset}_{valore}", valToSend, "FLOAT");
         }
     }
 }
