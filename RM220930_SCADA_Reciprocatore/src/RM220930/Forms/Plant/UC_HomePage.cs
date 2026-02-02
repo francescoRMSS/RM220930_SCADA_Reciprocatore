@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 using static RMLib.PLC.AppVariable;
 
@@ -44,6 +45,7 @@ namespace RM.src.RM220930.Forms.Plant
             InitializeZButtons();
             InitializeGoToZButtons();
             InitZActualPoslabelList();
+            InitGeneralButtons();
         }
 
         #region Metodi di UC_HomePage
@@ -60,8 +62,8 @@ namespace RM.src.RM220930.Forms.Plant
             SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z4ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
             SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z5ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
             SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z6ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z7ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
-            SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z8ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+           // SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z7ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
+           // SCADAManager.Z_ONOFF.Add(new BiStateButton(btn_z8ONOFF, Color.ForestGreen, "ON", Color.Firebrick, "OFF"));
         }
 
         /// <summary>
@@ -120,6 +122,15 @@ namespace RM.src.RM220930.Forms.Plant
 
         }
 
+        /// <summary>
+        /// Inizializzazione dei buttons general
+        /// </summary>
+        private void InitGeneralButtons()
+        {
+            SCADAManager.manMode = new BiStateButton(btn_manMode, Color.ForestGreen, Color.Firebrick);
+            SCADAManager.manMode = new BiStateButton(btn_autoMode, Color.ForestGreen, Color.Firebrick);
+        }
+
         #endregion
 
         #region Eventi di UC_HomePage
@@ -165,13 +176,29 @@ namespace RM.src.RM220930.Forms.Plant
         }
 
         /// <summary>
-        /// Applica il jog positivo all'asse relativo
+        /// Gestisce evento mouse down movimento jog pos dell'asse
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MouseDown_valuePos(object sender, MouseEventArgs e)
+        private void MouseDownEvent_JogAxePos(object sender, MouseEventArgs e)
         {
-            RefresherTask.AddUpdate($"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}", true, "BOOL");
+            var btn = sender as Button;
+            int index = Convert.ToInt32(btn.Tag);
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", true, "BOOL");
+        }
+
+        /// <summary>
+        /// Gestisce evento mouse up movimento jog pos dell'asse
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseUpEvent_JogAxePos(object sender, MouseEventArgs e)
+        {
+            var btn = sender as Button;
+            int index = Convert.ToInt32(btn.Tag);
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", false, "BOOL");
         }
 
         /// <summary>
@@ -179,12 +206,25 @@ namespace RM.src.RM220930.Forms.Plant
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MouseDown_valueNeg(object sender, MouseEventArgs e)
+        private void MouseDownEvent_JogAxeNeg(object sender, MouseEventArgs e)
         {
             var btn = sender as Button;
             int index = Convert.ToInt32(btn.Tag);
 
             RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_neg}", true, "BOOL");
+        }
+
+        /// <summary>
+        /// Applica il jog negativo all'asse relativo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MouseUpEvent_JogAxeNeg(object sender, MouseEventArgs e)
+        {
+            var btn = sender as Button;
+            int index = Convert.ToInt32(btn.Tag);
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_neg}", false, "BOOL");
         }
 
         /// <summary>
@@ -215,6 +255,100 @@ namespace RM.src.RM220930.Forms.Plant
         private void ClickEvent_cabinLight(object sender, EventArgs e)
         {
             CustomMessageBox.Show(MessageBoxTypeEnum.WARNING_OK, "Funzione non implementata");
+        }
+
+        /// <summary>
+        /// Imposta l'impianto in modalità auto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_setAutoMode(object sender, EventArgs e)
+        {
+            // Set automatic mode
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Select_Automatic}", true, "BOOL");
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Select_Manual}", false, "BOOL");
+        }
+
+        /// <summary>
+        /// Imposta l'impianto in modalità manuale
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_setManMode(object sender, EventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Select_Manual}", true, "BOOL");
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Select_Automatic}", false, "BOOL");
+        }
+
+        /// <summary>
+        /// Reset delle modalitù auto/man
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_pos0_Click(object sender, EventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Select_Automatic}", false, "BOOL");
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Select_Manual}", false, "BOOL");
+        }
+
+        /// <summary>
+        /// Richiesta reset allarmi generale
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_resetAllarmi_MouseDown(object sender, MouseEventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Reset}", true, "BOOL");
+        }
+
+        /// <summary>
+        /// Termine richiesta reset allarmi generale
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_resetAllarmi_MouseUp(object sender, MouseEventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Reset}", false, "BOOL");
+        }
+
+        /// <summary>
+        /// Richiesta tutti gli assi in home position
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_allHome_MouseDown(object sender, MouseEventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Cmd_Go_Home_All_Axis}", true, "BOOL");
+        }
+
+        /// <summary>
+        /// Termine richiesta tutti gli assi in home position
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_allHome_MouseUp(object sender, MouseEventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Cmd_Go_Home_All_Axis}", false, "BOOL");
+        }
+
+        /// <summary>
+        /// Richiesta tutti gli assi ON
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_allAxisON_MouseDown(object sender, MouseEventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Cmd_All_Axis_In_Power}", true, "BOOL");
+        }
+
+        /// <summary>
+        /// Termine richiesta tutti gli assi ON
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_allAxisON_MouseUp(object sender, MouseEventArgs e)
+        {
+            RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Cmd_All_Axis_In_Power}", false, "BOOL");
         }
 
         #endregion

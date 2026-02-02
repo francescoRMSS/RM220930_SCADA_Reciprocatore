@@ -236,6 +236,16 @@
             Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.autoMode">
+            <summary>
+            Tasto auto in home page
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.manMode">
+            <summary>
+            Tasto man in home page
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager._zState">
             <summary>
             Oggetto che rappresenta lo stato dell'asse
@@ -252,6 +262,11 @@
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager._prevWorkParamsState">
+            <summary>
+            Stato precedente per l'asse selezionato (WorkParams)
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager._prevAxeConfigurationState">
             <summary>
             Stato precedente per l'asse selezionato (WorkParams)
             </summary>
@@ -274,6 +289,11 @@
         <member name="F:RM.src.RM220930.Classes.SCADAManager.numAxe_workParams">
             <summary>
             Etichetta con numero di asse selezionato
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF_axeConfiguration">
+            <summary>
+            Tasto ON-OFF dell'asse selzionato in axeConfiguration
             </summary>
         </member>
         <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
@@ -780,6 +800,31 @@
             
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Reset">
+            <summary>
+            Reset di tutti gli allarmi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Select_Manual">
+            <summary>
+            Impostazione dell'impianto in manuale
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Select_Automatic">
+            <summary>
+            Impostazione dell'impianto in automatico
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Cmd_Go_Home_All_Axis">
+            <summary>
+            Invio in home di tutti gli assi
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Cmd_All_Axis_In_Power">
+            <summary>
+            Tutti gli assi ON
+            </summary>
+        </member>
         <member name="T:RM.src.RM220930.Classes.UiBinder.BiStateButton">
             <summary>
             Rappresenta un pulsante a 2 stati
@@ -1056,6 +1101,12 @@
             True = asse attivo, False = asse spento.
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdEnAxe">
+            <summary>
+            Comando abilita/disabilita dell'asse letto dal PLC.
+            True = asse attivo, False = asse spento.
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ReadHomeOK">
             <summary>
             Feedback ritorno in Home
@@ -1064,6 +1115,11 @@
         <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdAutoFromPc">
             <summary>
             Comando AUTO ON/OFF
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.HmiSelectManual">
+            <summary>
+            Comando modalità manual HMI
             </summary>
         </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ActPosition">
@@ -1673,6 +1729,11 @@
             </summary>
             <param name="parameter"></param>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.InitGeneralButtons">
+            <summary>
+            Inizializzazione dei buttons general
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_goToZ(System.Object,System.EventArgs)">
             <summary>
             Apre la gestione dell'asse selezionato
@@ -1687,14 +1748,28 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDown_valuePos(System.Object,System.Windows.Forms.MouseEventArgs)">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDownEvent_JogAxePos(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Applica il jog positivo all'asse relativo
+            Gestisce evento mouse down movimento jog pos dell'asse
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDown_valueNeg(System.Object,System.Windows.Forms.MouseEventArgs)">
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseUpEvent_JogAxePos(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Gestisce evento mouse up movimento jog pos dell'asse
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseDownEvent_JogAxeNeg(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Applica il jog negativo all'asse relativo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.MouseUpEvent_JogAxeNeg(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             Applica il jog negativo all'asse relativo
             </summary>
@@ -1718,6 +1793,69 @@
         <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_cabinLight(System.Object,System.EventArgs)">
             <summary>
             Apre pagina luci cabina (non implementata)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_setAutoMode(System.Object,System.EventArgs)">
+            <summary>
+            Imposta l'impianto in modalità auto
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.ClickEvent_setManMode(System.Object,System.EventArgs)">
+            <summary>
+            Imposta l'impianto in modalità manuale
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_pos0_Click(System.Object,System.EventArgs)">
+            <summary>
+            Reset delle modalitù auto/man
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_resetAllarmi_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Richiesta reset allarmi generale
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_resetAllarmi_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Termine richiesta reset allarmi generale
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_allHome_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Richiesta tutti gli assi in home position
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_allHome_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Termine richiesta tutti gli assi in home position
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_allAxisON_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Richiesta tutti gli assi ON
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.UC_HomePage.btn_allAxisON_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Termine richiesta tutti gli assi ON
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

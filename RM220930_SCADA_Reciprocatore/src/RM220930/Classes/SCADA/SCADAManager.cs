@@ -124,7 +124,7 @@ namespace RM.src.RM220930.Classes
         /// <summary>
         /// Numero di assi
         /// </summary>
-        public static int numZ = 9;
+        public static int numZ = 7;
 
         /// <summary>
         /// Contiene la lista di indicatori ON/OFF nella pagina monitor ciclo
@@ -135,6 +135,16 @@ namespace RM.src.RM220930.Classes
         /// Contiene la lista di label che leggono l'attuale posizione dell'asse nella pagina monitor ciclo
         /// </summary>
         public static readonly List<UiLabel> z_actualPos = new List<UiLabel>();
+
+        /// <summary>
+        /// Tasto auto in home page
+        /// </summary>
+        public static BiStateButton autoMode = new BiStateButton();
+
+        /// <summary>
+        /// Tasto man in home page
+        /// </summary>
+        public static BiStateButton manMode = new BiStateButton();
 
         /// <summary>
         /// Oggetto che rappresenta lo stato dell'asse
@@ -157,6 +167,11 @@ namespace RM.src.RM220930.Classes
         private static ZAxisState _prevWorkParamsState = new ZAxisState();
 
         /// <summary>
+        /// Stato precedente per l'asse selezionato (WorkParams)
+        /// </summary>
+        private static ZAxisState _prevAxeConfigurationState = new ZAxisState();
+
+        /// <summary>
         /// Tasto ON-OFF dell'asse selzionato in workParams
         /// </summary>
         public static BiStateButton Z_ONOFF_workParams = new BiStateButton();
@@ -175,6 +190,11 @@ namespace RM.src.RM220930.Classes
         /// Etichetta con numero di asse selezionato
         /// </summary>
         public static UiLabel numAxe_workParams = new UiLabel();
+
+        /// <summary>
+        /// Tasto ON-OFF dell'asse selzionato in axeConfiguration
+        /// </summary>
+        public static BiStateButton Z_ONOFF_axeConfiguration = new BiStateButton();
 
         #endregion
 
@@ -368,6 +388,8 @@ namespace RM.src.RM220930.Classes
             }
         }
 
+        public static bool? hmiVisManualMode;
+
         /// <summary>
         /// Aggiorna le variabili dal dizionario PLC
         /// </summary>
@@ -381,17 +403,22 @@ namespace RM.src.RM220930.Classes
             {
                 // ===== READ PLC =====
                 var cmdOn = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}"));
+                var cmdEn = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_En_Axe}"));
                 var readHomeOK = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Home_Ok}"));
                 var cmdAutoFromPc = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_AutoFrom_Pc}"));
                 var actPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}"));
+              //  var currentHmiVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Manual}"));
+               // var hmiVisAutomaticMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Automatic}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
+                _zState[i].CmdEnAxe = cmdEn;
                 _zState[i].ReadHomeOK = readHomeOK;
                 _zState[i].CmdAutoFromPc = cmdAutoFromPc;
                 _zState[i].ActPosition = actPos;
 
-                // ===== UI UPDATE (solo se cambia) =====
+                #region UI HOME PAGE 
+
                 changed = _prevZState[i].CmdOnAxe != cmdOn;
                 if (changed)
                 {
@@ -403,12 +430,14 @@ namespace RM.src.RM220930.Classes
                 if (changed)
                 {
                     _prevZState[i].ActPosition = actPos;
-                    z_actualPos[i].Write(actPos.ToString());
+                    z_actualPos[i].Write(Math.Round(actPos, 1).ToString());
                 }
 
+                #endregion
             }
 
-            // ===== UI WORKPARAMS (asse selezionato, solo se cambia) =====
+            #region UI WORKPARAMS
+
             int idx = SCADAManager.axeOffset;
             var state = _zState[idx];
 
@@ -443,6 +472,19 @@ namespace RM.src.RM220930.Classes
 
                 selectedAxe_axis[idx].ChangeStatus(true);
             }
+
+            #endregion
+
+            #region UI AXE_CONFIGURATION 
+
+            changed = _prevAxeConfigurationState.CmdEnAxe != state.CmdEnAxe;
+            if (changed)
+            {
+                _prevAxeConfigurationState.CmdEnAxe = state.CmdEnAxe;
+                Z_ONOFF_axeConfiguration.ChangeStatusCustom(state.CmdEnAxe);
+            }
+
+            #endregion
 
             // ===== VISIBILITÀ Z_Auto =====
             bool shouldBeVisible = idx != 0;

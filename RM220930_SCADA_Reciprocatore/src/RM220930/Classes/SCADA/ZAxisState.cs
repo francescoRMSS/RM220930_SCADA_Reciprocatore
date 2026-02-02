@@ -19,6 +19,11 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         public bool CmdOnAxe { get; set; }
         /// <summary>
+        /// Comando abilita/disabilita dell'asse letto dal PLC.
+        /// True = asse attivo, False = asse spento.
+        /// </summary>
+        public bool CmdEnAxe { get; set; }
+        /// <summary>
         /// Feedback ritorno in Home
         /// </summary>
         public bool ReadHomeOK { get; set; }
@@ -26,6 +31,10 @@ namespace RM.src.RM220930.Classes
         /// Comando AUTO ON/OFF
         /// </summary>
         public bool CmdAutoFromPc { get; set; }
+        /// <summary>
+        /// Comando modalità manual HMI
+        /// </summary>
+        public bool HmiSelectManual { get; set; }
         #endregion
 
         #region Floating Point Variables (REAL / float)

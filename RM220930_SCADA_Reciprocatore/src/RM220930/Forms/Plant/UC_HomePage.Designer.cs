@@ -95,6 +95,14 @@
             this.lbl_hub = new System.Windows.Forms.Label();
             this.pnl_valueRec = new RMLib.View.CustomPanel();
             this.lbl_valueRec = new System.Windows.Forms.Label();
+            this.btn_pos0 = new RMLib.View.CustomButton();
+            this.btn_manMode = new RMLib.View.CustomButton();
+            this.btn_autoMode = new RMLib.View.CustomButton();
+            this.btn_resetAllarmi = new RMLib.View.CustomButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_allAxisON = new RMLib.View.CustomButton();
+            this.btn_allHome = new RMLib.View.CustomButton();
+            this.lbl_general = new System.Windows.Forms.Label();
             this.pnl_axis.SuspendLayout();
             this.customPanel8.SuspendLayout();
             this.customPanel4.SuspendLayout();
@@ -107,6 +115,7 @@
             this.pnl_options.SuspendLayout();
             this.pnl_hub.SuspendLayout();
             this.pnl_valueRec.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -246,7 +255,8 @@
             this.btn_jogPosZ8.Tag = "8";
             this.btn_jogPosZ8.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ8.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // btn_jogPosZ4
             // 
@@ -269,7 +279,8 @@
             this.btn_jogPosZ4.Tag = "4";
             this.btn_jogPosZ4.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ4.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // customPanel1
             // 
@@ -346,7 +357,8 @@
             this.btn_jogPosZ6.Tag = "6";
             this.btn_jogPosZ6.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ6.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // btn_jogPosZ2
             // 
@@ -369,7 +381,8 @@
             this.btn_jogPosZ2.Tag = "2";
             this.btn_jogPosZ2.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ2.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // customPanel5
             // 
@@ -419,7 +432,8 @@
             this.btn_jogNegZ8.Tag = "8";
             this.btn_jogNegZ8.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ8.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_jogNegZ4
             // 
@@ -442,7 +456,8 @@
             this.btn_jogNegZ4.Tag = "4";
             this.btn_jogNegZ4.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ4.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_jogPosZ7
             // 
@@ -465,7 +480,8 @@
             this.btn_jogPosZ7.Tag = "7";
             this.btn_jogPosZ7.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ7.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // btn_jogNegZ6
             // 
@@ -488,7 +504,8 @@
             this.btn_jogNegZ6.Tag = "6";
             this.btn_jogNegZ6.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ6.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_jogPosZ3
             // 
@@ -511,7 +528,8 @@
             this.btn_jogPosZ3.Tag = "3";
             this.btn_jogPosZ3.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ3.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // customPanel3
             // 
@@ -588,7 +606,8 @@
             this.btn_jogNegZ7.Tag = "7";
             this.btn_jogNegZ7.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ7.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // customPanel7
             // 
@@ -638,7 +657,8 @@
             this.btn_jogNegZ2.Tag = "2";
             this.btn_jogNegZ2.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ2.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_jogPosZ5
             // 
@@ -661,7 +681,8 @@
             this.btn_jogPosZ5.Tag = "5";
             this.btn_jogPosZ5.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ5.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // btn_jogNegZ3
             // 
@@ -684,7 +705,8 @@
             this.btn_jogNegZ3.Tag = "3";
             this.btn_jogNegZ3.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ3.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_jogNegZ5
             // 
@@ -707,7 +729,8 @@
             this.btn_jogNegZ5.Tag = "5";
             this.btn_jogNegZ5.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ5.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_jogPosZ1
             // 
@@ -730,7 +753,8 @@
             this.btn_jogPosZ1.Tag = "1";
             this.btn_jogPosZ1.TextColor = System.Drawing.Color.White;
             this.btn_jogPosZ1.UseVisualStyleBackColor = false;
-            this.btn_jogPosZ1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosZ1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosZ1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // btn_z7ONOFF
             // 
@@ -774,7 +798,8 @@
             this.btn_jogNegZ1.Tag = "1";
             this.btn_jogNegZ1.TextColor = System.Drawing.Color.White;
             this.btn_jogNegZ1.UseVisualStyleBackColor = false;
-            this.btn_jogNegZ1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegZ1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegZ1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // btn_z8
             // 
@@ -1268,7 +1293,7 @@
             this.pnl_hub.Controls.Add(this.pnl_valueRec);
             this.pnl_hub.Location = new System.Drawing.Point(7, 50);
             this.pnl_hub.Name = "pnl_hub";
-            this.pnl_hub.Size = new System.Drawing.Size(263, 491);
+            this.pnl_hub.Size = new System.Drawing.Size(263, 166);
             this.pnl_hub.TabIndex = 360;
             // 
             // btn_z0ONOFF
@@ -1313,7 +1338,8 @@
             this.btn_jogPosRec.Tag = "0";
             this.btn_jogPosRec.TextColor = System.Drawing.Color.White;
             this.btn_jogPosRec.UseVisualStyleBackColor = false;
-            this.btn_jogPosRec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valuePos);
+            this.btn_jogPosRec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxePos);
+            this.btn_jogPosRec.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxePos);
             // 
             // btn_jogNegRec
             // 
@@ -1336,7 +1362,8 @@
             this.btn_jogNegRec.Tag = "0";
             this.btn_jogNegRec.TextColor = System.Drawing.Color.White;
             this.btn_jogNegRec.UseVisualStyleBackColor = false;
-            this.btn_jogNegRec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_valueNeg);
+            this.btn_jogNegRec.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_JogAxeNeg);
+            this.btn_jogNegRec.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpEvent_JogAxeNeg);
             // 
             // lbl_hub
             // 
@@ -1378,11 +1405,176 @@
             this.lbl_valueRec.Text = "0";
             this.lbl_valueRec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_pos0
+            // 
+            this.btn_pos0.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_pos0.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_pos0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_pos0.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_pos0.BorderRadius = 15;
+            this.btn_pos0.BorderSize = 2;
+            this.btn_pos0.FlatAppearance.BorderSize = 0;
+            this.btn_pos0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pos0.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_pos0.ForeColor = System.Drawing.Color.Black;
+            this.btn_pos0.Location = new System.Drawing.Point(178, 93);
+            this.btn_pos0.Name = "btn_pos0";
+            this.btn_pos0.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_pos0.Size = new System.Drawing.Size(80, 50);
+            this.btn_pos0.TabIndex = 387;
+            this.btn_pos0.Text = "POS 0";
+            this.btn_pos0.TextColor = System.Drawing.Color.Black;
+            this.btn_pos0.UseVisualStyleBackColor = false;
+            this.btn_pos0.Click += new System.EventHandler(this.btn_pos0_Click);
+            // 
+            // btn_manMode
+            // 
+            this.btn_manMode.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_manMode.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_manMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_manMode.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_manMode.BorderRadius = 15;
+            this.btn_manMode.BorderSize = 2;
+            this.btn_manMode.FlatAppearance.BorderSize = 0;
+            this.btn_manMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_manMode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_manMode.ForeColor = System.Drawing.Color.Black;
+            this.btn_manMode.Location = new System.Drawing.Point(90, 93);
+            this.btn_manMode.Name = "btn_manMode";
+            this.btn_manMode.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_manMode.Size = new System.Drawing.Size(80, 50);
+            this.btn_manMode.TabIndex = 386;
+            this.btn_manMode.Text = "MAN";
+            this.btn_manMode.TextColor = System.Drawing.Color.Black;
+            this.btn_manMode.UseVisualStyleBackColor = false;
+            this.btn_manMode.Click += new System.EventHandler(this.ClickEvent_setManMode);
+            // 
+            // btn_autoMode
+            // 
+            this.btn_autoMode.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_autoMode.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_autoMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_autoMode.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_autoMode.BorderRadius = 15;
+            this.btn_autoMode.BorderSize = 2;
+            this.btn_autoMode.FlatAppearance.BorderSize = 0;
+            this.btn_autoMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_autoMode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_autoMode.ForeColor = System.Drawing.Color.Black;
+            this.btn_autoMode.Location = new System.Drawing.Point(2, 93);
+            this.btn_autoMode.Name = "btn_autoMode";
+            this.btn_autoMode.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_autoMode.Size = new System.Drawing.Size(80, 50);
+            this.btn_autoMode.TabIndex = 385;
+            this.btn_autoMode.Text = "AUTO";
+            this.btn_autoMode.TextColor = System.Drawing.Color.Black;
+            this.btn_autoMode.UseVisualStyleBackColor = false;
+            this.btn_autoMode.Click += new System.EventHandler(this.ClickEvent_setAutoMode);
+            // 
+            // btn_resetAllarmi
+            // 
+            this.btn_resetAllarmi.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_resetAllarmi.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_resetAllarmi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_resetAllarmi.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_resetAllarmi.BorderRadius = 15;
+            this.btn_resetAllarmi.BorderSize = 2;
+            this.btn_resetAllarmi.FlatAppearance.BorderSize = 0;
+            this.btn_resetAllarmi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_resetAllarmi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_resetAllarmi.ForeColor = System.Drawing.Color.Black;
+            this.btn_resetAllarmi.Location = new System.Drawing.Point(3, 38);
+            this.btn_resetAllarmi.Name = "btn_resetAllarmi";
+            this.btn_resetAllarmi.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_resetAllarmi.Size = new System.Drawing.Size(80, 50);
+            this.btn_resetAllarmi.TabIndex = 384;
+            this.btn_resetAllarmi.Text = "RESET ALLARMI";
+            this.btn_resetAllarmi.TextColor = System.Drawing.Color.Black;
+            this.btn_resetAllarmi.UseVisualStyleBackColor = false;
+            this.btn_resetAllarmi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_resetAllarmi_MouseDown);
+            this.btn_resetAllarmi.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_resetAllarmi_MouseUp);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_allAxisON);
+            this.panel1.Controls.Add(this.btn_allHome);
+            this.panel1.Controls.Add(this.btn_pos0);
+            this.panel1.Controls.Add(this.lbl_general);
+            this.panel1.Controls.Add(this.btn_resetAllarmi);
+            this.panel1.Controls.Add(this.btn_manMode);
+            this.panel1.Controls.Add(this.btn_autoMode);
+            this.panel1.Location = new System.Drawing.Point(7, 222);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(263, 319);
+            this.panel1.TabIndex = 384;
+            // 
+            // btn_allAxisON
+            // 
+            this.btn_allAxisON.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_allAxisON.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_allAxisON.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_allAxisON.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_allAxisON.BorderRadius = 15;
+            this.btn_allAxisON.BorderSize = 2;
+            this.btn_allAxisON.FlatAppearance.BorderSize = 0;
+            this.btn_allAxisON.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_allAxisON.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_allAxisON.ForeColor = System.Drawing.Color.Black;
+            this.btn_allAxisON.Location = new System.Drawing.Point(90, 149);
+            this.btn_allAxisON.Name = "btn_allAxisON";
+            this.btn_allAxisON.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_allAxisON.Size = new System.Drawing.Size(80, 50);
+            this.btn_allAxisON.TabIndex = 389;
+            this.btn_allAxisON.Text = "ALL AXIS IN POWER";
+            this.btn_allAxisON.TextColor = System.Drawing.Color.Black;
+            this.btn_allAxisON.UseVisualStyleBackColor = false;
+            this.btn_allAxisON.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_allAxisON_MouseDown);
+            this.btn_allAxisON.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_allAxisON_MouseUp);
+            // 
+            // btn_allHome
+            // 
+            this.btn_allHome.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_allHome.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_allHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_allHome.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_allHome.BorderRadius = 15;
+            this.btn_allHome.BorderSize = 2;
+            this.btn_allHome.FlatAppearance.BorderSize = 0;
+            this.btn_allHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_allHome.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_allHome.ForeColor = System.Drawing.Color.Black;
+            this.btn_allHome.Location = new System.Drawing.Point(3, 149);
+            this.btn_allHome.Name = "btn_allHome";
+            this.btn_allHome.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_allHome.Size = new System.Drawing.Size(80, 50);
+            this.btn_allHome.TabIndex = 388;
+            this.btn_allHome.Text = "ALL HOME";
+            this.btn_allHome.TextColor = System.Drawing.Color.Black;
+            this.btn_allHome.UseVisualStyleBackColor = false;
+            this.btn_allHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_allHome_MouseDown);
+            this.btn_allHome.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_allHome_MouseUp);
+            // 
+            // lbl_general
+            // 
+            this.lbl_general.BackColor = System.Drawing.Color.Gray;
+            this.lbl_general.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbl_general.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.lbl_general.ForeColor = System.Drawing.Color.White;
+            this.lbl_general.Location = new System.Drawing.Point(-1, -1);
+            this.lbl_general.Name = "lbl_general";
+            this.lbl_general.Size = new System.Drawing.Size(263, 39);
+            this.lbl_general.TabIndex = 361;
+            this.lbl_general.Text = "GENERAL";
+            this.lbl_general.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UC_HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_hub);
             this.Controls.Add(this.pnl_options);
             this.Controls.Add(this.pnl_axis);
@@ -1401,6 +1593,7 @@
             this.pnl_options.ResumeLayout(false);
             this.pnl_hub.ResumeLayout(false);
             this.pnl_valueRec.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1474,5 +1667,13 @@
         private RMLib.View.CustomButton btn_jogNegZ5;
         private RMLib.View.CustomPanel customPanel8;
         private System.Windows.Forms.Label lbl_valueZ1;
+        private RMLib.View.CustomButton btn_resetAllarmi;
+        private RMLib.View.CustomButton btn_autoMode;
+        private RMLib.View.CustomButton btn_pos0;
+        private RMLib.View.CustomButton btn_manMode;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_general;
+        private RMLib.View.CustomButton btn_allAxisON;
+        private RMLib.View.CustomButton btn_allHome;
     }
 }

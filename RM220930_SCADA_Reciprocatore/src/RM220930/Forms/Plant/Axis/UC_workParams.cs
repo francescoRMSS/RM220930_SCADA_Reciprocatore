@@ -182,5 +182,12 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", true, "BOOL");
         }
+
+        private void btn_home_MouseUp(object sender, MouseEventArgs e)
+        {
+            int index = SCADAManager.axeOffset;
+
+            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Go_home}", false, "BOOL");
+        }
     }
 }

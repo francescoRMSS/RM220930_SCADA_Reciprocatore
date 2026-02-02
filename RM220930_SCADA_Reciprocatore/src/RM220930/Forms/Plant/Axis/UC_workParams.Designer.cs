@@ -104,6 +104,7 @@
             this.btn_home.TextColor = System.Drawing.Color.White;
             this.btn_home.UseVisualStyleBackColor = false;
             this.btn_home.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_home_MouseDown);
+            this.btn_home.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_home_MouseUp);
             // 
             // btn_z_onoff
             // 

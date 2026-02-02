@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
-            this.customButton1 = new RMLib.View.CustomButton();
+            this.btn_ONOFF = new RMLib.View.CustomButton();
             this.label27 = new System.Windows.Forms.Label();
             this.customPanel1 = new RMLib.View.CustomPanel();
             this.label28 = new System.Windows.Forms.Label();
@@ -120,27 +120,27 @@
             this.panel6.Size = new System.Drawing.Size(170, 370);
             this.panel6.TabIndex = 374;
             // 
-            // customButton1
+            // btn_ONOFF
             // 
-            this.customButton1.BackColor = System.Drawing.Color.Black;
-            this.customButton1.BackgroundColor = System.Drawing.Color.Black;
-            this.customButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton1.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton1.BorderRadius = 15;
-            this.customButton1.BorderSize = 1;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.customButton1.ForeColor = System.Drawing.Color.White;
-            this.customButton1.Location = new System.Drawing.Point(9, 7);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton1.Size = new System.Drawing.Size(80, 60);
-            this.customButton1.TabIndex = 450;
-            this.customButton1.Text = "Disabilitato";
-            this.customButton1.TextColor = System.Drawing.Color.White;
-            this.customButton1.UseVisualStyleBackColor = false;
-            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
+            this.btn_ONOFF.BackColor = System.Drawing.Color.Black;
+            this.btn_ONOFF.BackgroundColor = System.Drawing.Color.Black;
+            this.btn_ONOFF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_ONOFF.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_ONOFF.BorderRadius = 15;
+            this.btn_ONOFF.BorderSize = 1;
+            this.btn_ONOFF.FlatAppearance.BorderSize = 0;
+            this.btn_ONOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ONOFF.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_ONOFF.ForeColor = System.Drawing.Color.White;
+            this.btn_ONOFF.Location = new System.Drawing.Point(9, 7);
+            this.btn_ONOFF.Name = "btn_ONOFF";
+            this.btn_ONOFF.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_ONOFF.Size = new System.Drawing.Size(80, 60);
+            this.btn_ONOFF.TabIndex = 450;
+            this.btn_ONOFF.Text = "Disabilitato";
+            this.btn_ONOFF.TextColor = System.Drawing.Color.White;
+            this.btn_ONOFF.UseVisualStyleBackColor = false;
+            this.btn_ONOFF.Click += new System.EventHandler(this.ClickEvent_enableDisableAxe);
             // 
             // label27
             // 
@@ -1252,7 +1252,7 @@
             this.Controls.Add(this.customPanel1);
             this.Controls.Add(this.customButton2);
             this.Controls.Add(this.customButton3);
-            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.btn_ONOFF);
             this.Controls.Add(this.panel6);
             this.Name = "UC_axeConfiguration";
             this.Size = new System.Drawing.Size(590, 510);
@@ -1276,7 +1276,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel6;
-        private RMLib.View.CustomButton customButton1;
+        private RMLib.View.CustomButton btn_ONOFF;
         private System.Windows.Forms.Label label27;
         private RMLib.View.CustomPanel customPanel1;
         private System.Windows.Forms.Label label28;

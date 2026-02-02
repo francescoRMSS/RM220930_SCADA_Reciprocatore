@@ -160,12 +160,13 @@ namespace RM.src.RM220930
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Error during security loading");
             }
 
+            
             if (!SCADAManager.InitSCADA())
             {
                 CustomMessageBox.Show(MessageBoxTypeEnum.ERROR, "Errore durante configurazione dello SCADA");
                 Application.Exit();
             }
-
+            
             //ProgressBar a 90%
             progressBar1.Increment(10);
             lb_ProgressBar.Text = "Load translations...";

@@ -1,4 +1,8 @@
-﻿using RM.src.RM220930.Classes.Navigator;
+﻿using RM.src.RM220930.Classes;
+using RM.src.RM220930.Classes.Navigator;
+using RM.src.RM220930.Classes.PLC;
+using RM.src.RM220930.Classes.UiBinder;
+using RMLib.PLC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +20,9 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         public UC_axeConfiguration()
         {
             InitializeComponent();
+
+            SCADAManager.Z_ONOFF_axeConfiguration = new BiStateButton(btn_ONOFF, Color.ForestGreen, "Abilitato", Color.Firebrick, "Disabilitato");
+
         }
 
         public event EventHandler<NavigateEventArgs> NavigateRequested;
@@ -28,9 +35,22 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             }
         }
 
-        private void customButton1_Click(object sender, EventArgs e)
+        private void ClickEvent_enableDisableAxe(object sender, EventArgs e)
         {
-            // Cmd_En_Axe
+            int index = SCADAManager.axeOffset;
+
+            // Stato attuale letto dal PLC
+            bool currentCmdEn = SCADAManager._zState[index].CmdEnAxe;
+
+            // Toggle logico
+            bool newCmdEn = !currentCmdEn;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{index}_{PLCTagName.Cmd_En_Axe}",
+                newCmdEn,
+                "BOOL"
+            );
         }
 
         private void label28_Click(object sender, EventArgs e)
