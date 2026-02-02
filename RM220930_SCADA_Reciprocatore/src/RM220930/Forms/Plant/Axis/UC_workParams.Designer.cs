@@ -43,7 +43,7 @@
             this.btn_speedDown = new RMLib.View.CustomButton();
             this.label3 = new System.Windows.Forms.Label();
             this.customPanel2 = new RMLib.View.CustomPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_posRange = new System.Windows.Forms.Label();
             this.customButton4 = new RMLib.View.CustomButton();
             this.customButton5 = new RMLib.View.CustomButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -228,7 +228,7 @@
             // 
             // lbl_speed
             // 
-            this.lbl_speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_speed.ForeColor = System.Drawing.Color.Black;
             this.lbl_speed.Location = new System.Drawing.Point(10, 7);
             this.lbl_speed.Name = "lbl_speed";
@@ -236,7 +236,7 @@
             this.lbl_speed.TabIndex = 3;
             this.lbl_speed.Text = "0";
             this.lbl_speed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_speed.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_speed.Click += new System.EventHandler(this.ClickEvent_updateSpeed);
             // 
             // btn_speedUp
             // 
@@ -300,7 +300,7 @@
             this.customPanel2.BorderColor = System.Drawing.Color.DimGray;
             this.customPanel2.BorderRadius = 15;
             this.customPanel2.BorderSize = 2;
-            this.customPanel2.Controls.Add(this.label4);
+            this.customPanel2.Controls.Add(this.lbl_posRange);
             this.customPanel2.ForeColor = System.Drawing.Color.White;
             this.customPanel2.Location = new System.Drawing.Point(426, 194);
             this.customPanel2.Name = "customPanel2";
@@ -308,17 +308,17 @@
             this.customPanel2.TabIndex = 413;
             this.customPanel2.TextColor = System.Drawing.Color.White;
             // 
-            // label4
+            // lbl_posRange
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(10, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 27);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lbl_posRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_posRange.ForeColor = System.Drawing.Color.Black;
+            this.lbl_posRange.Location = new System.Drawing.Point(10, 7);
+            this.lbl_posRange.Name = "lbl_posRange";
+            this.lbl_posRange.Size = new System.Drawing.Size(42, 27);
+            this.lbl_posRange.TabIndex = 3;
+            this.lbl_posRange.Text = "0";
+            this.lbl_posRange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_posRange.Click += new System.EventHandler(this.label4_Click);
             // 
             // customButton4
             // 
@@ -725,7 +725,7 @@
         private RMLib.View.CustomButton btn_speedDown;
         private System.Windows.Forms.Label label3;
         private RMLib.View.CustomPanel customPanel2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_posRange;
         private RMLib.View.CustomButton customButton4;
         private RMLib.View.CustomButton customButton5;
         private System.Windows.Forms.Label label2;

@@ -42,6 +42,14 @@ namespace RM.src.RM220930.Classes
         /// Posizione attuale dell'asse letta dal PLC.
         /// </summary>
         public float ActPosition { get; set; }
+        /// <summary>
+        /// Velocità asse
+        /// </summary>
+        public float cmdSpeedPos { get; set; }
+        /// <summary>
+        /// Posizione no pezzo asse
+        /// </summary>
+        public float CmdPosRange { get; set; }
         #endregion
 
         #region Integer Variables (INT / short)

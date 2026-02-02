@@ -102,6 +102,7 @@
             this.btn_axe8.BorderColor = System.Drawing.Color.DimGray;
             this.btn_axe8.BorderRadius = 15;
             this.btn_axe8.BorderSize = 2;
+            this.btn_axe8.Enabled = false;
             this.btn_axe8.FlatAppearance.BorderSize = 0;
             this.btn_axe8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_axe8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -123,6 +124,7 @@
             this.btn_axe7.BorderColor = System.Drawing.Color.DimGray;
             this.btn_axe7.BorderRadius = 15;
             this.btn_axe7.BorderSize = 2;
+            this.btn_axe7.Enabled = false;
             this.btn_axe7.FlatAppearance.BorderSize = 0;
             this.btn_axe7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_axe7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);

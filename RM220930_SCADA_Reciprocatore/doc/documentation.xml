@@ -291,6 +291,16 @@
             Etichetta con numero di asse selezionato
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.speed_workParams">
+            <summary>
+            Velocità asse selezionato
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posRange_workParams">
+            <summary>
+            Posizione no pezzo asse selezionato
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF_axeConfiguration">
             <summary>
             Tasto ON-OFF dell'asse selzionato in axeConfiguration
@@ -1125,6 +1135,16 @@
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ActPosition">
             <summary>
             Posizione attuale dell'asse letta dal PLC.
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.cmdSpeedPos">
+            <summary>
+            Velocità asse
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdPosRange">
+            <summary>
+            Posizione no pezzo asse
             </summary>
         </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">

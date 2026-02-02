@@ -2,14 +2,17 @@
 using RM.src.RM220930.Classes.Navigator;
 using RM.src.RM220930.Classes.PLC;
 using RM.src.RM220930.Classes.UiBinder;
+using RMLib.Keyboards;
 using RMLib.MessageBox;
 using RMLib.PLC;
+using RMLib.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +29,9 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             SCADAManager.Z_Home_workParams = new BiStateButton(btn_home, Color.ForestGreen, Color.Firebrick);
             SCADAManager.Z_Auto_workParams = new BiStateButton(btn_autoONOFF, Color.ForestGreen, Color.Firebrick);
             SCADAManager.numAxe_workParams = new UiLabel(lbl_numAxe);
+            SCADAManager.speed_workParams = new UiLabel(lbl_speed);
+            SCADAManager.speed_workParams = new UiLabel(lbl_speed);
+            SCADAManager.posRange_workParams = new UiLabel(lbl_posRange);
         }
 
         public event EventHandler<NavigateEventArgs> NavigateRequested;
@@ -79,9 +85,21 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             // feedback Read_Home_Ok
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void ClickEvent_updateSpeed(object sender, EventArgs e)
         {
-            // Cmd_Speed_Pos
+            //if (!SecurityManager.ActionRequestCheck("modifyRobotSpeed")) return;
+
+            string newVelocity = VK_Manager.OpenIntVK("0");
+
+            if (newVelocity.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}",
+                newVelocity,
+                "FLOAT"
+            );
+
         }
 
         private void label9_Click(object sender, EventArgs e)

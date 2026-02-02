@@ -192,6 +192,16 @@ namespace RM.src.RM220930.Classes
         public static UiLabel numAxe_workParams = new UiLabel();
 
         /// <summary>
+        /// Velocità asse selezionato
+        /// </summary>
+        public static UiLabel speed_workParams = new UiLabel();
+
+        /// <summary>
+        /// Posizione no pezzo asse selezionato
+        /// </summary>
+        public static UiLabel posRange_workParams = new UiLabel();
+
+        /// <summary>
         /// Tasto ON-OFF dell'asse selzionato in axeConfiguration
         /// </summary>
         public static BiStateButton Z_ONOFF_axeConfiguration = new BiStateButton();
@@ -407,8 +417,10 @@ namespace RM.src.RM220930.Classes
                 var readHomeOK = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Home_Ok}"));
                 var cmdAutoFromPc = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_AutoFrom_Pc}"));
                 var actPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}"));
-              //  var currentHmiVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Manual}"));
-               // var hmiVisAutomaticMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Automatic}"));
+                var cmdSpeedPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Speed_Pos}"));
+                var cmdPosRange = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Pos_Range}"));
+                //  var currentHmiVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Manual}"));
+                // var hmiVisAutomaticMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Automatic}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -416,6 +428,7 @@ namespace RM.src.RM220930.Classes
                 _zState[i].ReadHomeOK = readHomeOK;
                 _zState[i].CmdAutoFromPc = cmdAutoFromPc;
                 _zState[i].ActPosition = actPos;
+                _zState[i].cmdSpeedPos = cmdSpeedPos;
 
                 #region UI HOME PAGE 
 
@@ -460,6 +473,20 @@ namespace RM.src.RM220930.Classes
             {
                 _prevWorkParamsState.CmdAutoFromPc = state.CmdAutoFromPc;
                 Z_Auto_workParams.ChangeStatus(state.CmdAutoFromPc);
+            }
+
+            changed = _prevWorkParamsState.cmdSpeedPos != state.cmdSpeedPos;
+            if (changed)
+            {
+                _prevWorkParamsState.cmdSpeedPos = state.cmdSpeedPos;
+                speed_workParams.Write(state.cmdSpeedPos.ToString());
+            }
+
+            changed = _prevWorkParamsState.CmdPosRange != state.CmdPosRange;
+            if (changed)
+            {
+                _prevWorkParamsState.CmdPosRange = state.CmdPosRange;
+                posRange_workParams.Write(state.CmdPosRange.ToString());
             }
 
             changed = _prevAxeOffset != idx;
