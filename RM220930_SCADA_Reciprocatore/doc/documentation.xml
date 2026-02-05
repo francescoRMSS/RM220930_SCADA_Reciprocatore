@@ -945,29 +945,29 @@
             Allarme 27 Laser Error Fault 1
             </summary>
         </member>
-        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm028_Laser_Error_Fault_1">
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm028_Laser_Error_Fault_2">
             <summary>
             Allarme 28 Laser Error Fault 2
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm029_Warning">
             <summary>
-            Allarme 28 Laser Error Fault 2
+            Allarme 29 Waring
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm030_ErroreLetturaLaser">
             <summary>
-            Allarme 28 Laser Error Fault 2
+            Allarme 30 Errore Lettura Laser
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm031_ErroreScritturaLaser">
             <summary>
-            Allarme 28 Laser Error Fault 2
+            Allarme 31 Errore Scrittura Laser
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm032_ErrorClientLaser">
             <summary>
-            Allarme 28 Laser Error Fault 2
+            Allarme 32 Errore Client Laser
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Reset">
@@ -983,6 +983,26 @@
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Select_Automatic">
             <summary>
             Impostazione dell'impianto in automatico
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Vis_Automatic_Mode">
+            <summary>
+            A true quando l'impianto è in automatico
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Vis_Manual_Mode">
+            <summary>
+            A true quando l'impianto è in manuale
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Vis_Pos_0">
+            <summary>
+            A true quando vengono resettate modalità di auto e manual
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Read_All_Axis_Home_Ok">
+            <summary>
+            A true quando tutti gli assi in home
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Cmd_Go_Home_All_Axis">

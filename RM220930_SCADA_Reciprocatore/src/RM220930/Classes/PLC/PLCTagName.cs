@@ -528,6 +528,22 @@ namespace RM.src.RM220930.Classes.PLC
         /// </summary>
         public const string Hmi_Select_Automatic = "array_general_bool_35";
         /// <summary>
+        /// A true quando l'impianto è in automatico
+        /// </summary>
+        public const string Hmi_Vis_Automatic_Mode = "array_general_bool_36";
+        /// <summary>
+        /// A true quando l'impianto è in manuale
+        /// </summary>
+        public const string Hmi_Vis_Manual_Mode = "array_general_bool_37";
+        /// <summary>
+        /// A true quando vengono resettate modalità di auto e manual
+        /// </summary>
+        public const string Hmi_Vis_Pos_0 = "array_general_bool_38";
+        /// <summary>
+        /// A true quando tutti gli assi in home
+        /// </summary>
+        public const string Hmi_Read_All_Axis_Home_Ok = "array_general_bool_39";
+        /// <summary>
         /// Invio in home di tutti gli assi
         /// </summary>
         public const string Hmi_Cmd_Go_Home_All_Axis = "array_general_bool_40";
@@ -536,90 +552,6 @@ namespace RM.src.RM220930.Classes.PLC
         /// </summary>
         public const string Hmi_Cmd_All_Axis_In_Power = "array_general_bool_41";
 
-
-        /*
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-
-        public const string LifeBit_in = "PLC1_" + "com_robot_152";
-        */
         #endregion
 
         #endregion
