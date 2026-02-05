@@ -147,6 +147,11 @@ namespace RM.src.RM220930.Classes
         public static BiStateButton manMode = new BiStateButton();
 
         /// <summary>
+        /// Tasto pos 0 in home page
+        /// </summary>
+        public static BiStateButton pos0Mode = new BiStateButton();
+
+        /// <summary>
         /// Oggetto che rappresenta lo stato dell'asse
         /// </summary>
         public static ZAxisState[] _zState;
@@ -419,8 +424,9 @@ namespace RM.src.RM220930.Classes
                 var actPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Read_Act_Pos}"));
                 var cmdSpeedPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Speed_Pos}"));
                 var cmdPosRange = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Pos_Range}"));
-                //  var currentHmiVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Manual}"));
-                // var hmiVisAutomaticMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Hmi_Select_Automatic}"));
+                var HMIVisAutomaticMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Automatic_Mode}"));
+                var HMIVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Manual_Mode}"));
+                var HMIVisPos0Mode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Pos_0}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -444,6 +450,24 @@ namespace RM.src.RM220930.Classes
                 {
                     _prevZState[i].ActPosition = actPos;
                     z_actualPos[i].Write(Math.Round(actPos, 1).ToString());
+                }
+
+                changed = autoMode.GetStatus() != HMIVisAutomaticMode;
+                if (changed)
+                {
+                    autoMode.ChangeStatus(HMIVisAutomaticMode);
+                }
+                
+                changed = manMode.GetStatus() != HMIVisManualMode;
+                if (changed)
+                {
+                    manMode.ChangeStatus(HMIVisManualMode);
+                }
+
+                changed = pos0Mode.GetStatus() != HMIVisPos0Mode;
+                if (changed)
+                {
+                    pos0Mode.ChangeStatus(HMIVisPos0Mode);
                 }
 
                 #endregion

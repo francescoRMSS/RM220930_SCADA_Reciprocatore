@@ -1417,8 +1417,8 @@
             // 
             // btn_pos0
             // 
-            this.btn_pos0.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_pos0.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_pos0.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_pos0.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btn_pos0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_pos0.BorderColor = System.Drawing.Color.DimGray;
             this.btn_pos0.BorderRadius = 15;
@@ -1426,21 +1426,21 @@
             this.btn_pos0.FlatAppearance.BorderSize = 0;
             this.btn_pos0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pos0.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_pos0.ForeColor = System.Drawing.Color.Black;
+            this.btn_pos0.ForeColor = System.Drawing.Color.White;
             this.btn_pos0.Location = new System.Drawing.Point(178, 93);
             this.btn_pos0.Name = "btn_pos0";
             this.btn_pos0.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_pos0.Size = new System.Drawing.Size(80, 50);
             this.btn_pos0.TabIndex = 387;
             this.btn_pos0.Text = "POS 0";
-            this.btn_pos0.TextColor = System.Drawing.Color.Black;
+            this.btn_pos0.TextColor = System.Drawing.Color.White;
             this.btn_pos0.UseVisualStyleBackColor = false;
             this.btn_pos0.Click += new System.EventHandler(this.btn_pos0_Click);
             // 
             // btn_manMode
             // 
-            this.btn_manMode.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_manMode.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_manMode.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_manMode.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btn_manMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_manMode.BorderColor = System.Drawing.Color.DimGray;
             this.btn_manMode.BorderRadius = 15;
@@ -1448,21 +1448,21 @@
             this.btn_manMode.FlatAppearance.BorderSize = 0;
             this.btn_manMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_manMode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_manMode.ForeColor = System.Drawing.Color.Black;
+            this.btn_manMode.ForeColor = System.Drawing.Color.White;
             this.btn_manMode.Location = new System.Drawing.Point(90, 93);
             this.btn_manMode.Name = "btn_manMode";
             this.btn_manMode.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_manMode.Size = new System.Drawing.Size(80, 50);
             this.btn_manMode.TabIndex = 386;
             this.btn_manMode.Text = "MAN";
-            this.btn_manMode.TextColor = System.Drawing.Color.Black;
+            this.btn_manMode.TextColor = System.Drawing.Color.White;
             this.btn_manMode.UseVisualStyleBackColor = false;
             this.btn_manMode.Click += new System.EventHandler(this.ClickEvent_setManMode);
             // 
             // btn_autoMode
             // 
-            this.btn_autoMode.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_autoMode.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_autoMode.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_autoMode.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btn_autoMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_autoMode.BorderColor = System.Drawing.Color.DimGray;
             this.btn_autoMode.BorderRadius = 15;
@@ -1470,14 +1470,14 @@
             this.btn_autoMode.FlatAppearance.BorderSize = 0;
             this.btn_autoMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_autoMode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_autoMode.ForeColor = System.Drawing.Color.Black;
+            this.btn_autoMode.ForeColor = System.Drawing.Color.White;
             this.btn_autoMode.Location = new System.Drawing.Point(2, 93);
             this.btn_autoMode.Name = "btn_autoMode";
             this.btn_autoMode.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_autoMode.Size = new System.Drawing.Size(80, 50);
             this.btn_autoMode.TabIndex = 385;
             this.btn_autoMode.Text = "AUTO";
-            this.btn_autoMode.TextColor = System.Drawing.Color.Black;
+            this.btn_autoMode.TextColor = System.Drawing.Color.White;
             this.btn_autoMode.UseVisualStyleBackColor = false;
             this.btn_autoMode.Click += new System.EventHandler(this.ClickEvent_setAutoMode);
             // 

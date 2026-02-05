@@ -246,6 +246,11 @@
             Tasto man in home page
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.pos0Mode">
+            <summary>
+            Tasto pos 0 in home page
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager._zState">
             <summary>
             Oggetto che rappresenta lo stato dell'asse

@@ -222,6 +222,11 @@ namespace RM.src.RM220930.Classes.UiBinder
             ChangeObjectImage();
         }
 
+        public bool GetStatus()
+        {
+            return state;
+        }
+
         /// <summary>
         /// Cambia stato in modo personalizzato cambiando testo e colori
         /// </summary>

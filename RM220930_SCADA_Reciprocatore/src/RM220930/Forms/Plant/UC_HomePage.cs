@@ -128,7 +128,8 @@ namespace RM.src.RM220930.Forms.Plant
         private void InitGeneralButtons()
         {
             SCADAManager.manMode = new BiStateButton(btn_manMode, Color.ForestGreen, Color.Firebrick);
-            SCADAManager.manMode = new BiStateButton(btn_autoMode, Color.ForestGreen, Color.Firebrick);
+            SCADAManager.autoMode = new BiStateButton(btn_autoMode, Color.ForestGreen, Color.Firebrick);
+            SCADAManager.pos0Mode = new BiStateButton(btn_pos0, Color.ForestGreen, Color.Firebrick);
         }
 
         #endregion
