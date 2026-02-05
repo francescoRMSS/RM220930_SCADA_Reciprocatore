@@ -810,6 +810,166 @@
             
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm001_Emergenza">
+            <summary>
+            Allarme 01 Emergenza
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm002">
+            <summary>
+            Allarme 02
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm003">
+            <summary>
+            Allarme 03
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm004">
+            <summary>
+            Allarme 04
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm005">
+            <summary>
+            Allarme 05
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm006">
+            <summary>
+            Allarme 06
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm007">
+            <summary>
+            Allarme 07
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm008">
+            <summary>
+            Allarme 08
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm009">
+            <summary>
+            Allarme 09
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm010_Error_Rec">
+            <summary>
+            Allarme 10 Errore Rec
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm011_Error_Z1">
+            <summary>
+            Allarme 11 Errore Z1
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm012_Error_Z2">
+            <summary>
+            Allarme 12 Errore Z2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm013_Error_Z3">
+            <summary>
+            Allarme 13 Errore Z3
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm014_Error_Z4">
+            <summary>
+            Allarme 14 Errore Z4
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm015_Error_Z5">
+            <summary>
+            Allarme 15 Errore Z5
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm016_Error_Z6">
+            <summary>
+            Allarme 16 Errore Z6
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm017_Error_Z7">
+            <summary>
+            Allarme 17 Errore Z7
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm018_Error_Z8">
+            <summary>
+            Allarme 18 Errore Z8
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm019">
+            <summary>
+            Allarme 19
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm020">
+            <summary>
+            Allarme 20
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm021">
+            <summary>
+            Allarme 21
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm022">
+            <summary>
+            Allarme 22
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm023">
+            <summary>
+            Allarme 23
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm024">
+            <summary>
+            Allarme 24
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm025">
+            <summary>
+            Allarme 25
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm026_Timeout_Com_Laser">
+            <summary>
+            Allarme 26 Timeout com laser
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm027_Laser_Error_Fault_1">
+            <summary>
+            Allarme 27 Laser Error Fault 1
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm028_Laser_Error_Fault_1">
+            <summary>
+            Allarme 28 Laser Error Fault 2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm029_Warning">
+            <summary>
+            Allarme 28 Laser Error Fault 2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm030_ErroreLetturaLaser">
+            <summary>
+            Allarme 28 Laser Error Fault 2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm031_ErroreScritturaLaser">
+            <summary>
+            Allarme 28 Laser Error Fault 2
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Alm032_ErrorClientLaser">
+            <summary>
+            Allarme 28 Laser Error Fault 2
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.PLC.PLCTagName.Hmi_Reset">
             <summary>
             Reset di tutti gli allarmi

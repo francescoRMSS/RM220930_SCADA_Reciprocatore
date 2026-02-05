@@ -387,7 +387,134 @@ namespace RM.src.RM220930.Classes.PLC
         #region GENERAL
 
         #region BOOL
-
+        /// <summary>
+        /// Allarme 01 Emergenza
+        /// </summary>
+        public const string Alm001_Emergenza = "array_general_bool_1";
+        /// <summary>
+        /// Allarme 02
+        /// </summary>
+        public const string Alm002 = "array_general_bool_2";
+        /// <summary>
+        /// Allarme 03
+        /// </summary>
+        public const string Alm003 = "array_general_bool_3";
+        /// <summary>
+        /// Allarme 04
+        /// </summary>
+        public const string Alm004 = "array_general_bool_4";
+        /// <summary>
+        /// Allarme 05
+        /// </summary>
+        public const string Alm005 = "array_general_bool_5";
+        /// <summary>
+        /// Allarme 06
+        /// </summary>
+        public const string Alm006 = "array_general_bool_6";
+        /// <summary>
+        /// Allarme 07
+        /// </summary>
+        public const string Alm007 = "array_general_bool_7";
+        /// <summary>
+        /// Allarme 08
+        /// </summary>
+        public const string Alm008 = "array_general_bool_8";
+        /// <summary>
+        /// Allarme 09
+        /// </summary>
+        public const string Alm009 = "array_general_bool_9";
+        /// <summary>
+        /// Allarme 10 Errore Rec
+        /// </summary>
+        public const string Alm010_Error_Rec = "array_general_bool_10";
+        /// <summary>
+        /// Allarme 11 Errore Z1
+        /// </summary>
+        public const string Alm011_Error_Z1 = "array_general_bool_11";
+        /// <summary>
+        /// Allarme 12 Errore Z2
+        /// </summary>
+        public const string Alm012_Error_Z2 = "array_general_bool_12";
+        /// <summary>
+        /// Allarme 13 Errore Z3
+        /// </summary>
+        public const string Alm013_Error_Z3 = "array_general_bool_13";
+        /// <summary>
+        /// Allarme 14 Errore Z4
+        /// </summary>
+        public const string Alm014_Error_Z4 = "array_general_bool_14";
+        /// <summary>
+        /// Allarme 15 Errore Z5
+        /// </summary>
+        public const string Alm015_Error_Z5 = "array_general_bool_15";
+        /// <summary>
+        /// Allarme 16 Errore Z6
+        /// </summary>
+        public const string Alm016_Error_Z6 = "array_general_bool_16";
+        /// <summary>
+        /// Allarme 17 Errore Z7
+        /// </summary>
+        public const string Alm017_Error_Z7 = "array_general_bool_17";
+        /// <summary>
+        /// Allarme 18 Errore Z8
+        /// </summary>
+        public const string Alm018_Error_Z8 = "array_general_bool_18";
+        /// <summary>
+        /// Allarme 19
+        /// </summary>
+        public const string Alm019 = "array_general_bool_19";
+        /// <summary>
+        /// Allarme 20
+        /// </summary>
+        public const string Alm020 = "array_general_bool_20";
+        /// <summary>
+        /// Allarme 21
+        /// </summary>
+        public const string Alm021 = "array_general_bool_21";
+        /// <summary>
+        /// Allarme 22
+        /// </summary>
+        public const string Alm022 = "array_general_bool_22";
+        /// <summary>
+        /// Allarme 23
+        /// </summary>
+        public const string Alm023 = "array_general_bool_23";
+        /// <summary>
+        /// Allarme 24
+        /// </summary>
+        public const string Alm024 = "array_general_bool_24";
+        /// <summary>
+        /// Allarme 25
+        /// </summary>
+        public const string Alm025 = "array_general_bool_25";
+        /// <summary>
+        /// Allarme 26 Timeout com laser
+        /// </summary>
+        public const string Alm026_Timeout_Com_Laser = "array_general_bool_26";
+        /// <summary>
+        /// Allarme 27 Laser Error Fault 1
+        /// </summary>
+        public const string Alm027_Laser_Error_Fault_1 = "array_general_bool_27";
+        /// <summary>
+        /// Allarme 28 Laser Error Fault 2
+        /// </summary>
+        public const string Alm028_Laser_Error_Fault_2 = "array_general_bool_28";
+        /// <summary>
+        /// Allarme 29 Waring
+        /// </summary>
+        public const string Alm029_Warning = "array_general_bool_29";
+        /// <summary>
+        /// Allarme 30 Errore Lettura Laser
+        /// </summary>
+        public const string Alm030_ErroreLetturaLaser = "array_general_bool_30";
+        /// <summary>
+        /// Allarme 31 Errore Scrittura Laser
+        /// </summary>
+        public const string Alm031_ErroreScritturaLaser = "array_general_bool_31";
+        /// <summary>
+        /// Allarme 32 Errore Client Laser
+        /// </summary>
+        public const string Alm032_ErrorClientLaser = "array_general_bool_32";
         /// <summary>
         /// Reset di tutti gli allarmi
         /// </summary>

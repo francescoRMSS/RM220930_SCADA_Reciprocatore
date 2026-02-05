@@ -215,6 +215,7 @@
             this.customPanel4.BorderRadius = 15;
             this.customPanel4.BorderSize = 2;
             this.customPanel4.Controls.Add(this.lbl_valueZ8);
+            this.customPanel4.Enabled = false;
             this.customPanel4.ForeColor = System.Drawing.Color.White;
             this.customPanel4.Location = new System.Drawing.Point(236, 430);
             this.customPanel4.Name = "customPanel4";
@@ -243,6 +244,7 @@
             this.btn_jogPosZ8.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ8.BorderRadius = 15;
             this.btn_jogPosZ8.BorderSize = 2;
+            this.btn_jogPosZ8.Enabled = false;
             this.btn_jogPosZ8.FlatAppearance.BorderSize = 0;
             this.btn_jogPosZ8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_jogPosZ8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -420,6 +422,7 @@
             this.btn_jogNegZ8.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ8.BorderRadius = 15;
             this.btn_jogNegZ8.BorderSize = 2;
+            this.btn_jogNegZ8.Enabled = false;
             this.btn_jogNegZ8.FlatAppearance.BorderSize = 0;
             this.btn_jogNegZ8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_jogNegZ8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -468,6 +471,7 @@
             this.btn_jogPosZ7.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ7.BorderRadius = 15;
             this.btn_jogPosZ7.BorderSize = 2;
+            this.btn_jogPosZ7.Enabled = false;
             this.btn_jogPosZ7.FlatAppearance.BorderSize = 0;
             this.btn_jogPosZ7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_jogPosZ7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -566,6 +570,7 @@
             this.customPanel6.BorderRadius = 15;
             this.customPanel6.BorderSize = 2;
             this.customPanel6.Controls.Add(this.lbl_valueZ7);
+            this.customPanel6.Enabled = false;
             this.customPanel6.ForeColor = System.Drawing.Color.White;
             this.customPanel6.Location = new System.Drawing.Point(236, 375);
             this.customPanel6.Name = "customPanel6";
@@ -594,6 +599,7 @@
             this.btn_jogNegZ7.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ7.BorderRadius = 15;
             this.btn_jogNegZ7.BorderSize = 2;
+            this.btn_jogNegZ7.Enabled = false;
             this.btn_jogNegZ7.FlatAppearance.BorderSize = 0;
             this.btn_jogNegZ7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_jogNegZ7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -764,6 +770,7 @@
             this.btn_z7ONOFF.BorderColor = System.Drawing.Color.DimGray;
             this.btn_z7ONOFF.BorderRadius = 15;
             this.btn_z7ONOFF.BorderSize = 2;
+            this.btn_z7ONOFF.Enabled = false;
             this.btn_z7ONOFF.FlatAppearance.BorderSize = 0;
             this.btn_z7ONOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z7ONOFF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -809,6 +816,7 @@
             this.btn_z8.BorderColor = System.Drawing.Color.DimGray;
             this.btn_z8.BorderRadius = 15;
             this.btn_z8.BorderSize = 2;
+            this.btn_z8.Enabled = false;
             this.btn_z8.FlatAppearance.BorderSize = 0;
             this.btn_z8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -830,6 +838,7 @@
             this.btn_z8ONOFF.BorderColor = System.Drawing.Color.DimGray;
             this.btn_z8ONOFF.BorderRadius = 15;
             this.btn_z8ONOFF.BorderSize = 2;
+            this.btn_z8ONOFF.Enabled = false;
             this.btn_z8ONOFF.FlatAppearance.BorderSize = 0;
             this.btn_z8ONOFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z8ONOFF.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
@@ -977,6 +986,7 @@
             this.btn_z7.BorderColor = System.Drawing.Color.DimGray;
             this.btn_z7.BorderRadius = 15;
             this.btn_z7.BorderSize = 2;
+            this.btn_z7.Enabled = false;
             this.btn_z7.FlatAppearance.BorderSize = 0;
             this.btn_z7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_z7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
