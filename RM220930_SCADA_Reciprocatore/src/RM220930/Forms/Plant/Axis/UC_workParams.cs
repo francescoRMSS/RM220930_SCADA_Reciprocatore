@@ -21,10 +21,24 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 {
     public partial class UC_workParams : UserControl, INavigable, INavigationRequester
     {
+        private bool incremento;  // true = +, false = -
+        private Timer repeatTimer;
+        private Label labelAttiva;
+        private int valoreAttivo;
+
+
         public UC_workParams()
         {
             InitializeComponent();
+            InitControls();
+            InitRepeatTimer();
+        }
 
+        /// <summary>
+        /// Creazione degli oggetti in SCADAManager
+        /// </summary>
+        private void InitControls()
+        {
             SCADAManager.Z_ONOFF_workParams = new BiStateButton(btn_z_onoff, Color.ForestGreen, "ON", Color.Firebrick, "OFF");
             SCADAManager.Z_Home_workParams = new BiStateButton(btn_home, Color.ForestGreen, Color.Firebrick);
             SCADAManager.Z_Auto_workParams = new BiStateButton(btn_autoONOFF, Color.ForestGreen, Color.Firebrick);
@@ -32,9 +46,34 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             SCADAManager.speed_workParams = new UiLabel(lbl_speed);
             SCADAManager.speed_workParams = new UiLabel(lbl_speed);
             SCADAManager.posRange_workParams = new UiLabel(lbl_posRange);
+            SCADAManager.offsetFromPiece_workParams = new UiLabel(lbl_offsetFromPiece);
+        }
+
+        /// <summary>
+        /// Init del timer per +/- dei valori
+        /// </summary>
+        private void InitRepeatTimer()
+        {
+            repeatTimer = new Timer();
+            repeatTimer.Interval = 150; // velocità di ripetizione in ms
+            repeatTimer.Tick += RepeatTimer_Tick;
         }
 
         public event EventHandler<NavigateEventArgs> NavigateRequested;
+
+        private void RepeatTimer_Tick(object sender, EventArgs e)
+        {
+            CambiaValore(labelAttiva, ref valoreAttivo, incremento);
+        }
+
+
+        private void CambiaValore(Label lbl, ref int valore, bool incremento)
+        {
+            valore += incremento ? 1 : -1;
+            lbl.Text = valore.ToString();
+        }
+
+
 
         public void OnNavigatedTo(object parameter)
         {
@@ -85,23 +124,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             // feedback Read_Home_Ok
         }
 
-        private void ClickEvent_updateSpeed(object sender, EventArgs e)
-        {
-            //if (!SecurityManager.ActionRequestCheck("modifyRobotSpeed")) return;
-
-            string newVelocity = VK_Manager.OpenIntVK("0");
-
-            if (newVelocity.Equals(VK_Manager.CANCEL_STRING)) return;
-
-            // Scrittura verso PLC (command)
-            RefresherTask.AddUpdate(
-                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}",
-                newVelocity,
-                "FLOAT"
-            );
-
-        }
-
+        
         private void label9_Click(object sender, EventArgs e)
         {
             // Cmd_Min_Pos
@@ -112,15 +135,9 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             // Cmd_Max_Pos
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-           // Cmd_Offset_From_Piece
-        }
+        
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            // Cmd_Pos_Range
-        }
+        
 
         private void label22_Click(object sender, EventArgs e)
         {
@@ -193,13 +210,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             // lbl_numAxe.Text = numAxe.ToString();
         }
 
-        private void MouseDownEvent_SpeedUp(object sender, MouseEventArgs e)
-        {
-            var btn = sender as Button;
-            int index = Convert.ToInt32(btn.Tag);
-
-            RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Jog_Pos}", true, "BOOL");
-        }
+        
 
         private void btn_home_MouseUp(object sender, MouseEventArgs e)
         {
@@ -207,5 +218,333 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             RefresherTask.AddUpdate($"PLC1_z{index}_{PLCTagName.Cmd_Go_home}", false, "BOOL");
         }
+
+        #region Speed
+
+        /// <summary>
+        /// Update speed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_updateSpeed(object sender, EventArgs e)
+        {
+            //if (!SecurityManager.ActionRequestCheck("modifyRobotSpeed")) return;
+
+            string newVelocity = VK_Manager.OpenIntVK("0");
+
+            if (newVelocity.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}",
+                newVelocity,
+                "FLOAT"
+            );
+
+        }
+
+        /// <summary>
+        /// Aumento della velocità
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_speedUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_speed;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop aumento della velocità
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_speedUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_speed;
+            repeatTimer.Stop();
+
+            float newVelocity = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}",
+                newVelocity,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        /// <summary>
+        /// Decremento della velocità
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_speedDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_speed;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+
+        }
+
+        /// <summary>
+        /// Stop decremento della velocità
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_speedDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newVelocity = Convert.ToSingle(lbl_speed.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Speed_Pos}",
+                newVelocity,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region PosRange
+
+        /// <summary>
+        /// Modifica posRange
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_updatePosRange(object sender, EventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            string newValue = VK_Manager.OpenIntVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Pos_Range}",
+                newValue,
+                "FLOAT"
+            );
+
+        }
+
+        /// <summary>
+        /// Aumento pos range
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posRangeUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_posRange;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop aumento pos range
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posRangeUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_posRange;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Pos_Range}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        /// <summary>
+        /// Decremento pos range
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posRangeDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_posRange;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop decremento pos range
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posRangeDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_posRange;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Pos_Range}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region Offset from piece
+
+        /// <summary>
+        /// Update offset from piece
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_updateOffsetFromPiece(object sender, EventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            string newValue = VK_Manager.OpenIntVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Offset_From_Piece}",
+                newValue,
+                "FLOAT"
+            );
+
+        }
+
+        /// <summary>
+        /// Aumento offset dal pezzo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_offsetFromPieceUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_offsetFromPiece;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop aumento offset dal pezzo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_offsetFromPieceUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_offsetFromPiece;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Offset_From_Piece}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        /// <summary>
+        /// Decremento offset da pezzo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_offsetFromPieceDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_offsetFromPiece;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop decremento offset da pezzo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_offsetFromPieceDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset == 0)
+                return;
+
+            Label label = lbl_offsetFromPiece;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Offset_From_Piece}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+       
+        #endregion
+
+
     }
 }

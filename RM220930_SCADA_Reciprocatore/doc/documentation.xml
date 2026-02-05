@@ -201,6 +201,11 @@
             Periodo di refresh per il task a bassa priorità.
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.isUIUpdating">
+            <summary>
+            A true quando la UI si sta aggiornando
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager.prevIsPlcConnected">
             <summary>
             Rappresenta lo stato precedente della connessione al PLC.
@@ -304,6 +309,11 @@
         <member name="F:RM.src.RM220930.Classes.SCADAManager.posRange_workParams">
             <summary>
             Posizione no pezzo asse selezionato
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.offsetFromPiece_workParams">
+            <summary>
+            Distanza dal pezzo
             </summary>
         </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF_axeConfiguration">
@@ -1332,6 +1342,11 @@
             Posizione no pezzo asse
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdOffsetFromPiece">
+            <summary>
+            Distanza dal pezzo
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
@@ -1735,6 +1750,16 @@
             il contenuto del metodo con l'editor di codice.
             </summary>
         </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.InitControls">
+            <summary>
+            Creazione degli oggetti in SCADAManager
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.InitRepeatTimer">
+            <summary>
+            Init del timer per +/- dei valori
+            </summary>
+        </member>
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_EnableDisableZ(System.Object,System.EventArgs)">
             <summary>
             Gestisce abilitazione/disabilitazione Z assi
@@ -1745,6 +1770,83 @@
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_EnableDisableAUTO(System.Object,System.EventArgs)">
             <summary>
             Gestisce abilitazione/disabilitazione Z assi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_updateSpeed(System.Object,System.EventArgs)">
+            <summary>
+            Update speed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_speedUp_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Aumento della velocità
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_speedUp_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop aumento della velocità
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_speedDown_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Decremento della velocità
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_speedDown_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop decremento della velocità
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_updatePosRange(System.Object,System.EventArgs)">
+            <summary>
+            Modifica posRange
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posRangeUp_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Aumento pos range
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posRangeUp_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop aumento pos range
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posRangeDown_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Decremento pos range
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posRangeDown_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop decremento pos range
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_updateOffsetFromPiece(System.Object,System.EventArgs)">
+            <summary>
+            Update offset from piece
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

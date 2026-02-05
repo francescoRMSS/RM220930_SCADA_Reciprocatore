@@ -42,15 +42,15 @@
             this.btn_speedUp = new RMLib.View.CustomButton();
             this.btn_speedDown = new RMLib.View.CustomButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.customPanel2 = new RMLib.View.CustomPanel();
+            this.pnl_posRange = new RMLib.View.CustomPanel();
             this.lbl_posRange = new System.Windows.Forms.Label();
-            this.customButton4 = new RMLib.View.CustomButton();
-            this.customButton5 = new RMLib.View.CustomButton();
+            this.btn_posRangeUp = new RMLib.View.CustomButton();
+            this.btn_posRangeDown = new RMLib.View.CustomButton();
             this.label2 = new System.Windows.Forms.Label();
             this.customPanel3 = new RMLib.View.CustomPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.customButton6 = new RMLib.View.CustomButton();
-            this.customButton7 = new RMLib.View.CustomButton();
+            this.lbl_offsetFromPiece = new System.Windows.Forms.Label();
+            this.btn_offsetFromPieceUp = new RMLib.View.CustomButton();
+            this.btn_offsetFromPieceDown = new RMLib.View.CustomButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.customPanel4 = new RMLib.View.CustomPanel();
@@ -67,7 +67,7 @@
             this.btn_autoONOFF = new RMLib.View.CustomButton();
             this.customPanel8.SuspendLayout();
             this.pnl_speed.SuspendLayout();
-            this.customPanel2.SuspendLayout();
+            this.pnl_posRange.SuspendLayout();
             this.customPanel3.SuspendLayout();
             this.customPanel4.SuspendLayout();
             this.customPanel5.SuspendLayout();
@@ -204,7 +204,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(361, 160);
+            this.label16.Location = new System.Drawing.Point(359, 133);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(190, 15);
             this.label16.TabIndex = 406;
@@ -220,7 +220,7 @@
             this.pnl_speed.BorderSize = 2;
             this.pnl_speed.Controls.Add(this.lbl_speed);
             this.pnl_speed.ForeColor = System.Drawing.Color.White;
-            this.pnl_speed.Location = new System.Drawing.Point(426, 117);
+            this.pnl_speed.Location = new System.Drawing.Point(424, 90);
             this.pnl_speed.Name = "pnl_speed";
             this.pnl_speed.Size = new System.Drawing.Size(60, 40);
             this.pnl_speed.TabIndex = 409;
@@ -251,14 +251,15 @@
             this.btn_speedUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_speedUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_speedUp.ForeColor = System.Drawing.Color.White;
-            this.btn_speedUp.Location = new System.Drawing.Point(491, 117);
+            this.btn_speedUp.Location = new System.Drawing.Point(489, 90);
             this.btn_speedUp.Name = "btn_speedUp";
             this.btn_speedUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_speedUp.Size = new System.Drawing.Size(60, 40);
             this.btn_speedUp.TabIndex = 408;
             this.btn_speedUp.TextColor = System.Drawing.Color.White;
             this.btn_speedUp.UseVisualStyleBackColor = false;
-            this.btn_speedUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent_SpeedUp);
+            this.btn_speedUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_speedUp_MouseDown);
+            this.btn_speedUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_speedUp_MouseUp);
             // 
             // btn_speedDown
             // 
@@ -273,44 +274,46 @@
             this.btn_speedDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_speedDown.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btn_speedDown.ForeColor = System.Drawing.Color.White;
-            this.btn_speedDown.Location = new System.Drawing.Point(361, 117);
+            this.btn_speedDown.Location = new System.Drawing.Point(359, 90);
             this.btn_speedDown.Name = "btn_speedDown";
             this.btn_speedDown.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btn_speedDown.Size = new System.Drawing.Size(60, 40);
             this.btn_speedDown.TabIndex = 407;
             this.btn_speedDown.TextColor = System.Drawing.Color.White;
             this.btn_speedDown.UseVisualStyleBackColor = false;
+            this.btn_speedDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_speedDown_MouseDown);
+            this.btn_speedDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_speedDown_MouseUp);
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(361, 237);
+            this.label3.Location = new System.Drawing.Point(356, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 15);
             this.label3.TabIndex = 410;
             this.label3.Text = "Posizione no pezzo";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customPanel2
+            // pnl_posRange
             // 
-            this.customPanel2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.customPanel2.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.customPanel2.BorderColor = System.Drawing.Color.DimGray;
-            this.customPanel2.BorderRadius = 15;
-            this.customPanel2.BorderSize = 2;
-            this.customPanel2.Controls.Add(this.lbl_posRange);
-            this.customPanel2.ForeColor = System.Drawing.Color.White;
-            this.customPanel2.Location = new System.Drawing.Point(426, 194);
-            this.customPanel2.Name = "customPanel2";
-            this.customPanel2.Size = new System.Drawing.Size(60, 40);
-            this.customPanel2.TabIndex = 413;
-            this.customPanel2.TextColor = System.Drawing.Color.White;
+            this.pnl_posRange.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_posRange.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_posRange.BorderColor = System.Drawing.Color.DimGray;
+            this.pnl_posRange.BorderRadius = 15;
+            this.pnl_posRange.BorderSize = 2;
+            this.pnl_posRange.Controls.Add(this.lbl_posRange);
+            this.pnl_posRange.ForeColor = System.Drawing.Color.White;
+            this.pnl_posRange.Location = new System.Drawing.Point(421, 197);
+            this.pnl_posRange.Name = "pnl_posRange";
+            this.pnl_posRange.Size = new System.Drawing.Size(60, 40);
+            this.pnl_posRange.TabIndex = 413;
+            this.pnl_posRange.TextColor = System.Drawing.Color.White;
             // 
             // lbl_posRange
             // 
-            this.lbl_posRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_posRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lbl_posRange.ForeColor = System.Drawing.Color.Black;
             this.lbl_posRange.Location = new System.Drawing.Point(10, 7);
             this.lbl_posRange.Name = "lbl_posRange";
@@ -318,56 +321,60 @@
             this.lbl_posRange.TabIndex = 3;
             this.lbl_posRange.Text = "0";
             this.lbl_posRange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_posRange.Click += new System.EventHandler(this.label4_Click);
+            this.lbl_posRange.Click += new System.EventHandler(this.ClickEvent_updatePosRange);
             // 
-            // customButton4
+            // btn_posRangeUp
             // 
-            this.customButton4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton4.BackgroundImage")));
-            this.customButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton4.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton4.BorderRadius = 15;
-            this.customButton4.BorderSize = 2;
-            this.customButton4.FlatAppearance.BorderSize = 0;
-            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton4.ForeColor = System.Drawing.Color.White;
-            this.customButton4.Location = new System.Drawing.Point(491, 194);
-            this.customButton4.Name = "customButton4";
-            this.customButton4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton4.Size = new System.Drawing.Size(60, 40);
-            this.customButton4.TabIndex = 412;
-            this.customButton4.TextColor = System.Drawing.Color.White;
-            this.customButton4.UseVisualStyleBackColor = false;
+            this.btn_posRangeUp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_posRangeUp.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_posRangeUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_posRangeUp.BackgroundImage")));
+            this.btn_posRangeUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_posRangeUp.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_posRangeUp.BorderRadius = 15;
+            this.btn_posRangeUp.BorderSize = 2;
+            this.btn_posRangeUp.FlatAppearance.BorderSize = 0;
+            this.btn_posRangeUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_posRangeUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_posRangeUp.ForeColor = System.Drawing.Color.White;
+            this.btn_posRangeUp.Location = new System.Drawing.Point(486, 197);
+            this.btn_posRangeUp.Name = "btn_posRangeUp";
+            this.btn_posRangeUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_posRangeUp.Size = new System.Drawing.Size(60, 40);
+            this.btn_posRangeUp.TabIndex = 412;
+            this.btn_posRangeUp.TextColor = System.Drawing.Color.White;
+            this.btn_posRangeUp.UseVisualStyleBackColor = false;
+            this.btn_posRangeUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posRangeUp_MouseDown);
+            this.btn_posRangeUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posRangeUp_MouseUp);
             // 
-            // customButton5
+            // btn_posRangeDown
             // 
-            this.customButton5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton5.BackgroundImage")));
-            this.customButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton5.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton5.BorderRadius = 15;
-            this.customButton5.BorderSize = 2;
-            this.customButton5.FlatAppearance.BorderSize = 0;
-            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton5.ForeColor = System.Drawing.Color.White;
-            this.customButton5.Location = new System.Drawing.Point(361, 194);
-            this.customButton5.Name = "customButton5";
-            this.customButton5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton5.Size = new System.Drawing.Size(60, 40);
-            this.customButton5.TabIndex = 411;
-            this.customButton5.TextColor = System.Drawing.Color.White;
-            this.customButton5.UseVisualStyleBackColor = false;
+            this.btn_posRangeDown.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_posRangeDown.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_posRangeDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_posRangeDown.BackgroundImage")));
+            this.btn_posRangeDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_posRangeDown.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_posRangeDown.BorderRadius = 15;
+            this.btn_posRangeDown.BorderSize = 2;
+            this.btn_posRangeDown.FlatAppearance.BorderSize = 0;
+            this.btn_posRangeDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_posRangeDown.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_posRangeDown.ForeColor = System.Drawing.Color.White;
+            this.btn_posRangeDown.Location = new System.Drawing.Point(356, 197);
+            this.btn_posRangeDown.Name = "btn_posRangeDown";
+            this.btn_posRangeDown.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_posRangeDown.Size = new System.Drawing.Size(60, 40);
+            this.btn_posRangeDown.TabIndex = 411;
+            this.btn_posRangeDown.TextColor = System.Drawing.Color.White;
+            this.btn_posRangeDown.UseVisualStyleBackColor = false;
+            this.btn_posRangeDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posRangeDown_MouseDown);
+            this.btn_posRangeDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posRangeDown_MouseUp);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(361, 298);
+            this.label2.Location = new System.Drawing.Point(356, 301);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 15);
             this.label2.TabIndex = 414;
@@ -381,67 +388,71 @@
             this.customPanel3.BorderColor = System.Drawing.Color.DimGray;
             this.customPanel3.BorderRadius = 15;
             this.customPanel3.BorderSize = 2;
-            this.customPanel3.Controls.Add(this.label5);
+            this.customPanel3.Controls.Add(this.lbl_offsetFromPiece);
             this.customPanel3.ForeColor = System.Drawing.Color.White;
-            this.customPanel3.Location = new System.Drawing.Point(426, 255);
+            this.customPanel3.Location = new System.Drawing.Point(421, 258);
             this.customPanel3.Name = "customPanel3";
             this.customPanel3.Size = new System.Drawing.Size(60, 40);
             this.customPanel3.TabIndex = 417;
             this.customPanel3.TextColor = System.Drawing.Color.White;
             // 
-            // label5
+            // lbl_offsetFromPiece
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(10, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 27);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lbl_offsetFromPiece.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lbl_offsetFromPiece.ForeColor = System.Drawing.Color.Black;
+            this.lbl_offsetFromPiece.Location = new System.Drawing.Point(10, 7);
+            this.lbl_offsetFromPiece.Name = "lbl_offsetFromPiece";
+            this.lbl_offsetFromPiece.Size = new System.Drawing.Size(42, 27);
+            this.lbl_offsetFromPiece.TabIndex = 3;
+            this.lbl_offsetFromPiece.Text = "0";
+            this.lbl_offsetFromPiece.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_offsetFromPiece.Click += new System.EventHandler(this.ClickEvent_updateOffsetFromPiece);
             // 
-            // customButton6
+            // btn_offsetFromPieceUp
             // 
-            this.customButton6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton6.BackgroundImage")));
-            this.customButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton6.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton6.BorderRadius = 15;
-            this.customButton6.BorderSize = 2;
-            this.customButton6.FlatAppearance.BorderSize = 0;
-            this.customButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton6.ForeColor = System.Drawing.Color.White;
-            this.customButton6.Location = new System.Drawing.Point(491, 255);
-            this.customButton6.Name = "customButton6";
-            this.customButton6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton6.Size = new System.Drawing.Size(60, 40);
-            this.customButton6.TabIndex = 416;
-            this.customButton6.TextColor = System.Drawing.Color.White;
-            this.customButton6.UseVisualStyleBackColor = false;
+            this.btn_offsetFromPieceUp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_offsetFromPieceUp.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_offsetFromPieceUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_offsetFromPieceUp.BackgroundImage")));
+            this.btn_offsetFromPieceUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_offsetFromPieceUp.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_offsetFromPieceUp.BorderRadius = 15;
+            this.btn_offsetFromPieceUp.BorderSize = 2;
+            this.btn_offsetFromPieceUp.FlatAppearance.BorderSize = 0;
+            this.btn_offsetFromPieceUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_offsetFromPieceUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_offsetFromPieceUp.ForeColor = System.Drawing.Color.White;
+            this.btn_offsetFromPieceUp.Location = new System.Drawing.Point(486, 258);
+            this.btn_offsetFromPieceUp.Name = "btn_offsetFromPieceUp";
+            this.btn_offsetFromPieceUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_offsetFromPieceUp.Size = new System.Drawing.Size(60, 40);
+            this.btn_offsetFromPieceUp.TabIndex = 416;
+            this.btn_offsetFromPieceUp.TextColor = System.Drawing.Color.White;
+            this.btn_offsetFromPieceUp.UseVisualStyleBackColor = false;
+            this.btn_offsetFromPieceUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_offsetFromPieceUp_MouseDown);
+            this.btn_offsetFromPieceUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_offsetFromPieceUp_MouseUp);
             // 
-            // customButton7
+            // btn_offsetFromPieceDown
             // 
-            this.customButton7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton7.BackgroundImage")));
-            this.customButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton7.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton7.BorderRadius = 15;
-            this.customButton7.BorderSize = 2;
-            this.customButton7.FlatAppearance.BorderSize = 0;
-            this.customButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton7.ForeColor = System.Drawing.Color.White;
-            this.customButton7.Location = new System.Drawing.Point(361, 255);
-            this.customButton7.Name = "customButton7";
-            this.customButton7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton7.Size = new System.Drawing.Size(60, 40);
-            this.customButton7.TabIndex = 415;
-            this.customButton7.TextColor = System.Drawing.Color.White;
-            this.customButton7.UseVisualStyleBackColor = false;
+            this.btn_offsetFromPieceDown.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_offsetFromPieceDown.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_offsetFromPieceDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_offsetFromPieceDown.BackgroundImage")));
+            this.btn_offsetFromPieceDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_offsetFromPieceDown.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_offsetFromPieceDown.BorderRadius = 15;
+            this.btn_offsetFromPieceDown.BorderSize = 2;
+            this.btn_offsetFromPieceDown.FlatAppearance.BorderSize = 0;
+            this.btn_offsetFromPieceDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_offsetFromPieceDown.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_offsetFromPieceDown.ForeColor = System.Drawing.Color.White;
+            this.btn_offsetFromPieceDown.Location = new System.Drawing.Point(356, 258);
+            this.btn_offsetFromPieceDown.Name = "btn_offsetFromPieceDown";
+            this.btn_offsetFromPieceDown.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_offsetFromPieceDown.Size = new System.Drawing.Size(60, 40);
+            this.btn_offsetFromPieceDown.TabIndex = 415;
+            this.btn_offsetFromPieceDown.TextColor = System.Drawing.Color.White;
+            this.btn_offsetFromPieceDown.UseVisualStyleBackColor = false;
+            this.btn_offsetFromPieceDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_offsetFromPieceDown_MouseDown);
+            this.btn_offsetFromPieceDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_offsetFromPieceDown_MouseUp);
             // 
             // label6
             // 
@@ -460,7 +471,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(361, 441);
+            this.label7.Location = new System.Drawing.Point(356, 463);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(190, 15);
             this.label7.TabIndex = 423;
@@ -476,7 +487,7 @@
             this.customPanel4.BorderSize = 2;
             this.customPanel4.Controls.Add(this.label9);
             this.customPanel4.ForeColor = System.Drawing.Color.White;
-            this.customPanel4.Location = new System.Drawing.Point(426, 398);
+            this.customPanel4.Location = new System.Drawing.Point(421, 420);
             this.customPanel4.Name = "customPanel4";
             this.customPanel4.Size = new System.Drawing.Size(60, 40);
             this.customPanel4.TabIndex = 426;
@@ -484,7 +495,7 @@
             // 
             // label9
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(10, 7);
             this.label9.Name = "label9";
@@ -507,7 +518,7 @@
             this.customButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton8.ForeColor = System.Drawing.Color.White;
-            this.customButton8.Location = new System.Drawing.Point(491, 398);
+            this.customButton8.Location = new System.Drawing.Point(486, 420);
             this.customButton8.Name = "customButton8";
             this.customButton8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton8.Size = new System.Drawing.Size(60, 40);
@@ -528,7 +539,7 @@
             this.customButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton9.ForeColor = System.Drawing.Color.White;
-            this.customButton9.Location = new System.Drawing.Point(361, 398);
+            this.customButton9.Location = new System.Drawing.Point(356, 420);
             this.customButton9.Name = "customButton9";
             this.customButton9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton9.Size = new System.Drawing.Size(60, 40);
@@ -541,7 +552,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(361, 380);
+            this.label10.Location = new System.Drawing.Point(356, 402);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(190, 15);
             this.label10.TabIndex = 419;
@@ -557,7 +568,7 @@
             this.customPanel5.BorderSize = 2;
             this.customPanel5.Controls.Add(this.label11);
             this.customPanel5.ForeColor = System.Drawing.Color.White;
-            this.customPanel5.Location = new System.Drawing.Point(426, 337);
+            this.customPanel5.Location = new System.Drawing.Point(421, 359);
             this.customPanel5.Name = "customPanel5";
             this.customPanel5.Size = new System.Drawing.Size(60, 40);
             this.customPanel5.TabIndex = 422;
@@ -565,7 +576,7 @@
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(10, 7);
             this.label11.Name = "label11";
@@ -588,7 +599,7 @@
             this.customButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton10.ForeColor = System.Drawing.Color.White;
-            this.customButton10.Location = new System.Drawing.Point(491, 337);
+            this.customButton10.Location = new System.Drawing.Point(486, 359);
             this.customButton10.Name = "customButton10";
             this.customButton10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton10.Size = new System.Drawing.Size(60, 40);
@@ -609,7 +620,7 @@
             this.customButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.customButton13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.customButton13.ForeColor = System.Drawing.Color.White;
-            this.customButton13.Location = new System.Drawing.Point(361, 337);
+            this.customButton13.Location = new System.Drawing.Point(356, 359);
             this.customButton13.Name = "customButton13";
             this.customButton13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.customButton13.Size = new System.Drawing.Size(60, 40);
@@ -622,9 +633,9 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(314, 319);
+            this.label12.Location = new System.Drawing.Point(314, 332);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 15);
+            this.label12.Size = new System.Drawing.Size(276, 15);
             this.label12.TabIndex = 427;
             this.label12.Text = "HUB";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -634,9 +645,9 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(314, 176);
+            this.label13.Location = new System.Drawing.Point(310, 169);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 15);
+            this.label13.Size = new System.Drawing.Size(280, 15);
             this.label13.TabIndex = 428;
             this.label13.Text = "Z ASSI";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -682,12 +693,12 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.customPanel3);
-            this.Controls.Add(this.customButton6);
-            this.Controls.Add(this.customButton7);
+            this.Controls.Add(this.btn_offsetFromPieceUp);
+            this.Controls.Add(this.btn_offsetFromPieceDown);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.customPanel2);
-            this.Controls.Add(this.customButton4);
-            this.Controls.Add(this.customButton5);
+            this.Controls.Add(this.pnl_posRange);
+            this.Controls.Add(this.btn_posRangeUp);
+            this.Controls.Add(this.btn_posRangeDown);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.pnl_speed);
             this.Controls.Add(this.btn_speedUp);
@@ -702,7 +713,7 @@
             this.Size = new System.Drawing.Size(590, 510);
             this.customPanel8.ResumeLayout(false);
             this.pnl_speed.ResumeLayout(false);
-            this.customPanel2.ResumeLayout(false);
+            this.pnl_posRange.ResumeLayout(false);
             this.customPanel3.ResumeLayout(false);
             this.customPanel4.ResumeLayout(false);
             this.customPanel5.ResumeLayout(false);
@@ -724,15 +735,15 @@
         private RMLib.View.CustomButton btn_speedUp;
         private RMLib.View.CustomButton btn_speedDown;
         private System.Windows.Forms.Label label3;
-        private RMLib.View.CustomPanel customPanel2;
+        private RMLib.View.CustomPanel pnl_posRange;
         private System.Windows.Forms.Label lbl_posRange;
-        private RMLib.View.CustomButton customButton4;
-        private RMLib.View.CustomButton customButton5;
+        private RMLib.View.CustomButton btn_posRangeUp;
+        private RMLib.View.CustomButton btn_posRangeDown;
         private System.Windows.Forms.Label label2;
         private RMLib.View.CustomPanel customPanel3;
-        private System.Windows.Forms.Label label5;
-        private RMLib.View.CustomButton customButton6;
-        private RMLib.View.CustomButton customButton7;
+        private System.Windows.Forms.Label lbl_offsetFromPiece;
+        private RMLib.View.CustomButton btn_offsetFromPieceUp;
+        private RMLib.View.CustomButton btn_offsetFromPieceDown;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private RMLib.View.CustomPanel customPanel4;

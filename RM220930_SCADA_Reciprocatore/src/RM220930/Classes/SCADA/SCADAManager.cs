@@ -102,6 +102,11 @@ namespace RM.src.RM220930.Classes
         #region Variabili di Stato per la Logica di Controllo
 
         /// <summary>
+        /// A true quando la UI si sta aggiornando
+        /// </summary>
+        public static bool isUIUpdating = false;
+
+        /// <summary>
         /// Rappresenta lo stato precedente della connessione al PLC.
         /// </summary>
         private static bool prevIsPlcConnected = true;
@@ -125,6 +130,8 @@ namespace RM.src.RM220930.Classes
         /// Numero di assi
         /// </summary>
         public static int numZ = 7;
+
+        #region Home page
 
         /// <summary>
         /// Contiene la lista di indicatori ON/OFF nella pagina monitor ciclo
@@ -166,10 +173,13 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         public static readonly List<BiStateButton> selectedAxe_axis = new List<BiStateButton>();
 
+        #endregion
+
+        #region Work params
         /// <summary>
         /// Stato precedente per l'asse selezionato (WorkParams)
         /// </summary>
-        private static ZAxisState _prevWorkParamsState = new ZAxisState();
+        public static ZAxisState _prevWorkParamsState = new ZAxisState();
 
         /// <summary>
         /// Stato precedente per l'asse selezionato (WorkParams)
@@ -207,9 +217,20 @@ namespace RM.src.RM220930.Classes
         public static UiLabel posRange_workParams = new UiLabel();
 
         /// <summary>
+        /// Distanza dal pezzo
+        /// </summary>
+        public static UiLabel offsetFromPiece_workParams = new UiLabel();
+
+        #endregion
+
+        #region Axe configuration
+
+        /// <summary>
         /// Tasto ON-OFF dell'asse selzionato in axeConfiguration
         /// </summary>
         public static BiStateButton Z_ONOFF_axeConfiguration = new BiStateButton();
+
+        #endregion
 
         #endregion
 
@@ -427,6 +448,7 @@ namespace RM.src.RM220930.Classes
                 var HMIVisAutomaticMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Automatic_Mode}"));
                 var HMIVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Manual_Mode}"));
                 var HMIVisPos0Mode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Pos_0}"));
+                var cmdOffsetFromPiece = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset_From_Piece}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -435,6 +457,8 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdAutoFromPc = cmdAutoFromPc;
                 _zState[i].ActPosition = actPos;
                 _zState[i].cmdSpeedPos = cmdSpeedPos;
+                _zState[i].CmdPosRange = cmdPosRange;
+                _zState[i].CmdOffsetFromPiece = cmdOffsetFromPiece;
 
                 #region UI HOME PAGE 
 
@@ -476,7 +500,13 @@ namespace RM.src.RM220930.Classes
             #region UI WORKPARAMS
 
             int idx = SCADAManager.axeOffset;
-            var state = _zState[idx];
+            changed = _prevAxeOffset != idx;
+            if (changed)
+            {
+                ResetPrevStates();
+            }
+
+           var state = _zState[idx];
 
             changed = _prevWorkParamsState.CmdOnAxe != state.CmdOnAxe;
             if (changed)
@@ -500,22 +530,30 @@ namespace RM.src.RM220930.Classes
             }
 
             changed = _prevWorkParamsState.cmdSpeedPos != state.cmdSpeedPos;
-            if (changed)
+            if (changed && !isUIUpdating)
             {
                 _prevWorkParamsState.cmdSpeedPos = state.cmdSpeedPos;
                 speed_workParams.Write(state.cmdSpeedPos.ToString());
             }
 
             changed = _prevWorkParamsState.CmdPosRange != state.CmdPosRange;
-            if (changed)
+            if (changed && !isUIUpdating)
             {
                 _prevWorkParamsState.CmdPosRange = state.CmdPosRange;
                 posRange_workParams.Write(state.CmdPosRange.ToString());
             }
 
+            changed = _prevWorkParamsState.CmdOffsetFromPiece != state.CmdOffsetFromPiece;
+            if (changed && !isUIUpdating)
+            {
+                _prevWorkParamsState.CmdOffsetFromPiece = state.CmdOffsetFromPiece;
+                offsetFromPiece_workParams.Write(state.CmdOffsetFromPiece.ToString());
+            }
+
             changed = _prevAxeOffset != idx;
             if (changed)
             {
+                
                 _prevAxeOffset = idx;
                 numAxe_workParams.Write(idx.ToString());
                 foreach (var axe in selectedAxe_axis)
@@ -541,6 +579,13 @@ namespace RM.src.RM220930.Classes
             bool shouldBeVisible = idx != 0;
             if (Z_Auto_workParams._button.Visible != shouldBeVisible)
                 Z_Auto_workParams.ChangeVisibility(shouldBeVisible);
+        }
+
+        private static void ResetPrevStates()
+        {
+            _prevAxeConfigurationState = new ZAxisState();
+            _prevWorkParamsState = new ZAxisState();
+
         }
 
         /// <summary>

@@ -141,6 +141,14 @@ namespace RM.src.RM220930.Forms.Plant
             page.Dock = DockStyle.Fill;
             _navigator._cache["Work Params"] = page;
 
+            page = (UserControl)Activator.CreateInstance(typeof(UC_axeConfiguration));
+            page.Dock = DockStyle.Fill;
+            _navigator._cache["Axe Configuration"] = page;
+
+            page = (UserControl)Activator.CreateInstance(typeof(UC_axePosition));
+            page.Dock = DockStyle.Fill;
+            _navigator._cache["Axe Position"] = page;
+
         }
 
         /// <summary>
