@@ -1463,16 +1463,6 @@
             Home timeout
             </summary>
         </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosMin">
-            <summary>
-            Pos min
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosMax">
-            <summary>
-            Pos max
-            </summary>
-        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.PosStop">
             <summary>
             Pos stop

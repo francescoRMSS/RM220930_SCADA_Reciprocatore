@@ -686,7 +686,7 @@
             this.lbl_posMin.TabIndex = 3;
             this.lbl_posMin.Text = "0";
             this.lbl_posMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_posMin.Click += new System.EventHandler(this.label16_Click);
+            this.lbl_posMin.Click += new System.EventHandler(this.ClickEvent_udpateMinPos);
             // 
             // btn_posMinUp
             // 
@@ -708,6 +708,8 @@
             this.btn_posMinUp.TabIndex = 477;
             this.btn_posMinUp.TextColor = System.Drawing.Color.White;
             this.btn_posMinUp.UseVisualStyleBackColor = false;
+            this.btn_posMinUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posMinUp_MouseDown);
+            this.btn_posMinUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posMinUp_MouseUp);
             // 
             // btn_posMinDown
             // 
@@ -729,6 +731,8 @@
             this.btn_posMinDown.TabIndex = 476;
             this.btn_posMinDown.TextColor = System.Drawing.Color.White;
             this.btn_posMinDown.UseVisualStyleBackColor = false;
+            this.btn_posMinDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posMinDown_MouseDown);
+            this.btn_posMinDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posMinDown_MouseUp);
             // 
             // label13
             // 

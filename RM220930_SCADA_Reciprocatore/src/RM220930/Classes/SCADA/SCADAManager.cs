@@ -533,7 +533,6 @@ namespace RM.src.RM220930.Classes
                 var cmdAcc = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Acc}"));
                 var cmdDec = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Dec}"));
 
-
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
                 _zState[i].CmdEnAxe = cmdEn;
@@ -550,6 +549,7 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdVelMax = cmdVelMax;
                 _zState[i].CmdAcc = cmdAcc;
                 _zState[i].CmdDec = cmdDec;
+
 
                 #region UI HOME PAGE 
 
@@ -712,6 +712,22 @@ namespace RM.src.RM220930.Classes
                 _prevAxeConfigurationState.CmdDec = state.CmdDec;
                 deceleration_axeConfiguration.Write(state.CmdDec.ToString());
             }
+
+            changed = _prevAxeConfigurationState.CmdMinPos != state.CmdMinPos;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdMinPos = state.CmdMinPos;
+                posMin_axeConfiguration.Write(state.CmdMinPos.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdMaxPos != state.CmdMaxPos;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdMaxPos = state.CmdMaxPos;
+                posMax_axeConfiguration.Write(state.CmdMaxPos.ToString());
+            }
+
+            
 
             #endregion
 

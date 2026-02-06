@@ -78,6 +78,7 @@ namespace RM.src.RM220930.Classes
         /// Deceleration
         /// </summary>
         public float CmdDec { get; set; }
+
         #endregion
 
         #region Integer Variables (INT / short)
@@ -90,15 +91,6 @@ namespace RM.src.RM220930.Classes
         /// Home timeout
         /// </summary>
         public int CmdHomeTimeout { get; set; }
-       
-        /// <summary>
-        /// Pos min
-        /// </summary>
-        public int PosMin { get; set; }
-        /// <summary>
-        /// Pos max
-        /// </summary>
-        public int PosMax { get; set; }
         /// <summary>
         /// Pos stop
         /// </summary>
