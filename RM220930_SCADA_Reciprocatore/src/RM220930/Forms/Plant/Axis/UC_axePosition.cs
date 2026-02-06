@@ -157,27 +157,69 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         private void ClickEvent_updateAdvance(object sender, EventArgs e)
         {
-            // Cmd_Advance
+            string newValue = VK_Manager.OpenIntVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Advance}",
+                newValue,
+                "INT32"
+            );
         }
 
         private void btn_advanceUp_MouseDown(object sender, MouseEventArgs e)
         {
-
+            Label label = lbl_advance;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
         }
 
         private void btn_advanceUp_MouseUp(object sender, MouseEventArgs e)
         {
+            Label label = lbl_advance;
+            repeatTimer.Stop();
 
+            int newValue = Convert.ToInt32(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Advance}",
+                newValue,
+                "INT32"
+            );
+
+            SCADAManager.isUIUpdating = false;
         }
 
         private void btn_advanceDown_MouseDown(object sender, MouseEventArgs e)
         {
-
+            Label label = lbl_advance;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
         }
 
         private void btn_advanceDown_MouseUp(object sender, MouseEventArgs e)
         {
+            repeatTimer.Stop();
 
+            float newValue = Convert.ToSingle(lbl_advance.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Advance}",
+                newValue,
+                "INT32"
+            );
+
+            SCADAManager.isUIUpdating = false;
         }
 
         #endregion
@@ -186,27 +228,69 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         private void ClickEvent_updateDistance(object sender, EventArgs e)
         {
-            // Cmd_Distance
+            string newValue = VK_Manager.OpenIntVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Distance}",
+                newValue,
+                "INT32"
+            );
         }
 
         private void btn_distanceUp_MouseDown(object sender, MouseEventArgs e)
         {
-
+            Label label = lbl_distance;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
         }
 
         private void btn_distanceUp_MouseUp(object sender, MouseEventArgs e)
         {
+            Label label = lbl_distance;
+            repeatTimer.Stop();
 
+            int newValue = Convert.ToInt32(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Distance}",
+                newValue,
+                "INT32"
+            );
+
+            SCADAManager.isUIUpdating = false;
         }
 
         private void btn_distanceDown_MouseDown(object sender, MouseEventArgs e)
         {
-
+            Label label = lbl_distance;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
         }
 
         private void btn_distanceDown_MouseUp(object sender, MouseEventArgs e)
         {
+            repeatTimer.Stop();
 
+            float newValue = Convert.ToSingle(lbl_distance.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Distance}",
+                newValue,
+                "INT32"
+            );
+
+            SCADAManager.isUIUpdating = false;
         }
 
         #endregion
