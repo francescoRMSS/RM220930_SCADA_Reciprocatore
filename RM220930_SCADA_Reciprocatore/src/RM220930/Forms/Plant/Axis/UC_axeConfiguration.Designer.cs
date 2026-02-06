@@ -605,7 +605,7 @@
             this.lbl_posMax.TabIndex = 3;
             this.lbl_posMax.Text = "0";
             this.lbl_posMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_posMax.Click += new System.EventHandler(this.label8_Click);
+            this.lbl_posMax.Click += new System.EventHandler(this.ClickEvent_updateMaxPos);
             // 
             // btn_posMaxUp
             // 
@@ -627,6 +627,8 @@
             this.btn_posMaxUp.TabIndex = 473;
             this.btn_posMaxUp.TextColor = System.Drawing.Color.White;
             this.btn_posMaxUp.UseVisualStyleBackColor = false;
+            this.btn_posMaxUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posMaxUp_MouseDown);
+            this.btn_posMaxUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posMaxUp_MouseUp);
             // 
             // btn_posMaxDown
             // 
@@ -648,6 +650,8 @@
             this.btn_posMaxDown.TabIndex = 472;
             this.btn_posMaxDown.TextColor = System.Drawing.Color.White;
             this.btn_posMaxDown.UseVisualStyleBackColor = false;
+            this.btn_posMaxDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posMaxDown_MouseDown);
+            this.btn_posMaxDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posMaxDown_MouseUp);
             // 
             // label15
             // 
