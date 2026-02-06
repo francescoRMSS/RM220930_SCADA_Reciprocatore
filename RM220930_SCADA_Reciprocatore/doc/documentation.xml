@@ -316,6 +316,16 @@
             Distanza dal pezzo
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posAlta_workParams">
+            <summary>
+            Posizione Alta
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posBassa_workParams">
+            <summary>
+            Posizione Bassa
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF_axeConfiguration">
             <summary>
             Tasto ON-OFF dell'asse selzionato in axeConfiguration
@@ -1347,6 +1357,11 @@
             Distanza dal pezzo
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdMaxPos">
+            <summary>
+            Posizione alta
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
@@ -1847,6 +1862,34 @@
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_updateOffsetFromPiece(System.Object,System.EventArgs)">
             <summary>
             Update offset from piece
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_offsetFromPieceUp_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Aumento offset dal pezzo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_offsetFromPieceUp_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop aumento offset dal pezzo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_offsetFromPieceDown_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Decremento offset da pezzo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_offsetFromPieceDown_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop decremento offset da pezzo
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

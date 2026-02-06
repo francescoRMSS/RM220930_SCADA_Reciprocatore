@@ -54,6 +54,10 @@ namespace RM.src.RM220930.Classes
         /// Distanza dal pezzo
         /// </summary>
         public float CmdOffsetFromPiece { get; set; }
+        /// <summary>
+        /// Posizione alta
+        /// </summary>
+        public float CmdMaxPos { get; set; }
         #endregion
 
         #region Integer Variables (INT / short)

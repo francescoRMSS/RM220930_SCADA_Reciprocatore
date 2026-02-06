@@ -47,6 +47,8 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             SCADAManager.speed_workParams = new UiLabel(lbl_speed);
             SCADAManager.posRange_workParams = new UiLabel(lbl_posRange);
             SCADAManager.offsetFromPiece_workParams = new UiLabel(lbl_offsetFromPiece);
+            SCADAManager.posAlta_workParams = new UiLabel(lbl_posAlta);
+            SCADAManager.posBassa_workParams = new UiLabel(lbl_posBassa);
         }
 
         /// <summary>
@@ -130,10 +132,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             // Cmd_Min_Pos
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-            // Cmd_Max_Pos
-        }
+        
 
         
 
@@ -542,9 +541,25 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             SCADAManager.isUIUpdating = false;
         }
-       
+
         #endregion
 
+        private void ClickEvent_updatePosAlta(object sender, EventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            string newValue = VK_Manager.OpenIntVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Max_Pos}",
+                newValue,
+                "FLOAT"
+            );
+        }
 
     }
 }

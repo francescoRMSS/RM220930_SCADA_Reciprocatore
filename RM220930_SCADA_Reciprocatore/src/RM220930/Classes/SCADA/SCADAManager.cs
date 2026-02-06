@@ -221,6 +221,16 @@ namespace RM.src.RM220930.Classes
         /// </summary>
         public static UiLabel offsetFromPiece_workParams = new UiLabel();
 
+        /// <summary>
+        /// Posizione Alta
+        /// </summary>
+        public static UiLabel posAlta_workParams = new UiLabel();
+
+        /// <summary>
+        /// Posizione Bassa
+        /// </summary>
+        public static UiLabel posBassa_workParams = new UiLabel();
+
         #endregion
 
         #region Axe configuration
@@ -449,6 +459,7 @@ namespace RM.src.RM220930.Classes
                 var HMIVisManualMode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Manual_Mode}"));
                 var HMIVisPos0Mode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Pos_0}"));
                 var cmdOffsetFromPiece = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset_From_Piece}"));
+                var cmdMaxPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Max_Pos}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -459,6 +470,7 @@ namespace RM.src.RM220930.Classes
                 _zState[i].cmdSpeedPos = cmdSpeedPos;
                 _zState[i].CmdPosRange = cmdPosRange;
                 _zState[i].CmdOffsetFromPiece = cmdOffsetFromPiece;
+                _zState[i].CmdMaxPos = cmdMaxPos;
 
                 #region UI HOME PAGE 
 
@@ -548,6 +560,13 @@ namespace RM.src.RM220930.Classes
             {
                 _prevWorkParamsState.CmdOffsetFromPiece = state.CmdOffsetFromPiece;
                 offsetFromPiece_workParams.Write(state.CmdOffsetFromPiece.ToString());
+            }
+
+            changed = _prevWorkParamsState.CmdMaxPos != state.CmdMaxPos;
+            if (changed && !isUIUpdating)
+            {
+                _prevWorkParamsState.CmdMaxPos = state.CmdMaxPos;
+                posAlta_workParams.Write(state.CmdMaxPos.ToString());
             }
 
             changed = _prevAxeOffset != idx;
