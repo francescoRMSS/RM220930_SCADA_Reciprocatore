@@ -331,6 +331,71 @@
             Tasto ON-OFF dell'asse selzionato in axeConfiguration
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.homeTimeout_axeConfiguration">
+            <summary>
+            Home timeout
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.velMin_axeConfiguration">
+            <summary>
+            Vel min
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.velMax_axeConfiguration">
+            <summary>
+            Vel max
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.acceleration_axeConfiguration">
+            <summary>
+            Accelerazione
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.deceleration_axeConfiguration">
+            <summary>
+            Decelerazione
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posMin_axeConfiguration">
+            <summary>
+            Pos min
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posMax_axeConfiguration">
+            <summary>
+            Pos max
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posStop_axeConfiguration">
+            <summary>
+            Pos stop
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.velStop_axeConfiguration">
+            <summary>
+            Vel stop
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.offsetBase_axeConfiguration">
+            <summary>
+            Offset base
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.disPistole_axeConfiguration">
+            <summary>
+            Distanza pistole
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.posLavaggio_axeConfiguration">
+            <summary>
+            Pos lavaggio
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.velLavaggio_axeConfiguration">
+            <summary>
+            Vel lavaggio
+            </summary>
+        </member>
         <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
             <summary>
             Evento invocato quando viene generato un allarme.
@@ -1367,10 +1432,75 @@
             Posizione bassa
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdVelMin">
+            <summary>
+            Vel min
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdVelMax">
+            <summary>
+            Vel max
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
             0 = nessun errore.
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdHomeTimeout">
+            <summary>
+            Home timeout
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.Acceleration">
+            <summary>
+            Acceleration
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.Deceleration">
+            <summary>
+            Deceleration
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosMin">
+            <summary>
+            Pos min
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosMax">
+            <summary>
+            Pos max
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosStop">
+            <summary>
+            Pos stop
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.VelStop">
+            <summary>
+            Vel stop
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.OffsetBase">
+            <summary>
+            Offset base
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.DisPistole">
+            <summary>
+            Distanza pistole
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosLavaggio">
+            <summary>
+            Pos lavaggio
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.VelLavaggio">
+            <summary>
+            Vel lavaggio
             </summary>
         </member>
         <member name="T:RM.src.RM220930.TaskManager">
@@ -1679,6 +1809,23 @@
             Metodo necessario per il supporto della finestra di progettazione. Non modificare
             il contenuto del metodo con l'editor di codice.
             </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.InitRepeatTimer">
+            <summary>
+            Init del timer per +/- dei valori
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.InitControls">
+            <summary>
+            Creazione degli oggetti in SCADAManager
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.ClickEvent_updateHomeTimeout(System.Object,System.EventArgs)">
+            <summary>
+            Update home timeout
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.components">
             <summary> 

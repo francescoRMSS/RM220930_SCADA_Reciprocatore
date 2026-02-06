@@ -176,6 +176,7 @@ namespace RM.src.RM220930.Classes
         #endregion
 
         #region Work params
+
         /// <summary>
         /// Stato precedente per l'asse selezionato (WorkParams)
         /// </summary>
@@ -239,6 +240,71 @@ namespace RM.src.RM220930.Classes
         /// Tasto ON-OFF dell'asse selzionato in axeConfiguration
         /// </summary>
         public static BiStateButton Z_ONOFF_axeConfiguration = new BiStateButton();
+
+        /// <summary>
+        /// Home timeout
+        /// </summary>
+        public static UiLabel homeTimeout_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Vel min
+        /// </summary>
+        public static UiLabel velMin_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Vel max
+        /// </summary>
+        public static UiLabel velMax_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Accelerazione
+        /// </summary>
+        public static UiLabel acceleration_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Decelerazione
+        /// </summary>
+        public static UiLabel deceleration_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Pos min
+        /// </summary>
+        public static UiLabel posMin_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Pos max
+        /// </summary>
+        public static UiLabel posMax_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Pos stop
+        /// </summary>
+        public static UiLabel posStop_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Vel stop
+        /// </summary>
+        public static UiLabel velStop_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Offset base
+        /// </summary>
+        public static UiLabel offsetBase_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Distanza pistole
+        /// </summary>
+        public static UiLabel disPistole_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Pos lavaggio
+        /// </summary>
+        public static UiLabel posLavaggio_axeConfiguration = new UiLabel();
+
+        /// <summary>
+        /// Vel lavaggio
+        /// </summary>
+        public static UiLabel velLavaggio_axeConfiguration = new UiLabel();
 
         #endregion
 
@@ -461,6 +527,10 @@ namespace RM.src.RM220930.Classes
                 var cmdOffsetFromPiece = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset_From_Piece}"));
                 var cmdMaxPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Max_Pos}"));
                 var cmdMinPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Min_Pos}"));
+                var cmdHomeTimeout = Convert.ToInt32(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Time_Home}"));
+                var cmdVelMin = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Min_Speed}"));
+                var cmdVelMax = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Max_Speed}"));
+
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -473,6 +543,9 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdOffsetFromPiece = cmdOffsetFromPiece;
                 _zState[i].CmdMaxPos = cmdMaxPos;
                 _zState[i].CmdMinPos = cmdMinPos;
+                _zState[i].CmdHomeTimeout = cmdHomeTimeout;
+                _zState[i].CmdVelMin = cmdVelMin;
+                _zState[i].CmdVelMax = cmdVelMax;
 
                 #region UI HOME PAGE 
 
@@ -599,6 +672,27 @@ namespace RM.src.RM220930.Classes
             {
                 _prevAxeConfigurationState.CmdEnAxe = state.CmdEnAxe;
                 Z_ONOFF_axeConfiguration.ChangeStatusCustom(state.CmdEnAxe);
+            }
+
+            changed = _prevAxeConfigurationState.CmdHomeTimeout != state.CmdHomeTimeout;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdHomeTimeout = state.CmdHomeTimeout;
+                homeTimeout_axeConfiguration.Write(state.CmdHomeTimeout.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdVelMin != state.CmdVelMin;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdVelMin = state.CmdVelMin;
+                velMin_axeConfiguration.Write(state.CmdVelMin.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdVelMax != state.CmdVelMax;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdVelMax = state.CmdVelMax;
+                velMax_axeConfiguration.Write(state.CmdVelMax.ToString());
             }
 
             #endregion

@@ -62,6 +62,14 @@ namespace RM.src.RM220930.Classes
         /// Posizione bassa
         /// </summary>
         public float CmdMinPos { get; set; }
+        /// <summary>
+        /// Vel min
+        /// </summary>
+        public float CmdVelMin { get; set; }
+        /// <summary>
+        /// Vel max
+        /// </summary>
+        public float CmdVelMax { get; set; }
         #endregion
 
         #region Integer Variables (INT / short)
@@ -70,6 +78,50 @@ namespace RM.src.RM220930.Classes
         /// 0 = nessun errore.
         /// </summary>
         public short ErrorCode { get; set; }
+        /// <summary>
+        /// Home timeout
+        /// </summary>
+        public int CmdHomeTimeout { get; set; }
+        /// <summary>
+        /// Acceleration
+        /// </summary>
+        public int Acceleration { get; set; }
+        /// <summary>
+        /// Deceleration
+        /// </summary>
+        public int Deceleration { get; set; }
+        /// <summary>
+        /// Pos min
+        /// </summary>
+        public int PosMin { get; set; }
+        /// <summary>
+        /// Pos max
+        /// </summary>
+        public int PosMax { get; set; }
+        /// <summary>
+        /// Pos stop
+        /// </summary>
+        public int PosStop { get; set; }
+        /// <summary>
+        /// Vel stop
+        /// </summary>
+        public int VelStop { get; set; }
+        /// <summary>
+        /// Offset base
+        /// </summary>
+        public int OffsetBase { get; set; }
+        /// <summary>
+        /// Distanza pistole
+        /// </summary>
+        public int DisPistole { get; set; }
+        /// <summary>
+        /// Pos lavaggio
+        /// </summary>
+        public int PosLavaggio { get; set; }
+        /// <summary>
+        /// Vel lavaggio
+        /// </summary>
+        public int VelLavaggio { get; set; }
         #endregion
     }
 
