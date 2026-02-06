@@ -310,6 +310,7 @@ namespace RM.src.RM220930.Forms.Plant
         private void btn_resetAllarmi_MouseUp(object sender, MouseEventArgs e)
         {
             RefresherTask.AddUpdate($"PLC1_{PLCTagName.Hmi_Reset}", false, "BOOL");
+            SCADAManager.HandleAlarmsCleared();
         }
 
         /// <summary>

@@ -1,18 +1,12 @@
-﻿using CookComputing.XmlRpc;
-using fairino;
-using RM.src.RM220930.Classes.PLC;
+﻿using RM.src.RM220930.Classes.PLC;
 using RM.src.RM220930.Classes.UiBinder;
-using RM.src.RM220930.Forms.Plant;
 using RMLib.Alarms;
 using RMLib.DataAccess;
 using RMLib.Logger;
 using RMLib.PLC;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using static EasyModbus.ModbusServer;
@@ -130,6 +124,11 @@ namespace RM.src.RM220930.Classes
         /// Numero di assi
         /// </summary>
         public static int numZ = 7;
+
+        /// <summary>
+        /// Stato precedente degli allarmi
+        /// </summary>
+        private static readonly Dictionary<string, bool> _previousAlarmStates = new Dictionary<string, bool>();
 
         #region Home page
 
@@ -340,6 +339,7 @@ namespace RM.src.RM220930.Classes
         /// Evento invocato quando viene generato un allarme.
         /// </summary>
         public static event EventHandler AllarmeGenerato;
+
         /// <summary>
         /// Evento invocato quando gli allarmi vengono resettati.
         /// </summary>
@@ -523,8 +523,52 @@ namespace RM.src.RM220930.Classes
                 _prevZState[i] = new ZAxisState();
             }
         }
+ 
+        /// <summary>
+        /// Notifica il fronte di un allarme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="description"></param>
+        private static void NotifyAlarm(string id, string description)
+        {
+            log.Error($"Errore {id}: {description}");
 
-        public static bool? hmiVisManualMode;
+            DateTime now = DateTime.Now;
+            long unixTimestamp = ((DateTimeOffset)now).ToUnixTimeMilliseconds();
+            DateTime dateTime = DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(unixTimestamp.ToString())).DateTime.ToLocalTime();
+            string formattedDate = dateTime.ToString("dd-MM-yyyy HH:mm:ss");
+
+            string device = "PLC";
+            string state = "ON";
+
+            if (!IsAlarmAlreadySignaled(id))
+            {
+                CreateAlarm(id, description, formattedDate, device, state);
+                MarkAlarmAsSignaled(id);
+            }
+        }
+
+        /// <summary>
+        /// Notifica sul fronte di un allarme
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="description"></param>
+        /// <param name="tag"></param>
+        private static void CheckAlarmOnRisingEdge(string id, string description, string tag)
+        {
+            bool current = Convert.ToBoolean(
+                PLCConfig.appVariables.getValue($"PLC1_{tag}")
+            );
+
+            _previousAlarmStates.TryGetValue(id, out bool previous);
+
+            if (current && !previous)
+            {
+                NotifyAlarm(id, description);
+            }
+
+            _previousAlarmStates[id] = current;
+        }
 
         /// <summary>
         /// Aggiorna le variabili dal dizionario PLC
@@ -537,6 +581,41 @@ namespace RM.src.RM220930.Classes
 
             for (int i = 0; i < numZ; i++)
             {
+                // ===== READ ALARMS =====
+                CheckAlarmOnRisingEdge("1", "Alm001_Emergenza", PLCTagName.Alm001_Emergenza);
+                CheckAlarmOnRisingEdge("2", "Alm002", PLCTagName.Alm002);
+                CheckAlarmOnRisingEdge("3", "Alm003", PLCTagName.Alm003);
+                CheckAlarmOnRisingEdge("4", "Alm004", PLCTagName.Alm004);
+                CheckAlarmOnRisingEdge("5", "Alm005", PLCTagName.Alm005);
+                CheckAlarmOnRisingEdge("6", "Alm006", PLCTagName.Alm006);
+                CheckAlarmOnRisingEdge("7", "Alm007", PLCTagName.Alm007);
+                CheckAlarmOnRisingEdge("8", "Alm008", PLCTagName.Alm008);
+                CheckAlarmOnRisingEdge("9", "Alm009", PLCTagName.Alm009);
+                CheckAlarmOnRisingEdge("10", "Alm010_Error_Rec", PLCTagName.Alm010_Error_Rec);
+                CheckAlarmOnRisingEdge("11", "Alm011_Error_Z1", PLCTagName.Alm011_Error_Z1);
+                CheckAlarmOnRisingEdge("12", "Alm012_Error_Z2", PLCTagName.Alm012_Error_Z2);
+                CheckAlarmOnRisingEdge("13", "Alm013_Error_Z3", PLCTagName.Alm013_Error_Z3);
+                CheckAlarmOnRisingEdge("14", "Alm014_Error_Z4", PLCTagName.Alm014_Error_Z4);
+                CheckAlarmOnRisingEdge("15", "Alm015_Error_Z5", PLCTagName.Alm015_Error_Z5);
+                CheckAlarmOnRisingEdge("16", "Alm016_Error_Z6", PLCTagName.Alm016_Error_Z6);
+                CheckAlarmOnRisingEdge("17", "Alm017_Error_Z7", PLCTagName.Alm017_Error_Z7);
+                CheckAlarmOnRisingEdge("18", "Alm018_Error_Z8", PLCTagName.Alm018_Error_Z8);
+                CheckAlarmOnRisingEdge("19", "Alm019", PLCTagName.Alm019);
+                CheckAlarmOnRisingEdge("20", "Alm020", PLCTagName.Alm020);
+                CheckAlarmOnRisingEdge("21", "Alm021", PLCTagName.Alm021);
+                CheckAlarmOnRisingEdge("22", "Alm022", PLCTagName.Alm022);
+                CheckAlarmOnRisingEdge("23", "Alm023", PLCTagName.Alm023);
+                CheckAlarmOnRisingEdge("24", "Alm024", PLCTagName.Alm024);
+                CheckAlarmOnRisingEdge("25", "Alm025", PLCTagName.Alm025);
+                CheckAlarmOnRisingEdge("26", "Alm026_Timeout_Com_Laser", PLCTagName.Alm026_Timeout_Com_Laser);
+                CheckAlarmOnRisingEdge("27", "Alm027_Laser_Error_Fault_1", PLCTagName.Alm027_Laser_Error_Fault_1);
+                CheckAlarmOnRisingEdge("28", "Alm028_Laser_Error_Fault_2", PLCTagName.Alm028_Laser_Error_Fault_2);
+                CheckAlarmOnRisingEdge("29", "Alm029_Warning", PLCTagName.Alm029_Warning);
+                CheckAlarmOnRisingEdge("30", "Alm030_ErroreLetturaLaser", PLCTagName.Alm030_ErroreLetturaLaser);
+                CheckAlarmOnRisingEdge("31", "Alm031_ErroreScritturaLaser", PLCTagName.Alm031_ErroreScritturaLaser);
+                CheckAlarmOnRisingEdge("32", "Alm032_ErrorClientLaser", PLCTagName.Alm032_ErrorClientLaser);
+
+
                 // ===== READ PLC =====
                 var cmdOn = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_On_Axe}"));
                 var cmdEn = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_En_Axe}"));
@@ -585,7 +664,7 @@ namespace RM.src.RM220930.Classes
                 _zState[i].cmdStopPos = cmdStopPos;
                 _zState[i].CmdVelStop = cmdVelStop;
                 _zState[i].CmdOffset = cmdOffset;
-                _zState[i].CmdDistanceFromCenter = cmdDistanceFromCenter;
+                _zState[i].CmdDistanceFromCenter = cmdDistanceFromCenter;   
                 _zState[i].CmdWashPos = cmdWashPos;
                 _zState[i].CmdDelay = cmdDelay;
                 _zState[i].CmdAdvance = cmdAdvance;
@@ -834,13 +913,6 @@ namespace RM.src.RM220930.Classes
                 Z_Auto_workParams.ChangeVisibility(shouldBeVisible);
         }
 
-        private static void ResetPrevStates()
-        {
-            _prevAxeConfigurationState = new ZAxisState();
-            _prevWorkParamsState = new ZAxisState();
-
-        }
-
         /// <summary>
         /// Check su connessione PLC
         /// </summary>
@@ -959,27 +1031,33 @@ namespace RM.src.RM220930.Classes
         /// <param name="e"></param>
         private static void RMLib_AlarmsCleared(object sender, EventArgs e)
         {
+            HandleAlarmsCleared();
+
+        }
+
+        /// <summary>
+        /// Handle del reset degli allarmi
+        /// </summary>
+        public static void HandleAlarmsCleared()
+        {
             var criteria = new List<(string device, string description)>
-            {
-                ("", "PLC disconnesso. Il ciclo è stato terminato.")
-            };
+    {
+        ("", "PLC disconnesso. Il ciclo è stato terminato.")
+    };
 
             bool isBlocking = formAlarmPage.IsBlockingAlarmPresent(criteria);
 
             if (isBlocking)
             {
-                // Segnalo che non ci sono più allarmi bloccanti
                 AlarmManager.blockingAlarm = false;
             }
 
             TriggerAllarmeResettato();
 
-            // Reset degli allarmi segnalati
             foreach (var key in allarmiSegnalati.Keys.ToList())
             {
                 allarmiSegnalati[key] = false;
             }
-
         }
 
         /// <summary>
