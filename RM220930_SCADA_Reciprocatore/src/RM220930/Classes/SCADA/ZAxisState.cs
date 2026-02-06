@@ -58,6 +58,10 @@ namespace RM.src.RM220930.Classes
         /// Posizione alta
         /// </summary>
         public float CmdMaxPos { get; set; }
+        /// <summary>
+        /// Posizione bassa
+        /// </summary>
+        public float CmdMinPos { get; set; }
         #endregion
 
         #region Integer Variables (INT / short)

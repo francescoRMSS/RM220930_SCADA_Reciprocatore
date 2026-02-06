@@ -460,6 +460,7 @@ namespace RM.src.RM220930.Classes
                 var HMIVisPos0Mode = Convert.ToBoolean(PLCConfig.appVariables.getValue($"PLC1_{PLCTagName.Hmi_Vis_Pos_0}"));
                 var cmdOffsetFromPiece = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset_From_Piece}"));
                 var cmdMaxPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Max_Pos}"));
+                var cmdMinPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Min_Pos}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -471,6 +472,7 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdPosRange = cmdPosRange;
                 _zState[i].CmdOffsetFromPiece = cmdOffsetFromPiece;
                 _zState[i].CmdMaxPos = cmdMaxPos;
+                _zState[i].CmdMinPos = cmdMinPos;
 
                 #region UI HOME PAGE 
 
@@ -567,6 +569,13 @@ namespace RM.src.RM220930.Classes
             {
                 _prevWorkParamsState.CmdMaxPos = state.CmdMaxPos;
                 posAlta_workParams.Write(state.CmdMaxPos.ToString());
+            }
+
+            changed = _prevWorkParamsState.CmdMinPos != state.CmdMinPos;
+            if (changed && !isUIUpdating)
+            {
+                _prevWorkParamsState.CmdMinPos = state.CmdMinPos;
+                posBassa_workParams.Write(state.CmdMinPos.ToString());
             }
 
             changed = _prevAxeOffset != idx;

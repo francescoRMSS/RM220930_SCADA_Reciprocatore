@@ -1362,6 +1362,11 @@
             Posizione alta
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdMinPos">
+            <summary>
+            Posizione bassa
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
@@ -1890,6 +1895,76 @@
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_offsetFromPieceDown_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
             <summary>
             Stop decremento offset da pezzo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_updatePosAlta(System.Object,System.EventArgs)">
+            <summary>
+            Update posizione alta
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posAltaUp_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Aumento pos alta
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posAltaUp_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop aumento pos alta
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_PosAltaDown_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Decremento pos alta
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_PosAltaDown_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop decremento pos alta
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.ClickEvent_updatePosBassa(System.Object,System.EventArgs)">
+            <summary>
+            Update posizione bassa
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posBassaUp_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Aumento posizione bassa
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posBassaUp_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop aumento posizione bassa
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posBassaDown_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Decremento posizione bassa
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_workParams.btn_posBassaDown_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Stop decremento posizione bassa
             </summary>
             <param name="sender"></param>
             <param name="e"></param>

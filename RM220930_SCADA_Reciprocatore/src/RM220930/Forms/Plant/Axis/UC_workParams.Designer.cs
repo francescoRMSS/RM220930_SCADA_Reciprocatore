@@ -503,7 +503,7 @@
             this.lbl_posBassa.TabIndex = 3;
             this.lbl_posBassa.Text = "0";
             this.lbl_posBassa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_posBassa.Click += new System.EventHandler(this.label9_Click);
+            this.lbl_posBassa.Click += new System.EventHandler(this.ClickEvent_updatePosBassa);
             // 
             // btn_posBassaUp
             // 
@@ -525,6 +525,8 @@
             this.btn_posBassaUp.TabIndex = 425;
             this.btn_posBassaUp.TextColor = System.Drawing.Color.White;
             this.btn_posBassaUp.UseVisualStyleBackColor = false;
+            this.btn_posBassaUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posBassaUp_MouseDown);
+            this.btn_posBassaUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posBassaUp_MouseUp);
             // 
             // btn_posBassaDown
             // 
@@ -546,6 +548,8 @@
             this.btn_posBassaDown.TabIndex = 424;
             this.btn_posBassaDown.TextColor = System.Drawing.Color.White;
             this.btn_posBassaDown.UseVisualStyleBackColor = false;
+            this.btn_posBassaDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posBassaDown_MouseDown);
+            this.btn_posBassaDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posBassaDown_MouseUp);
             // 
             // label10
             // 
@@ -606,6 +610,8 @@
             this.btn_posAltaUp.TabIndex = 421;
             this.btn_posAltaUp.TextColor = System.Drawing.Color.White;
             this.btn_posAltaUp.UseVisualStyleBackColor = false;
+            this.btn_posAltaUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posAltaUp_MouseDown);
+            this.btn_posAltaUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posAltaUp_MouseUp);
             // 
             // btn_PosAltaDown
             // 
@@ -627,6 +633,8 @@
             this.btn_PosAltaDown.TabIndex = 420;
             this.btn_PosAltaDown.TextColor = System.Drawing.Color.White;
             this.btn_PosAltaDown.UseVisualStyleBackColor = false;
+            this.btn_PosAltaDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_PosAltaDown_MouseDown);
+            this.btn_PosAltaDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_PosAltaDown_MouseUp);
             // 
             // label12
             // 

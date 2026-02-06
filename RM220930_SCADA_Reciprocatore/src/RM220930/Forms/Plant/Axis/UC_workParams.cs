@@ -127,10 +127,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         }
 
         
-        private void label9_Click(object sender, EventArgs e)
-        {
-            // Cmd_Min_Pos
-        }
+       
 
         
 
@@ -544,6 +541,13 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         #endregion
 
+        #region Pos alta
+
+        /// <summary>
+        /// Update posizione alta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickEvent_updatePosAlta(object sender, EventArgs e)
         {
             if (SCADAManager.axeOffset != 0)
@@ -561,5 +565,204 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             );
         }
 
+        /// <summary>
+        /// Aumento pos alta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posAltaUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posAlta;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop aumento pos alta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posAltaUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posAlta;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Max_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        /// <summary>
+        /// Decremento pos alta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_PosAltaDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posAlta;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop decremento pos alta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_PosAltaDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posAlta;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Max_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region Pos bassa
+
+        /// <summary>
+        /// Update posizione bassa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClickEvent_updatePosBassa(object sender, EventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            string newValue = VK_Manager.OpenIntVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Min_Pos}",
+                newValue,
+                "FLOAT"
+            );
+        }
+
+        /// <summary>
+        /// Aumento posizione bassa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posBassaUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posBassa;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop aumento posizione bassa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posBassaUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posBassa;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Min_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        /// <summary>
+        /// Decremento posizione bassa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posBassaDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posBassa;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        /// <summary>
+        /// Stop decremento posizione bassa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_posBassaDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (SCADAManager.axeOffset != 0)
+                return;
+
+            Label label = lbl_posBassa;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Min_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
     }
 }
