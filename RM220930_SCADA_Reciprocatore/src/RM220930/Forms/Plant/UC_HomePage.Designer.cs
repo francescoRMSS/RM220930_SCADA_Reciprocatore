@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_HomePage));
             this.lbl_title = new System.Windows.Forms.Label();
             this.pnl_axis = new System.Windows.Forms.Panel();
             this.customPanel8 = new RMLib.View.CustomPanel();
@@ -239,7 +240,7 @@
             // 
             this.btn_jogPosZ8.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ8.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ8.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ8.BackgroundImage")));
             this.btn_jogPosZ8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ8.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ8.BorderRadius = 15;
@@ -264,7 +265,7 @@
             // 
             this.btn_jogPosZ4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ4.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ4.BackgroundImage")));
             this.btn_jogPosZ4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ4.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ4.BorderRadius = 15;
@@ -342,7 +343,7 @@
             // 
             this.btn_jogPosZ6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ6.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ6.BackgroundImage")));
             this.btn_jogPosZ6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ6.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ6.BorderRadius = 15;
@@ -366,7 +367,7 @@
             // 
             this.btn_jogPosZ2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ2.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ2.BackgroundImage")));
             this.btn_jogPosZ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ2.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ2.BorderRadius = 15;
@@ -417,7 +418,7 @@
             // 
             this.btn_jogNegZ8.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ8.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ8.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ8.BackgroundImage")));
             this.btn_jogNegZ8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ8.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ8.BorderRadius = 15;
@@ -442,7 +443,7 @@
             // 
             this.btn_jogNegZ4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ4.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ4.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ4.BackgroundImage")));
             this.btn_jogNegZ4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ4.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ4.BorderRadius = 15;
@@ -466,7 +467,7 @@
             // 
             this.btn_jogPosZ7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ7.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ7.BackgroundImage")));
             this.btn_jogPosZ7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ7.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ7.BorderRadius = 15;
@@ -491,7 +492,7 @@
             // 
             this.btn_jogNegZ6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ6.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ6.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ6.BackgroundImage")));
             this.btn_jogNegZ6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ6.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ6.BorderRadius = 15;
@@ -515,7 +516,7 @@
             // 
             this.btn_jogPosZ3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ3.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ3.BackgroundImage")));
             this.btn_jogPosZ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ3.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ3.BorderRadius = 15;
@@ -594,7 +595,7 @@
             // 
             this.btn_jogNegZ7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ7.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ7.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ7.BackgroundImage")));
             this.btn_jogNegZ7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ7.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ7.BorderRadius = 15;
@@ -646,7 +647,7 @@
             // 
             this.btn_jogNegZ2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ2.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ2.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ2.BackgroundImage")));
             this.btn_jogNegZ2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ2.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ2.BorderRadius = 15;
@@ -670,7 +671,7 @@
             // 
             this.btn_jogPosZ5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ5.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ5.BackgroundImage")));
             this.btn_jogPosZ5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ5.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ5.BorderRadius = 15;
@@ -694,7 +695,7 @@
             // 
             this.btn_jogNegZ3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ3.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ3.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ3.BackgroundImage")));
             this.btn_jogNegZ3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ3.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ3.BorderRadius = 15;
@@ -718,7 +719,7 @@
             // 
             this.btn_jogNegZ5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ5.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ5.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ5.BackgroundImage")));
             this.btn_jogNegZ5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ5.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ5.BorderRadius = 15;
@@ -742,7 +743,7 @@
             // 
             this.btn_jogPosZ1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosZ1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosZ1.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosZ1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogPosZ1.BackgroundImage")));
             this.btn_jogPosZ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosZ1.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosZ1.BorderRadius = 15;
@@ -788,7 +789,7 @@
             // 
             this.btn_jogNegZ1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegZ1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegZ1.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegZ1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_jogNegZ1.BackgroundImage")));
             this.btn_jogNegZ1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegZ1.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegZ1.BorderRadius = 15;
@@ -1331,7 +1332,7 @@
             // 
             this.btn_jogPosRec.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogPosRec.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogPosRec.BackgroundImage = global::RM.Properties.Resources.plus32Black;
+            this.btn_jogPosRec.BackgroundImage = global::RM.Properties.Resources.right_arrow;
             this.btn_jogPosRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogPosRec.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogPosRec.BorderRadius = 15;
@@ -1355,7 +1356,7 @@
             // 
             this.btn_jogNegRec.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_jogNegRec.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_jogNegRec.BackgroundImage = global::RM.Properties.Resources.minus32Black;
+            this.btn_jogNegRec.BackgroundImage = global::RM.Properties.Resources.left_arrow;
             this.btn_jogNegRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_jogNegRec.BorderColor = System.Drawing.Color.DimGray;
             this.btn_jogNegRec.BorderRadius = 15;
