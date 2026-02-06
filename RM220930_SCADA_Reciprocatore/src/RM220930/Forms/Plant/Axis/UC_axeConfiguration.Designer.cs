@@ -945,7 +945,7 @@
             this.lbl_disPistole.TabIndex = 3;
             this.lbl_disPistole.Text = "0";
             this.lbl_disPistole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_disPistole.Click += new System.EventHandler(this.label10_Click);
+            this.lbl_disPistole.Click += new System.EventHandler(this.ClickEvent_updateDistance);
             // 
             // btn_disPistoleUp
             // 
@@ -967,6 +967,8 @@
             this.btn_disPistoleUp.TabIndex = 489;
             this.btn_disPistoleUp.TextColor = System.Drawing.Color.White;
             this.btn_disPistoleUp.UseVisualStyleBackColor = false;
+            this.btn_disPistoleUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_disPistoleUp_MouseDown);
+            this.btn_disPistoleUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_disPistoleUp_MouseUp);
             // 
             // btn_disPistoleDown
             // 
@@ -988,6 +990,8 @@
             this.btn_disPistoleDown.TabIndex = 488;
             this.btn_disPistoleDown.TextColor = System.Drawing.Color.White;
             this.btn_disPistoleDown.UseVisualStyleBackColor = false;
+            this.btn_disPistoleDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_disPistoleDown_MouseDown);
+            this.btn_disPistoleDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_disPistoleDown_MouseUp);
             // 
             // label23
             // 
@@ -1192,7 +1196,7 @@
             this.lbl_posLavaggio.TabIndex = 3;
             this.lbl_posLavaggio.Text = "0";
             this.lbl_posLavaggio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_posLavaggio.Click += new System.EventHandler(this.label20_Click);
+            this.lbl_posLavaggio.Click += new System.EventHandler(this.ClickEvent_updatePosLavaggio);
             // 
             // btn_posLavaggioUp
             // 
@@ -1214,6 +1218,8 @@
             this.btn_posLavaggioUp.TabIndex = 501;
             this.btn_posLavaggioUp.TextColor = System.Drawing.Color.White;
             this.btn_posLavaggioUp.UseVisualStyleBackColor = false;
+            this.btn_posLavaggioUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posLavaggioUp_MouseDown);
+            this.btn_posLavaggioUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posLavaggioUp_MouseUp);
             // 
             // btn_posLavaggioDown
             // 
@@ -1235,6 +1241,8 @@
             this.btn_posLavaggioDown.TabIndex = 500;
             this.btn_posLavaggioDown.TextColor = System.Drawing.Color.White;
             this.btn_posLavaggioDown.UseVisualStyleBackColor = false;
+            this.btn_posLavaggioDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posLavaggioDown_MouseDown);
+            this.btn_posLavaggioDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posLavaggioDown_MouseUp);
             // 
             // UC_axeConfiguration
             // 

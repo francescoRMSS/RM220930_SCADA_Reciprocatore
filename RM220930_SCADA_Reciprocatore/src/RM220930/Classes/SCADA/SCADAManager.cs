@@ -535,7 +535,8 @@ namespace RM.src.RM220930.Classes
                 var cmdStopPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Stop_Pos}"));
                 var cmdVelStop = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Jog_Speed}"));
                 var cmdOffset = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset}"));
-
+                var cmdDistanceFromCenter = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Distance_From_Center}"));
+                var cmdWashPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Wash_Pos}"));
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -556,6 +557,8 @@ namespace RM.src.RM220930.Classes
                 _zState[i].cmdStopPos = cmdStopPos;
                 _zState[i].CmdVelStop = cmdVelStop;
                 _zState[i].CmdOffset = cmdOffset;
+                _zState[i].CmdDistanceFromCenter = cmdDistanceFromCenter;
+                _zState[i].CmdWashPos = cmdWashPos;
 
                 #region UI HOME PAGE 
 
@@ -752,6 +755,20 @@ namespace RM.src.RM220930.Classes
             {
                 _prevAxeConfigurationState.CmdOffset = state.CmdOffset;
                 offsetBase_axeConfiguration.Write(state.CmdOffset.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdDistanceFromCenter != state.CmdDistanceFromCenter;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdDistanceFromCenter = state.CmdDistanceFromCenter;
+                disPistole_axeConfiguration.Write(state.CmdDistanceFromCenter.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdWashPos != state.CmdWashPos;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdWashPos = state.CmdWashPos;
+                posLavaggio_axeConfiguration.Write(state.CmdWashPos.ToString());
             }
 
             #endregion

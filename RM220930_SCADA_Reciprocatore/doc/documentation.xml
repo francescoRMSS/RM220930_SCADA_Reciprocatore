@@ -1467,6 +1467,16 @@
             Offset base
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdDistanceFromCenter">
+            <summary>
+            Distanza pistole
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdWashPos">
+            <summary>
+            Pos lavaggio
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
@@ -1476,16 +1486,6 @@
         <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdHomeTimeout">
             <summary>
             Home timeout
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.DisPistole">
-            <summary>
-            Distanza pistole
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosLavaggio">
-            <summary>
-            Pos lavaggio
             </summary>
         </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.VelLavaggio">

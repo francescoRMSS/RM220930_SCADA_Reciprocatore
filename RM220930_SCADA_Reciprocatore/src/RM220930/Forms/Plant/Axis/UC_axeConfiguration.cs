@@ -116,15 +116,9 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
      
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-            // Cmd_Distance_From_Center
-        }
+    
 
-        private void label20_Click(object sender, EventArgs e)
-        {
-            // Cmd_Wash_Pos
-        }
+       
 
         private void label22_Click(object sender, EventArgs e)
         {
@@ -841,5 +835,148 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         }
 
         #endregion
+
+        #region Distanza pistole
+
+        private void ClickEvent_updateDistance(object sender, EventArgs e)
+        {
+            string newValue = VK_Manager.OpenFloatVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Distance_From_Center}",
+                newValue,
+                "FLOAT"
+            );
+        }
+
+        private void btn_disPistoleUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_disPistole;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_disPistoleUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_disPistole;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Distance_From_Center}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        private void btn_disPistoleDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_disPistole;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_disPistoleDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(lbl_disPistole.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Distance_From_Center}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region Pos lavaggio
+
+        private void ClickEvent_updatePosLavaggio(object sender, EventArgs e)
+        {
+            string newValue = VK_Manager.OpenFloatVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Wash_Pos}",
+                newValue,
+                "FLOAT"
+            );
+        }
+
+        private void btn_posLavaggioUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_posLavaggio;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_posLavaggioUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_posLavaggio;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Wash_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        private void btn_posLavaggioDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_posLavaggio;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_posLavaggioDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(lbl_posLavaggio.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Wash_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
     }
+
 }

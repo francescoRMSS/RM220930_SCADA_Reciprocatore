@@ -91,6 +91,14 @@ namespace RM.src.RM220930.Classes
         /// Offset base
         /// </summary>
         public float CmdOffset { get; set; }
+        /// <summary>
+        /// Distanza pistole
+        /// </summary>
+        public float CmdDistanceFromCenter{ get; set; }
+        /// <summary>
+        /// Pos lavaggio
+        /// </summary>
+        public float CmdWashPos { get; set; }
 
         #endregion
 
@@ -106,14 +114,8 @@ namespace RM.src.RM220930.Classes
         public int CmdHomeTimeout { get; set; }
         
       
-        /// <summary>
-        /// Distanza pistole
-        /// </summary>
-        public int DisPistole { get; set; }
-        /// <summary>
-        /// Pos lavaggio
-        /// </summary>
-        public int PosLavaggio { get; set; }
+        
+       
         /// <summary>
         /// Vel lavaggio
         /// </summary>
