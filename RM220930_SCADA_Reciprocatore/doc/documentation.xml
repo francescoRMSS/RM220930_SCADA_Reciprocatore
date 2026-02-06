@@ -1442,6 +1442,16 @@
             Vel max
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdAcc">
+            <summary>
+            Acceleration
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdDec">
+            <summary>
+            Deceleration
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
@@ -1451,16 +1461,6 @@
         <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdHomeTimeout">
             <summary>
             Home timeout
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.Acceleration">
-            <summary>
-            Acceleration
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.Deceleration">
-            <summary>
-            Deceleration
             </summary>
         </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.PosMin">
@@ -1819,13 +1819,6 @@
             <summary>
             Creazione degli oggetti in SCADAManager
             </summary>
-        </member>
-        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.ClickEvent_updateHomeTimeout(System.Object,System.EventArgs)">
-            <summary>
-            Update home timeout
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
         </member>
         <member name="F:RM.src.RM220930.Forms.Plant.Axis.UC_axeConfiguration.components">
             <summary> 

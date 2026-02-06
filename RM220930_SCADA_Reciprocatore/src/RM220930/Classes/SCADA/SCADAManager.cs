@@ -530,6 +530,8 @@ namespace RM.src.RM220930.Classes
                 var cmdHomeTimeout = Convert.ToInt32(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Time_Home}"));
                 var cmdVelMin = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Min_Speed}"));
                 var cmdVelMax = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Max_Speed}"));
+                var cmdAcc = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Acc}"));
+                var cmdDec = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Dec}"));
 
 
                 // ===== UPDATE STATE =====
@@ -546,6 +548,8 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdHomeTimeout = cmdHomeTimeout;
                 _zState[i].CmdVelMin = cmdVelMin;
                 _zState[i].CmdVelMax = cmdVelMax;
+                _zState[i].CmdAcc = cmdAcc;
+                _zState[i].CmdDec = cmdDec;
 
                 #region UI HOME PAGE 
 
@@ -693,6 +697,20 @@ namespace RM.src.RM220930.Classes
             {
                 _prevAxeConfigurationState.CmdVelMax = state.CmdVelMax;
                 velMax_axeConfiguration.Write(state.CmdVelMax.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdAcc != state.CmdAcc;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdAcc = state.CmdAcc;
+                acceleration_axeConfiguration.Write(state.CmdAcc.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdDec != state.CmdDec;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdDec = state.CmdDec;
+                deceleration_axeConfiguration.Write(state.CmdDec.ToString());
             }
 
             #endregion

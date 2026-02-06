@@ -435,7 +435,7 @@
             this.lbl_deceleration.TabIndex = 3;
             this.lbl_deceleration.Text = "0";
             this.lbl_deceleration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_deceleration.Click += new System.EventHandler(this.label5_Click);
+            this.lbl_deceleration.Click += new System.EventHandler(this.ClickEvent_updateDeceleration);
             // 
             // btn_decUp
             // 
@@ -457,6 +457,8 @@
             this.btn_decUp.TabIndex = 465;
             this.btn_decUp.TextColor = System.Drawing.Color.White;
             this.btn_decUp.UseVisualStyleBackColor = false;
+            this.btn_decUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_decUp_MouseDown);
+            this.btn_decUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_decUp_MouseUp);
             // 
             // btn_decDown
             // 
@@ -478,6 +480,8 @@
             this.btn_decDown.TabIndex = 464;
             this.btn_decDown.TextColor = System.Drawing.Color.White;
             this.btn_decDown.UseVisualStyleBackColor = false;
+            this.btn_decDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_decDown_MouseDown);
+            this.btn_decDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_decDown_MouseUp);
             // 
             // label3
             // 
@@ -516,7 +520,7 @@
             this.lbl_acceleration.TabIndex = 3;
             this.lbl_acceleration.Text = "0";
             this.lbl_acceleration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_acceleration.Click += new System.EventHandler(this.label6_Click);
+            this.lbl_acceleration.Click += new System.EventHandler(this.ClickEvent_updateAcceleration);
             // 
             // btn_accUp
             // 
@@ -538,6 +542,8 @@
             this.btn_accUp.TabIndex = 469;
             this.btn_accUp.TextColor = System.Drawing.Color.White;
             this.btn_accUp.UseVisualStyleBackColor = false;
+            this.btn_accUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_accUp_MouseDown);
+            this.btn_accUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_accUp_MouseUp);
             // 
             // btn_accDown
             // 
@@ -559,6 +565,8 @@
             this.btn_accDown.TabIndex = 468;
             this.btn_accDown.TextColor = System.Drawing.Color.White;
             this.btn_accDown.UseVisualStyleBackColor = false;
+            this.btn_accDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_accDown_MouseDown);
+            this.btn_accDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_accDown_MouseUp);
             // 
             // label7
             // 

@@ -70,6 +70,14 @@ namespace RM.src.RM220930.Classes
         /// Vel max
         /// </summary>
         public float CmdVelMax { get; set; }
+        /// <summary>
+        /// Acceleration
+        /// </summary>
+        public float CmdAcc { get; set; }
+        /// <summary>
+        /// Deceleration
+        /// </summary>
+        public float CmdDec { get; set; }
         #endregion
 
         #region Integer Variables (INT / short)
@@ -82,14 +90,7 @@ namespace RM.src.RM220930.Classes
         /// Home timeout
         /// </summary>
         public int CmdHomeTimeout { get; set; }
-        /// <summary>
-        /// Acceleration
-        /// </summary>
-        public int Acceleration { get; set; }
-        /// <summary>
-        /// Deceleration
-        /// </summary>
-        public int Deceleration { get; set; }
+       
         /// <summary>
         /// Pos min
         /// </summary>
