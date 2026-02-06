@@ -188,6 +188,11 @@ namespace RM.src.RM220930.Classes
         private static ZAxisState _prevAxeConfigurationState = new ZAxisState();
 
         /// <summary>
+        /// Stato precedente per l'asse selezionato (AxePosition)
+        /// </summary>
+        private static ZAxisState _prevAxePositionState = new ZAxisState();
+
+        /// <summary>
         /// Tasto ON-OFF dell'asse selzionato in workParams
         /// </summary>
         public static BiStateButton Z_ONOFF_workParams = new BiStateButton();
@@ -305,6 +310,25 @@ namespace RM.src.RM220930.Classes
         /// Vel lavaggio
         /// </summary>
         public static UiLabel velLavaggio_axeConfiguration = new UiLabel();
+
+        #endregion
+
+        #region Axe position
+
+        /// <summary>
+        /// Delay
+        /// </summary>
+        public static UiLabel delay_axePosition = new UiLabel();
+
+        /// <summary>
+        /// Advance
+        /// </summary>
+        public static UiLabel advance_axePosition = new UiLabel();
+
+        /// <summary>
+        /// Distance
+        /// </summary>
+        public static UiLabel distance_axePosition = new UiLabel();
 
         #endregion
 
@@ -537,6 +561,10 @@ namespace RM.src.RM220930.Classes
                 var cmdOffset = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset}"));
                 var cmdDistanceFromCenter = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Distance_From_Center}"));
                 var cmdWashPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Wash_Pos}"));
+                var cmdDelay = Convert.ToInt32(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Delay}"));
+                var cmdAdvance = Convert.ToInt32(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Advance}"));
+                var cmdDistance = Convert.ToInt32(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Distance}"));
+
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -559,6 +587,9 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdOffset = cmdOffset;
                 _zState[i].CmdDistanceFromCenter = cmdDistanceFromCenter;
                 _zState[i].CmdWashPos = cmdWashPos;
+                _zState[i].CmdDelay = cmdDelay;
+                _zState[i].CmdAdvance = cmdAdvance;
+                _zState[i].CmdDistance = cmdDistance;
 
                 #region UI HOME PAGE 
 
@@ -771,6 +802,30 @@ namespace RM.src.RM220930.Classes
                 posLavaggio_axeConfiguration.Write(state.CmdWashPos.ToString());
             }
 
+            #endregion
+
+            #region UI AXE_POSITION
+
+            changed = _prevAxePositionState.CmdDelay != state.CmdDelay;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxePositionState.CmdDelay = state.CmdDelay;
+                delay_axePosition.Write(state.CmdDelay.ToString());
+            }
+
+            changed = _prevAxePositionState.CmdAdvance != state.CmdAdvance;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxePositionState.CmdAdvance = state.CmdAdvance;
+                advance_axePosition.Write(state.CmdAdvance.ToString());
+            }
+
+            changed = _prevAxePositionState.CmdDistance != state.CmdDistance;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxePositionState.CmdDistance = state.CmdDistance;
+                distance_axePosition.Write(state.CmdDistance.ToString());
+            }
             #endregion
 
             // ===== VISIBILITÀ Z_Auto =====

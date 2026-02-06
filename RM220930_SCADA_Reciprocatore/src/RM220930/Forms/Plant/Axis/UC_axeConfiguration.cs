@@ -101,27 +101,6 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             );
         }
 
-        
-
-       
-
-       
-
-      
-
-    
-       
-
-       
-
-     
-
-    
-
-       
-
-       
-
         #region Home timeout
 
         private void ClickEvent_updateHomeTimeout(object sender, EventArgs e)
@@ -975,6 +954,8 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
         #endregion
 
+        #region Vel lavaggio
+
         private void ClickEvent_updateVelLavaggio(object sender, EventArgs e)
         {
             string newValue = VK_Manager.OpenFloatVK("0");
@@ -1041,6 +1022,8 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
             SCADAManager.isUIUpdating = false;
         }
+
+        #endregion
     }
 
 }

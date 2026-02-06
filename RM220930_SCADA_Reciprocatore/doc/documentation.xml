@@ -281,6 +281,11 @@
             Stato precedente per l'asse selezionato (WorkParams)
             </summary>
         </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager._prevAxePositionState">
+            <summary>
+            Stato precedente per l'asse selezionato (AxePosition)
+            </summary>
+        </member>
         <member name="F:RM.src.RM220930.Classes.SCADAManager.Z_ONOFF_workParams">
             <summary>
             Tasto ON-OFF dell'asse selzionato in workParams
@@ -394,6 +399,21 @@
         <member name="F:RM.src.RM220930.Classes.SCADAManager.velLavaggio_axeConfiguration">
             <summary>
             Vel lavaggio
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.delay_axePosition">
+            <summary>
+            Delay
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.advance_axePosition">
+            <summary>
+            Advance
+            </summary>
+        </member>
+        <member name="F:RM.src.RM220930.Classes.SCADAManager.distance_axePosition">
+            <summary>
+            Distance
             </summary>
         </member>
         <member name="E:RM.src.RM220930.Classes.SCADAManager.AllarmeGenerato">
@@ -1488,6 +1508,21 @@
             Home timeout
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdDelay">
+            <summary>
+            Delay
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdAdvance">
+            <summary>
+            Advance
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdDistance">
+            <summary>
+            Distance
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.VelLavaggio">
             <summary>
             Vel lavaggio
@@ -1830,6 +1865,16 @@
         <member name="E:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.NavigateRequested">
             <summary>
             Evento che intercetta il navigator quando è stata richiesta una navigazione tra le UC
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.InitRepeatTimer">
+            <summary>
+            Init del timer per +/- dei valori
+            </summary>
+        </member>
+        <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.InitControls">
+            <summary>
+            Creazione degli oggetti in SCADAManager
             </summary>
         </member>
         <member name="M:RM.src.RM220930.Forms.Plant.Axis.UC_axePosition.OnNavigatedTo(System.Object)">

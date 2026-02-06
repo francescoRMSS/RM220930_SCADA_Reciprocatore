@@ -112,10 +112,19 @@ namespace RM.src.RM220930.Classes
         /// Home timeout
         /// </summary>
         public int CmdHomeTimeout { get; set; }
-        
-      
-        
-       
+        /// <summary>
+        /// Delay
+        /// </summary>
+        public int CmdDelay { get; set; }
+        /// <summary>
+        /// Advance
+        /// </summary>
+        public int CmdAdvance { get; set; }
+        /// <summary>
+        /// Distance
+        /// </summary>
+        public int CmdDistance { get; set; }
+
         /// <summary>
         /// Vel lavaggio
         /// </summary>
