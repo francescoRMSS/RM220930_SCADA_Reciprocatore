@@ -120,10 +120,7 @@ namespace RM.src.RM220930.Forms.Plant.Axis
 
        
 
-        private void label22_Click(object sender, EventArgs e)
-        {
-            // Cmd_Jog_Speed
-        }
+       
 
         #region Home timeout
 
@@ -977,6 +974,73 @@ namespace RM.src.RM220930.Forms.Plant.Axis
         }
 
         #endregion
+
+        private void ClickEvent_updateVelLavaggio(object sender, EventArgs e)
+        {
+            string newValue = VK_Manager.OpenFloatVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Jog_Speed}",
+                newValue,
+                "FLOAT"
+            );
+        }
+
+        private void btn_velLavaggioUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_velLavaggio;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_velLavaggioUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_velLavaggio;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Jog_Speed}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        private void btn_velLavaggioDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_velLavaggio;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_velLavaggioDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(lbl_velLavaggio.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Jog_Speed}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
     }
 
 }

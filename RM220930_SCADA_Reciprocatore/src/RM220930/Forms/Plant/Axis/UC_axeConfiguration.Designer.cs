@@ -1115,7 +1115,7 @@
             this.lbl_velLavaggio.TabIndex = 3;
             this.lbl_velLavaggio.Text = "0";
             this.lbl_velLavaggio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_velLavaggio.Click += new System.EventHandler(this.label22_Click);
+            this.lbl_velLavaggio.Click += new System.EventHandler(this.ClickEvent_updateVelLavaggio);
             // 
             // btn_velLavaggioUp
             // 
@@ -1137,6 +1137,8 @@
             this.btn_velLavaggioUp.TabIndex = 497;
             this.btn_velLavaggioUp.TextColor = System.Drawing.Color.White;
             this.btn_velLavaggioUp.UseVisualStyleBackColor = false;
+            this.btn_velLavaggioUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_velLavaggioUp_MouseDown);
+            this.btn_velLavaggioUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_velLavaggioUp_MouseUp);
             // 
             // btn_velLavaggioDown
             // 
@@ -1158,6 +1160,8 @@
             this.btn_velLavaggioDown.TabIndex = 496;
             this.btn_velLavaggioDown.TextColor = System.Drawing.Color.White;
             this.btn_velLavaggioDown.UseVisualStyleBackColor = false;
+            this.btn_velLavaggioDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_velLavaggioDown_MouseDown);
+            this.btn_velLavaggioDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_velLavaggioDown_MouseUp);
             // 
             // label19
             // 
