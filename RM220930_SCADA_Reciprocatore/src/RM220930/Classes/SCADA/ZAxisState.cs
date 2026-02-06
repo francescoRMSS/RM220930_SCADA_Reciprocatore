@@ -78,6 +78,19 @@ namespace RM.src.RM220930.Classes
         /// Deceleration
         /// </summary>
         public float CmdDec { get; set; }
+        /// <summary>
+        /// Pos stop
+        /// </summary>
+        public float cmdStopPos { get; set; }
+        /// <summary>
+        /// Vel stop
+        /// </summary>
+        public float CmdVelStop { get; set; }
+
+        /// <summary>
+        /// Offset base
+        /// </summary>
+        public float CmdOffset { get; set; }
 
         #endregion
 
@@ -91,18 +104,8 @@ namespace RM.src.RM220930.Classes
         /// Home timeout
         /// </summary>
         public int CmdHomeTimeout { get; set; }
-        /// <summary>
-        /// Pos stop
-        /// </summary>
-        public int PosStop { get; set; }
-        /// <summary>
-        /// Vel stop
-        /// </summary>
-        public int VelStop { get; set; }
-        /// <summary>
-        /// Offset base
-        /// </summary>
-        public int OffsetBase { get; set; }
+        
+      
         /// <summary>
         /// Distanza pistole
         /// </summary>

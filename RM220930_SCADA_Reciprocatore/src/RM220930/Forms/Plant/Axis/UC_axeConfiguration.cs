@@ -110,20 +110,11 @@ namespace RM.src.RM220930.Forms.Plant.Axis
       
 
     
-        private void label12_Click(object sender, EventArgs e)
-        {
-            // Cmd_Stop_Pos
-        }
+       
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-            // Cmd_Jog_Speed
-        }
+       
 
-        private void label24_Click(object sender, EventArgs e)
-        {
-            // Cmd_Offset
-        }
+     
 
         private void label10_Click(object sender, EventArgs e)
         {
@@ -628,6 +619,220 @@ namespace RM.src.RM220930.Forms.Plant.Axis
             // Scrittura verso PLC (command)
             RefresherTask.AddUpdate(
                 $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Max_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region Pos stop
+
+        private void ClickEvent_updateStopPos(object sender, EventArgs e)
+        {
+            string newValue = VK_Manager.OpenFloatVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Stop_Pos}",
+                newValue,
+                "FLOAT"
+            );
+        }
+
+        private void btn_posStopUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_posStop;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_posStopUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_posStop;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Stop_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        private void btn_posStopDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_posStop;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_posStopDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(lbl_posStop.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Stop_Pos}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region Vel stop
+
+        private void ClickEvent_updateJogSpeed(object sender, EventArgs e)
+        {
+            string newValue = VK_Manager.OpenFloatVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Jog_Speed}",
+                newValue,
+                "FLOAT"
+            );
+            
+        }
+
+        private void btn_velStopUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_velStop;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_velStopUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_velStop;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Jog_Speed}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        private void btn_velStopDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_velStop;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_velStopDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(lbl_velStop.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Jog_Speed}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        #endregion
+
+        #region Offset base
+
+        private void ClickEvent_updateOffset(object sender, EventArgs e)
+        {
+            string newValue = VK_Manager.OpenFloatVK("0");
+
+            if (newValue.Equals(VK_Manager.CANCEL_STRING)) return;
+
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Offset}",
+                newValue,
+                "FLOAT"
+            );
+        }
+
+        private void btn_offsetBaseUp_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_offsetBase;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = true;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_offsetBaseUp_MouseUp(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_offsetBase;
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(label.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Offset}",
+                newValue,
+                "FLOAT"
+            );
+
+            SCADAManager.isUIUpdating = false;
+        }
+
+        private void btn_offsetBaseDown_MouseDown(object sender, MouseEventArgs e)
+        {
+            Label label = lbl_offsetBase;
+            SCADAManager.isUIUpdating = true;
+            labelAttiva = label;
+            valoreAttivo = Convert.ToInt32(label.Text);
+            incremento = false;
+            CambiaValore(label, ref valoreAttivo, incremento);       // primo aumento immediato
+            repeatTimer.Start();  // poi continua finché premi
+        }
+
+        private void btn_offsetBaseDown_MouseUp(object sender, MouseEventArgs e)
+        {
+            repeatTimer.Stop();
+
+            float newValue = Convert.ToSingle(lbl_offsetBase.Text);
+            // Scrittura verso PLC (command)
+            RefresherTask.AddUpdate(
+                $"PLC1_z{SCADAManager.axeOffset}_{PLCTagName.Cmd_Offset}",
                 newValue,
                 "FLOAT"
             );

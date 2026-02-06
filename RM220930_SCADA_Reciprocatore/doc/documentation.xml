@@ -1452,6 +1452,21 @@
             Deceleration
             </summary>
         </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.cmdStopPos">
+            <summary>
+            Pos stop
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdVelStop">
+            <summary>
+            Vel stop
+            </summary>
+        </member>
+        <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdOffset">
+            <summary>
+            Offset base
+            </summary>
+        </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.ErrorCode">
             <summary>
             Codice di errore dell'asse letto dal PLC.
@@ -1461,21 +1476,6 @@
         <member name="P:RM.src.RM220930.Classes.ZAxisState.CmdHomeTimeout">
             <summary>
             Home timeout
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.PosStop">
-            <summary>
-            Pos stop
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.VelStop">
-            <summary>
-            Vel stop
-            </summary>
-        </member>
-        <member name="P:RM.src.RM220930.Classes.ZAxisState.OffsetBase">
-            <summary>
-            Offset base
             </summary>
         </member>
         <member name="P:RM.src.RM220930.Classes.ZAxisState.DisPistole">

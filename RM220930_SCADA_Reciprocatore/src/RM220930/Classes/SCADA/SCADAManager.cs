@@ -532,6 +532,10 @@ namespace RM.src.RM220930.Classes
                 var cmdVelMax = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Max_Speed}"));
                 var cmdAcc = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Acc}"));
                 var cmdDec = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Dec}"));
+                var cmdStopPos = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Stop_Pos}"));
+                var cmdVelStop = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Jog_Speed}"));
+                var cmdOffset = Convert.ToSingle(PLCConfig.appVariables.getValue($"PLC1_z{i}_{PLCTagName.Cmd_Offset}"));
+
 
                 // ===== UPDATE STATE =====
                 _zState[i].CmdOnAxe = cmdOn;
@@ -549,7 +553,9 @@ namespace RM.src.RM220930.Classes
                 _zState[i].CmdVelMax = cmdVelMax;
                 _zState[i].CmdAcc = cmdAcc;
                 _zState[i].CmdDec = cmdDec;
-
+                _zState[i].cmdStopPos = cmdStopPos;
+                _zState[i].CmdVelStop = cmdVelStop;
+                _zState[i].CmdOffset = cmdOffset;
 
                 #region UI HOME PAGE 
 
@@ -591,11 +597,11 @@ namespace RM.src.RM220930.Classes
             #region UI WORKPARAMS
 
             int idx = SCADAManager.axeOffset;
-            changed = _prevAxeOffset != idx;
+            /*changed = _prevAxeOffset != idx;
             if (changed)
             {
                 ResetPrevStates();
-            }
+            }*/
 
            var state = _zState[idx];
 
@@ -727,7 +733,26 @@ namespace RM.src.RM220930.Classes
                 posMax_axeConfiguration.Write(state.CmdMaxPos.ToString());
             }
 
-            
+            changed = _prevAxeConfigurationState.cmdStopPos != state.cmdStopPos;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.cmdStopPos = state.cmdStopPos;
+                posStop_axeConfiguration.Write(state.cmdStopPos.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdVelStop != state.CmdVelStop;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdVelStop = state.CmdVelStop;
+                velStop_axeConfiguration.Write(state.CmdVelStop.ToString());
+            }
+
+            changed = _prevAxeConfigurationState.CmdOffset != state.CmdOffset;
+            if (changed && !isUIUpdating)
+            {
+                _prevAxeConfigurationState.CmdOffset = state.CmdOffset;
+                offsetBase_axeConfiguration.Write(state.CmdOffset.ToString());
+            }
 
             #endregion
 

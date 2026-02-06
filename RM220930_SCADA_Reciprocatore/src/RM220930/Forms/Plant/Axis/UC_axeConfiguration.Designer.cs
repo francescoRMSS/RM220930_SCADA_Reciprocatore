@@ -69,8 +69,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pnl_velStop = new RMLib.View.CustomPanel();
             this.lbl_velStop = new System.Windows.Forms.Label();
-            this.customButton16 = new RMLib.View.CustomButton();
-            this.customButton17 = new RMLib.View.CustomButton();
+            this.btn_velStopUp = new RMLib.View.CustomButton();
+            this.btn_velStopDown = new RMLib.View.CustomButton();
             this.label11 = new System.Windows.Forms.Label();
             this.pnl_posStop = new RMLib.View.CustomPanel();
             this.lbl_posStop = new System.Windows.Forms.Label();
@@ -775,49 +775,53 @@
             this.lbl_velStop.TabIndex = 3;
             this.lbl_velStop.Text = "0";
             this.lbl_velStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_velStop.Click += new System.EventHandler(this.label14_Click);
+            this.lbl_velStop.Click += new System.EventHandler(this.ClickEvent_updateJogSpeed);
             // 
-            // customButton16
+            // btn_velStopUp
             // 
-            this.customButton16.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton16.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton16.BackgroundImage")));
-            this.customButton16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton16.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton16.BorderRadius = 15;
-            this.customButton16.BorderSize = 2;
-            this.customButton16.FlatAppearance.BorderSize = 0;
-            this.customButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton16.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton16.ForeColor = System.Drawing.Color.White;
-            this.customButton16.Location = new System.Drawing.Point(515, 288);
-            this.customButton16.Name = "customButton16";
-            this.customButton16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton16.Size = new System.Drawing.Size(60, 40);
-            this.customButton16.TabIndex = 481;
-            this.customButton16.TextColor = System.Drawing.Color.White;
-            this.customButton16.UseVisualStyleBackColor = false;
+            this.btn_velStopUp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_velStopUp.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_velStopUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_velStopUp.BackgroundImage")));
+            this.btn_velStopUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_velStopUp.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_velStopUp.BorderRadius = 15;
+            this.btn_velStopUp.BorderSize = 2;
+            this.btn_velStopUp.FlatAppearance.BorderSize = 0;
+            this.btn_velStopUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_velStopUp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_velStopUp.ForeColor = System.Drawing.Color.White;
+            this.btn_velStopUp.Location = new System.Drawing.Point(515, 288);
+            this.btn_velStopUp.Name = "btn_velStopUp";
+            this.btn_velStopUp.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_velStopUp.Size = new System.Drawing.Size(60, 40);
+            this.btn_velStopUp.TabIndex = 481;
+            this.btn_velStopUp.TextColor = System.Drawing.Color.White;
+            this.btn_velStopUp.UseVisualStyleBackColor = false;
+            this.btn_velStopUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_velStopUp_MouseDown);
+            this.btn_velStopUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_velStopUp_MouseUp);
             // 
-            // customButton17
+            // btn_velStopDown
             // 
-            this.customButton17.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton17.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.customButton17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("customButton17.BackgroundImage")));
-            this.customButton17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.customButton17.BorderColor = System.Drawing.Color.DimGray;
-            this.customButton17.BorderRadius = 15;
-            this.customButton17.BorderSize = 2;
-            this.customButton17.FlatAppearance.BorderSize = 0;
-            this.customButton17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.customButton17.ForeColor = System.Drawing.Color.White;
-            this.customButton17.Location = new System.Drawing.Point(385, 288);
-            this.customButton17.Name = "customButton17";
-            this.customButton17.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.customButton17.Size = new System.Drawing.Size(60, 40);
-            this.customButton17.TabIndex = 480;
-            this.customButton17.TextColor = System.Drawing.Color.White;
-            this.customButton17.UseVisualStyleBackColor = false;
+            this.btn_velStopDown.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_velStopDown.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_velStopDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_velStopDown.BackgroundImage")));
+            this.btn_velStopDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_velStopDown.BorderColor = System.Drawing.Color.DimGray;
+            this.btn_velStopDown.BorderRadius = 15;
+            this.btn_velStopDown.BorderSize = 2;
+            this.btn_velStopDown.FlatAppearance.BorderSize = 0;
+            this.btn_velStopDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_velStopDown.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_velStopDown.ForeColor = System.Drawing.Color.White;
+            this.btn_velStopDown.Location = new System.Drawing.Point(385, 288);
+            this.btn_velStopDown.Name = "btn_velStopDown";
+            this.btn_velStopDown.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.btn_velStopDown.Size = new System.Drawing.Size(60, 40);
+            this.btn_velStopDown.TabIndex = 480;
+            this.btn_velStopDown.TextColor = System.Drawing.Color.White;
+            this.btn_velStopDown.UseVisualStyleBackColor = false;
+            this.btn_velStopDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_velStopDown_MouseDown);
+            this.btn_velStopDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_velStopDown_MouseUp);
             // 
             // label11
             // 
@@ -856,7 +860,7 @@
             this.lbl_posStop.TabIndex = 3;
             this.lbl_posStop.Text = "0";
             this.lbl_posStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_posStop.Click += new System.EventHandler(this.label12_Click);
+            this.lbl_posStop.Click += new System.EventHandler(this.ClickEvent_updateStopPos);
             // 
             // btn_posStopUp
             // 
@@ -878,6 +882,8 @@
             this.btn_posStopUp.TabIndex = 485;
             this.btn_posStopUp.TextColor = System.Drawing.Color.White;
             this.btn_posStopUp.UseVisualStyleBackColor = false;
+            this.btn_posStopUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posStopUp_MouseDown);
+            this.btn_posStopUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posStopUp_MouseUp);
             // 
             // btn_posStopDown
             // 
@@ -899,6 +905,8 @@
             this.btn_posStopDown.TabIndex = 484;
             this.btn_posStopDown.TextColor = System.Drawing.Color.White;
             this.btn_posStopDown.UseVisualStyleBackColor = false;
+            this.btn_posStopDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_posStopDown_MouseDown);
+            this.btn_posStopDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_posStopDown_MouseUp);
             // 
             // label9
             // 
@@ -1018,7 +1026,7 @@
             this.lbl_offsetBase.TabIndex = 3;
             this.lbl_offsetBase.Text = "0";
             this.lbl_offsetBase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_offsetBase.Click += new System.EventHandler(this.label24_Click);
+            this.lbl_offsetBase.Click += new System.EventHandler(this.ClickEvent_updateOffset);
             // 
             // btn_offsetBaseUp
             // 
@@ -1040,6 +1048,8 @@
             this.btn_offsetBaseUp.TabIndex = 493;
             this.btn_offsetBaseUp.TextColor = System.Drawing.Color.White;
             this.btn_offsetBaseUp.UseVisualStyleBackColor = false;
+            this.btn_offsetBaseUp.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_offsetBaseUp_MouseDown);
+            this.btn_offsetBaseUp.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_offsetBaseUp_MouseUp);
             // 
             // btn_offsetBaseDown
             // 
@@ -1061,6 +1071,8 @@
             this.btn_offsetBaseDown.TabIndex = 492;
             this.btn_offsetBaseDown.TextColor = System.Drawing.Color.White;
             this.btn_offsetBaseDown.UseVisualStyleBackColor = false;
+            this.btn_offsetBaseDown.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_offsetBaseDown_MouseDown);
+            this.btn_offsetBaseDown.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_offsetBaseDown_MouseUp);
             // 
             // label21
             // 
@@ -1251,8 +1263,8 @@
             this.Controls.Add(this.btn_posStopDown);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pnl_velStop);
-            this.Controls.Add(this.customButton16);
-            this.Controls.Add(this.customButton17);
+            this.Controls.Add(this.btn_velStopUp);
+            this.Controls.Add(this.btn_velStopDown);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.pnl_posMin);
             this.Controls.Add(this.btn_posMinUp);
@@ -1344,8 +1356,8 @@
         private System.Windows.Forms.Label label13;
         private RMLib.View.CustomPanel pnl_velStop;
         private System.Windows.Forms.Label lbl_velStop;
-        private RMLib.View.CustomButton customButton16;
-        private RMLib.View.CustomButton customButton17;
+        private RMLib.View.CustomButton btn_velStopUp;
+        private RMLib.View.CustomButton btn_velStopDown;
         private System.Windows.Forms.Label label11;
         private RMLib.View.CustomPanel pnl_posStop;
         private System.Windows.Forms.Label lbl_posStop;
